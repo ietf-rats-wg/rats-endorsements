@@ -93,6 +93,7 @@ per claim per component.  The appraisal policy then specifies how to match
 the current value against the set of reference values.
 
 Some examples of such matching include:
+
 * The current value must be in the set of allowed reference values.
 * The current value must not be in the set of disallowed reference values.
 * The current value must be in a range where two reference values are the min and max.
