@@ -26,6 +26,13 @@ author:
   region: ""
   country: USA
 
+informative:
+  TCG-DICE:
+    author:
+      org: "Trusted Computing Group"
+    title: "DICE Certificate Profiles"
+    target: https://trustedcomputinggroup.org/wp-content/uploads/DICE-Certificate-Profiles-r01_3june2020-1.pdf
+
 --- abstract
 
 
@@ -103,22 +110,24 @@ as discussed in {{RFC9334}}.
 
 ~~~~ aasvg
              / .-------------.   Appraisal    .-----------------.  \
-            |  |Current state|    Policy      | Reference state |  | R
-            |  |  (layer N)  |                |    (layer N)    |  | e
-            |  '-------------'       |        '-----------------'  | f
+            |  |Current state|    Policy      | Reference state |  |
+            |  |  (layer N)  |                |    (layer N)    |  | R
+            |  '-------------'       |        '-----------------'  | e
+            |                        |                             | f
             |  .-------------.       |        .-----------------.  | e
    Evidence |  |Current state|       |        | Reference state |  | r
             |  |  (layer 2)  |       |        |    (layer 2)    |  | e
-            |  '-------------'       v        '-----------------'  | n
-            |  .-------------.  <==========>  .-----------------.  | c
-            |  |Current state|   Comparison   | Reference state |  | e
-            |  |  (layer 1)  |     Rules      |    (layer 1)    |  |
-            \  '-------------'                '-----------------'  | V
-                                                                   | a
-            /  .-------------.                .-----------------.  | l
-Endorsement |  |Current state|                | Reference state |  | u
-            |  |  (layer 0)  |                |    (layer 0)    |  | e
-            \  '-------------'                '-----------------'  / s
+            |  '-------------'       |        '-----------------'  | n
+            |                        v                             | c
+            |  .-------------.  <==========>  .-----------------.  | e
+            |  |Current state|   Comparison   | Reference state |  |
+            |  |  (layer 1)  |     Rules      |    (layer 1)    |  | V
+            \  '-------------'                '-----------------'  | a
+                                                                   | l
+            /  .-------------.                .-----------------.  | u
+Endorsement |  |Current state|                | Reference state |  | e
+            |  |  (layer 0)  |                |    (layer 0)    |  | s
+            \  '-------------'                '-----------------'  /
 ~~~~
 {: #input artwork-align="center" title="Example Verifier Input"}
 
@@ -131,7 +140,7 @@ state above, where the Reference State would be the set of trust anchors
 accepted (or rejected) by the Verifier, and the Current State would be
 a trust anchor used to sign Evidence or Endorsements.
 
-In a DICE-based layered attestation for example, the current state of each layer
+In layered attestation using DICE {{TCG-DICE}} for example, the current state of each layer
 is signed by a key held by the next lower layer.  Thus in the example diagram
 above, the layer 2 current state (e.g., OS state) is signed by a layer 1 key
 (e.g., a signing key used by the firmware), the layer 1 current state (e.g.,
