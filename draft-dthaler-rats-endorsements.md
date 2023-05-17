@@ -1,7 +1,7 @@
 ---
 title: 'RATS Endorsements'
 abbrev: RATS Endorsements
-docname: draft-thaler-rats-endorsements-latest
+docname: draft-dthaler-rats-endorsements-latest
 submissiontype: IETF
 consensus: true
 wg: RATS Working Group
