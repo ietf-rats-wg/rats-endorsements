@@ -2,6 +2,8 @@
 title: 'RATS Endorsements'
 abbrev: RATS Endorsements
 docname: draft-dthaler-rats-endorsements-latest
+submissiontype: IETF
+consensus: true
 wg: RATS Working Group
 stand_alone: true
 ipr: trust200902
@@ -46,7 +48,7 @@ a set of Reference Values.
 
 Various formats exist, including standard and vendor-specific formats, for
 the conceptual messages shown.  Indeed, one of the purposes of a Verifer as depicted
-in Figure 9 of {{RFC9334}} is to be able to accept Evidence in a variety of 
+in Figure 9 of {{RFC9334}} is to be able to accept Evidence in a variety of
 formats and generate Attestation Results in the format needed by a Relying Party.
 
 # Current State vs Reference States {#statetypes}
@@ -106,11 +108,11 @@ as discussed in {{RFC9334}}.
             |  '-------------'       |        '-----------------'  | f
             |  .-------------.       |        .-----------------.  | e
    Evidence |  |Current state|       |        | Reference state |  | r
-            |  |  (layer 2)  |       |        |    (layer 2)    |  | e 
+            |  |  (layer 2)  |       |        |    (layer 2)    |  | e
             |  '-------------'       v        '-----------------'  | n
             |  .-------------.  <==========>  .-----------------.  | c
             |  |Current state|   Comparison   | Reference state |  | e
-            |  |  (layer 1)  |     Rules      |    (layer 1)    |  |  
+            |  |  (layer 1)  |     Rules      |    (layer 1)    |  |
             \  '-------------'                '-----------------'  | V
                                                                    | a
             /  .-------------.                .-----------------.  | l
