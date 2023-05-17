@@ -7,7 +7,7 @@ consensus: true
 wg: RATS Working Group
 stand_alone: true
 ipr: trust200902
-area: Security
+area: "Security"
 kw: Internet-Draft
 cat: info
 pi:
