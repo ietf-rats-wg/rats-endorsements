@@ -58,16 +58,16 @@ the conceptual messages shown.  Indeed, one of the purposes of a Verifer as depi
 in Figure 9 of {{RFC9334}} is to be able to accept Evidence in a variety of
 formats and generate Attestation Results in the format needed by a Relying Party.
 
-# Current State vs Reference States {#statetypes}
+# Actual State vs Reference States {#statetypes}
 
 Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
-Attestation Results) involve comparing the current state of an attester against
+Attestation Results) involve comparing the actual state of an attester against
 desired or undesired states, in order to determine how trustworthy the attester
 is for its purposes.  Thus, a Verifier needs to receive messages with information
-about current state, and information about desired/undesired states, and an appraisal
+about actual state, and information about desired/undesired states, and an appraisal
 policy that controls how the two are compared.
 
-Current state is a group of claims about the actual state of the attester at a
+Actual state is a group of claims about the actual state of the attester at a
 given point in time.  Generally speaking, each claim has a name (or other ID)
 and a singleton value, being the value of that specific attester at a given point
 in time. Some claims may inherently have multiple values, such as a list of
@@ -76,33 +76,33 @@ a list as a single unit, meaning one attester at one point in time.
 
 Each attester in general has multiple components (e.g., hardware, firmware,
 Operating System, etc.), each with their own set of claims (sometimes called
-a "claimset"), where the current state of the attester is a group of such claimsets,
+a "claimset"), where the actual state of the attester is a group of such claimsets,
 for all the key components of the attester that are essential to determining
 trustworthiness.
 
 Reference state is a group of claims about the desired or undesired state of
 the attester.  Typically, each claim has a name (or other ID) and
-a set of potential values, being the current values that are allowed/disallowed
+a set of potential values, being the values that are allowed/disallowed
 when determining whether to trust the attester.  In general there may be more
 gradation than simply "allowed or disallowed" so each value might include some
 more complex level of gradation in some implementations.
 
-That is, where current state has a single value per claim per component
+That is, where actual state has a single value per claim per component
 applying to one device at one point in time, reference state has a set of values
 per claim per component.  The appraisal policy then specifies how to match
-the current value against the set of reference values.
+the actual value against the set of reference values.
 
 Some examples of such matching include:
 
-* The current value must be in the set of allowed reference values.
-* The current value must not be in the set of disallowed reference values.
-* The current value must be in a range where two reference values are the min and max.
+* The actual value must be in the set of allowed reference values.
+* The actual value must not be in the set of disallowed reference values.
+* The actual value must be in a range where two reference values are the min and max.
 
 ## RATS Conceptual Messages
 
 RATS conceptual messages in {{RFC9334}} fall into the above categories as follows:
 
-* Current state: Evidence, Endorsements, Attestation Results
+* Actual state: Evidence, Endorsements, Attestation Results
 * Reference state: Reference Values
 * Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy for Attestation Results
 
@@ -110,25 +110,25 @@ The figure below shows an example of verifier input for a layered attester
 as discussed in {{RFC9334}}.
 
 ~~~~ aasvg
-             / .-------------.   Appraisal    .-----------------.  \
-            |  |Current state|    Policy      | Reference state |  |
-            |  |  (layer N)  |                |    (layer N)    |  | R
-            |  '-------------'       |        '-----------------'  | e
-            |                        |                             | f
-            |  .-------------.       |        .-----------------.  | e
-   Evidence |  |Current state|       |        | Reference state |  | r
-            |  |  (layer 2)  |       |        |    (layer 2)    |  | e
-            |  '-------------'       |        '-----------------'  | n
-            |                        v                             | c
-            |  .-------------.  <==========>  .-----------------.  | e
-            |  |Current state|   Comparison   | Reference state |  |
-            |  |  (layer 1)  |     Rules      |    (layer 1)    |  | V
-            \  '-------------'                '-----------------'  | a
-                                                                   | l
-            /  .-------------.                .-----------------.  | u
-Endorsement |  |Current state|                | Reference state |  | e
-            |  |  (layer 0)  |                |    (layer 0)    |  | s
-            \  '-------------'                '-----------------'  /
+             / .------------.   Appraisal    .-----------------.  \
+            |  |Actual state|    Policy      | Reference state |  |
+            |  |  (layer N) |                |    (layer N)    |  | R
+            |  '------------'       |        '-----------------'  | e
+            |                       |                             | f
+            |  .------------.       |        .-----------------.  | e
+   Evidence |  |Actual state|       |        | Reference state |  | r
+            |  |  (layer 2) |       |        |    (layer 2)    |  | e
+            |  '------------'       |        '-----------------'  | n
+            |                       v                             | c
+            |  .------------.  <==========>  .-----------------.  | e
+            |  |Actual state|   Comparison   | Reference state |  |
+            |  |  (layer 1) |     Rules      |    (layer 1)    |  | V
+            \  '------------'                '-----------------'  | a
+                                                                  | l
+            /  .------------.                .-----------------.  | u
+Endorsement |  |Actual state|                | Reference state |  | e
+            |  |  (layer 0) |                |    (layer 0)    |  | s
+            \  '------------'                '-----------------'  /
 ~~~~
 {: #input artwork-align="center" title="Example Verifier Input"}
 
@@ -138,15 +138,15 @@ a chip added to a hardware board potentially from a different vendor.
 
 A Trust Anchor Store is a special case of
 state above, where the Reference State would be the set of trust anchors
-accepted (or rejected) by the Verifier, and the Current State would be
+accepted (or rejected) by the Verifier, and the Actual State would be
 a trust anchor used to sign Evidence or Endorsements.
 
-In layered attestation using DICE {{TCG-DICE}} for example, the current state of each layer
+In layered attestation using DICE {{TCG-DICE}} for example, the actual state of each layer
 is signed by a key held by the next lower layer.  Thus in the example diagram
-above, the layer 2 current state (e.g., OS state) is signed by a layer 1 key
-(e.g., a signing key used by the firmware), the layer 1 current state (e.g.,
+above, the layer 2 actual state (e.g., OS state) is signed by a layer 1 key
+(e.g., a signing key used by the firmware), the layer 1 actual state (e.g.,
 firmware state) is signed by a layer 0 key (e.g., a hardware key stored in ROM),
-and the layer 0 current state (hardware specs and key ID) is signed by a layer 0
+and the layer 0 actual state (hardware specs and key ID) is signed by a layer 0
 key (e.g., a vendor key) which is matched against the Verifier's trust anchor
 store, which is part of the layer 0 reference state depicted above.
 
