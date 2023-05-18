@@ -139,7 +139,7 @@ a chip added to a hardware board potentially from a different vendor.
 A Trust Anchor Store is a special case of
 state above, where the Reference State would be the set of trust anchors
 accepted (or rejected) by the Verifier, and the Actual State would be
-a trust anchor used to sign Evidence or Endorsements.
+a trust anchor used to verify Evidence or Endorsements.
 
 In layered attestation using DICE {{TCG-DICE}} for example, the actual state of each layer
 is signed by a key held by the next lower layer.  Thus in the example diagram
