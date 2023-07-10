@@ -67,7 +67,7 @@ is for its purposes.  Thus, a Verifier needs to receive messages with informatio
 about actual state, and information about desired/undesired states, and an appraisal
 policy that controls how the two are compared.
 
-Actual state is a group of claims about the actual state of the attester at a
+"Actual state" is a group of claims about the actual state of the attester at a
 given point in time.  Generally speaking, each claim has a name (or other ID)
 and a singleton value, being the value of that specific attester at a given point
 in time. Some claims may inherently have multiple values, such as a list of
@@ -80,7 +80,7 @@ a "claimset"), where the actual state of the attester is a group of such claimse
 for all the key components of the attester that are essential to determining
 trustworthiness.
 
-Reference state is a group of claims about the desired or undesired state of
+"Reference state" is a group of claims about the desired or undesired state of
 the attester.  Typically, each claim has a name (or other ID) and
 a set of potential values, being the values that are allowed/disallowed
 when determining whether to trust the attester.  In general there may be more
@@ -150,6 +150,37 @@ and the layer 0 actual state (hardware specs and key ID) is signed by a layer 0
 key (e.g., a vendor key) which is matched against the Verifier's trust anchor
 store, which is part of the layer 0 reference state depicted above.
 
+# Conditionally Endorsed Values
+
+Some claims in endorsements might be conditional. A claim is conditional if
+it only applies if actual state matches reference values, according to some
+matching policy.
+
+Endorsers should not use conditionally endorsed values based on immutable
+values of actual state in Evidence (such as an immutable serial number for example).
+An Endorser can, however, use conditionally endorsed values based on mutable
+values.  For example an Endorser for a given CPU might provide additional
+information about what the CPU supports based on current firmware configuration
+state.
+
+Policies around matching actual state in Evidence against
+reference states are normally expressed in Appraisal Policy for Evidence.
+Similarly, reference states are normally expressed in the Reference Values
+conceptual message.  Such policies allow a Verifier and Relying Parties to make
+their decisions about trustworthiness of an Attester.
+
+The use of conditionally endorsed values, however, is different in that
+a matching policy is not about trustworthiness (and hence not "appraisal" per se)
+but rather about whether an Endorser's claim is applicable or not, and thus
+usable as input to trustworthiness appraisal or not.
+
+As such the matching policy for conditionally endorsed values must be
+up to the Endorser not the Appraisal Policy Provider.  Thus, an Endorsement
+format that supports conditionally endorsed values would probably include
+some minimal matching policy (e.g., exact match against a singleton reference
+value).  This unfortunately complicates design as a Verifier may need
+multiple parsers for matching policies.
+
 # Endorsement Format Considerations
 
 This section discusses considerations around formats for Endorsements.
@@ -186,6 +217,9 @@ a required trust anchor that Evidence must be signed with and little else).
 Using the same message format for Evidence, Endorsements, and (later) Attestation Results received
 from the later Verifier, can provide a code size savings due to having only a single parser
 in this limited case.
+
+Similarly, an embedded constrained Verifier can choose to not support conditionally
+endorsed values, in order to avoid complexity introduced by such.
 
 # IANA Considerations
 
