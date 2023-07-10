@@ -193,6 +193,54 @@ another step to appraise other claims for determining trustworthiness.
 This document treats identity claims as with any other claims, but allows
 Appraisal Policy for Evidence to have multiple steps if desired.
 
+# Multiple Endorsements
+
+Figure {{input}} showed an example with endorsement at layer 0, such as
+a hardware manufacturer providing claims about the hardware. However, the
+same could be done at other layers in addition.  For example, an OS vendor
+might provide additional static claims about the OS software it provides,
+and application developers might provide additional static claims about
+the applications they release.
+
+{{multiple}} depicts an example with an Attester consisting of an application,
+OS, firmware, and hardware, each from a different vendor that provides
+an Endorsement for their own component, containing additional claims
+about that component.  Thus each component (application, OS, firware,
+and hardware) has one set of claims in the Evidence, and an additional
+set of claims in the Endorsement from its manufacturer.  A Verifier
+that trusts each Endorser would thus use claims from both conceptual
+messages when comparing against reference state for a given component.
+
+~~~~ aasvg
+               .-----------------------. .-------------.
+App            |            .--------. | | .--------.  |
+Endorser ----> |Endorsement |  app   | | | |  app   |  |
+               |            |claimset| | | |claimset| E|
+               |            '--------' | | '--------' v|
+               '-----------------------' |            i|
+               .-----------------------. |            d|
+OS             |            .--------. | | .--------. e|
+Endorser ----> |Endorsement |   OS   | | | |   OS   | n|
+               |            |claimset| | | |claimset| c|
+               |            '--------' | | '--------' e|
+               '-----------------------' |             |
+               |-----------------------. |             |
+Firmware       |            .--------. | | .--------.  |
+Endorser ----> |Endorsement |firmware| | | |firmware|  |
+               |            |claimset| | | |claimset|  |
+               |            '--------' | | '--------'  |
+               '-----------------------' |             |
+               .-----------------------. |             |
+Hardware       |            .--------. | | .--------.  |
+Endorser ----> |Endorsement |hardware| | | |hardware|  |
+               |            |claimset| | | |claimset|  |
+               |            '--------' | | '--------'  |
+               '-----------------------' '-------------'
+                                                ^
+Attester ---------------------------------------/
+~~~~
+{: #multiple artwork-align="center" title="Multiple Endorsements"}
+
 # Endorsement Format Considerations
 
 This section discusses considerations around formats for Endorsements.
