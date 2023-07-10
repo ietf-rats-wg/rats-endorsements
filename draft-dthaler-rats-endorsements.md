@@ -181,6 +181,18 @@ some minimal matching policy (e.g., exact match against a singleton reference
 value).  This unfortunately complicates design as a Verifier may need
 multiple parsers for matching policies.
 
+# Endorsing Identity
+
+One type of claims that might be endorsed would be claims having to do with
+identity, such as verification keys.  While identity claims are just another
+type of claims that may be endorsed, some implementations might treat them
+differently. For example, a Verifier might perform a first step to
+cryptographically verify the Attester's identity before spending effort on
+another step to appraise other claims for determining trustworthiness.
+
+This document treats identity claims as with any other claims, but allows
+Appraisal Policy for Evidence to have multiple steps if desired.
+
 # Endorsement Format Considerations
 
 This section discusses considerations around formats for Endorsements.
