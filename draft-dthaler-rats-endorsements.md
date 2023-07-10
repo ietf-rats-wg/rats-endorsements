@@ -109,7 +109,7 @@ RATS conceptual messages in {{RFC9334}} fall into the above categories as follow
 The figure below shows an example of verifier input for a layered attester
 as discussed in {{RFC9334}}.
 
-~~~~ aasvg
+~~~~
              / .------------.   Appraisal    .-----------------.  \
             |  |Actual state|    Policy      | Reference state |  |
             |  |  (layer N) |                |    (layer N)    |  | R
@@ -211,14 +211,14 @@ set of claims in the Endorsement from its manufacturer.  A Verifier
 that trusts each Endorser would thus use claims from both conceptual
 messages when comparing against reference state for a given component.
 
-~~~~ aasvg
+~~~~
                .-----------------------. .-------------.
 App            |            .--------. | | .--------.  |
 Endorser ----> |Endorsement |  app   | | | |  app   |  |
-               |            |claimset| | | |claimset| E|
-               |            '--------' | | '--------' v|
-               '-----------------------' |            i|
-                                         |             |
+               |            |claimset| | | |claimset|  |
+               |            '--------' | | '--------' E|
+               '-----------------------' |            v|
+                                         |            i|
                .-----------------------. |            d|
 OS             |            .--------. | | .--------. e|
 Endorser ----> |Endorsement |   OS   | | | |   OS   | n|
