@@ -218,18 +218,21 @@ Endorser ----> |Endorsement |  app   | | | |  app   |  |
                |            |claimset| | | |claimset| E|
                |            '--------' | | '--------' v|
                '-----------------------' |            i|
+                                         |             |
                .-----------------------. |            d|
 OS             |            .--------. | | .--------. e|
 Endorser ----> |Endorsement |   OS   | | | |   OS   | n|
                |            |claimset| | | |claimset| c|
                |            '--------' | | '--------' e|
                '-----------------------' |             |
-               |-----------------------. |             |
+                                         |             |
+               .-----------------------. |             |
 Firmware       |            .--------. | | .--------.  |
 Endorser ----> |Endorsement |firmware| | | |firmware|  |
                |            |claimset| | | |claimset|  |
                |            '--------' | | '--------'  |
                '-----------------------' |             |
+                                         |             |
                .-----------------------. |             |
 Hardware       |            .--------. | | .--------.  |
 Endorser ----> |Endorsement |hardware| | | |hardware|  |
@@ -237,7 +240,7 @@ Endorser ----> |Endorsement |hardware| | | |hardware|  |
                |            '--------' | | '--------'  |
                '-----------------------' '-------------'
                                                 ^
-Attester ---------------------------------------/
+Attester ---------------------------------------'
 ~~~~
 {: #multiple artwork-align="center" title="Multiple Endorsements"}
 
