@@ -61,42 +61,41 @@ formats and generate Attestation Results in the format needed by a Relying Party
 # Actual State vs Reference States {#statetypes}
 
 Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
-Attestation Results) involve comparing the actual state of an attester against
-desired or undesired states, in order to determine how trustworthy the attester
+Attestation Results) involve comparing the actual state of an Attester against
+desired or undesired states, in order to determine how trustworthy the Attester
 is for its purposes.  Thus, a Verifier needs to receive messages with information
 about actual state, and information about desired/undesired states, and an appraisal
 policy that controls how the two are compared.
 
-"Actual state" is a group of claims about the actual state of the attester at a
-given point in time.  Generally speaking, each claim has a name (or other ID)
-and a singleton value, being the value of that specific attester at a given point
+Each Attester in general has multiple Target Environments (e.g., hardware, firmware,
+Operating System, etc.), each with their own set of claims (sometimes called.
+a "claimset").
+
+"Actual state" is a group of claimsets about the actual state of the Attester at a
+given point in time. Each claimset holds claims about a specific Target Environment
+that is essential to determining trustworthiness.  Generally speaking, each claim has a name (or other ID)
+and a singleton value, being the value of that specific Attester at a given point
 in time. Some claims may inherently have multiple values, such as a list of
 files in a given location on the device, but for our purposes we will treat such
-a list as a single unit, meaning one attester at one point in time.
+a list as a single unit, meaning one Attester at one point in time.
 
-Each attester in general has multiple components (e.g., hardware, firmware,
-Operating System, etc.), each with their own set of claims (sometimes called
-a "claimset"), where the actual state of the attester is a group of such claimsets,
-for all the key components of the attester that are essential to determining
-trustworthiness.
-
-"Reference state" is a group of claims about the desired or undesired state of
-the attester.  Typically, each claim has a name (or other ID) and
+"Reference state" is a group of claimsets about the desired or undesired state of
+the Attester.  Typically, each claim has a name (or other ID) and
 a set of potential values, being the values that are allowed/disallowed
-when determining whether to trust the attester.  In general there may be more
+when determining whether to trust the Attester.  In general there may be more
 gradation than simply "allowed or disallowed" so each value might include some
 more complex level of gradation in some implementations.
 
-That is, where actual state has a single value per claim per component
-applying to one device at one point in time, reference state has a set of values
-per claim per component.  The appraisal policy then specifies how to match
-the actual value against the set of reference values.
+That is, where actual state has a single value per claim per Target Environment
+applying to one device at one point in time, reference state can have a set of values
+per claim per Target Environment.  The appraisal policy then specifies how to match
+the actual value against the set of Reference Values.
 
 Some examples of such matching include:
 
-* The actual value must be in the set of allowed reference values.
-* The actual value must not be in the set of disallowed reference values.
-* The actual value must be in a range where two reference values are the min and max.
+* The actual value must be in the set of allowed Reference Values.
+* The actual value must not be in the set of disallowed Reference Values.
+* The actual value must be in a range where two Reference Values are the min and max.
 
 ## RATS Conceptual Messages
 
@@ -106,7 +105,7 @@ RATS conceptual messages in {{RFC9334}} fall into the above categories as follow
 * Reference state: Reference Values
 * Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy for Attestation Results
 
-The figure below shows an example of verifier input for a layered attester
+The figure below shows an example of Verifier input for a layered Attester
 as discussed in {{RFC9334}}.
 
 ~~~~
@@ -133,7 +132,7 @@ Endorsement |  |Actual state|                | Reference state |  | e
 {: #input artwork-align="center" title="Example Verifier Input"}
 
 While the above example only shows one layer within Endorsements as
-the typical case, there could be multiple layers within it, such as
+the typical case, there could be multiple layers (see {{multiple}}), such as
 a chip added to a hardware board potentially from a different vendor.
 
 A Trust Anchor Store is a special case of
@@ -152,8 +151,8 @@ store, which is part of the layer 0 reference state depicted above.
 
 # Conditionally Endorsed Values
 
-Some claims in endorsements might be conditional. A claim is conditional if
-it only applies if actual state matches reference values, according to some
+Some claims in Endorsements might be conditional. A claim is conditional if
+it only applies if actual state matches Reference Values, according to some
 matching policy.
 
 Endorsers should not use conditionally endorsed values based on immutable
@@ -193,9 +192,9 @@ another step to appraise other claims for determining trustworthiness.
 This document treats identity claims as with any other claims, but allows
 Appraisal Policy for Evidence to have multiple steps if desired.
 
-# Multiple Endorsements
+# Multiple Endorsements {#multiple}
 
-Figure {{input}} showed an example with endorsement at layer 0, such as
+Figure {{input}} showed an example with an Endorsement at layer 0, such as
 a hardware manufacturer providing claims about the hardware. However, the
 same could be done at other layers in addition.  For example, an OS vendor
 might provide additional static claims about the OS software it provides,
@@ -204,12 +203,12 @@ the applications they release.
 
 {{multiple}} depicts an example with an Attester consisting of an application,
 OS, firmware, and hardware, each from a different vendor that provides
-an Endorsement for their own component, containing additional claims
-about that component.  Thus each component (application, OS, firware,
+an Endorsement for their own Target Environment, containing additional claims
+about that Target Environment.  Thus each Target Environment (application, OS, firmware,
 and hardware) has one set of claims in the Evidence, and an additional
 set of claims in the Endorsement from its manufacturer.  A Verifier
 that trusts each Endorser would thus use claims from both conceptual
-messages when comparing against reference state for a given component.
+messages when comparing against reference state for a given Target Environment.
 
 ~~~~
                .-----------------------. .-------------.
@@ -272,9 +271,9 @@ trust in the Verifier it will use.  In such a case, the Relying Party may have
 a constrained Verifier embedded in it that is only capable of appraising Evidence
 provided by its desired Verifier.  Thus, the Relying Party uses its embedded Verifier
 for purposes of appraising its desired Verifier which it treats as only an Attester,
-and once verified, then uses it for verification of all other attesters.
+and once verified, then uses it for verification of all other Attesters.
 In this scenario, the embedded Verifier may have code and data size constraints,
-and a very simple (by comparison) appraisal policy and desired state (e.g.,
+and a very simple (by comparison) Appraisal Policy for Evidence and desired state (e.g.,
 a required trust anchor that Evidence must be signed with and little else).
 
 Using the same message format for Evidence, Endorsements, and (later) Attestation Results received
