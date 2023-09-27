@@ -25,6 +25,27 @@ author:
   city: ""
   region: ""
   country: USA
+- ins: H. Birkholz
+  name: Henk Birkholz
+  org: Fraunhofer SIT
+  abbrev: Fraunhofer SIT
+  email: henk.birkholz@sit.fraunhofer.de
+  street: Rheinstrasse 75
+  code: '64295'
+  city: Darmstadt
+  country: Germany
+- ins: T. Hardjono
+  name: Thomas Hardjono
+  organization: MIT
+  email: hardjono@mit.edu
+- ins: L. Lundblade
+  name: Laurence Lundblade
+  org: Security Theory LLC
+  email: lgl@securitytheory.com
+- ins: K. Moriarty
+  name: Kathleen Moriarty
+  org: Center for Internet Security (CIS)
+  email: Kathleen.Moriarty@cisecurity.org
 
 informative:
   TCG-DICE:
