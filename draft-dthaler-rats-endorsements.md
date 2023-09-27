@@ -74,10 +74,10 @@ in time. Some claims may inherently have multiple values, such as a list of
 files in a given location on the device, but for our purposes we will treat such
 a list as a single unit, meaning one attester at one point in time.
 
-Each attester in general has multiple components (e.g., hardware, firmware,
+Each attester in general has multiple Target Environments (e.g., hardware, firmware,
 Operating System, etc.), each with their own set of claims (sometimes called
 a "claimset"), where the actual state of the attester is a group of such claimsets,
-for all the key components of the attester that are essential to determining
+for all the key Target Environments of the attester that are essential to determining
 trustworthiness.
 
 "Reference state" is a group of claims about the desired or undesired state of
@@ -87,9 +87,9 @@ when determining whether to trust the attester.  In general there may be more
 gradation than simply "allowed or disallowed" so each value might include some
 more complex level of gradation in some implementations.
 
-That is, where actual state has a single value per claim per component
+That is, where actual state has a single value per claim per Target Environment
 applying to one device at one point in time, reference state has a set of values
-per claim per component.  The appraisal policy then specifies how to match
+per claim per Target Environment.  The appraisal policy then specifies how to match
 the actual value against the set of reference values.
 
 Some examples of such matching include:
@@ -204,12 +204,12 @@ the applications they release.
 
 {{multiple}} depicts an example with an Attester consisting of an application,
 OS, firmware, and hardware, each from a different vendor that provides
-an Endorsement for their own component, containing additional claims
-about that component.  Thus each component (application, OS, firware,
+an Endorsement for their own Target Environment, containing additional claims
+about that Target Environment.  Thus each Target Environment (application, OS, firware,
 and hardware) has one set of claims in the Evidence, and an additional
 set of claims in the Endorsement from its manufacturer.  A Verifier
 that trusts each Endorser would thus use claims from both conceptual
-messages when comparing against reference state for a given component.
+messages when comparing against reference state for a given Target Environment.
 
 ~~~~
                .-----------------------. .-------------.
@@ -243,6 +243,18 @@ Endorser ----> |Endorsement |hardware| | | |hardware|  |
 Attester ---------------------------------------'
 ~~~~
 {: #multiple artwork-align="center" title="Multiple Endorsements"}
+
+When Target Environments from different vendors each have their own
+Endorser, it is important that a Verifier be able to distinguish
+which Endorser is allowed to provide an Endorsement about which
+Target Environment.  For example, the OS Endorser might be trusted to
+provide additional claims about the OS, but not about the hardware.
+Thus it is not as simple as saying that a Verifier has a trusted
+set of Endorsers. The binding between Target Environment and Endorser might
+be part of the Appraisal Policy for Evidence, or might be specified
+as part of the Evidence itself, or some combination of the two.
+An Endorsment format specification should explain how this concern
+is addressed.
 
 # Endorsement Format Considerations
 
