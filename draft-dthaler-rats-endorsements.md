@@ -73,7 +73,8 @@ a "claimset").
 
 "Actual state" is a group of claimsets about the actual state of the Attester at a
 given point in time. Each claimset holds claims about a specific Target Environment
-that is essential to determining trustworthiness.  Generally speaking, each claim has a name (or other ID)
+that is essential to determining trustworthiness.  Generally speaking, each claim
+has a name (or other ID)
 and a singleton value, being the value of that specific Attester at a given point
 in time. Some claims may inherently have multiple values, such as a list of
 files in a given location on the device, but for our purposes we will treat such
@@ -132,7 +133,7 @@ Endorsement |  |Actual state|                | Reference state |  | e
 {: #input artwork-align="center" title="Example Verifier Input"}
 
 While the above example only shows one layer within Endorsements as
-the typical case, there could be multiple layers (see {{multiple}}), such as
+the typical case, there could be multiple layers (see {{multiple-endorsements}}), such as
 a chip added to a hardware board potentially from a different vendor.
 
 A Trust Anchor Store is a special case of
@@ -192,7 +193,7 @@ another step to appraise other claims for determining trustworthiness.
 This document treats identity claims as with any other claims, but allows
 Appraisal Policy for Evidence to have multiple steps if desired.
 
-# Multiple Endorsements {#multiple}
+# Multiple Endorsements {#multiple-endorsements}
 
 Figure {{input}} showed an example with an Endorsement at layer 0, such as
 a hardware manufacturer providing claims about the hardware. However, the
