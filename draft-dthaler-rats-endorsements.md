@@ -80,6 +80,12 @@ in time. Some claims may inherently have multiple values, such as a list of
 files in a given location on the device, but for our purposes we will treat such
 a list as a single unit, meaning one Attester at one point in time.
 
+Each attester in general has multiple Target Environments (e.g., hardware, firmware,
+Operating System, etc.), each with their own set of claims (sometimes called
+a "claimset"), where the actual state of the attester is a group of such claimsets,
+for all the key Target Environments of the attester that are essential to determining
+trustworthiness.
+
 "Reference state" is a group of claimsets about the desired or undesired state of
 the Attester.  Typically, each claim has a name (or other ID) and
 a set of potential values, being the values that are allowed/disallowed
@@ -243,6 +249,18 @@ Endorser ----> |Endorsement |hardware| | | |hardware|  |
 Attester ---------------------------------------'
 ~~~~
 {: #multiple artwork-align="center" title="Multiple Endorsements"}
+
+When Target Environments from different vendors each have their own
+Endorser, it is important that a Verifier be able to distinguish
+which Endorser is allowed to provide an Endorsement about which
+Target Environment.  For example, the OS Endorser might be trusted to
+provide additional claims about the OS, but not about the hardware.
+Thus it is not as simple as saying that a Verifier has a trusted
+set of Endorsers. The binding between Target Environment and Endorser might
+be part of the Appraisal Policy for Evidence, or might be specified
+as part of the Evidence itself, or some combination of the two.
+An Endorsment format specification should explain how this concern
+is addressed.
 
 # Endorsement Format Considerations
 
