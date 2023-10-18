@@ -115,26 +115,26 @@ RATS conceptual messages in {{RFC9334}} fall into the above categories as follow
 The figure below shows an example of Verifier input for a layered Attester
 as discussed in {{RFC9334}}.
 
-~~~~
-             / .------------.   Appraisal    .-----------------.  \
-            |  |Actual state|    Policy      | Reference state |  |
-            |  |  (layer N) |                |    (layer N)    |  | R
-            |  '------------'       |        '-----------------'  | e
-            |                       |                             | f
-            |  .------------.       |        .-----------------.  | e
-   Evidence |  |Actual state|       |        | Reference state |  | r
-            |  |  (layer 2) |       |        |    (layer 2)    |  | e
-            |  '------------'       |        '-----------------'  | n
-            |                       v                             | c
-            |  .------------.  <==========>  .-----------------.  | e
-            |  |Actual state|   Comparison   | Reference state |  |
-            |  |  (layer 1) |     Rules      |    (layer 1)    |  | V
-            \  '------------'                '-----------------'  | a
-                                                                  | l
-            /  .------------.                .-----------------.  | u
-Endorsement |  |Actual state|                | Reference state |  | e
-            |  |  (layer 0) |                |    (layer 0)    |  | s
-            \  '------------'                '-----------------'  /
+~~~~ aasvg
+            .-- .------------.   Appraisal    .-----------------. --.
+            |   |Actual state|    Policy      | Reference state |   |
+            |   |  (layer N) |                |    (layer N)    |   | R
+            |   '------------'       |        '-----------------'   | e
+            |                        |                              | f
+            |   .------------.       |        .-----------------.   | e
+   Evidence |   |Actual state|       |        | Reference state |   | r
+            |   |  (layer 2) |       |        |    (layer 2)    |   | e
+            |   '------------'       |        '-----------------'   | n
+            |                        v                              | c
+            |   .------------.  <==========>  .-----------------.   | e
+            |   |Actual state|   Comparison   | Reference state |   |
+            |   |  (layer 1) |     Rules      |    (layer 1)    |   | V
+            '-- '------------'                '-----------------'   | a
+                                                                    | l
+            .-- .------------.                .-----------------.   | u
+Endorsement |   |Actual state|                | Reference state |   | e
+            |   |  (layer 0) |                |    (layer 0)    |   | s
+            '-- '------------'                '-----------------' --'
 ~~~~
 {: #input artwork-align="center" title="Example Verifier Input"}
 
@@ -217,7 +217,7 @@ set of claims in the Endorsement from its manufacturer.  A Verifier
 that trusts each Endorser would thus use claims from both conceptual
 messages when comparing against reference state for a given Target Environment.
 
-~~~~
+~~~~ aasvg
                .-----------------------. .-------------.
 App            |            .--------. | | .--------.  |
 Endorser ----> |Endorsement |  app   | | | |  app   |  |
@@ -246,6 +246,7 @@ Endorser ----> |Endorsement |hardware| | | |hardware|  |
                |            '--------' | | '--------'  |
                '-----------------------' '-------------'
                                                 ^
+                                                |
 Attester ---------------------------------------'
 ~~~~
 {: #multiple artwork-align="center" title="Multiple Endorsements"}
@@ -259,7 +260,7 @@ Thus it is not as simple as saying that a Verifier has a trusted
 set of Endorsers. The binding between Target Environment and Endorser might
 be part of the Appraisal Policy for Evidence, or might be specified
 as part of the Evidence itself, or some combination of the two.
-An Endorsment format specification should explain how this concern
+An Endorsement format specification should explain how this concern
 is addressed.
 
 # Endorsement Format Considerations
