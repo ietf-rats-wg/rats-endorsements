@@ -34,6 +34,10 @@ author:
   code: '64295'
   city: Darmstadt
   country: Germany
+- ins: T. Fossati
+  name: Thomas Fossati
+  organization: Arm
+  email: Thomas.Fossati@arm.com
 - ins: T. Hardjono
   name: Thomas Hardjono
   organization: MIT
