@@ -68,7 +68,7 @@ about actual state, and information about desired/undesired states, and an appra
 policy that controls how the two are compared.
 
 Each Attester in general has multiple Target Environments (e.g., hardware, firmware,
-Operating System, etc.), each with their own set of claims (sometimes called.
+Operating System, etc.), each with their own set of claims (sometimes called
 a "claimset").
 
 "Actual state" is a group of claimsets about the actual state of the Attester at a
@@ -79,12 +79,6 @@ and a singleton value, being the value of that specific Attester at a given poin
 in time. Some claims may inherently have multiple values, such as a list of
 files in a given location on the device, but for our purposes we will treat such
 a list as a single unit, meaning one Attester at one point in time.
-
-Each attester in general has multiple Target Environments (e.g., hardware, firmware,
-Operating System, etc.), each with their own set of claims (sometimes called
-a "claimset"), where the actual state of the attester is a group of such claimsets,
-for all the key Target Environments of the attester that are essential to determining
-trustworthiness.
 
 "Reference state" is a group of claimsets about the desired or undesired state of
 the Attester.  Typically, each claim has a name (or other ID) and
