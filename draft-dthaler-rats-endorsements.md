@@ -263,7 +263,7 @@ This section discusses considerations around formats for Endorsements.
 
 ## Security Considerations
 
-In many scenarios, a Verifiers can also support a variety of different formats,
+In many scenarios, a Verifier can also support a variety of different formats,
 and while code size may not be a huge concern, simplicity and correctness of code
 is essential to security.  "Complexity is the enemy of security" is a popular
 security mantra and hence to increase security, any decrease in complexity
