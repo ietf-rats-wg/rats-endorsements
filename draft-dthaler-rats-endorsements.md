@@ -61,7 +61,7 @@ formats and generate Attestation Results in the formats needed by a Relying Part
 
 Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
 Attestation Results) involve comparing the actual state of an Attester against
-desired or undesired states , in order to determine how trustworthy the Attester
+desired or undesired states, in order to determine how trustworthy the Attester
 is for its purposes.  The state of an Attester represents it's composition of
 components of execution environments (its "shape"), typically in a hierarchical
 manner.  The state of an Attester also encompasses the combination of static and
