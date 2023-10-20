@@ -25,6 +25,19 @@ author:
   city: ""
   region: ""
   country: USA
+- ins: H. Birkholz
+  name: Henk Birkholz
+  org: Fraunhofer SIT
+  abbrev: Fraunhofer SIT
+  email: henk.birkholz@sit.fraunhofer.de
+  street: Rheinstrasse 75
+  code: '64295'
+  city: Darmstadt
+  country: Germany
+- ins: T. Fossati
+  name: Thomas Fossati
+  organization: Arm
+  email: Thomas.Fossati@arm.com
 
 informative:
   TCG-DICE:
@@ -306,5 +319,10 @@ endorsed values, in order to avoid complexity introduced by such.
 # IANA Considerations
 
 This document does not require any actions by IANA.
+
+# Acknowledgements
+
+The authors wish to thank Thomas Hardjono, Laurence Lundblade, and Kathleen Moriarty
+for feedback and ideas that contributed to this document.
 
 --- back
