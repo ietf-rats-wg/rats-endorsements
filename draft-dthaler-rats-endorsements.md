@@ -75,7 +75,7 @@ Each Attester in general has at least one Attesting Environment and one Target
 Environment (e.g., hardware, firmware, Operating System, etc.).  Typically, each
 Attester has multiple Target Environments, each with their own set of claims (sometimes
 called a "claimset") representing their actual state.  Additionally, the number of
-target Environments is not limited.
+Target Environments is not limited.
 
 "Actual state" is a group of claimsets about the actual state of the Attester at a
 given point in time. Each claimset holds claims about a specific Target Environment
