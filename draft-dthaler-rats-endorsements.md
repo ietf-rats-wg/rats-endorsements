@@ -38,18 +38,6 @@ author:
   name: Thomas Fossati
   organization: Arm
   email: Thomas.Fossati@arm.com
-- ins: T. Hardjono
-  name: Thomas Hardjono
-  organization: MIT
-  email: hardjono@mit.edu
-- ins: L. Lundblade
-  name: Laurence Lundblade
-  org: Security Theory LLC
-  email: lgl@securitytheory.com
-- ins: K. Moriarty
-  name: Kathleen Moriarty
-  org: Center for Internet Security (CIS)
-  email: Kathleen.Moriarty@cisecurity.org
 
 informative:
   TCG-DICE:
@@ -331,5 +319,10 @@ endorsed values, in order to avoid complexity introduced by such.
 # IANA Considerations
 
 This document does not require any actions by IANA.
+
+# Acknowledgements
+
+The authors wish to thank Thomas Hardjono, Laurence Lundblade, and Kathleen Moriarty
+for feedback and ideas that contributed to this document.
 
 --- back
