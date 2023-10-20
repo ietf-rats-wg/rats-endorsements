@@ -39,7 +39,7 @@ informative:
 In the IETF Remote Attestation Procedures (RATS) architecture, a Verifier
 accepts Evidence and, using Appraisal Policy typically with additional
 input from Endorsements and Reference Values, generates Attestation Results
-in a format needed by a Relying Party.  This document explains the purpose and
+in formats needed by a Relying Parties.  This document explains the purpose and
 role of Endorsements and discusses some considerations in the choice of
 message format for Endorsements.
 
@@ -47,29 +47,35 @@ message format for Endorsements.
 
 # Introduction
 
-Section 3 in the RATS Architecture {{!RFC9334}} gives an overview of the roles
-and conceptual messages in the IETF Remote Attestation Architecture.
-As discussed in that document, a Verifier accepts Evidence and Endorsements,
-and appraises them using Appraisal Policy for Evidence, typically against
-a set of Reference Values.
+Section 3 in the Remote ATtestation procedures (RATS) Architecture {{!RFC9334}} gives an overview of the roles
+and conceptual messages in the IETF RATS Architecture.
+As discussed in that document, a Verifier accepts a well-defined set of RATS conceptual messages: Evidence, Endorsements
+and Reference Values (as well es Policy for Appraisal of Evidence).  A Verifier appraises Evidence using Appraisal Policy for Evidence, typically against a set of Reference Values.
 
-Various formats exist, including standard and vendor-specific formats, for
-the conceptual messages shown.  Indeed, one of the purposes of a Verifer as depicted
-in Figure 9 of {{RFC9334}} is to be able to accept Evidence in a variety of
-formats and generate Attestation Results in the format needed by a Relying Party.
+Various formats of conceptual messages exist, including standard and vendor-specific formats.
+One of the purposes of a Verifier is depicted
+in Figure 9 of {{RFC9334}}. A Verifier is intended to be able to accept Evidence in a variety of
+formats and generate Attestation Results in the formats needed by a Relying Parties it is intended to cater.
 
 # Actual State vs Reference States {#statetypes}
 
 Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
 Attestation Results) involve comparing the actual state of an Attester against
-desired or undesired states, in order to determine how trustworthy the Attester
-is for its purposes.  Thus, a Verifier needs to receive messages with information
-about actual state, and information about desired/undesired states, and an appraisal
-policy that controls how the two are compared.
+desired or undesired states , in order to determine how trustworthy the Attester
+is for its purposes.  The state of an Attester represents it's composition of
+components of execution environments (its "shape"), typically in a hierarchical
+manner.  The state of an Attester also encompasses the combination of static and
+dynamic constitution (e.g., provisioned and deployed software, firmware, and
+micro-code), static and dynamic configuration, and the resulting operational state
+of its components at a certain point of time. Thus, a Verifier needs to receive
+messages with information about actual state, and information about desired/undesired
+states, and an appraisal policy that controls how the two are compared.
 
-Each Attester in general has multiple Target Environments (e.g., hardware, firmware,
-Operating System, etc.), each with their own set of claims (sometimes called
-a "claimset").
+Each Attester in general has at least one Attesting Environment and one Target
+Environment (e.g., hardware, firmware, Operating System, etc.).  Typically, a each
+Attester has multiple Target Environments, each with their own set of claims (sometimes
+called a "claimset") representing their actual state.  Additionally, the number of
+target Environments is not limited.
 
 "Actual state" is a group of claimsets about the actual state of the Attester at a
 given point in time. Each claimset holds claims about a specific Target Environment
