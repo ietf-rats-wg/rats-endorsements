@@ -19,7 +19,7 @@ author:
 - ins: D. Thaler
   name: Dave Thaler
   org: Microsoft
-  email: dthaler@microsoft.com
+  email: dave.thaler.ietf@gmail.com
   street: ""
   code: ""
   city: ""
