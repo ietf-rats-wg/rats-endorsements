@@ -6,34 +6,36 @@
 <meta content="initial-scale=1.0" name="viewport">
 <title>RATS Endorsements</title>
 <meta content="Dave Thaler" name="author">
+<meta content="Henk Birkholz" name="author">
+<meta content="Thomas Fossati" name="author">
 <meta content="
        In the IETF Remote Attestation Procedures (RATS) architecture, a Verifier
 accepts Evidence and, using Appraisal Policy typically with additional
 input from Endorsements and Reference Values, generates Attestation Results
-in a format needed by a Relying Party.  This document explains the purpose and
+in formats needed by a Relying Parties.  This document explains the purpose and
 role of Endorsements and discusses some considerations in the choice of
 message format for Endorsements. 
     " name="description">
-<meta content="xml2rfc 3.18.0" name="generator">
+<meta content="xml2rfc 3.18.2" name="generator">
 <meta content="Internet-Draft" name="keyword">
-<meta content="draft-dthaler-rats-endorsements-latest" name="ietf.draft">
+<meta content="draft-ietf-rats-endorsements-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.18.0
-    Python 3.11.5
+  xml2rfc 3.18.2
+    Python 3.11.6
     ConfigArgParse 1.5.3
     google-i18n-address 3.1.0
     intervaltree 3.1.0
     Jinja2 3.1.2
     lxml 4.9.3
-    platformdirs 3.10.0
+    platformdirs 4.0.0
     pycountry 22.3.5
     PyYAML 6.0
     requests 2.31.0
     setuptools 67.7.2
     six 1.16.0
-    wcwidth 0.2.6
+    wcwidth 0.2.10
 -->
-<link href="draft-dthaler-rats-endorsements.xml" rel="alternate" type="application/rfc+xml">
+<link href="draft-ietf-rats-endorsements.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
 <style type="text/css">@font-face {
   font-family: 'Lora';
@@ -1030,11 +1032,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">RATS Endorsements</td>
-<td class="right">September 2023</td>
+<td class="right">November 2023</td>
 </tr></thead>
 <tfoot><tr>
-<td class="left">Thaler</td>
-<td class="center">Expires 1 April 2024</td>
+<td class="left">Thaler, et al.</td>
+<td class="center">Expires 2 June 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1044,20 +1046,28 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dt class="label-workgroup">Workgroup:</dt>
 <dd class="workgroup">RATS Working Group</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
-<dd class="internet-draft">draft-dthaler-rats-endorsements-latest</dd>
+<dd class="internet-draft">draft-ietf-rats-endorsements-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-09-29" class="published">29 September 2023</time>
+<time datetime="2023-11-30" class="published">30 November 2023</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-04-01">1 April 2024</time></dd>
-<dt class="label-authors">Author:</dt>
+<dd class="expires"><time datetime="2024-06-02">2 June 2024</time></dd>
+<dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
       <div class="author-name">D. Thaler</div>
 <div class="org">Microsoft</div>
+</div>
+<div class="author">
+      <div class="author-name">H. Birkholz</div>
+<div class="org">Fraunhofer SIT</div>
+</div>
+<div class="author">
+      <div class="author-name">T. Fossati</div>
+<div class="org">Arm</div>
 </div>
 </dd>
 </dl>
@@ -1068,7 +1078,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="section-abstract-1">In the IETF Remote Attestation Procedures (RATS) architecture, a Verifier
 accepts Evidence and, using Appraisal Policy typically with additional
 input from Endorsements and Reference Values, generates Attestation Results
-in a format needed by a Relying Party.  This document explains the purpose and
+in formats needed by a Relying Parties.  This document explains the purpose and
 role of Endorsements and discusses some considerations in the choice of
 message format for Endorsements.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
@@ -1102,7 +1112,7 @@ message format for Endorsements.<a href="#section-abstract-1" class="pilcrow">¶
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 1 April 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 2 June 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1166,18 +1176,21 @@ message format for Endorsements.<a href="#section-abstract-1" class="pilcrow">¶
             <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-references" class="internal xref">References</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.1">
-                <p id="section-toc.1-1.8.2.1.1"><a href="#section-8.1" class="auto internal xref">8.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-acknowledgements" class="internal xref">Acknowledgements</a></p>
 </li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.2">
-                <p id="section-toc.1-1.8.2.2.1"><a href="#section-8.2" class="auto internal xref">8.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-references" class="internal xref">References</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.1">
+                <p id="section-toc.1-1.9.2.1.1"><a href="#section-9.1" class="auto internal xref">9.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.2">
+                <p id="section-toc.1-1.9.2.2.1"><a href="#section-9.2" class="auto internal xref">9.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
 </li>
             </ul>
 </li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
+            <p id="section-toc.1-1.10.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1188,15 +1201,14 @@ message format for Endorsements.<a href="#section-abstract-1" class="pilcrow">¶
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">Section 3 in the RATS Architecture <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> gives an overview of the roles
-and conceptual messages in the IETF Remote Attestation Architecture.
-As discussed in that document, a Verifier accepts Evidence and Endorsements,
-and appraises them using Appraisal Policy for Evidence, typically against
-a set of Reference Values.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">Various formats exist, including standard and vendor-specific formats, for
-the conceptual messages shown.  Indeed, one of the purposes of a Verifer as depicted
-in Figure 9 of <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> is to be able to accept Evidence in a variety of
-formats and generate Attestation Results in the format needed by a Relying Party.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-1">Section 3 in the Remote ATtestation procedures (RATS) Architecture <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> gives an overview of the roles
+and conceptual messages in the IETF RATS Architecture.
+As discussed in that document, a Verifier accepts a well-defined set of RATS conceptual messages: Evidence, Endorsements
+and Reference Values (as well es Policy for Appraisal of Evidence).  A Verifier appraises Evidence using Appraisal Policy for Evidence, typically against a set of Reference Values.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">Various formats of conceptual messages exist, including standard and vendor-specific formats.
+One of the purposes of a Verifier is depicted
+in Figure 9 of <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span>. A Verifier is intended to be able to accept Evidence in a variety of
+formats and generate Attestation Results in the formats needed by a Relying Parties it is intended to cater.<a href="#section-1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="statetypes">
@@ -1207,12 +1219,19 @@ formats and generate Attestation Results in the format needed by a Relying Party
 <p id="section-2-1">Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
 Attestation Results) involve comparing the actual state of an Attester against
 desired or undesired states, in order to determine how trustworthy the Attester
-is for its purposes.  Thus, a Verifier needs to receive messages with information
-about actual state, and information about desired/undesired states, and an appraisal
-policy that controls how the two are compared.<a href="#section-2-1" class="pilcrow">¶</a></p>
-<p id="section-2-2">Each Attester in general has multiple Target Environments (e.g., hardware, firmware,
-Operating System, etc.), each with their own set of claims (sometimes called.
-a "claimset").<a href="#section-2-2" class="pilcrow">¶</a></p>
+is for its purposes.  The state of an Attester represents its composition of
+components of execution environments (its "shape"), typically in a hierarchical
+manner.  The state of an Attester also encompasses the combination of static and
+dynamic constitution (e.g., provisioned and deployed software, firmware, and
+micro-code), static and dynamic configuration, and the resulting operational state
+of its components at a certain point of time. Thus, a Verifier needs to receive
+messages with information about actual state, and information about desired/undesired
+states, and an appraisal policy that controls how the two are compared.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-2">Each Attester in general has at least one Attesting Environment and one Target
+Environment (e.g., hardware, firmware, Operating System, etc.).  Typically, each
+Attester has multiple Target Environments, each with their own set of claims (sometimes
+called a "claimset") representing their actual state.  Additionally, the number of
+Target Environments is not limited.<a href="#section-2-2" class="pilcrow">¶</a></p>
 <p id="section-2-3">"Actual state" is a group of claimsets about the actual state of the Attester at a
 given point in time. Each claimset holds claims about a specific Target Environment
 that is essential to determining trustworthiness.  Generally speaking, each claim
@@ -1233,11 +1252,14 @@ per claim per Target Environment.  The appraisal policy then specifies how to ma
 the actual value against the set of Reference Values.<a href="#section-2-5" class="pilcrow">¶</a></p>
 <p id="section-2-6">Some examples of such matching include:<a href="#section-2-6" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-2-7.1">The actual value must be in the set of allowed Reference Values.<a href="#section-2-7.1" class="pilcrow">¶</a>
+<li class="normal" id="section-2-7.1">
+          <p id="section-2-7.1.1">The actual value must be in the set of allowed Reference Values.<a href="#section-2-7.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-7.2">The actual value must not be in the set of disallowed Reference Values.<a href="#section-2-7.2" class="pilcrow">¶</a>
+        <li class="normal" id="section-2-7.2">
+          <p id="section-2-7.2.1">The actual value must not be in the set of disallowed Reference Values.<a href="#section-2-7.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-7.3">The actual value must be in a range where two Reference Values are the min and max.<a href="#section-2-7.3" class="pilcrow">¶</a>
+        <li class="normal" id="section-2-7.3">
+          <p id="section-2-7.3.1">The actual value must be in a range where two Reference Values are the min and max.<a href="#section-2-7.3.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <div id="rats-conceptual-messages">
@@ -1247,39 +1269,127 @@ the actual value against the set of Reference Values.<a href="#section-2-5" clas
         </h3>
 <p id="section-2.1-1">RATS conceptual messages in <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> fall into the above categories as follows:<a href="#section-2.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-2.1-2.1">Actual state: Evidence, Endorsements, Attestation Results<a href="#section-2.1-2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-2.1-2.1">
+            <p id="section-2.1-2.1.1">Actual state: Evidence, Endorsements, Attestation Results<a href="#section-2.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-2.1-2.2">Reference state: Reference Values<a href="#section-2.1-2.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-2.1-2.2">
+            <p id="section-2.1-2.2.1">Reference state: Reference Values<a href="#section-2.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-2.1-2.3">Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy for Attestation Results<a href="#section-2.1-2.3" class="pilcrow">¶</a>
+          <li class="normal" id="section-2.1-2.3">
+            <p id="section-2.1-2.3.1">Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy for Attestation Results<a href="#section-2.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-2.1-3">The figure below shows an example of Verifier input for a layered Attester
 as discussed in <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span>.<a href="#section-2.1-3" class="pilcrow">¶</a></p>
 <span id="name-example-verifier-input"></span><div id="input">
 <figure id="figure-1">
-          <div class="alignCenter art-text artwork" id="section-2.1-4.1">
-<pre>
-             / .------------.   Appraisal    .-----------------.  \
-            |  |Actual state|    Policy      | Reference state |  |
-            |  |  (layer N) |                |    (layer N)    |  | R
-            |  '------------'       |        '-----------------'  | e
-            |                       |                             | f
-            |  .------------.       |        .-----------------.  | e
-   Evidence |  |Actual state|       |        | Reference state |  | r
-            |  |  (layer 2) |       |        |    (layer 2)    |  | e
-            |  '------------'       |        '-----------------'  | n
-            |                       v                             | c
-            |  .------------.  &lt;==========&gt;  .-----------------.  | e
-            |  |Actual state|   Comparison   | Reference state |  |
-            |  |  (layer 1) |     Rules      |    (layer 1)    |  | V
-            \  '------------'                '-----------------'  | a
-                                                                  | l
-            /  .------------.                .-----------------.  | u
-Endorsement |  |Actual state|                | Reference state |  | e
-            |  |  (layer 0) |                |    (layer 0)    |  | s
-            \  '------------'                '-----------------'  /
-</pre>
+          <div id="section-2.1-4.1">
+            <div class="alignCenter art-svg artwork" id="section-2.1-4.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="336" width="576" viewBox="0 0 576 336" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 104,32 L 104,240" fill="none" stroke="black"></path>
+                <path d="M 104,272 L 104,320" fill="none" stroke="black"></path>
+                <path d="M 136,32 L 136,80" fill="none" stroke="black"></path>
+                <path d="M 136,112 L 136,160" fill="none" stroke="black"></path>
+                <path d="M 136,192 L 136,240" fill="none" stroke="black"></path>
+                <path d="M 136,272 L 136,320" fill="none" stroke="black"></path>
+                <path d="M 240,32 L 240,80" fill="none" stroke="black"></path>
+                <path d="M 240,112 L 240,160" fill="none" stroke="black"></path>
+                <path d="M 240,192 L 240,240" fill="none" stroke="black"></path>
+                <path d="M 240,272 L 240,320" fill="none" stroke="black"></path>
+                <path d="M 304,80 L 304,176" fill="none" stroke="black"></path>
+                <path d="M 376,32 L 376,80" fill="none" stroke="black"></path>
+                <path d="M 376,112 L 376,160" fill="none" stroke="black"></path>
+                <path d="M 376,192 L 376,240" fill="none" stroke="black"></path>
+                <path d="M 376,272 L 376,320" fill="none" stroke="black"></path>
+                <path d="M 520,32 L 520,80" fill="none" stroke="black"></path>
+                <path d="M 520,112 L 520,160" fill="none" stroke="black"></path>
+                <path d="M 520,192 L 520,240" fill="none" stroke="black"></path>
+                <path d="M 520,272 L 520,320" fill="none" stroke="black"></path>
+                <path d="M 552,32 L 552,320" fill="none" stroke="black"></path>
+                <path d="M 104,32 L 120,32" fill="none" stroke="black"></path>
+                <path d="M 136,32 L 240,32" fill="none" stroke="black"></path>
+                <path d="M 376,32 L 520,32" fill="none" stroke="black"></path>
+                <path d="M 536,32 L 552,32" fill="none" stroke="black"></path>
+                <path d="M 136,80 L 240,80" fill="none" stroke="black"></path>
+                <path d="M 376,80 L 520,80" fill="none" stroke="black"></path>
+                <path d="M 136,112 L 240,112" fill="none" stroke="black"></path>
+                <path d="M 376,112 L 520,112" fill="none" stroke="black"></path>
+                <path d="M 136,160 L 240,160" fill="none" stroke="black"></path>
+                <path d="M 376,160 L 520,160" fill="none" stroke="black"></path>
+                <path d="M 136,192 L 240,192" fill="none" stroke="black"></path>
+                <path d="M 264,190 L 352,190" fill="none" stroke="black"></path>
+                <path d="M 264,194 L 352,194" fill="none" stroke="black"></path>
+                <path d="M 376,192 L 520,192" fill="none" stroke="black"></path>
+                <path d="M 104,240 L 120,240" fill="none" stroke="black"></path>
+                <path d="M 136,240 L 240,240" fill="none" stroke="black"></path>
+                <path d="M 376,240 L 520,240" fill="none" stroke="black"></path>
+                <path d="M 104,272 L 120,272" fill="none" stroke="black"></path>
+                <path d="M 136,272 L 240,272" fill="none" stroke="black"></path>
+                <path d="M 376,272 L 520,272" fill="none" stroke="black"></path>
+                <path d="M 104,320 L 120,320" fill="none" stroke="black"></path>
+                <path d="M 136,320 L 240,320" fill="none" stroke="black"></path>
+                <path d="M 376,320 L 520,320" fill="none" stroke="black"></path>
+                <path d="M 536,320 L 552,320" fill="none" stroke="black"></path>
+                <polygon class="arrowhead" points="360,192 348,186.4 348,197.6" fill="black" transform="rotate(0,352,192)"></polygon>
+                <polygon class="arrowhead" points="312,176 300,170.4 300,181.6" fill="black" transform="rotate(90,304,176)"></polygon>
+                <polygon class="arrowhead" points="272,192 260,186.4 260,197.6" fill="black" transform="rotate(180,264,192)"></polygon>
+                <g class="text">
+                  <text x="304" y="36">Appraisal</text>
+                  <text x="164" y="52">Actual</text>
+                  <text x="216" y="52">state</text>
+                  <text x="300" y="52">Policy</text>
+                  <text x="424" y="52">Reference</text>
+                  <text x="488" y="52">state</text>
+                  <text x="180" y="68">(layer</text>
+                  <text x="220" y="68">N)</text>
+                  <text x="436" y="68">(layer</text>
+                  <text x="476" y="68">N)</text>
+                  <text x="568" y="68">R</text>
+                  <text x="568" y="84">e</text>
+                  <text x="568" y="100">f</text>
+                  <text x="568" y="116">e</text>
+                  <text x="60" y="132">Evidence</text>
+                  <text x="164" y="132">Actual</text>
+                  <text x="216" y="132">state</text>
+                  <text x="424" y="132">Reference</text>
+                  <text x="488" y="132">state</text>
+                  <text x="568" y="132">r</text>
+                  <text x="180" y="148">(layer</text>
+                  <text x="220" y="148">2)</text>
+                  <text x="436" y="148">(layer</text>
+                  <text x="476" y="148">2)</text>
+                  <text x="568" y="148">e</text>
+                  <text x="568" y="164">n</text>
+                  <text x="568" y="180">c</text>
+                  <text x="568" y="196">e</text>
+                  <text x="164" y="212">Actual</text>
+                  <text x="216" y="212">state</text>
+                  <text x="308" y="212">Comparison</text>
+                  <text x="424" y="212">Reference</text>
+                  <text x="488" y="212">state</text>
+                  <text x="180" y="228">(layer</text>
+                  <text x="220" y="228">1)</text>
+                  <text x="304" y="228">Rules</text>
+                  <text x="436" y="228">(layer</text>
+                  <text x="476" y="228">1)</text>
+                  <text x="568" y="228">V</text>
+                  <text x="568" y="244">a</text>
+                  <text x="568" y="260">l</text>
+                  <text x="568" y="276">u</text>
+                  <text x="48" y="292">Endorsement</text>
+                  <text x="164" y="292">Actual</text>
+                  <text x="216" y="292">state</text>
+                  <text x="424" y="292">Reference</text>
+                  <text x="488" y="292">state</text>
+                  <text x="568" y="292">e</text>
+                  <text x="180" y="308">(layer</text>
+                  <text x="220" y="308">0)</text>
+                  <text x="436" y="308">(layer</text>
+                  <text x="476" y="308">0)</text>
+                  <text x="568" y="308">s</text>
+                </g>
+              </svg><a href="#section-2.1-4.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-1" class="selfRef">Figure 1</a>:
 <a href="#name-example-verifier-input" class="selfRef">Example Verifier Input</a>
@@ -1371,43 +1481,129 @@ that trusts each Endorser would thus use claims from both conceptual
 messages when comparing against reference state for a given Target Environment.<a href="#section-5-2" class="pilcrow">¶</a></p>
 <span id="name-multiple-endorsements-2"></span><div id="multiple">
 <figure id="figure-2">
-        <div class="alignCenter art-text artwork" id="section-5-3.1">
-<pre>
-               .-----------------------. .-------------.
-App            |            .--------. | | .--------.  |
-Endorser ----&gt; |Endorsement |  app   | | | |  app   |  |
-               |            |claimset| | | |claimset|  |
-               |            '--------' | | '--------' E|
-               '-----------------------' |            v|
-                                         |            i|
-               .-----------------------. |            d|
-OS             |            .--------. | | .--------. e|
-Endorser ----&gt; |Endorsement |   OS   | | | |   OS   | n|
-               |            |claimset| | | |claimset| c|
-               |            '--------' | | '--------' e|
-               '-----------------------' |             |
-                                         |             |
-               .-----------------------. |             |
-Firmware       |            .--------. | | .--------.  |
-Endorser ----&gt; |Endorsement |firmware| | | |firmware|  |
-               |            |claimset| | | |claimset|  |
-               |            '--------' | | '--------'  |
-               '-----------------------' |             |
-                                         |             |
-               .-----------------------. |             |
-Hardware       |            .--------. | | .--------.  |
-Endorser ----&gt; |Endorsement |hardware| | | |hardware|  |
-               |            |claimset| | | |claimset|  |
-               |            '--------' | | '--------'  |
-               '-----------------------' '-------------'
-                                                ^
-Attester ---------------------------------------'
-</pre>
+        <div id="section-5-3.1">
+          <div class="alignCenter art-svg artwork" id="section-5-3.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="512" width="456" viewBox="0 0 456 512" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+              <path d="M 128,32 L 128,112" fill="none" stroke="black"></path>
+              <path d="M 128,144 L 128,224" fill="none" stroke="black"></path>
+              <path d="M 128,256 L 128,336" fill="none" stroke="black"></path>
+              <path d="M 128,368 L 128,448" fill="none" stroke="black"></path>
+              <path d="M 232,48 L 232,96" fill="none" stroke="black"></path>
+              <path d="M 232,160 L 232,208" fill="none" stroke="black"></path>
+              <path d="M 232,272 L 232,320" fill="none" stroke="black"></path>
+              <path d="M 232,384 L 232,432" fill="none" stroke="black"></path>
+              <path d="M 304,48 L 304,96" fill="none" stroke="black"></path>
+              <path d="M 304,160 L 304,208" fill="none" stroke="black"></path>
+              <path d="M 304,272 L 304,320" fill="none" stroke="black"></path>
+              <path d="M 304,384 L 304,432" fill="none" stroke="black"></path>
+              <path d="M 320,32 L 320,112" fill="none" stroke="black"></path>
+              <path d="M 320,144 L 320,224" fill="none" stroke="black"></path>
+              <path d="M 320,256 L 320,336" fill="none" stroke="black"></path>
+              <path d="M 320,368 L 320,448" fill="none" stroke="black"></path>
+              <path d="M 336,32 L 336,448" fill="none" stroke="black"></path>
+              <path d="M 352,48 L 352,96" fill="none" stroke="black"></path>
+              <path d="M 352,160 L 352,208" fill="none" stroke="black"></path>
+              <path d="M 352,272 L 352,320" fill="none" stroke="black"></path>
+              <path d="M 352,384 L 352,432" fill="none" stroke="black"></path>
+              <path d="M 392,456 L 392,496" fill="none" stroke="black"></path>
+              <path d="M 424,48 L 424,96" fill="none" stroke="black"></path>
+              <path d="M 424,160 L 424,208" fill="none" stroke="black"></path>
+              <path d="M 424,272 L 424,320" fill="none" stroke="black"></path>
+              <path d="M 424,384 L 424,432" fill="none" stroke="black"></path>
+              <path d="M 448,32 L 448,448" fill="none" stroke="black"></path>
+              <path d="M 128,32 L 320,32" fill="none" stroke="black"></path>
+              <path d="M 336,32 L 448,32" fill="none" stroke="black"></path>
+              <path d="M 232,48 L 304,48" fill="none" stroke="black"></path>
+              <path d="M 352,48 L 424,48" fill="none" stroke="black"></path>
+              <path d="M 80,64 L 112,64" fill="none" stroke="black"></path>
+              <path d="M 232,96 L 304,96" fill="none" stroke="black"></path>
+              <path d="M 352,96 L 424,96" fill="none" stroke="black"></path>
+              <path d="M 128,112 L 320,112" fill="none" stroke="black"></path>
+              <path d="M 128,144 L 320,144" fill="none" stroke="black"></path>
+              <path d="M 232,160 L 304,160" fill="none" stroke="black"></path>
+              <path d="M 352,160 L 424,160" fill="none" stroke="black"></path>
+              <path d="M 80,176 L 112,176" fill="none" stroke="black"></path>
+              <path d="M 232,208 L 304,208" fill="none" stroke="black"></path>
+              <path d="M 352,208 L 424,208" fill="none" stroke="black"></path>
+              <path d="M 128,224 L 320,224" fill="none" stroke="black"></path>
+              <path d="M 128,256 L 320,256" fill="none" stroke="black"></path>
+              <path d="M 232,272 L 304,272" fill="none" stroke="black"></path>
+              <path d="M 352,272 L 424,272" fill="none" stroke="black"></path>
+              <path d="M 80,288 L 112,288" fill="none" stroke="black"></path>
+              <path d="M 232,320 L 304,320" fill="none" stroke="black"></path>
+              <path d="M 352,320 L 424,320" fill="none" stroke="black"></path>
+              <path d="M 128,336 L 320,336" fill="none" stroke="black"></path>
+              <path d="M 128,368 L 320,368" fill="none" stroke="black"></path>
+              <path d="M 232,384 L 304,384" fill="none" stroke="black"></path>
+              <path d="M 352,384 L 424,384" fill="none" stroke="black"></path>
+              <path d="M 80,400 L 112,400" fill="none" stroke="black"></path>
+              <path d="M 232,432 L 304,432" fill="none" stroke="black"></path>
+              <path d="M 352,432 L 424,432" fill="none" stroke="black"></path>
+              <path d="M 128,448 L 320,448" fill="none" stroke="black"></path>
+              <path d="M 336,448 L 448,448" fill="none" stroke="black"></path>
+              <path d="M 80,496 L 392,496" fill="none" stroke="black"></path>
+              <polygon class="arrowhead" points="400,456 388,450.4 388,461.6" fill="black" transform="rotate(270,392,456)"></polygon>
+              <polygon class="arrowhead" points="120,400 108,394.4 108,405.6" fill="black" transform="rotate(0,112,400)"></polygon>
+              <polygon class="arrowhead" points="120,288 108,282.4 108,293.6" fill="black" transform="rotate(0,112,288)"></polygon>
+              <polygon class="arrowhead" points="120,176 108,170.4 108,181.6" fill="black" transform="rotate(0,112,176)"></polygon>
+              <polygon class="arrowhead" points="120,64 108,58.4 108,69.6" fill="black" transform="rotate(0,112,64)"></polygon>
+              <g class="text">
+                <text x="16" y="52">App</text>
+                <text x="36" y="68">Endorser</text>
+                <text x="176" y="68">Endorsement</text>
+                <text x="264" y="68">app</text>
+                <text x="384" y="68">app</text>
+                <text x="268" y="84">claimset</text>
+                <text x="388" y="84">claimset</text>
+                <text x="440" y="100">E</text>
+                <text x="440" y="116">v</text>
+                <text x="440" y="132">i</text>
+                <text x="440" y="148">d</text>
+                <text x="12" y="164">OS</text>
+                <text x="440" y="164">e</text>
+                <text x="36" y="180">Endorser</text>
+                <text x="176" y="180">Endorsement</text>
+                <text x="268" y="180">OS</text>
+                <text x="388" y="180">OS</text>
+                <text x="440" y="180">n</text>
+                <text x="268" y="196">claimset</text>
+                <text x="388" y="196">claimset</text>
+                <text x="440" y="196">c</text>
+                <text x="440" y="212">e</text>
+                <text x="36" y="276">Firmware</text>
+                <text x="36" y="292">Endorser</text>
+                <text x="176" y="292">Endorsement</text>
+                <text x="268" y="292">firmware</text>
+                <text x="388" y="292">firmware</text>
+                <text x="268" y="308">claimset</text>
+                <text x="388" y="308">claimset</text>
+                <text x="36" y="388">Hardware</text>
+                <text x="36" y="404">Endorser</text>
+                <text x="176" y="404">Endorsement</text>
+                <text x="268" y="404">hardware</text>
+                <text x="388" y="404">hardware</text>
+                <text x="268" y="420">claimset</text>
+                <text x="388" y="420">claimset</text>
+                <text x="36" y="500">Attester</text>
+              </g>
+            </svg><a href="#section-5-3.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-2" class="selfRef">Figure 2</a>:
 <a href="#name-multiple-endorsements-2" class="selfRef">Multiple Endorsements</a>
         </figcaption></figure>
 </div>
+<p id="section-5-4">When Target Environments from different vendors each have their own
+Endorser, it is important that a Verifier be able to distinguish
+which Endorser is allowed to provide an Endorsement about which
+Target Environment.  For example, the OS Endorser might be trusted to
+provide additional claims about the OS, but not about the hardware.
+Thus it is not as simple as saying that a Verifier has a trusted
+set of Endorsers. The binding between Target Environment and Endorser might
+be part of the Appraisal Policy for Evidence, or might be specified
+as part of the Evidence itself, or some combination of the two.
+An Endorsement format specification should explain how this concern
+is addressed.<a href="#section-5-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="endorsement-format-considerations">
@@ -1421,7 +1617,7 @@ Attester ---------------------------------------'
         <h3 id="name-security-considerations">
 <a href="#section-6.1" class="section-number selfRef">6.1. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
         </h3>
-<p id="section-6.1-1">In many scenarios, a Verifiers can also support a variety of different formats,
+<p id="section-6.1-1">In many scenarios, a Verifier can also support a variety of different formats,
 and while code size may not be a huge concern, simplicity and correctness of code
 is essential to security.  "Complexity is the enemy of security" is a popular
 security mantra and hence to increase security, any decrease in complexity
@@ -1467,14 +1663,23 @@ endorsed values, in order to avoid complexity introduced by such.<a href="#secti
 <p id="section-7-1">This document does not require any actions by IANA.<a href="#section-7-1" class="pilcrow">¶</a></p>
 </section>
 </div>
+<div id="acknowledgements">
 <section id="section-8">
+      <h2 id="name-acknowledgements">
+<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-acknowledgements" class="section-name selfRef">Acknowledgements</a>
+      </h2>
+<p id="section-8-1">The authors wish to thank Thomas Hardjono, Laurence Lundblade, and Kathleen Moriarty
+for feedback and ideas that contributed to this document.<a href="#section-8-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<section id="section-9">
       <h2 id="name-references">
-<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-references" class="section-name selfRef">References</a>
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-references" class="section-name selfRef">References</a>
       </h2>
 <div id="sec-normative-references">
-<section id="section-8.1">
+<section id="section-9.1">
         <h3 id="name-normative-references">
-<a href="#section-8.1" class="section-number selfRef">8.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<a href="#section-9.1" class="section-number selfRef">9.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
 <dt id="RFC9334">[RFC9334]</dt>
@@ -1485,9 +1690,9 @@ endorsed values, in order to avoid complexity introduced by such.<a href="#secti
 </section>
 </div>
 <div id="sec-informative-references">
-<section id="section-8.2">
+<section id="section-9.2">
         <h3 id="name-informative-references">
-<a href="#section-8.2" class="section-number selfRef">8.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+<a href="#section-9.2" class="section-number selfRef">9.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
 <dt id="TCG-DICE">[TCG-DICE]</dt>
@@ -1500,8 +1705,8 @@ endorsed values, in order to avoid complexity introduced by such.<a href="#secti
 </section>
 <div id="authors-addresses">
 <section id="appendix-A">
-      <h2 id="name-authors-address">
-<a href="#name-authors-address" class="section-name selfRef">Author's Address</a>
+      <h2 id="name-authors-addresses">
+<a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Dave Thaler</span></div>
@@ -1509,7 +1714,28 @@ endorsed values, in order to avoid complexity introduced by such.<a href="#secti
 <div dir="auto" class="left"><span class="country-name">United States of America</span></div>
 <div class="email">
 <span>Email:</span>
-<a href="mailto:dthaler@microsoft.com" class="email">dthaler@microsoft.com</a>
+<a href="mailto:dave.thaler.ietf@gmail.com" class="email">dave.thaler.ietf@gmail.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Henk Birkholz</span></div>
+<div dir="auto" class="left"><span class="org">Fraunhofer SIT</span></div>
+<div dir="auto" class="left"><span class="street-address">Rheinstrasse 75</span></div>
+<div dir="auto" class="left">
+<span class="postal-code">64295</span> <span class="locality">Darmstadt</span>
+</div>
+<div dir="auto" class="left"><span class="country-name">Germany</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:henk.birkholz@sit.fraunhofer.de" class="email">henk.birkholz@sit.fraunhofer.de</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Thomas Fossati</span></div>
+<div dir="auto" class="left"><span class="org">Arm</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:Thomas.Fossati@arm.com" class="email">Thomas.Fossati@arm.com</a>
 </div>
 </address>
 </section>

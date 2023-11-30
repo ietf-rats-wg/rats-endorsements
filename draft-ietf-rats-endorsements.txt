@@ -4,19 +4,22 @@
 
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                 Microsoft
-Intended status: Informational                           18 October 2023
-Expires: 20 April 2024
+Intended status: Informational                               H. Birkholz
+Expires: 2 June 2024                                      Fraunhofer SIT
+                                                              T. Fossati
+                                                                     Arm
+                                                        30 November 2023
 
 
                            RATS Endorsements
-                 draft-dthaler-rats-endorsements-latest
+                  draft-ietf-rats-endorsements-latest
 
 Abstract
 
    In the IETF Remote Attestation Procedures (RATS) architecture, a
    Verifier accepts Evidence and, using Appraisal Policy typically with
    additional input from Endorsements and Reference Values, generates
-   Attestation Results in a format needed by a Relying Party.  This
+   Attestation Results in formats needed by a Relying Parties.  This
    document explains the purpose and role of Endorsements and discusses
    some considerations in the choice of message format for Endorsements.
 
@@ -46,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 April 2024.
+   This Internet-Draft will expire on 2 June 2024.
 
 Copyright Notice
 
@@ -74,38 +77,53 @@ Table of Contents
      6.1.  Security Considerations
      6.2.  Scalability Considerations
    7.  IANA Considerations
-   8.  References
-     8.1.  Normative References
-     8.2.  Informative References
-   Author's Address
+   8.  Acknowledgements
+   9.  References
+     9.1.  Normative References
+     9.2.  Informative References
+   Authors' Addresses
 
 1.  Introduction
 
-   Section 3 in the RATS Architecture [RFC9334] gives an overview of the
-   roles and conceptual messages in the IETF Remote Attestation
-   Architecture.  As discussed in that document, a Verifier accepts
-   Evidence and Endorsements, and appraises them using Appraisal Policy
-   for Evidence, typically against a set of Reference Values.
+   Section 3 in the Remote ATtestation procedures (RATS) Architecture
+   [RFC9334] gives an overview of the roles and conceptual messages in
+   the IETF RATS Architecture.  As discussed in that document, a
+   Verifier accepts a well-defined set of RATS conceptual messages:
+   Evidence, Endorsements and Reference Values (as well es Policy for
+   Appraisal of Evidence).  A Verifier appraises Evidence using
+   Appraisal Policy for Evidence, typically against a set of Reference
+   Values.
 
-   Various formats exist, including standard and vendor-specific
-   formats, for the conceptual messages shown.  Indeed, one of the
-   purposes of a Verifer as depicted in Figure 9 of [RFC9334] is to be
-   able to accept Evidence in a variety of formats and generate
-   Attestation Results in the format needed by a Relying Party.
+   Various formats of conceptual messages exist, including standard and
+   vendor-specific formats.  One of the purposes of a Verifier is
+   depicted in Figure 9 of [RFC9334].  A Verifier is intended to be able
+   to accept Evidence in a variety of formats and generate Attestation
+   Results in the formats needed by a Relying Parties it is intended to
+   cater.
 
 2.  Actual State vs Reference States
 
    Appraisal policies (Appraisal Policy for Evidence, and Appraisal
    Policy for Attestation Results) involve comparing the actual state of
    an Attester against desired or undesired states, in order to
-   determine how trustworthy the Attester is for its purposes.  Thus, a
-   Verifier needs to receive messages with information about actual
-   state, and information about desired/undesired states, and an
-   appraisal policy that controls how the two are compared.
+   determine how trustworthy the Attester is for its purposes.  The
+   state of an Attester represents its composition of components of
+   execution environments (its "shape"), typically in a hierarchical
+   manner.  The state of an Attester also encompasses the combination of
+   static and dynamic constitution (e.g., provisioned and deployed
+   software, firmware, and micro-code), static and dynamic
+   configuration, and the resulting operational state of its components
+   at a certain point of time.  Thus, a Verifier needs to receive
+   messages with information about actual state, and information about
+   desired/undesired states, and an appraisal policy that controls how
+   the two are compared.
 
-   Each Attester in general has multiple Target Environments (e.g.,
-   hardware, firmware, Operating System, etc.), each with their own set
-   of claims (sometimes called a "claimset").
+   Each Attester in general has at least one Attesting Environment and
+   one Target Environment (e.g., hardware, firmware, Operating System,
+   etc.).  Typically, each Attester has multiple Target Environments,
+   each with their own set of claims (sometimes called a "claimset")
+   representing their actual state.  Additionally, the number of Target
+   Environments is not limited.
 
    "Actual state" is a group of claimsets about the actual state of the
    Attester at a given point in time.  Each claimset holds claims about
@@ -363,25 +381,44 @@ Table of Contents
 
    This document does not require any actions by IANA.
 
-8.  References
+8.  Acknowledgements
 
-8.1.  Normative References
+   The authors wish to thank Thomas Hardjono, Laurence Lundblade, and
+   Kathleen Moriarty for feedback and ideas that contributed to this
+   document.
+
+9.  References
+
+9.1.  Normative References
 
    [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
               W. Pan, "Remote ATtestation procedureS (RATS)
               Architecture", RFC 9334, DOI 10.17487/RFC9334, January
               2023, <https://www.rfc-editor.org/rfc/rfc9334>.
 
-8.2.  Informative References
+9.2.  Informative References
 
    [TCG-DICE] Trusted Computing Group, "DICE Certificate Profiles",
               n.d., <https://trustedcomputinggroup.org/wp-
               content/uploads/DICE-Certificate-Profiles-
               r01_3june2020-1.pdf>.
 
-Author's Address
+Authors' Addresses
 
    Dave Thaler
    Microsoft
    United States of America
-   Email: dthaler@microsoft.com
+   Email: dave.thaler.ietf@gmail.com
+
+
+   Henk Birkholz
+   Fraunhofer SIT
+   Rheinstrasse 75
+   64295 Darmstadt
+   Germany
+   Email: henk.birkholz@sit.fraunhofer.de
+
+
+   Thomas Fossati
+   Arm
+   Email: Thomas.Fossati@arm.com
