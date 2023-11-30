@@ -2,10 +2,10 @@
 
 This is the working area for the individual Internet-Draft, "RATS Endorsements".
 
-* [Editor's Copy](https://dthaler.github.io/rats-endorsements/#go.draft-dthaler-rats-endorsements.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-dthaler-rats-endorsements)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-dthaler-rats-endorsements)
-* [Compare Editor's Copy to Individual Draft](https://dthaler.github.io/rats-endorsements/#go.draft-dthaler-rats-endorsements.diff)
+* [Editor's Copy](https://dthaler.github.io/rats-endorsements/#go.draft-ietf-rats-endorsements.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-rats-endorsements)
+* [WG Draft](https://datatracker.ietf.org/doc/html/draft-ietf-rats-endorsements)
+* [Compare Editor's Copy to WG Draft](https://dthaler.github.io/rats-endorsements/#go.draft-ietf-rats-endorsements.diff)
 
 
 ## Contributing
