@@ -18,7 +18,6 @@ pi:
 author:
 - ins: D. Thaler
   name: Dave Thaler
-  org: Microsoft
   email: dave.thaler.ietf@gmail.com
   street: ""
   code: ""
