@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-08T00:29:05.138077+00:00",
+  "timestamp": "2024-02-11T00:31:36.831394+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -533,6 +533,34 @@
           ]
         }
       ]
+    },
+    {
+      "number": 14,
+      "id": "PR_kwDOJj8oQM5mgXQt",
+      "title": "Update author affiliation",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/14",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-02-09T17:44:41Z",
+      "updatedAt": "2024-02-09T17:49:22Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "6770263b5e0ac86f83fb4a01b1491e32653a4958",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "affiliation",
+      "headRefOid": "6ee91048a89ab96b36679813b1a6f557eb1afa08",
+      "closedAt": "2024-02-09T17:49:20Z",
+      "mergedAt": "2024-02-09T17:49:20Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "8afcc77b1321327df4b70fd0422b69ba5d895b78"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }
