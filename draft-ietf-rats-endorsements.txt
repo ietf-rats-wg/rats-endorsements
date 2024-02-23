@@ -5,10 +5,10 @@
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Intended status: Informational                               H. Birkholz
-Expires: 12 August 2024                                   Fraunhofer SIT
+Expires: 26 August 2024                                   Fraunhofer SIT
                                                               T. Fossati
-                                                                     Arm
-                                                         9 February 2024
+                                                                  Linaro
+                                                        23 February 2024
 
 
                            RATS Endorsements
@@ -49,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 August 2024.
+   This Internet-Draft will expire on 26 August 2024.
 
 Copyright Notice
 
@@ -398,10 +398,10 @@ Table of Contents
 
 9.2.  Informative References
 
-   [TCG-DICE] Trusted Computing Group, "DICE Certificate Profiles",
-              n.d., <https://trustedcomputinggroup.org/wp-
-              content/uploads/DICE-Certificate-Profiles-
-              r01_3june2020-1.pdf>.
+   [TCG-DICE] Trusted Computing Group, "DICE Attestation Architecture",
+              January 2024, <https://trustedcomputinggroup.org/wp-
+              content/uploads/DICE-Attestation-Architecture-Version-1.1-
+              Revision-18_pub.pdf>.
 
 Authors' Addresses
 
@@ -419,5 +419,5 @@ Authors' Addresses
 
 
    Thomas Fossati
-   Arm
-   Email: Thomas.Fossati@arm.com
+   Linaro
+   Email: Thomas.Fossati@linaro.org
