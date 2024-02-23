@@ -35,15 +35,16 @@ author:
   country: Germany
 - ins: T. Fossati
   name: Thomas Fossati
-  organization: Arm
-  email: Thomas.Fossati@arm.com
+  organization: Linaro
+  email: Thomas.Fossati@linaro.org
 
 informative:
   TCG-DICE:
     author:
       org: "Trusted Computing Group"
-    title: "DICE Certificate Profiles"
-    target: https://trustedcomputinggroup.org/wp-content/uploads/DICE-Certificate-Profiles-r01_3june2020-1.pdf
+    title: "DICE Attestation Architecture"
+    target: https://trustedcomputinggroup.org/wp-content/uploads/DICE-Attestation-Architecture-Version-1.1-Revision-18_pub.pdf
+    date: January, 2024
 
 --- abstract
 
