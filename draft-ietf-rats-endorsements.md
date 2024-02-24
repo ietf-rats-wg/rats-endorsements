@@ -39,6 +39,7 @@ author:
   email: Thomas.Fossati@linaro.org
 
 informative:
+  I-D.ietf-rats-eat: rats-eat
   TCG-DICE:
     author:
       org: "Trusted Computing Group"
@@ -203,7 +204,7 @@ multiple parsers for matching policies.
 # Endorsing Identity
 
 One type of claims that might be endorsed would be claims having to do with
-identity, such as verification keys.  While identity claims are just another
+identity, such as verification keys bound to an identifier for the Attesting Environment (e.g., {{-rats-eat}} `ueid`).  While identity claims are just another
 type of claims that may be endorsed, some implementations might treat them
 differently. For example, a Verifier might perform a first step to
 cryptographically verify the Attester's identity before spending effort on
