@@ -5,10 +5,10 @@
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Intended status: Informational                               H. Birkholz
-Expires: 26 August 2024                                   Fraunhofer SIT
+Expires: 27 August 2024                                   Fraunhofer SIT
                                                               T. Fossati
                                                                   Linaro
-                                                        23 February 2024
+                                                        24 February 2024
 
 
                            RATS Endorsements
@@ -49,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 August 2024.
+   This Internet-Draft will expire on 27 August 2024.
 
 Copyright Notice
 
@@ -254,12 +254,13 @@ Table of Contents
 4.  Endorsing Identity
 
    One type of claims that might be endorsed would be claims having to
-   do with identity, such as verification keys.  While identity claims
-   are just another type of claims that may be endorsed, some
-   implementations might treat them differently.  For example, a
-   Verifier might perform a first step to cryptographically verify the
-   Attester's identity before spending effort on another step to
-   appraise other claims for determining trustworthiness.
+   do with identity, such as verification keys bound to an identifier
+   for the Attesting Environment (e.g., [I-D.ietf-rats-eat] ueid).
+   While identity claims are just another type of claims that may be
+   endorsed, some implementations might treat them differently.  For
+   example, a Verifier might perform a first step to cryptographically
+   verify the Attester's identity before spending effort on another step
+   to appraise other claims for determining trustworthiness.
 
    This document treats identity claims as with any other claims, but
    allows Appraisal Policy for Evidence to have multiple steps if
@@ -397,6 +398,13 @@ Table of Contents
               2023, <https://www.rfc-editor.org/rfc/rfc9334>.
 
 9.2.  Informative References
+
+   [I-D.ietf-rats-eat]
+              Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
+              Wallace, "The Entity Attestation Token (EAT)", Work in
+              Progress, Internet-Draft, draft-ietf-rats-eat-25, 15
+              January 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-rats-eat-25>.
 
    [TCG-DICE] Trusted Computing Group, "DICE Attestation Architecture",
               January 2024, <https://trustedcomputinggroup.org/wp-
