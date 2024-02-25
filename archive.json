@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-22T00:28:48.472047+00:00",
+  "timestamp": "2024-02-25T00:31:31.507184+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -123,14 +123,44 @@
       "authorAssociation": "COLLABORATOR",
       "assignees": [
         "findthomas",
+        "thomas-fossati",
         "henkbirkholz"
       ],
       "labels": [],
       "body": "In the IEFT 117 meeting, Laurence suggested not using the word \"identity\" but rather \"key material for verifying evidence\" or \"attestation keys\".  He suggested there might be like 3 pages of stuff to talk about here.   I asked if there were volunteers to contribute such text and the recording shows that two people raised their hands (Thomas Hardjono was one, and I think the other might have been Henk).",
       "createdAt": "2023-09-27T19:10:02Z",
-      "updatedAt": "2023-09-29T20:18:10Z",
+      "updatedAt": "2024-02-24T22:26:01Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@findthomas @henkbirkholz @thomas-fossati Anyone able to contribute anything for this last issue?  I won't be able to.  I haven't requested time for this draft since there's nothing new to report but if someone else can contribute to this issue then we should ask for a slot.",
+          "createdAt": "2024-02-23T17:25:04Z",
+          "updatedAt": "2024-02-23T17:25:04Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Sorry folks, [this](https://github.com/ietf-rats-wg/rats-endorsements/commit/376bc8dd4760bc11a65dd13b0915837d5c05dc04) was merged on error.  I meant to create a PR but G-H tricked me somehow \ud83d\ude2d",
+          "createdAt": "2024-02-24T11:37:35Z",
+          "updatedAt": "2024-02-24T11:37:35Z"
+        },
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> Sorry folks, [this](https://github.com/ietf-rats-wg/rats-endorsements/commit/376bc8dd4760bc11a65dd13b0915837d5c05dc04) was merged on error. I meant to create a PR but G-H tricked me somehow \ud83d\ude2d\r\n\r\nNo worries, it looks good to me.  I'm not sure it addresses Laurence's issue though since he seemed to want a lot of text (about what, I'm not sure).  Do you (or anyone else) have a suggestion here?   Since you've generated PR's, I'd like to list you as a co-author regardless.",
+          "createdAt": "2024-02-24T22:23:05Z",
+          "updatedAt": "2024-02-24T22:23:05Z"
+        },
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "My bad, Thomas Fossati is already a co-author.  I was confused since github didn't automatically add you as a reviewer.  I meant add folks to CODEOWNERS not the draft itself.  Expect a PR shortly.",
+          "createdAt": "2024-02-24T22:26:00Z",
+          "updatedAt": "2024-02-24T22:26:00Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -559,6 +589,74 @@
       "mergeCommit": {
         "oid": "8afcc77b1321327df4b70fd0422b69ba5d895b78"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 15,
+      "id": "PR_kwDOJj8oQM5nuzy8",
+      "title": "tho's affil + fix DICE ref",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/15",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-02-23T08:46:17Z",
+      "updatedAt": "2024-02-23T17:22:52Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "8afcc77b1321327df4b70fd0422b69ba5d895b78",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "minutiae",
+      "headRefOid": "e8366b1c438fd49420edfeebbbf122a12d9f3d5e",
+      "closedAt": "2024-02-23T17:22:52Z",
+      "mergedAt": "2024-02-23T17:22:52Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "cbed9a839b598373219a48627f44b06c09561796"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM5xKlpJ",
+          "commit": {
+            "abbreviatedOid": "e8366b1"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-23T17:22:46Z",
+          "updatedAt": "2024-02-23T17:22:46Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "id": "PR_kwDOJj8oQM5n1E6y",
+      "title": "Update .github/CODEOWNERS",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/16",
+      "state": "OPEN",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Add draft co-authors to CODEOWNERS",
+      "createdAt": "2024-02-24T22:49:56Z",
+      "updatedAt": "2024-02-24T22:50:17Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "376bc8dd4760bc11a65dd13b0915837d5c05dc04",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "codeowners",
+      "headRefOid": "706cd2f2523352a5961bc57a600972b01c962eca",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
