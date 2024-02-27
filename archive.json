@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-25T00:31:31.507184+00:00",
+  "timestamp": "2024-02-27T00:28:32.294625+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -646,7 +646,7 @@
       "labels": [],
       "body": "Add draft co-authors to CODEOWNERS",
       "createdAt": "2024-02-24T22:49:56Z",
-      "updatedAt": "2024-02-24T22:50:17Z",
+      "updatedAt": "2024-02-25T01:08:29Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
       "baseRefOid": "376bc8dd4760bc11a65dd13b0915837d5c05dc04",
@@ -658,7 +658,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM5xOWkc",
+          "commit": {
+            "abbreviatedOid": "706cd2f"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "thanks!",
+          "createdAt": "2024-02-25T01:08:29Z",
+          "updatedAt": "2024-02-25T01:08:29Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
