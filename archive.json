@@ -1,0 +1,678 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2024-02-27T00:28:32.294625+00:00",
+  "repo": "ietf-rats-wg/rats-endorsements",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOJj8oQM5nCuIi",
+      "title": "Add text about endorsements for layers other than the bottom",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/1",
+      "state": "CLOSED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-05-27T14:45:15Z",
+      "updatedAt": "2023-07-10T22:20:18Z",
+      "closedAt": "2023-07-10T22:20:18Z",
+      "comments": []
+    },
+    {
+      "number": 5,
+      "id": "I_kwDOJj8oQM5rQhSX",
+      "title": "Requested feedback",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/5",
+      "state": "CLOSED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "- The following is NOT always applicable: \r\n> where actual state has a single value per claim per component applying to one device at one point in time, reference state has a set of values per claim per component (\u00a72)\r\n\r\nIt may very well be the case that there is only one Reference Value per Claim per component (e.g., _MRENCLAVE_ in SGX).\r\n\r\n- The following is NOT always the case: \r\n> Actual state: Evidence, Endorsements, Attestation Results (\u00a72.1)\r\n\r\nAs a counterexample, _CPUSVN_ inside PCK cert (Endorsement) may be older than the one in Evidence (QE Report Body). \r\n\r\n- I think the draft currently focuses on a very specific case rather than the goal stated in the abstract: \r\n> explains the purpose and role of Endorsements\r\n\r\nOne of the major purposes of Endorsements is to provide identity endorsement, which is never discussed in the draft. \r\n\r\n- Clarify \"group of claims\" vs. \"set of claims\" (e.g., as used in \u00a72)\r\n\r\n- Clarify the definition of \"Claim\" and explain: \r\n> for our purposes we will treat such a list as a single unit (\u00a72)\r\n\r\nFor example, I am thinking about _attributes_ and _Security Version Numbers_ in SGX/TDX. For instance, SGX TCB Security Version Number (SVN) has 16 components, so would each component be treated as a Claim, or would the SVN be treated as a single unit?\r\n\r\n- Clarify \"reference values\" vs. \"Reference Values\" ",
+      "createdAt": "2023-07-11T18:07:25Z",
+      "updatedAt": "2023-10-17T21:14:37Z",
+      "closedAt": "2023-10-17T21:14:37Z",
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> * The following is NOT always applicable:\r\n> \r\n> > where actual state has a single value per claim per component applying to one device at one point in time, reference state has a set of values per claim per component (\u00a72)\r\n> \r\n> It may very well be the case that there is only one Reference Value per Claim per component (e.g., _MRENCLAVE_ in SGX).\r\n\r\nThere is no contradiction.  A single-value can still be represented as a set of size one in such a case.\r\n\r\n> * The following is NOT always the case:\r\n> \r\n> > Actual state: Evidence, Endorsements, Attestation Results (\u00a72.1)\r\n> \r\n> As a counterexample, _CPUSVN_ inside PCK cert (Endorsement) may be older than the one in Evidence (QE Report Body).\r\n\r\nI don't understand the relevance of your statement to the quoted text. Please clarify your feedback.\r\nI suspect the \"Conditionally Endorsed Values\" section will be the answer to your question.\r\n\r\n> * I think the draft currently focuses on a very specific case rather than the goal stated in the abstract:\r\n> \r\n> > explains the purpose and role of Endorsements\r\n> \r\n> One of the major purposes of Endorsements is to provide identity endorsement, which is never discussed in the draft.\r\n\r\nDraft-02 added section 4 \"Endorsing Identity\".\r\n\r\n> * Clarify \"group of claims\" vs. \"set of claims\" (e.g., as used in \u00a72)\r\n\r\n\"set of claims\" is used synonymously with \"claimset\" in other documents, where Evidence can have multiple claimsets, one per component.  I'm using \"group of claims\" to refer to a set of claimsets.  Will clarify.\r\n\r\n> * Clarify the definition of \"Claim\" and explain:\r\n> \r\n> > for our purposes we will treat such a list as a single unit (\u00a72)\r\n> \r\n> For example, I am thinking about _attributes_ and _Security Version Numbers_ in SGX/TDX. For instance, SGX TCB Security Version Number (SVN) has 16 components, so would each component be treated as a Claim, or would the SVN be treated as a single unit?\r\n\r\nThe hardware is a component, and has multiple claims of which SVN might be one unit if the EAT profile (or CORIM or whatever else) defined it as such.\r\n\r\n> * Clarify \"reference values\" vs. \"Reference Values\"\r\n\r\nShould be the latter for consistency.",
+          "createdAt": "2023-07-25T18:27:13Z",
+          "updatedAt": "2023-07-25T18:27:13Z"
+        },
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "NONE",
+          "body": "> > * The following is NOT always applicable:\r\n> > \r\n> > > where actual state has a single value per claim per component applying to one device at one point in time, reference state has a set of values per claim per component (\u00a72)\r\n> > \r\n> > \r\n> > It may very well be the case that there is only one Reference Value per Claim per component (e.g., _MRENCLAVE_ in SGX).\r\n> \r\n> There is no contradiction. A single-value can still be represented as a set of size one in such a case.\r\n> \r\n\r\nIf both actual state and reference state can be represented as sets, then the distinction between actual state and reference state in the draft is very weak. The distinction should be more precisely clarified. \r\n> > * The following is NOT always the case:\r\n> > \r\n> > > Actual state: Evidence, Endorsements, Attestation Results (\u00a72.1)\r\n> > \r\n> > \r\n> > As a counterexample, _CPUSVN_ inside PCK cert (Endorsement) may be older than the one in Evidence (QE Report Body).\r\n> \r\n> I don't understand the relevance of your statement to the quoted text. Please clarify your feedback. I suspect the \"Conditionally Endorsed Values\" section will be the answer to your question.\r\n> \r\n\r\nJust to clarify, this was not supposed to be a question. This was supposed to be a counter-example that as opposed to what the draft (e.g., quoted text) says, Endorsements may not always represent actual state. \r\n> > * I think the draft currently focuses on a very specific case rather than the goal stated in the abstract:\r\n> > \r\n> > > explains the purpose and role of Endorsements\r\n> > \r\n> > \r\n> > One of the major purposes of Endorsements is to provide identity endorsement, which is never discussed in the draft.\r\n> \r\n> Draft-02 added section 4 \"Endorsing Identity\".\r\n> \r\n\r\nThanks, I was reviewing draft-01. I will have a look. \r\n> > * Clarify \"group of claims\" vs. \"set of claims\" (e.g., as used in \u00a72)\r\n> \r\n> \"set of claims\" is used synonymously with \"claimset\" in other documents, where Evidence can have multiple claimsets, one per component. I'm using \"group of claims\" to refer to a set of claimsets. Will clarify.\r\n> \r\n\r\nI hope to see this question clarified: Is one \"component\" representing precisely one Target Environment? I think that will precisely distinguish \"set of claims\"/\"claimset\" and \"group of claims\" \r\n> > * Clarify the definition of \"Claim\" and explain:\r\n> > \r\n> > > for our purposes we will treat such a list as a single unit (\u00a72)\r\n> > \r\n> > \r\n> > For example, I am thinking about _attributes_ and _Security Version Numbers_ in SGX/TDX. For instance, SGX TCB Security Version Number (SVN) has 16 components, so would each component be treated as a Claim, or would the SVN be treated as a single unit?\r\n> \r\n> The hardware is a component, and has multiple claims of which SVN might be one unit if the EAT profile (or CORIM or whatever else) defined it as such.\r\n> \r\n\r\nThis is very ambiguous to me. The definition of Claim that is used in the draft should be independent of EAT profile/CORIM. \r\n",
+          "createdAt": "2023-07-28T21:35:32Z",
+          "updatedAt": "2023-07-28T21:35:32Z"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "I_kwDOJj8oQM5yNi6B",
+      "title": "ability to constrain which components an endorser can endorse",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/6",
+      "state": "CLOSED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Multiple Endorsements should talk about this concept and draft -02 doesn't.\r\nDiscussed at IETF 117.\r\n\r\nKathleen Moriarty mentioned same concept is in attestation sets draft.\r\n\r\nHenk Birkholz mentioned that corim 3.1.4.1.1 refers to multiple environments, for same reason.\r\n",
+      "createdAt": "2023-09-27T19:02:08Z",
+      "updatedAt": "2023-10-17T21:18:48Z",
+      "closedAt": "2023-10-17T21:18:48Z",
+      "comments": []
+    },
+    {
+      "number": 7,
+      "id": "I_kwDOJj8oQM5yNlY3",
+      "title": "key material for attestation",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/7",
+      "state": "OPEN",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "findthomas",
+        "thomas-fossati",
+        "henkbirkholz"
+      ],
+      "labels": [],
+      "body": "In the IEFT 117 meeting, Laurence suggested not using the word \"identity\" but rather \"key material for verifying evidence\" or \"attestation keys\".  He suggested there might be like 3 pages of stuff to talk about here.   I asked if there were volunteers to contribute such text and the recording shows that two people raised their hands (Thomas Hardjono was one, and I think the other might have been Henk).",
+      "createdAt": "2023-09-27T19:10:02Z",
+      "updatedAt": "2024-02-24T22:26:01Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@findthomas @henkbirkholz @thomas-fossati Anyone able to contribute anything for this last issue?  I won't be able to.  I haven't requested time for this draft since there's nothing new to report but if someone else can contribute to this issue then we should ask for a slot.",
+          "createdAt": "2024-02-23T17:25:04Z",
+          "updatedAt": "2024-02-23T17:25:04Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Sorry folks, [this](https://github.com/ietf-rats-wg/rats-endorsements/commit/376bc8dd4760bc11a65dd13b0915837d5c05dc04) was merged on error.  I meant to create a PR but G-H tricked me somehow \ud83d\ude2d",
+          "createdAt": "2024-02-24T11:37:35Z",
+          "updatedAt": "2024-02-24T11:37:35Z"
+        },
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> Sorry folks, [this](https://github.com/ietf-rats-wg/rats-endorsements/commit/376bc8dd4760bc11a65dd13b0915837d5c05dc04) was merged on error. I meant to create a PR but G-H tricked me somehow \ud83d\ude2d\r\n\r\nNo worries, it looks good to me.  I'm not sure it addresses Laurence's issue though since he seemed to want a lot of text (about what, I'm not sure).  Do you (or anyone else) have a suggestion here?   Since you've generated PR's, I'd like to list you as a co-author regardless.",
+          "createdAt": "2024-02-24T22:23:05Z",
+          "updatedAt": "2024-02-24T22:23:05Z"
+        },
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "My bad, Thomas Fossati is already a co-author.  I was confused since github didn't automatically add you as a reviewer.  I meant add folks to CODEOWNERS not the draft itself.  Expect a PR shortly.",
+          "createdAt": "2024-02-24T22:26:00Z",
+          "updatedAt": "2024-02-24T22:26:00Z"
+        }
+      ]
+    }
+  ],
+  "pulls": [
+    {
+      "number": 2,
+      "id": "PR_kwDOJj8oQM5VH2_B",
+      "title": "Conditionally endorsed values",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/2",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Addresses https://github.com/dthaler/rats-endorsements-old/issues/3",
+      "createdAt": "2023-07-10T19:43:08Z",
+      "updatedAt": "2023-07-10T21:37:39Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "9524b12691128dfb90d871a34d6fcda43be9ecfe",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "conditional",
+      "headRefOid": "9242494fd3834b0a195869403e6f57518e46f5db",
+      "closedAt": "2023-07-10T21:37:35Z",
+      "mergedAt": "2023-07-10T21:37:35Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "03a724a1227d5c6700832f38258ad744fb71e264"
+      },
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@thomas-fossati what do you think?",
+          "createdAt": "2023-07-10T19:43:41Z",
+          "updatedAt": "2023-07-10T19:43:41Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM5ax3R4",
+          "commit": {
+            "abbreviatedOid": "9242494"
+          },
+          "author": "nedmsmith",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-07-10T20:49:27Z",
+          "updatedAt": "2023-07-10T20:49:27Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOJj8oQM5VIbm4",
+      "title": "Add notion of identity endorsements",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/3",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Addresses https://github.com/dthaler/rats-endorsements-old/issues/2\r\n\r\nHowever I don't think they're really another type of endorsement per se, use is really up to the Appraisal Policy for Evidence.",
+      "createdAt": "2023-07-10T21:33:31Z",
+      "updatedAt": "2023-07-11T09:25:48Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "03a724a1227d5c6700832f38258ad744fb71e264",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "identity",
+      "headRefOid": "f27b478bb2c85bf55e01eaeb663398fddc6fbe8d",
+      "closedAt": "2023-07-10T21:47:22Z",
+      "mergedAt": "2023-07-10T21:47:22Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "fa5faefc69f838a2502be87ffc230eb9d5bf6bd9"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM5ayJV6",
+          "commit": {
+            "abbreviatedOid": "f27b478"
+          },
+          "author": "OR13",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "This is possible a bit off topic, but I have been considering the case for SCITT and KT,  where the COSE payload is a key content type (jwk+json, or cose-key) and the header contains claims that bind that key to an identifier, for example `email` or `website`... \n\nIt's nice be able to dedicate the entire payload to a content type, but this leaves only headers to establish relationships.\n\nFor example SCITT has feeds, which would support this... You could have a feed that only supports endorsed keys, from certain parties and for certain purposes, but with support for multiple key content types.",
+          "createdAt": "2023-07-10T21:48:47Z",
+          "updatedAt": "2023-07-10T21:49:24Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJj8oQM5a1AmR",
+          "commit": {
+            "abbreviatedOid": "f27b478"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "belated \ud83d\udc4d",
+          "createdAt": "2023-07-11T09:25:48Z",
+          "updatedAt": "2023-07-11T09:25:48Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "PR_kwDOJj8oQM5VIn-T",
+      "title": "Add text about multiple endorsements, up to one per layer",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/4",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixes #1",
+      "createdAt": "2023-07-10T22:17:28Z",
+      "updatedAt": "2023-07-10T22:20:20Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "fa5faefc69f838a2502be87ffc230eb9d5bf6bd9",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "multiple",
+      "headRefOid": "d6dc8574b00047672babafc575b18d794975d2ec",
+      "closedAt": "2023-07-10T22:20:17Z",
+      "mergedAt": "2023-07-10T22:20:17Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "9f56c39f6ecfce2ef571bdeda025916decc709cc"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOJj8oQM5bX8y5",
+      "title": "Add co-authors",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/8",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Add the list of folks who were potentially wiling to be co-authors.\r\nWill wait for acks before merging, and remove anyone who doesn't ack.",
+      "createdAt": "2023-09-27T19:45:58Z",
+      "updatedAt": "2023-10-20T19:30:59Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "a474f631cf7f58c1c5b8ce97cf5fded4f6d06dd2",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "coauthors",
+      "headRefOid": "65aad8104c0ffa76a3898c5e155eef45e90da085",
+      "closedAt": "2023-10-20T19:30:55Z",
+      "mergedAt": "2023-10-20T19:30:55Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "fac77e1dabd2c6c778a09615538ae17529654097"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 9,
+      "id": "PR_kwDOJj8oQM5bYW_O",
+      "title": "Ability to constrain which components an endorser can endorse",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/9",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixes #6",
+      "createdAt": "2023-09-27T21:09:18Z",
+      "updatedAt": "2023-10-17T21:19:01Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "024298606909aa4da75dc6c4d1521d2c2a2d5f3e",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "multiple-endorsers",
+      "headRefOid": "1b08c2502e565c15fed2e83a44d37ba116c8a4bc",
+      "closedAt": "2023-10-17T21:18:47Z",
+      "mergedAt": "2023-10-17T21:18:47Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "91688c86d786c1021f693bc47dd5ba4e23258109"
+      },
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Merging since no comments after 3 weeks have passed.",
+          "createdAt": "2023-10-17T21:17:52Z",
+          "updatedAt": "2023-10-17T21:17:52Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 10,
+      "id": "PR_kwDOJj8oQM5bYbzo",
+      "title": "Editorial fixes",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/10",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixes #5",
+      "createdAt": "2023-09-27T21:22:16Z",
+      "updatedAt": "2023-10-17T21:14:55Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "edfb63fbf9beb97351686927e22d7782aa624b59",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "editorial",
+      "headRefOid": "e6aa4fe0af0ba29f8dff93bf3afcd5764d8394c6",
+      "closedAt": "2023-10-17T21:14:36Z",
+      "mergedAt": "2023-10-17T21:14:36Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "024298606909aa4da75dc6c4d1521d2c2a2d5f3e"
+      },
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Merged since no comments here after 3 weeks.",
+          "createdAt": "2023-10-17T21:14:51Z",
+          "updatedAt": "2023-10-17T21:14:51Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 11,
+      "id": "PR_kwDOJj8oQM5dImcZ",
+      "title": "fix typo & add SVG diagrams",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/11",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "cosmetics",
+      "createdAt": "2023-10-18T12:20:23Z",
+      "updatedAt": "2023-10-18T19:37:21Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "91688c86d786c1021f693bc47dd5ba4e23258109",
+      "headRepository": null,
+      "headRefName": "main",
+      "headRefOid": "853fb5501bd6431172844c6dc9bafaf2a50916e4",
+      "closedAt": "2023-10-18T19:37:21Z",
+      "mergedAt": "2023-10-18T19:37:21Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "08e4f6830bf4355d1dc3d95aec240cde59707636"
+      },
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thanks!",
+          "createdAt": "2023-10-18T19:37:17Z",
+          "updatedAt": "2023-10-18T19:37:17Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM5kfg7A",
+          "commit": {
+            "abbreviatedOid": "853fb55"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-10-18T19:37:08Z",
+          "updatedAt": "2023-10-18T19:37:08Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "id": "PR_kwDOJj8oQM5dMILD",
+      "title": "1-char fix",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/12",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "mismatched plural",
+      "createdAt": "2023-10-18T20:59:13Z",
+      "updatedAt": "2023-10-18T21:02:32Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "08e4f6830bf4355d1dc3d95aec240cde59707636",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "1-char-fix",
+      "headRefOid": "f10073a487432cf72411b0ded62b45d5ae807a5a",
+      "closedAt": "2023-10-18T21:02:31Z",
+      "mergedAt": "2023-10-18T21:02:31Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "54bb52d6dfaf954889485dc467e6c2c501983f11"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM5kgG_U",
+          "commit": {
+            "abbreviatedOid": "f10073a"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-10-18T21:02:27Z",
+          "updatedAt": "2023-10-18T21:02:27Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "id": "PR_kwDOJj8oQM5dW91G",
+      "title": "Broadening Wording of Abstract and Introduction",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/13",
+      "state": "MERGED",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "A proposal for discussion.",
+      "createdAt": "2023-10-20T08:59:23Z",
+      "updatedAt": "2023-10-20T15:29:36Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "54bb52d6dfaf954889485dc467e6c2c501983f11",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "abstract-intro-augment",
+      "headRefOid": "50a4c3a5e45f1091240dcfb49252e25990aeccd8",
+      "closedAt": "2023-10-20T15:29:35Z",
+      "mergedAt": "2023-10-20T15:29:35Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "a474f631cf7f58c1c5b8ce97cf5fded4f6d06dd2"
+      },
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "I'd recommend to restructure the markdown to one line per sentence before the next submission so that github changes are visualized more comprehensive.",
+          "createdAt": "2023-10-20T09:00:39Z",
+          "updatedAt": "2023-10-20T09:00:39Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM5kwEQ0",
+          "commit": {
+            "abbreviatedOid": "75b69e1"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Good other than some typos.\r\nThanks!",
+          "createdAt": "2023-10-20T15:27:24Z",
+          "updatedAt": "2023-10-20T15:28:59Z",
+          "comments": [
+            {
+              "originalPosition": 44,
+              "body": "```suggestion\r\ndesired or undesired states, in order to determine how trustworthy the Attester\r\n```",
+              "createdAt": "2023-10-20T15:27:24Z",
+              "updatedAt": "2023-10-20T15:28:59Z"
+            },
+            {
+              "originalPosition": 45,
+              "body": "```suggestion\r\nis for its purposes.  The state of an Attester represents its composition of\r\n```",
+              "createdAt": "2023-10-20T15:27:50Z",
+              "updatedAt": "2023-10-20T15:28:59Z"
+            },
+            {
+              "originalPosition": 55,
+              "body": "```suggestion\r\nEnvironment (e.g., hardware, firmware, Operating System, etc.).  Typically, each\r\n```",
+              "createdAt": "2023-10-20T15:28:26Z",
+              "updatedAt": "2023-10-20T15:28:59Z"
+            },
+            {
+              "originalPosition": 58,
+              "body": "```suggestion\r\nTarget Environments is not limited.\r\n```",
+              "createdAt": "2023-10-20T15:28:44Z",
+              "updatedAt": "2023-10-20T15:28:59Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "id": "PR_kwDOJj8oQM5mgXQt",
+      "title": "Update author affiliation",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/14",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-02-09T17:44:41Z",
+      "updatedAt": "2024-02-09T17:49:22Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "6770263b5e0ac86f83fb4a01b1491e32653a4958",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "affiliation",
+      "headRefOid": "6ee91048a89ab96b36679813b1a6f557eb1afa08",
+      "closedAt": "2024-02-09T17:49:20Z",
+      "mergedAt": "2024-02-09T17:49:20Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "8afcc77b1321327df4b70fd0422b69ba5d895b78"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 15,
+      "id": "PR_kwDOJj8oQM5nuzy8",
+      "title": "tho's affil + fix DICE ref",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/15",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-02-23T08:46:17Z",
+      "updatedAt": "2024-02-23T17:22:52Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "8afcc77b1321327df4b70fd0422b69ba5d895b78",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "minutiae",
+      "headRefOid": "e8366b1c438fd49420edfeebbbf122a12d9f3d5e",
+      "closedAt": "2024-02-23T17:22:52Z",
+      "mergedAt": "2024-02-23T17:22:52Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "cbed9a839b598373219a48627f44b06c09561796"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM5xKlpJ",
+          "commit": {
+            "abbreviatedOid": "e8366b1"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-23T17:22:46Z",
+          "updatedAt": "2024-02-23T17:22:46Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "id": "PR_kwDOJj8oQM5n1E6y",
+      "title": "Update .github/CODEOWNERS",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/16",
+      "state": "OPEN",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Add draft co-authors to CODEOWNERS",
+      "createdAt": "2024-02-24T22:49:56Z",
+      "updatedAt": "2024-02-25T01:08:29Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "376bc8dd4760bc11a65dd13b0915837d5c05dc04",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "codeowners",
+      "headRefOid": "706cd2f2523352a5961bc57a600972b01c962eca",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM5xOWkc",
+          "commit": {
+            "abbreviatedOid": "706cd2f"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "thanks!",
+          "createdAt": "2024-02-25T01:08:29Z",
+          "updatedAt": "2024-02-25T01:08:29Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
+}
