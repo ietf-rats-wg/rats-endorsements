@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-03T00:30:51.207741+00:00",
+  "timestamp": "2024-03-05T00:28:08.515552+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -639,24 +639,26 @@
       "id": "PR_kwDOJj8oQM5n1E6y",
       "title": "Update .github/CODEOWNERS",
       "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/16",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "dthaler",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Add draft co-authors to CODEOWNERS",
       "createdAt": "2024-02-24T22:49:56Z",
-      "updatedAt": "2024-02-25T01:08:29Z",
+      "updatedAt": "2024-03-04T14:55:11Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
       "baseRefOid": "376bc8dd4760bc11a65dd13b0915837d5c05dc04",
       "headRepository": "ietf-rats-wg/rats-endorsements",
       "headRefName": "codeowners",
       "headRefOid": "706cd2f2523352a5961bc57a600972b01c962eca",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-03-04T14:55:08Z",
+      "mergedAt": "2024-03-04T14:55:08Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "d621ff97efb0d30ee22eea32a4d3478741df8cef"
+      },
       "comments": [],
       "reviews": [
         {
@@ -673,6 +675,34 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 17,
+      "id": "PR_kwDOJj8oQM5on7KR",
+      "title": "Fix links in repository README.md file",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/17",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Two links in the README gave 404 errors.",
+      "createdAt": "2024-03-04T18:29:27Z",
+      "updatedAt": "2024-03-04T18:29:59Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "d621ff97efb0d30ee22eea32a4d3478741df8cef",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "readme",
+      "headRefOid": "62f7d66c8489cde000b03899836c1ad8a5ab483d",
+      "closedAt": "2024-03-04T18:29:56Z",
+      "mergedAt": "2024-03-04T18:29:56Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "f8341e225c78667c397bf907bb8be73202b64594"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }
