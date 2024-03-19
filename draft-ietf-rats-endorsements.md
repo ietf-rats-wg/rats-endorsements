@@ -206,7 +206,7 @@ multiple parsers for matching policies.
 A Verifier receives Evidence from an Attester that must be considered untrusted
 until verified through cryptography. Typically,
 the bottom-most Attesting Environment in an Attester will sign claims about a Target Environment
-with a private key that that Attesting Environment possesses and the Verifier will verify
+with a private key that the Attesting Environment possesses and the Verifier will verify
 the resulting Evidence with a public key it possesses, called a verification key below. While this is typical,
 cryptography other than public key may also be used.
 
