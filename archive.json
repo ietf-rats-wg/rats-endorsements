@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-17T00:31:24.588076+00:00",
+  "timestamp": "2024-03-19T00:28:58.025139+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -129,7 +129,7 @@
       "labels": [],
       "body": "In the IEFT 117 meeting, Laurence suggested not using the word \"identity\" but rather \"key material for verifying evidence\" or \"attestation keys\".  He suggested there might be like 3 pages of stuff to talk about here.   I asked if there were volunteers to contribute such text and the recording shows that two people raised their hands (Thomas Hardjono was one, and I think the other might have been Henk).",
       "createdAt": "2023-09-27T19:10:02Z",
-      "updatedAt": "2024-02-24T22:26:01Z",
+      "updatedAt": "2024-03-18T19:04:05Z",
       "closedAt": null,
       "comments": [
         {
@@ -159,6 +159,20 @@
           "body": "My bad, Thomas Fossati is already a co-author.  I was confused since github didn't automatically add you as a reviewer.  I meant add folks to CODEOWNERS not the draft itself.  Expect a PR shortly.",
           "createdAt": "2024-02-24T22:26:00Z",
           "updatedAt": "2024-02-24T22:26:00Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "NONE",
+          "body": "Here's a start. Having trouble with cloning and building, so no PR yet, but wanted to share before the meeting.\r\n\r\n\r\n\r\nA RATS verifier receives evidence from an attester that must be considered untrusted until established otherwise. This trust is established using cryptography. Typically, the attester will sign a nonce with a private key it possesses and the verifier will verify it with a public key it possesses. While this is typical, cryptography other than public key may also be used.\r\n\r\nSince it is not possible to establish trust in an attester without cryptography, the verifier must have a verification key for each attester.  The verification key comes to the verifier in an endorsement from an endorser.\r\n\r\nNo particularly algorithm or cryptographic protocol is assumed for the verification of the attester. The verification key could be a symmetric key, a public key or something more sophisticated. Thus there is no assumption about the type of verification key in the endorsement.\r\n\r\n(In theory the verification key could also come in reference values or appraisal policy, the other inputs to the verifier, but that would not line up with the descriptions in the RATS architecture).\r\n",
+          "createdAt": "2024-03-18T18:33:01Z",
+          "updatedAt": "2024-03-18T18:33:01Z"
+        },
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thanks @laurencelundblade\r\n\r\nThere is some wordsmithing I would do to your text but it's a valuable start that we can use.  Thanks for posting this!",
+          "createdAt": "2024-03-18T19:04:04Z",
+          "updatedAt": "2024-03-18T19:04:04Z"
         }
       ]
     }
@@ -703,6 +717,211 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 18,
+      "id": "PR_kwDOJj8oQM5p_bVb",
+      "title": "Incorporate key material text suggestions from Laurence",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/18",
+      "state": "OPEN",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This PR incorporates suggestions from @laurencelundblade \r\n\r\nFixes #7",
+      "createdAt": "2024-03-18T19:48:56Z",
+      "updatedAt": "2024-03-18T22:22:35Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "83fec8073155d3fb5a60a54e67d1fa885807bf23",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "key-material",
+      "headRefOid": "9a64a27ae99ca8897163f0ef3103d63b7837242d",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "NONE",
+          "body": "Dave, thanks for turning my crude first pass into a PR. ",
+          "createdAt": "2024-03-18T21:31:04Z",
+          "updatedAt": "2024-03-18T21:31:04Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM5z4Xf7",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "good stuff, thanks.  I have left a few comments and suggestions inline.",
+          "createdAt": "2024-03-18T20:44:16Z",
+          "updatedAt": "2024-03-18T21:07:22Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "```suggestion\r\nwith a private key that the Attesting Environment possesses and the Verifier will verify\r\n```",
+              "createdAt": "2024-03-18T20:44:17Z",
+              "updatedAt": "2024-03-18T21:07:22Z"
+            },
+            {
+              "originalPosition": 33,
+              "body": "one _\"cryptographically\"_ can probably be removed without loss of information, e.g.:\r\n\r\n```suggestion\r\ncryptographically verify that the Evidence\r\nhas been generated by the Attester that has the key material associated\r\n```",
+              "createdAt": "2024-03-18T20:48:43Z",
+              "updatedAt": "2024-03-18T21:07:22Z"
+            },
+            {
+              "originalPosition": 37,
+              "body": "extra comma (not in the scope of this PR, but since we in the area)\r\n\r\n```suggestion\r\nThis document treats identity claims as with any other claims but allows\r\n```",
+              "createdAt": "2024-03-18T20:51:03Z",
+              "updatedAt": "2024-03-18T21:07:22Z"
+            },
+            {
+              "originalPosition": 10,
+              "body": "slight streamlining\r\n\r\n```suggestion\r\nA Verifier receives Evidence from an Attester that must be considered untrusted\r\nuntil verified through cryptography. Typically,\r\n```",
+              "createdAt": "2024-03-18T20:55:03Z",
+              "updatedAt": "2024-03-18T21:07:22Z"
+            },
+            {
+              "originalPosition": 17,
+              "body": "The sentence _\"[t]he Verifier must have a verification key for each Attester.\"_ may give the impression that a Verifier must be provisioned with the key that verifies the Attester's signature.  In reality, the requirement is less stringent: it is sufficient that the Verifier is given enough information to trust the verification key (e.g., via one or more CA certs) rather than to _\"have\"_ such verification key.  I.e., the actual key could be in-band with Evidence as long as it chains up to a trusted anchor.\r\n",
+              "createdAt": "2024-03-18T21:04:22Z",
+              "updatedAt": "2024-03-18T21:15:47Z"
+            },
+            {
+              "originalPosition": 22,
+              "body": "What do we mean by _\"more sophisticated\"_?",
+              "createdAt": "2024-03-18T21:06:03Z",
+              "updatedAt": "2024-03-18T21:07:22Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM5z4tVR",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-18T21:30:56Z",
+          "updatedAt": "2024-03-18T21:30:56Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "Yes. Very much agreed.\r\n\r\nWould be good to add text explaining this -- that an endorsement might contain a root certificate or other key material that is needed to establish trust in the attester \r\n\r\n(and it would help get closer to my prediction that 3 pages were needed :-) )",
+              "createdAt": "2024-03-18T21:30:56Z",
+              "updatedAt": "2024-03-18T21:30:56Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM5z4tWv",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-18T21:31:00Z",
+          "updatedAt": "2024-03-18T21:31:00Z",
+          "comments": [
+            {
+              "originalPosition": 22,
+              "body": "Some new DAA crypto protocol.",
+              "createdAt": "2024-03-18T21:31:00Z",
+              "updatedAt": "2024-03-18T21:31:00Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM5z4vNp",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-18T21:35:25Z",
+          "updatedAt": "2024-03-18T21:35:25Z",
+          "comments": [
+            {
+              "originalPosition": 22,
+              "body": "awesome, should we add it as an example?",
+              "createdAt": "2024-03-18T21:35:25Z",
+              "updatedAt": "2024-03-18T21:35:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM5z5CdD",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-18T22:20:40Z",
+          "updatedAt": "2024-03-18T22:20:40Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "```suggestion\r\nthe bottom-most (a leaf) Attesting Environment in an Attester will sign claims about one or more Target Environments\r\n```",
+              "createdAt": "2024-03-18T22:20:40Z",
+              "updatedAt": "2024-03-18T22:20:40Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM5z5DMl",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-18T22:21:45Z",
+          "updatedAt": "2024-03-18T22:21:45Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "```suggestion\r\nthe resulting Evidence with a public key it possesses, called a verification key below. While this is typical,\r\n```",
+              "createdAt": "2024-03-18T22:21:45Z",
+              "updatedAt": "2024-03-18T22:21:45Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM5z5Dvp",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-18T22:22:35Z",
+          "updatedAt": "2024-03-18T22:22:35Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "This sentence needs healing.",
+              "createdAt": "2024-03-18T22:22:35Z",
+              "updatedAt": "2024-03-18T22:22:43Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
