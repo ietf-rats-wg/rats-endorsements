@@ -207,7 +207,7 @@ A Verifier receives Evidence from an Attester that must be considered untrusted
 until established otherwise. This trust is established using cryptography. Typically,
 the bottom-most Attesting Environment in an Attester will sign claims about a Target Environment
 with a private key that that Attesting Environment possesses and the Verifier will verify
-them with a public key it possesses, called a verification key below. While this is typical,
+the resulting Evidence with a public key it possesses, called a verification key below. While this is typical,
 cryptography other than public key may also be used.
 
 Since it is not possible to establish trust in an Attester without cryptography,
