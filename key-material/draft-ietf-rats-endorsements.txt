@@ -284,7 +284,7 @@ Table of Contents
    claim(s) before spending effort on another step to appraise other
    claims for determining trustworthiness.
 
-   This document treats identity claims as with any other claims, but
+   This document treats identity claims as with any other claims but
    allows Appraisal Policy for Evidence to have multiple steps if
    desired.
 
