@@ -1450,7 +1450,7 @@ multiple parsers for matching policies.<a href="#section-3-5" class="pilcrow">¶
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-key-material-for-attestatio" class="section-name selfRef">Key Material for Attestation</a>
       </h2>
 <p id="section-4-1">A Verifier receives Evidence from an Attester that must be considered untrusted
-until established otherwise. This trust is established using cryptography. Typically,
+until verified through cryptography. Typically,
 the bottom-most Attesting Environment in an Attester will sign claims about a Target Environment
 with a private key that that Attesting Environment possesses and the Verifier will verify
 the resulting Evidence with a public key it possesses, called a verification key below. While this is typical,
