@@ -5,10 +5,10 @@
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Intended status: Informational                               H. Birkholz
-Expires: 19 September 2024                                Fraunhofer SIT
+Expires: 20 September 2024                                Fraunhofer SIT
                                                               T. Fossati
                                                                   Linaro
-                                                           18 March 2024
+                                                           19 March 2024
 
 
                            RATS Endorsements
@@ -49,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 September 2024.
+   This Internet-Draft will expire on 20 September 2024.
 
 Copyright Notice
 
@@ -258,9 +258,9 @@ Table of Contents
    using cryptography.  Typically, the bottom-most Attesting Environment
    in an Attester will sign claims about a Target Environment with a
    private key that that Attesting Environment possesses and the
-   Verifier will verify them with a public key it possesses, called a
-   verification key below.  While this is typical, cryptography other
-   than public key may also be used.
+   Verifier will verify the resulting Evidence with a public key it
+   possesses, called a verification key below.  While this is typical,
+   cryptography other than public key may also be used.
 
    Since it is not possible to establish trust in an Attester without
    cryptography, the Verifier must have a verification key for each
