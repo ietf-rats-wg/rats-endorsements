@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-19T00:28:58.025139+00:00",
+  "timestamp": "2024-03-21T00:29:52.563066+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -730,13 +730,13 @@
       "labels": [],
       "body": "This PR incorporates suggestions from @laurencelundblade \r\n\r\nFixes #7",
       "createdAt": "2024-03-18T19:48:56Z",
-      "updatedAt": "2024-03-18T22:22:35Z",
+      "updatedAt": "2024-03-19T17:15:27Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
       "baseRefOid": "83fec8073155d3fb5a60a54e67d1fa885807bf23",
       "headRepository": "ietf-rats-wg/rats-endorsements",
       "headRefName": "key-material",
-      "headRefOid": "9a64a27ae99ca8897163f0ef3103d63b7837242d",
+      "headRefOid": "1c9e6f8370cf8300fff3647e4fa0fd4b8670d645",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -918,6 +918,166 @@
               "body": "This sentence needs healing.",
               "createdAt": "2024-03-18T22:22:35Z",
               "updatedAt": "2024-03-18T22:22:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM5z-MYn",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-19T09:50:10Z",
+          "updatedAt": "2024-03-19T09:50:11Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Sorry, I missed the change of title.\r\nI think this \"endorsing identity\" is a valid and useful conceptualisation.\r\nWhat we are talking about here is precisely the endorsements that allow a verifier to know that a certain cryptographic key \"speaks for\" a known and genuine attester, i.e., the mechanism through which its identity is anchored.",
+              "createdAt": "2024-03-19T09:50:11Z",
+              "updatedAt": "2024-03-19T09:50:11Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM50B1sC",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-19T15:35:55Z",
+          "updatedAt": "2024-03-19T15:35:56Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "why leaf?",
+              "createdAt": "2024-03-19T15:35:56Z",
+              "updatedAt": "2024-03-19T15:35:56Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM50CKmz",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-19T16:06:07Z",
+          "updatedAt": "2024-03-19T16:06:07Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "I think the changed title is better since \"Endorsing Identity\" doesn't seem right when DAA is used but the new title and the text in the section still applies in that case.",
+              "createdAt": "2024-03-19T16:06:07Z",
+              "updatedAt": "2024-03-19T16:06:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM50CLEg",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-19T16:06:54Z",
+          "updatedAt": "2024-03-19T16:06:54Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "Yeah I don't get that either",
+              "createdAt": "2024-03-19T16:06:54Z",
+              "updatedAt": "2024-03-19T16:06:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM50CLZK",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-19T16:07:21Z",
+          "updatedAt": "2024-03-19T16:07:22Z",
+          "comments": [
+            {
+              "originalPosition": 22,
+              "body": "I was thinking an example of \"more sophistocated\" would be a certificate.",
+              "createdAt": "2024-03-19T16:07:21Z",
+              "updatedAt": "2024-03-19T16:07:22Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM50CNG6",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-19T16:09:48Z",
+          "updatedAt": "2024-03-19T16:09:48Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "```suggestion\r\nthe bottom-most Attesting Environment in an Attester will sign claims about one or more Target Environments\r\n```",
+              "createdAt": "2024-03-19T16:09:48Z",
+              "updatedAt": "2024-03-19T16:09:48Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM50CyIN",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-19T17:11:34Z",
+          "updatedAt": "2024-03-19T17:11:34Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "IIUC, the DAA Issuer endorses a _group_ identity, but an identity still.\r\n",
+              "createdAt": "2024-03-19T17:11:34Z",
+              "updatedAt": "2024-03-19T17:11:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM50C1M-",
+          "commit": {
+            "abbreviatedOid": "1c9e6f8"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-19T17:15:26Z",
+          "updatedAt": "2024-03-19T17:15:27Z",
+          "comments": [
+            {
+              "originalPosition": 22,
+              "body": "I'll give it a try:\r\n\r\n```suggestion\r\nof the Attester. The verification key could be, typically, a symmetric key, a raw public key, or a certified public key.\r\n```",
+              "createdAt": "2024-03-19T17:15:26Z",
+              "updatedAt": "2024-03-19T17:15:27Z"
             }
           ]
         }
