@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-05-26T00:34:26.680507+00:00",
+  "timestamp": "2024-05-28T00:31:13.787979+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -730,7 +730,7 @@
       "labels": [],
       "body": "This PR incorporates suggestions from @laurencelundblade \r\n\r\nFixes #7",
       "createdAt": "2024-03-18T19:48:56Z",
-      "updatedAt": "2024-03-19T17:15:27Z",
+      "updatedAt": "2024-05-26T11:51:13Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
       "baseRefOid": "83fec8073155d3fb5a60a54e67d1fa885807bf23",
@@ -748,6 +748,13 @@
           "body": "Dave, thanks for turning my crude first pass into a PR. ",
           "createdAt": "2024-03-18T21:31:04Z",
           "updatedAt": "2024-03-18T21:31:04Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@dthaler @henkbirkholz @laurencelundblade:\r\n\r\nThe draft is going to expire soon (2024-06-03).\r\n\r\nThere are a few remaining review comments that need to be addressed before we can wrap this up.\r\n\r\nCan you please try and have a look to see what's missing / what needs changing in your view?\r\n\r\nIt'd be great if we could reach a consensus in the next few days as this is the only PR we need to merge before we publish an update and ask WGLC on the document.\r\n\r\n",
+          "createdAt": "2024-05-26T11:51:12Z",
+          "updatedAt": "2024-05-26T11:51:12Z"
         }
       ],
       "reviews": [
