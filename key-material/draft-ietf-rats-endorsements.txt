@@ -5,10 +5,10 @@
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Intended status: Informational                               H. Birkholz
-Expires: 20 September 2024                                Fraunhofer SIT
+Expires: 29 November 2024                                 Fraunhofer SIT
                                                               T. Fossati
                                                                   Linaro
-                                                           19 March 2024
+                                                             28 May 2024
 
 
                            RATS Endorsements
@@ -49,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 September 2024.
+   This Internet-Draft will expire on 29 November 2024.
 
 Copyright Notice
 
@@ -268,8 +268,9 @@ Table of Contents
    an Endorsement from an Endorser.
 
    No particular algorithm or cryptographic protocol is assumed for the
-   verification of the Attester.  The verification key could be a
-   symmetric key, a public key, or something more sophisticated.
+   verification of the Attester.  The verification key could be,
+   typically, a symmetric key, a raw public key, or a certified public
+   key.
 
    Evidence typically contains an identifier for the Attester (e.g.,
    [I-D.ietf-rats-eat] ueid) in a claim, sometimes termed an "identity
@@ -424,9 +425,9 @@ Table of Contents
    [I-D.ietf-rats-eat]
               Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
               Wallace, "The Entity Attestation Token (EAT)", Work in
-              Progress, Internet-Draft, draft-ietf-rats-eat-25, 15
-              January 2024, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-rats-eat-25>.
+              Progress, Internet-Draft, draft-ietf-rats-eat-27, 26 May
+              2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
+              rats-eat-27>.
 
    [TCG-DICE] Trusted Computing Group, "DICE Attestation Architecture",
               January 2024, <https://trustedcomputinggroup.org/wp-
