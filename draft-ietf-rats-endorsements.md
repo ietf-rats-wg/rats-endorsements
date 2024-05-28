@@ -215,8 +215,7 @@ the Verifier must have a verification key for each Attester. Typically, the veri
 key comes to the Verifier in an Endorsement from an Endorser.
 
 No particular algorithm or cryptographic protocol is assumed for the verification
-of the Attester. The verification key could be a symmetric key, a public key, or
-something more sophisticated.
+of the Attester. The verification key could be, typically, a symmetric key, a raw public key, or a certified public key.
 
 Evidence typically contains an identifier for the Attester
 (e.g., {{-rats-eat}} `ueid`) in a claim, sometimes termed an "identity claim",
