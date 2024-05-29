@@ -5,10 +5,10 @@
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Intended status: Informational                               H. Birkholz
-Expires: 29 November 2024                                 Fraunhofer SIT
+Expires: 30 November 2024                                 Fraunhofer SIT
                                                               T. Fossati
                                                                   Linaro
-                                                             28 May 2024
+                                                             29 May 2024
 
 
                            RATS Endorsements
@@ -49,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 November 2024.
+   This Internet-Draft will expire on 30 November 2024.
 
 Copyright Notice
 
@@ -263,9 +263,13 @@ Table of Contents
    than public key may also be used.
 
    Since it is not possible to establish trust in an Attester without
-   cryptography, the Verifier must have a verification key for each
-   Attester.  Typically, the verification key comes to the Verifier in
-   an Endorsement from an Endorser.
+   cryptography, the Verifier must have access to a verification key for
+   each Attester.  Such a key could be provisioned directly in the
+   Verifier, though for scalability the Verifier typically is
+   provisioned with a trusted root CA certificate such that an
+   Endorsement from an Endorser includes the Attester's verification key
+   material in the form of a certificate that chains up to that trusted
+   root.
 
    No particular algorithm or cryptographic protocol is assumed for the
    verification of the Attester.  The verification key could be,
