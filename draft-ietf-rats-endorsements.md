@@ -215,7 +215,9 @@ the Verifier must have access to a verification key for each Attester. Such a ke
 could be provisioned directly in the Verifier, though for scalability the Verifier
 typically is provisioned with a trusted root CA certificate such that an
 Endorsement from an Endorser includes the Attester's verification key material
-in the form of a certificate that chains up to that trusted root.
+in the form of a certificate that chains up to that trusted root.  Such a certificate
+need not be stored by the Verifier when the Endorsement can be resolved on demand
+or passed to the Verifier along with the Evidence to verify, depending on the protocol.
 
 No particular algorithm or cryptographic protocol is assumed for the verification
 of the Attester. The verification key could be, typically, a symmetric key, a raw public key, or a certified public key.
