@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-05-28T00:31:13.787979+00:00",
+  "timestamp": "2024-05-30T00:31:43.694603+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -730,13 +730,13 @@
       "labels": [],
       "body": "This PR incorporates suggestions from @laurencelundblade \r\n\r\nFixes #7",
       "createdAt": "2024-03-18T19:48:56Z",
-      "updatedAt": "2024-05-26T11:51:13Z",
+      "updatedAt": "2024-05-29T22:50:56Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
       "baseRefOid": "83fec8073155d3fb5a60a54e67d1fa885807bf23",
       "headRepository": "ietf-rats-wg/rats-endorsements",
       "headRefName": "key-material",
-      "headRefOid": "1c9e6f8370cf8300fff3647e4fa0fd4b8670d645",
+      "headRefOid": "e4612e8355ce11c7580e00c5b9d99fabc4ea10ba",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -1085,6 +1085,166 @@
               "body": "I'll give it a try:\r\n\r\n```suggestion\r\nof the Attester. The verification key could be, typically, a symmetric key, a raw public key, or a certified public key.\r\n```",
               "createdAt": "2024-03-19T17:15:26Z",
               "updatedAt": "2024-03-19T17:15:27Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM58NQbG",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-05-28T21:07:02Z",
+          "updatedAt": "2024-05-28T21:07:02Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "The rest of the WG pushed back against the concept of \"identity\" per se being the focus.  Is there a technical objection to the change in section title?",
+              "createdAt": "2024-05-28T21:07:02Z",
+              "updatedAt": "2024-05-28T21:07:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM58NQ0-",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-05-28T21:08:12Z",
+          "updatedAt": "2024-05-28T21:08:12Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "Can you elaborate on what the problem is?",
+              "createdAt": "2024-05-28T21:08:12Z",
+              "updatedAt": "2024-05-28T21:08:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM58QVDx",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-05-29T08:19:30Z",
+          "updatedAt": "2024-05-29T08:19:30Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "If you are referring to the conversation starting at https://mailarchive.ietf.org/arch/msg/rats/hEnwNxvLHcLV7CQGmwQvYwztGqI/ \r\nthere was some initial pushback from Henk and Laurence (Ned's points were more neutral), to which I replied to clarify my point further.\r\nThe conversation stopped there. So, from my perspective, it's still in limbo.\r\n\r\n@laurencelundblade, @henkbirkholz can you please look at that thread again and see if my reply clarifies your initial confusion?\r\n",
+              "createdAt": "2024-05-29T08:19:30Z",
+              "updatedAt": "2024-05-29T08:19:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM58Uh6j",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-05-29T15:30:18Z",
+          "updatedAt": "2024-05-29T15:30:19Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "Updated text.  Is the new text better?",
+              "createdAt": "2024-05-29T15:30:18Z",
+              "updatedAt": "2024-05-29T15:30:19Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM58UxPn",
+          "commit": {
+            "abbreviatedOid": "e4612e8"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-05-29T15:56:43Z",
+          "updatedAt": "2024-05-29T15:56:44Z",
+          "comments": [
+            {
+              "originalPosition": 22,
+              "body": "hmm, providing the verification key material in the form of a certificate doesn't seem to solve the scalabilty problem, it's still 1:1 with the attesters' population.\r\n\r\nIf you have the right trust anchor configured, the endorsement consists of the intermediates' certs that allow completing the path to the Attester's cert, i.e.:\r\n\r\n```\r\nTA -> iCA1 -> ... -> iCAn -> attesters' certs\r\n      '-----------------'\r\n          endorsement\r\n```\r\nNote that this kind of endorsement could be inlined with Evidence, e.g., in EAT (or other CWT-/JWT-based formats) using an `x5chain` header parameter.",
+              "createdAt": "2024-05-29T15:56:44Z",
+              "updatedAt": "2024-05-29T15:56:44Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM58VMRy",
+          "commit": {
+            "abbreviatedOid": "e4612e8"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-05-29T16:46:45Z",
+          "updatedAt": "2024-05-29T16:46:46Z",
+          "comments": [
+            {
+              "originalPosition": 22,
+              "body": "Scalability is solved by not storing the attester's certificate.  It still comes in an endorsement, but whether that is resolved on demand or passed along with the evidence depends on the protocol.",
+              "createdAt": "2024-05-29T16:46:46Z",
+              "updatedAt": "2024-05-29T16:46:46Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM58VaQ7",
+          "commit": {
+            "abbreviatedOid": "e4612e8"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-05-29T17:13:54Z",
+          "updatedAt": "2024-05-29T17:13:54Z",
+          "comments": [
+            {
+              "originalPosition": 22,
+              "body": "> Scalability is solved by not storing the attester's certificate.\r\n\r\nOK, then I don't understand what _\"Attester's verification key material\"_ means in the following:\r\n\r\n> _\"[e]ndorsement from an Endorser includes the Attester's verification key material in the form of a certificate that chains up to that trusted root.\"_\r\n\r\nDoes that exclude the leaf cert?",
+              "createdAt": "2024-05-29T17:13:54Z",
+              "updatedAt": "2024-05-29T17:14:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM58YW-u",
+          "commit": {
+            "abbreviatedOid": "e4612e8"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-05-29T22:50:56Z",
+          "updatedAt": "2024-05-29T22:50:56Z",
+          "comments": [
+            {
+              "originalPosition": 22,
+              "body": "A certificate that includes the Attester's public key, signed by the Endorser.  I'd call that the leaf cert.  I'm saying the leaf cert need not be stored by the Verifier.  Thus the Verifier's persistent state need not be O(Attesters).",
+              "createdAt": "2024-05-29T22:50:56Z",
+              "updatedAt": "2024-05-29T22:50:57Z"
             }
           ]
         }
