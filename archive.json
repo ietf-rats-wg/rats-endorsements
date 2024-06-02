@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-05-30T00:31:43.694603+00:00",
+  "timestamp": "2024-06-02T00:34:36.887279+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -730,13 +730,13 @@
       "labels": [],
       "body": "This PR incorporates suggestions from @laurencelundblade \r\n\r\nFixes #7",
       "createdAt": "2024-03-18T19:48:56Z",
-      "updatedAt": "2024-05-29T22:50:56Z",
+      "updatedAt": "2024-05-31T16:08:44Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
       "baseRefOid": "83fec8073155d3fb5a60a54e67d1fa885807bf23",
       "headRepository": "ietf-rats-wg/rats-endorsements",
       "headRefName": "key-material",
-      "headRefOid": "e4612e8355ce11c7580e00c5b9d99fabc4ea10ba",
+      "headRefOid": "6435f962f9f6dbfd9f77b34d8c396ad52aeceb4d",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -1245,6 +1245,106 @@
               "body": "A certificate that includes the Attester's public key, signed by the Endorser.  I'd call that the leaf cert.  I'm saying the leaf cert need not be stored by the Verifier.  Thus the Verifier's persistent state need not be O(Attesters).",
               "createdAt": "2024-05-29T22:50:56Z",
               "updatedAt": "2024-05-29T22:50:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM58aJHT",
+          "commit": {
+            "abbreviatedOid": "e4612e8"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-05-30T04:57:57Z",
+          "updatedAt": "2024-05-30T04:57:57Z",
+          "comments": [
+            {
+              "originalPosition": 22,
+              "body": "> I'm saying the leaf cert need not be stored by the Verifier. Thus the Verifier's persistent state need not be O(Attesters).\r\n\r\nThat's the key point, but lines 217-218 are not making that entirely transparent. I suggest we explicitly state it.\r\n\r\n",
+              "createdAt": "2024-05-30T04:57:57Z",
+              "updatedAt": "2024-05-30T04:57:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM58gqpl",
+          "commit": {
+            "abbreviatedOid": "e4612e8"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-05-30T17:19:27Z",
+          "updatedAt": "2024-05-30T17:19:27Z",
+          "comments": [
+            {
+              "originalPosition": 22,
+              "body": "Ok, added sentence, please check.",
+              "createdAt": "2024-05-30T17:19:27Z",
+              "updatedAt": "2024-05-30T17:19:27Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM58hG-c",
+          "commit": {
+            "abbreviatedOid": "e4612e8"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-05-30T18:05:23Z",
+          "updatedAt": "2024-05-30T18:05:24Z",
+          "comments": [
+            {
+              "originalPosition": 22,
+              "body": "Thanks very much.",
+              "createdAt": "2024-05-30T18:05:23Z",
+              "updatedAt": "2024-05-30T18:05:24Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM58nHS3",
+          "commit": {
+            "abbreviatedOid": "6435f96"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-05-31T11:34:32Z",
+          "updatedAt": "2024-05-31T11:34:32Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "```suggestion\r\nA Verifier receives Evidence from an Attester that must be considered untrusted\r\nuntil its roots of trust endorsements and their corresponding identity documents are verified through cryptography. Typically,\r\n```",
+              "createdAt": "2024-05-31T11:34:32Z",
+              "updatedAt": "2024-05-31T11:34:32Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM58pXnZ",
+          "commit": {
+            "abbreviatedOid": "6435f96"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-05-31T16:08:44Z",
+          "updatedAt": "2024-05-31T16:08:44Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "I disagree with this wording as phrased because it incorrectly implies that endorsements are mandatory.  They're not mandatory (at the expense of scalability), as other text already explains.",
+              "createdAt": "2024-05-31T16:08:44Z",
+              "updatedAt": "2024-05-31T16:08:45Z"
             }
           ]
         }
