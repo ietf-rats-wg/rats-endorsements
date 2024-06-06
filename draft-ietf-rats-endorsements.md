@@ -201,7 +201,7 @@ some minimal matching policy (e.g., exact match against a singleton reference
 value).  This unfortunately complicates design as a Verifier may need
 multiple parsers for matching policies.
 
-# Key Material for Attestation
+# Endorsing Evidence Provenance
 
 A Verifier receives Evidence from an Attester that must be considered untrusted
 until verified through cryptography. Typically,
