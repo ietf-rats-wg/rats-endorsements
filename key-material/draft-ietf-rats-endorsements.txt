@@ -5,10 +5,10 @@
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Intended status: Informational                               H. Birkholz
-Expires: 1 December 2024                                  Fraunhofer SIT
+Expires: 8 December 2024                                  Fraunhofer SIT
                                                               T. Fossati
                                                                   Linaro
-                                                             30 May 2024
+                                                             6 June 2024
 
 
                            RATS Endorsements
@@ -49,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 December 2024.
+   This Internet-Draft will expire on 8 December 2024.
 
 Copyright Notice
 
@@ -71,7 +71,7 @@ Table of Contents
    2.  Actual State vs Reference States
      2.1.  RATS Conceptual Messages
    3.  Conditionally Endorsed Values
-   4.  Key Material for Attestation
+   4.  Endorsing Evidence Provenance
    5.  Multiple Endorsements
    6.  Endorsement Format Considerations
      6.1.  Security Considerations
@@ -251,7 +251,7 @@ Table of Contents
    against a singleton reference value).  This unfortunately complicates
    design as a Verifier may need multiple parsers for matching policies.
 
-4.  Key Material for Attestation
+4.  Endorsing Evidence Provenance
 
    A Verifier receives Evidence from an Attester that must be considered
    untrusted until verified through cryptography.  Typically, the
