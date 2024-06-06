@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-04T00:31:42.606470+00:00",
+  "timestamp": "2024-06-06T00:31:34.103968+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -730,7 +730,7 @@
       "labels": [],
       "body": "This PR incorporates suggestions from @laurencelundblade \r\n\r\nFixes #7",
       "createdAt": "2024-03-18T19:48:56Z",
-      "updatedAt": "2024-05-31T16:08:44Z",
+      "updatedAt": "2024-06-04T10:29:57Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
       "baseRefOid": "83fec8073155d3fb5a60a54e67d1fa885807bf23",
@@ -1345,6 +1345,126 @@
               "body": "I disagree with this wording as phrased because it incorrectly implies that endorsements are mandatory.  They're not mandatory (at the expense of scalability), as other text already explains.",
               "createdAt": "2024-05-31T16:08:44Z",
               "updatedAt": "2024-05-31T16:08:45Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM586oF6",
+          "commit": {
+            "abbreviatedOid": "6435f96"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-06-04T08:44:21Z",
+          "updatedAt": "2024-06-04T08:44:21Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "```suggestion\r\nA Verifier receives Evidence from an Attesting Environment of an Attester that must be considered untrusted\r\n```",
+              "createdAt": "2024-06-04T08:44:21Z",
+              "updatedAt": "2024-06-04T08:44:21Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM586qTu",
+          "commit": {
+            "abbreviatedOid": "6435f96"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-06-04T08:48:20Z",
+          "updatedAt": "2024-06-04T08:48:20Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "Sorry, I read from the top down to this Section and am unsure which other text you refer to. Could you point me to the right place, please?",
+              "createdAt": "2024-06-04T08:48:20Z",
+              "updatedAt": "2024-06-04T08:48:21Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM586sXa",
+          "commit": {
+            "abbreviatedOid": "6435f96"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-06-04T08:52:01Z",
+          "updatedAt": "2024-06-04T08:52:01Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "I checked. And then got caught up in other things. Continuing...\r\n\r\nAppraisal of Evidence is always cut into two pieces:\r\n1.) appraisal of Evidence provenance (most prominently signature checking in object security and peer authentication in secure channels) that identifies an Attesting Environment.\r\n2.) appraisal of Evidence Claims that identifies or classifies a Target Environment AND are ultimately used to assess the trustworthiness that Target Environment.\r\n\r\nSo, the Attesting Environment is either endorsed or it was a Target Environment before and it was assessed to be trustworthy and now takes on the duty of an Attesting Environment. Following that line of though, on the one hand \"Endorsed Identity\" intuitively says \"Attesting Environment\" to me.\r\n\r\n\"Key Material for Attestation\" could be anything, right? Text above talks about the \"trust anchor actual state scenario\" where the Actual State would be a trust anchor used to verify Evidence or Endorsement. The text here is talking about Evidence and somewhat Layered Attestation now. So I do not think it is about Endorsement authenticity, but only Evidence authenticity.\r\n\r\nCould \"Key Material for Attestation\" simply be renamed to \"Key Material for Evidence Provision and Appraisal\"? Or should we massage the text to clearly include Evidence and Endorsement Authenticity?\r\n",
+              "createdAt": "2024-06-04T08:52:01Z",
+              "updatedAt": "2024-06-04T08:52:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM586uzy",
+          "commit": {
+            "abbreviatedOid": "6435f96"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-06-04T08:55:23Z",
+          "updatedAt": "2024-06-04T08:55:23Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "I read the text as a whole a few times and it seems just to be unusual English phrasing for me. The new text is pretty terse, but it seems to be good enough.\r\n\r\nIn general in this Section Attester and Attesting Environment seem to be used synonymously. Would it break the meaning of the text if we would change \"Attester\" to \"Attesting Environments of an Attester\"? See exemplary suggestion above https://github.com/ietf-rats-wg/rats-endorsements/pull/18/files#r1625613299",
+              "createdAt": "2024-06-04T08:55:23Z",
+              "updatedAt": "2024-06-04T08:55:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM587h1J",
+          "commit": {
+            "abbreviatedOid": "9a64a27"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-06-04T10:26:03Z",
+          "updatedAt": "2024-06-04T10:26:03Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "> [...] Following that line of though, on the one hand \"Endorsed Identity\" intuitively says \"Attesting Environment\" to me.\r\n\r\nYes, exactly.  The section is all about endorsing the authenticity of the (bottom-most) attesting environment.\r\nAnd, BTW, I am fine with it.\r\n\r\n> \"Key Material for Attestation\" could be anything, right?\r\n\r\nYes, my main concern with the proposed new title is it's too broad.  We are talking about a pretty specific use of crypto, i.e., how the verifier uses it to assess evidence's provenance.\r\nThe relevant thing is not crypto key material per se, but how we tell the verifier what key is the one that verifies the authenticity of AE's evidence statement.\r\n\r\n> Could \"Key Material for Attestation\" simply be renamed to \"Key Material for Evidence Provision and Appraisal\"?\r\n\r\nI don't think that makes the point any clearer.\r\nI like your breakdown above (provenance vs claims), and I think.a more precise title would be \"Endorsing Evidence Provenance\".\r\n\r\n> Or should we massage the text to clearly include Evidence and Endorsement Authenticity?\r\n\r\nNo, please.  This section has a nice and narrow scope.  Let's not bloat it.",
+              "createdAt": "2024-06-04T10:26:03Z",
+              "updatedAt": "2024-06-04T10:26:03Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM587kQq",
+          "commit": {
+            "abbreviatedOid": "6435f96"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-06-04T10:29:57Z",
+          "updatedAt": "2024-06-04T10:29:57Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "This hurts readability and doesn't seem to add much in terms of precision.\r\n",
+              "createdAt": "2024-06-04T10:29:57Z",
+              "updatedAt": "2024-06-04T10:29:57Z"
             }
           ]
         }
