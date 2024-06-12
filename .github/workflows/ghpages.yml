@@ -54,5 +54,6 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         path: |
+          draft-*.xml
           draft-*.html
           draft-*.txt
