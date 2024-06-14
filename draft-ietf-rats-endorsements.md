@@ -39,6 +39,7 @@ author:
   email: Thomas.Fossati@linaro.org
 
 informative:
+  RFC9334: rats-arch
   I-D.ietf-rats-eat: rats-eat
   TCG-DICE:
     author:
@@ -61,7 +62,7 @@ message format for Endorsements in the scope of the RATS architecture.
 
 # Introduction
 
-Section 3 in the Remote ATtestation procedures (RATS) Architecture {{!RFC9334}} gives an overview of the roles
+Section 3 in the Remote ATtestation procedures (RATS) Architecture {{Section 3 of RFC9334}} gives an overview of the roles
 and conceptual messages in the IETF RATS Architecture.
 As discussed in that document, a Verifier accepts a well-defined set of RATS conceptual messages: Evidence, Endorsements
 and Reference Values (as well es Policy for Appraisal of Evidence).  A Verifier appraises Evidence using Appraisal Policy for Evidence, typically against a set of Reference Values.
