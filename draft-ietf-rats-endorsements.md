@@ -101,10 +101,10 @@ in time. Some claims may inherently have multiple values, such as a list of
 files in a given location on the device, but in the context of this document such
 a list is treated as a single unit, representing one Attester at one point in time.
 
-"Reference state" is a group of claimsets about the desired or undesired state of
-the Attester.  Typically, each claim has a name (or other ID) and
+"Reference state" is a group of claim sets about the desired or undesired state of
+an Attester.  Typically, each claim has a name (or key, label, or other ID) and
 a set of potential values, being the values that are allowed/disallowed
-when determining whether to trust the Attester.  In general there may be more
+when determining the trustworthiness of the Attester.  In general, there may be more
 gradation than simply "allowed or disallowed" so each value might include some
 more complex level of gradation in some implementations.
 
