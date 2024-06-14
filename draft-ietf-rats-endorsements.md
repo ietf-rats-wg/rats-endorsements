@@ -92,14 +92,14 @@ Attester has multiple Target Environments, each with their own set of claims (so
 called a "claim sets") representing their actual-state.  Additionally, the number of
 Target Environments and Attesting Environments that are components of an Attester are not limited.
 
-"Actual state" is a group of claimsets about the actual state of the Attester at a
-given point in time. Each claimset holds claims about a specific Target Environment
+"Actual-state" is a group of claim sets about the actual state of the Attester at a
+given point in time. Each claim set holds claims about a specific Target Environment
 that is essential to determining trustworthiness.  Generally speaking, each claim
-has a name (or other ID)
-and a singleton value, being the value of that specific Attester at a given point
+has a name (or key, label, or other ID)
+and a singleton value, being a value collected from a Target Environment of a specific Attester at a given point
 in time. Some claims may inherently have multiple values, such as a list of
-files in a given location on the device, but for our purposes we will treat such
-a list as a single unit, meaning one Attester at one point in time.
+files in a given location on the device, but in the context of this document such
+a list is treated as a single unit, representing one Attester at one point in time.
 
 "Reference state" is a group of claimsets about the desired or undesired state of
 the Attester.  Typically, each claim has a name (or other ID) and
