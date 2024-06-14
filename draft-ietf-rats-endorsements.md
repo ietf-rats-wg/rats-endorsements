@@ -123,12 +123,12 @@ Some examples of such matching include:
 
 RATS conceptual messages in {{RFC9334}} fall into the above categories as follows:
 
-* Actual state: Evidence, Endorsements, Attestation Results
+* Actual-state: Evidence, Endorsements, Attestation Results
 * Reference state: Reference Values
 * Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy for Attestation Results
 
-The figure below shows an example of Verifier input for a layered Attester
-as discussed in {{RFC9334}}.
+{{input}} below shows an example of Verifier input for a layered Attester
+as discussed in {{Section 3.2 of RFC9334}}.
 
 ~~~~ aasvg
             .-- .------------.   Appraisal    .-----------------. --.
