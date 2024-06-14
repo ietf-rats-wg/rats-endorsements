@@ -108,16 +108,16 @@ when determining the trustworthiness of the Attester.  In general, there may be 
 gradation than simply "allowed or disallowed" so each value might include some
 more complex level of gradation in some implementations.
 
-That is, where actual state has a single value per claim per Target Environment
+That is, where actual-state has a single value per claim per Target Environment
 applying to one device at one point in time, reference state can have a set of values
-per claim per Target Environment.  The appraisal policy then specifies how to match
-the actual value against the set of Reference Values.
+per claim per Target Environment.  Appraisal policy then specifies how to match
+the actual-state values against a set of Reference Values.
 
 Some examples of such matching include:
 
-* The actual value must be in the set of allowed Reference Values.
-* The actual value must not be in the set of disallowed Reference Values.
-* The actual value must be in a range where two Reference Values are the min and max.
+* An actual value must be in the set of allowed Reference Values.
+* An actual value must not be in the set of disallowed Reference Values.
+* An actual value must be in a range where two Reference Values are the min and max.
 
 ## RATS Conceptual Messages
 
