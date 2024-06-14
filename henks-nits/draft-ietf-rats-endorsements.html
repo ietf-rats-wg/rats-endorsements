@@ -1237,20 +1237,20 @@ a set of potential values, being the values that are allowed/disallowed
 when determining the trustworthiness of the Attester.  In general, there may be more
 gradation than simply "allowed or disallowed" so each value might include some
 more complex level of gradation in some implementations.<a href="#section-2-4" class="pilcrow">¶</a></p>
-<p id="section-2-5">That is, where actual state has a single value per claim per Target Environment
+<p id="section-2-5">That is, where actual-state has a single value per claim per Target Environment
 applying to one device at one point in time, reference state can have a set of values
-per claim per Target Environment.  The appraisal policy then specifies how to match
-the actual value against the set of Reference Values.<a href="#section-2-5" class="pilcrow">¶</a></p>
+per claim per Target Environment.  Appraisal policy then specifies how to match
+the actual-state values against a set of Reference Values.<a href="#section-2-5" class="pilcrow">¶</a></p>
 <p id="section-2-6">Some examples of such matching include:<a href="#section-2-6" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2-7.1">
-          <p id="section-2-7.1.1">The actual value must be in the set of allowed Reference Values.<a href="#section-2-7.1.1" class="pilcrow">¶</a></p>
+          <p id="section-2-7.1.1">An actual value must be in the set of allowed Reference Values.<a href="#section-2-7.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-2-7.2">
-          <p id="section-2-7.2.1">The actual value must not be in the set of disallowed Reference Values.<a href="#section-2-7.2.1" class="pilcrow">¶</a></p>
+          <p id="section-2-7.2.1">An actual value must not be in the set of disallowed Reference Values.<a href="#section-2-7.2.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-2-7.3">
-          <p id="section-2-7.3.1">The actual value must be in a range where two Reference Values are the min and max.<a href="#section-2-7.3.1" class="pilcrow">¶</a></p>
+          <p id="section-2-7.3.1">An actual value must be in a range where two Reference Values are the min and max.<a href="#section-2-7.3.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <div id="rats-conceptual-messages">
