@@ -62,14 +62,14 @@ message format for Endorsements.
 
 # Introduction
 
-Section 3 in the Remote ATtestation procedures (RATS) Architecture {{Section 3 of RFC9334}} gives an overview of the roles
+Section 3 in the Remote ATtestation procedures (RATS) Architecture {{Section 3 of -rats-arch}} gives an overview of the roles
 and conceptual messages in the IETF RATS Architecture.
 As discussed in that document, a Verifier accepts a well-defined set of RATS conceptual messages: Evidence, Endorsements
 and Reference Values, as well as Policy for Appraisal of Evidence.  A Verifier appraises Evidence using Appraisal Policy for Evidence, typically against a set of Reference Values.
 
 Various formats of conceptual messages exist, including standard and vendor-specific formats.
 One of the purposes of a Verifier is depicted
-in Figure 9 of {{RFC9334}}. A Verifier is intended to be able to accept Evidence in a variety of
+in Figure 9 of {{-rats-arch}}. A Verifier is intended to be able to accept Evidence in a variety of
 formats and generate Attestation Results in the formats needed by a Relying Parties it is intended to cater.
 
 # Actual State vs Reference States {#statetypes}
