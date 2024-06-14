@@ -5,10 +5,10 @@
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Intended status: Informational                               H. Birkholz
-Expires: 14 December 2024                                 Fraunhofer SIT
+Expires: 16 December 2024                                 Fraunhofer SIT
                                                               T. Fossati
                                                                   Linaro
-                                                            12 June 2024
+                                                            14 June 2024
 
 
                            RATS Endorsements
@@ -19,9 +19,10 @@ Abstract
    In the IETF Remote Attestation Procedures (RATS) architecture, a
    Verifier accepts Evidence and, using Appraisal Policy typically with
    additional input from Endorsements and Reference Values, generates
-   Attestation Results in formats needed by a Relying Parties.  This
-   document explains the purpose and role of Endorsements and discusses
-   some considerations in the choice of message format for Endorsements.
+   Attestation Results in formats that are useful for Relying Parties.
+   This document illustrates the purpose and role of Endorsements and
+   discusses some considerations in the choice of message format for
+   Endorsements in the scope of the RATS architecture.
 
 Discussion Venues
 
@@ -49,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 14 December 2024.
+   This Internet-Draft will expire on 16 December 2024.
 
 Copyright Notice
 
