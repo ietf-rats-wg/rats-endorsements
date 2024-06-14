@@ -79,21 +79,19 @@ Table of Contents
      6.2.  Scalability Considerations
    7.  IANA Considerations
    8.  Acknowledgements
-   9.  References
-     9.1.  Normative References
-     9.2.  Informative References
+   9.  Informative References
    Authors' Addresses
 
 1.  Introduction
 
    Section 3 in the Remote ATtestation procedures (RATS) Architecture
-   [RFC9334] gives an overview of the roles and conceptual messages in
-   the IETF RATS Architecture.  As discussed in that document, a
-   Verifier accepts a well-defined set of RATS conceptual messages:
-   Evidence, Endorsements and Reference Values (as well es Policy for
-   Appraisal of Evidence).  A Verifier appraises Evidence using
-   Appraisal Policy for Evidence, typically against a set of Reference
-   Values.
+   Section 3 of [RFC9334] gives an overview of the roles and conceptual
+   messages in the IETF RATS Architecture.  As discussed in that
+   document, a Verifier accepts a well-defined set of RATS conceptual
+   messages: Evidence, Endorsements and Reference Values (as well es
+   Policy for Appraisal of Evidence).  A Verifier appraises Evidence
+   using Appraisal Policy for Evidence, typically against a set of
+   Reference Values.
 
    Various formats of conceptual messages exist, including standard and
    vendor-specific formats.  One of the purposes of a Verifier is
@@ -418,16 +416,7 @@ Table of Contents
    Kathleen Moriarty for feedback and ideas that contributed to this
    document.
 
-9.  References
-
-9.1.  Normative References
-
-   [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
-              W. Pan, "Remote ATtestation procedureS (RATS)
-              Architecture", RFC 9334, DOI 10.17487/RFC9334, January
-              2023, <https://www.rfc-editor.org/rfc/rfc9334>.
-
-9.2.  Informative References
+9.  Informative References
 
    [I-D.ietf-rats-eat]
               Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
@@ -435,6 +424,11 @@ Table of Contents
               Progress, Internet-Draft, draft-ietf-rats-eat-27, 26 May
               2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
               rats-eat-27>.
+
+   [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
+              W. Pan, "Remote ATtestation procedureS (RATS)
+              Architecture", RFC 9334, DOI 10.17487/RFC9334, January
+              2023, <https://www.rfc-editor.org/rfc/rfc9334>.
 
    [TCG-DICE] Trusted Computing Group, "DICE Attestation Architecture",
               January 2024, <https://trustedcomputinggroup.org/wp-
