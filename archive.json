@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-13T00:32:16.392568+00:00",
+  "timestamp": "2024-06-16T00:35:36.461611+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -1613,6 +1613,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 20,
+      "id": "PR_kwDOJj8oQM5yf4lR",
+      "title": "Henk's review feedback for WGLC",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/20",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "a little bit late, but there are always little fires everywhere.",
+      "createdAt": "2024-06-14T16:00:00Z",
+      "updatedAt": "2024-06-14T16:11:18Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "3f00cf9ae4d0ec6bbd5b9806dbf6bb7767bb5b8f",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "henks-nits",
+      "headRefOid": "e35266ad12f84ea475b951b1b74701e69e056234",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
