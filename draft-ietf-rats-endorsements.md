@@ -348,7 +348,7 @@ This document does not require any actions by IANA.
 
 # Acknowledgements
 
-The authors wish to thank Thomas Hardjono, Laurence Lundblade, and Kathleen Moriarty
+The authors wish to thank Thomas Hardjono, Laurence Lundblade, Kathleen Moriarty, and Ned Smith
 for feedback and ideas that contributed to this document.
 
 --- back
