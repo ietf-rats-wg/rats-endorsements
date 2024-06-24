@@ -5,10 +5,10 @@
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Intended status: Informational                               H. Birkholz
-Expires: 16 December 2024                                 Fraunhofer SIT
+Expires: 26 December 2024                                 Fraunhofer SIT
                                                               T. Fossati
                                                                   Linaro
-                                                            14 June 2024
+                                                            24 June 2024
 
 
                            RATS Endorsements
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 December 2024.
+   This Internet-Draft will expire on 26 December 2024.
 
 Copyright Notice
 
@@ -412,9 +412,9 @@ Table of Contents
 
 8.  Acknowledgements
 
-   The authors wish to thank Thomas Hardjono, Laurence Lundblade, and
-   Kathleen Moriarty for feedback and ideas that contributed to this
-   document.
+   The authors wish to thank Thomas Hardjono, Laurence Lundblade,
+   Kathleen Moriarty, and Ned Smith for feedback and ideas that
+   contributed to this document.
 
 9.  Informative References
 
