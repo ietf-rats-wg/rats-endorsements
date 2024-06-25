@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-23T00:35:07.080912+00:00",
+  "timestamp": "2024-06-25T00:32:09.559036+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -188,7 +188,7 @@
       "labels": [],
       "body": "Section 2.1 describes appraisal policy as the source of comparison rules for relating actual state with reference (possible) state. However, there are significant comparison dynamics that can occur independent of appraisal policy. For example, a verifier can assume exact match semantics given the reference values are identical to the evidence values. No appraisal policy is required to instruct a verifier to apply exact match semantics.\r\n\r\nAdditionally, a profile such as https://datatracker.ietf.org/doc/draft-cds-rats-intel-corim-profile/ defines Reference Values that define actual value must be in the set of allowed Reference Values and actual value must be in a range where two Reference Values are the min and max.\r\n\r\nThis suggests that the RVP has insight on how best a verifier should apply matching rules. \r\n\r\nThe current text seems to ignore this important aspect. \r\n\r\n",
       "createdAt": "2024-06-21T18:44:29Z",
-      "updatedAt": "2024-06-21T20:22:33Z",
+      "updatedAt": "2024-06-24T08:50:06Z",
       "closedAt": null,
       "comments": [
         {
@@ -204,6 +204,13 @@
           "body": "> What Section 2.1 of rats-endorsements says agrees with Section 8.5 of the architecture.\r\n\r\nI'm not following. Did I mention 8.5 of RATS Arch?",
           "createdAt": "2024-06-21T20:22:31Z",
           "updatedAt": "2024-06-21T20:22:31Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I am saying that \u00a72.1 or rats-endorsements is currently per \u00a78.5 of RFC9334.\r\n\r\nIf we want to say something different here we need to:\r\n1. Present the proposal to the WG and get consensus;\r\n2. Mark rats-endorsement as \"Update: 9334\".\r\n\r\n(Note that 2. may already be the case.)\r\n",
+          "createdAt": "2024-06-24T08:50:05Z",
+          "updatedAt": "2024-06-24T08:50:05Z"
         }
       ]
     },
@@ -1721,7 +1728,7 @@
       "labels": [],
       "body": "a little bit late, but there are always little fires everywhere.",
       "createdAt": "2024-06-14T16:00:00Z",
-      "updatedAt": "2024-06-14T16:11:18Z",
+      "updatedAt": "2024-06-24T18:26:54Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
       "baseRefOid": "3f00cf9ae4d0ec6bbd5b9806dbf6bb7767bb5b8f",
@@ -1733,7 +1740,71 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM5_WE7V",
+          "commit": {
+            "abbreviatedOid": "e35266a"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "This looks ok to me, please rebase and mark as ready for review",
+          "createdAt": "2024-06-24T18:26:54Z",
+          "updatedAt": "2024-06-24T18:26:54Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "id": "PR_kwDOJj8oQM5zZnRa",
+      "title": "Add Ned to acknowledgements section",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/26",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-06-24T18:28:48Z",
+      "updatedAt": "2024-06-24T20:08:53Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "3f00cf9ae4d0ec6bbd5b9806dbf6bb7767bb5b8f",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "ack-ned",
+      "headRefOid": "a1209e1de586aa6b509ae4990333344e7c6c0680",
+      "closedAt": "2024-06-24T20:08:53Z",
+      "mergedAt": "2024-06-24T20:08:53Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "8f2a73a3ff0cb2f6ae9f024bd5740f846ad19143"
+      },
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This looks pretty uncontroversial to me, I'll go ahead and merge :-)",
+          "createdAt": "2024-06-24T20:08:50Z",
+          "updatedAt": "2024-06-24T20:08:50Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM5_WspF",
+          "commit": {
+            "abbreviatedOid": "a1209e1"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-06-24T20:08:09Z",
+          "updatedAt": "2024-06-24T20:08:09Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
