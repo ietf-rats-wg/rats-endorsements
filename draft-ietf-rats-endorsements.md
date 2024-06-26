@@ -54,9 +54,9 @@ informative:
 In the IETF Remote Attestation Procedures (RATS) architecture, a Verifier
 accepts Evidence and, using Appraisal Policy typically with additional
 input from Endorsements and Reference Values, generates Attestation Results
-in formats suitable for consumption by Relying Parties.  This document explains the purpose and
+in formats that are useful for Relying Parties.  This document illustrates the purpose and
 role of Endorsements and discusses some considerations in the choice of
-message format for Endorsements.
+message format for Endorsements in the scope of the RATS architecture.
 
 --- middle
 
@@ -348,7 +348,7 @@ This document does not require any actions by IANA.
 
 # Acknowledgements
 
-The authors wish to thank Thomas Hardjono, Laurence Lundblade, and Kathleen Moriarty
+The authors wish to thank Thomas Hardjono, Laurence Lundblade, Kathleen Moriarty, and Ned Smith
 for feedback and ideas that contributed to this document.
 
 --- back
