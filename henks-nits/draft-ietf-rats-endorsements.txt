@@ -5,10 +5,10 @@
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Intended status: Informational                               H. Birkholz
-Expires: 16 December 2024                                 Fraunhofer SIT
+Expires: 28 December 2024                                 Fraunhofer SIT
                                                               T. Fossati
                                                                   Linaro
-                                                            14 June 2024
+                                                            26 June 2024
 
 
                            RATS Endorsements
@@ -19,10 +19,10 @@ Abstract
    In the IETF Remote Attestation Procedures (RATS) architecture, a
    Verifier accepts Evidence and, using Appraisal Policy typically with
    additional input from Endorsements and Reference Values, generates
-   Attestation Results in formats suitable for consumption by Relying
-   Parties.  This document explains the purpose and role of Endorsements
-   and discusses some considerations in the choice of message format for
-   Endorsements.
+   Attestation Results in formats that are useful for Relying Parties.
+   This document illustrates the purpose and role of Endorsements and
+   discusses some considerations in the choice of message format for
+   Endorsements in the scope of the RATS architecture.
 
 Discussion Venues
 
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 December 2024.
+   This Internet-Draft will expire on 28 December 2024.
 
 Copyright Notice
 
@@ -414,18 +414,18 @@ Table of Contents
 
 8.  Acknowledgements
 
-   The authors wish to thank Thomas Hardjono, Laurence Lundblade, and
-   Kathleen Moriarty for feedback and ideas that contributed to this
-   document.
+   The authors wish to thank Thomas Hardjono, Laurence Lundblade,
+   Kathleen Moriarty, and Ned Smith for feedback and ideas that
+   contributed to this document.
 
 9.  Informative References
 
    [I-D.ietf-rats-eat]
               Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
               Wallace, "The Entity Attestation Token (EAT)", Work in
-              Progress, Internet-Draft, draft-ietf-rats-eat-27, 26 May
+              Progress, Internet-Draft, draft-ietf-rats-eat-28, 25 June
               2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              rats-eat-27>.
+              rats-eat-28>.
 
    [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
               W. Pan, "Remote ATtestation procedureS (RATS)
