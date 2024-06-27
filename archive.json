@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-25T00:32:09.559036+00:00",
+  "timestamp": "2024-06-27T00:32:33.612020+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -1728,13 +1728,13 @@
       "labels": [],
       "body": "a little bit late, but there are always little fires everywhere.",
       "createdAt": "2024-06-14T16:00:00Z",
-      "updatedAt": "2024-06-24T18:26:54Z",
+      "updatedAt": "2024-06-26T12:00:41Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
-      "baseRefOid": "3f00cf9ae4d0ec6bbd5b9806dbf6bb7767bb5b8f",
+      "baseRefOid": "8f2a73a3ff0cb2f6ae9f024bd5740f846ad19143",
       "headRepository": "ietf-rats-wg/rats-endorsements",
       "headRefName": "henks-nits",
-      "headRefOid": "e35266ad12f84ea475b951b1b74701e69e056234",
+      "headRefOid": "d1aaa0c2a29bbfb5c6a7abd07be73e882a68a0c8",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -1753,6 +1753,50 @@
           "createdAt": "2024-06-24T18:26:54Z",
           "updatedAt": "2024-06-24T18:26:54Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOJj8oQM5_pYyp",
+          "commit": {
+            "abbreviatedOid": "d1aaa0c"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-06-26T11:46:24Z",
+          "updatedAt": "2024-06-26T12:00:41Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "I have never seen \"tree graph\".  You could say \"tree\" or \"connected and acyclic graph\".  My preference is for the latter.",
+              "createdAt": "2024-06-26T11:46:24Z",
+              "updatedAt": "2024-06-26T12:00:41Z"
+            },
+            {
+              "originalPosition": 41,
+              "body": "I prefer the non-hyphenised version \"actual state\".  Besides, the term should be made consistent across the whole document.",
+              "createdAt": "2024-06-26T11:48:47Z",
+              "updatedAt": "2024-06-26T12:00:41Z"
+            },
+            {
+              "originalPosition": 42,
+              "body": "I suggest removing the sentence _\"[A]dditionally, [...] not limited\"_ as it doesn't add any value to the paragraph.",
+              "createdAt": "2024-06-26T11:55:31Z",
+              "updatedAt": "2024-06-26T12:00:41Z"
+            },
+            {
+              "originalPosition": 51,
+              "body": "There is no need to add _\"key, label,\"_ as they are already subsumed by \"other ID\".",
+              "createdAt": "2024-06-26T11:58:10Z",
+              "updatedAt": "2024-06-26T12:00:41Z"
+            },
+            {
+              "originalPosition": 62,
+              "body": "ditto",
+              "createdAt": "2024-06-26T11:59:48Z",
+              "updatedAt": "2024-06-26T12:00:41Z"
+            }
+          ]
         }
       ]
     },
