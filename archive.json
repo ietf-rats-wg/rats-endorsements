@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-27T00:32:33.612020+00:00",
+  "timestamp": "2024-06-30T00:36:09.759139+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -188,7 +188,7 @@
       "labels": [],
       "body": "Section 2.1 describes appraisal policy as the source of comparison rules for relating actual state with reference (possible) state. However, there are significant comparison dynamics that can occur independent of appraisal policy. For example, a verifier can assume exact match semantics given the reference values are identical to the evidence values. No appraisal policy is required to instruct a verifier to apply exact match semantics.\r\n\r\nAdditionally, a profile such as https://datatracker.ietf.org/doc/draft-cds-rats-intel-corim-profile/ defines Reference Values that define actual value must be in the set of allowed Reference Values and actual value must be in a range where two Reference Values are the min and max.\r\n\r\nThis suggests that the RVP has insight on how best a verifier should apply matching rules. \r\n\r\nThe current text seems to ignore this important aspect. \r\n\r\n",
       "createdAt": "2024-06-21T18:44:29Z",
-      "updatedAt": "2024-06-24T08:50:06Z",
+      "updatedAt": "2024-06-28T19:27:30Z",
       "closedAt": null,
       "comments": [
         {
@@ -211,6 +211,13 @@
           "body": "I am saying that \u00a72.1 or rats-endorsements is currently per \u00a78.5 of RFC9334.\r\n\r\nIf we want to say something different here we need to:\r\n1. Present the proposal to the WG and get consensus;\r\n2. Mark rats-endorsement as \"Update: 9334\".\r\n\r\n(Note that 2. may already be the case.)\r\n",
           "createdAt": "2024-06-24T08:50:05Z",
           "updatedAt": "2024-06-24T08:50:05Z"
+        },
+        {
+          "author": "nedmsmith",
+          "authorAssociation": "NONE",
+          "body": "I would prefer to update RATS Arch rather than have multiple RATS Arch specs. I think I-D.DAA also updates a portion of the architecture. ",
+          "createdAt": "2024-06-28T19:27:29Z",
+          "updatedAt": "2024-06-28T19:27:29Z"
         }
       ]
     },
