@@ -62,14 +62,14 @@ message format for Endorsements in the scope of the RATS architecture.
 
 # Introduction
 
-Section 3 in the Remote ATtestation procedures (RATS) Architecture {{Section 3 of RFC9334}} gives an overview of the roles
+Section 3 in the Remote ATtestation procedures (RATS) Architecture {{Section 3 of -rats-arch}} gives an overview of the roles
 and conceptual messages in the IETF RATS Architecture.
 As discussed in that document, a Verifier accepts a well-defined set of RATS conceptual messages: Evidence, Endorsements
-and Reference Values (as well es Policy for Appraisal of Evidence).  A Verifier appraises Evidence using Appraisal Policy for Evidence, typically against a set of Reference Values.
+and Reference Values, as well as Policy for Appraisal of Evidence.  A Verifier appraises Evidence using Appraisal Policy for Evidence, typically against a set of Reference Values.
 
 Various formats of conceptual messages exist, including standard and vendor-specific formats.
 One of the purposes of a Verifier is depicted
-in Figure 9 of {{RFC9334}}. A Verifier is intended to be able to accept Evidence in a variety of
+in Figure 9 of {{-rats-arch}}. A Verifier is intended to be able to accept Evidence in a variety of
 formats and generate Attestation Results in the formats needed by a Relying Parties it is intended to cater.
 
 # Actual State vs Reference States {#statetypes}
@@ -78,46 +78,47 @@ Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
 Attestation Results) involve comparing the actual state of an Attester against
 desired or undesired states, in order to determine how trustworthy the Attester
 is for its purposes.  The state of an Attester represents its composition of
-components of execution environments (its "shape"), typically in a hierarchical
-manner.  The state of an Attester also encompasses the combination of static and
-dynamic constitution (e.g., provisioned and deployed software, firmware, and
+components of execution environments (its "shape" or "composition"), typically in a hierarchical
+manner, i.e., a tree.
+The state of an Attester also encompasses the combination of static and
+dynamic composition (e.g., provisioned and deployed software, firmware, and
 micro-code), static and dynamic configuration, and the resulting operational state
 of its components at a certain point of time. Thus, a Verifier needs to receive
-messages with information about actual state, and information about desired/undesired
+conceptual messages with information about actual state, and information about desired/undesired
 states, and an appraisal policy that controls how the two are compared.
 
 Each Attester in general has at least one Attesting Environment and one Target
 Environment (e.g., hardware, firmware, Operating System, etc.).  Typically, each
 Attester has multiple Target Environments, each with their own set of claims (sometimes
-called a "claimset") representing their actual state.  Additionally, the number of
-Target Environments is not limited.
+called a "claim sets") representing their actual state.  Additionally, the number of
+Target Environments and Attesting Environments that are components of an Attester are not limited.
 
-"Actual state" is a group of claimsets about the actual state of the Attester at a
-given point in time. Each claimset holds claims about a specific Target Environment
+"Actual state" is a group of claim sets about the actual state of the Attester at a
+given point in time. Each claim set holds claims about a specific Target Environment
 that is essential to determining trustworthiness.  Generally speaking, each claim
-has a name (or other ID)
-and a singleton value, being the value of that specific Attester at a given point
+has a name (typically referred to as label and occasionally referred to as a key, code-point, or some other ID)
+and a singleton value, being a value collected from a Target Environment of a specific Attester at a given point
 in time. Some claims may inherently have multiple values, such as a list of
-files in a given location on the device, but for our purposes we will treat such
-a list as a single unit, meaning one Attester at one point in time.
+files in a given location on the device, but in the context of this document such
+a list is treated as a single unit, representing one Attester at one point in time.
 
-"Reference state" is a group of claimsets about the desired or undesired state of
-the Attester.  Typically, each claim has a name (or other ID) and
+"Reference state" is a group of claim sets about the desired or undesired state of
+an Attester.  Typically, each claim has a name and
 a set of potential values, being the values that are allowed/disallowed
-when determining whether to trust the Attester.  In general there may be more
+when determining the trustworthiness of the Attester.  In general, there may be more
 gradation than simply "allowed or disallowed" so each value might include some
 more complex level of gradation in some implementations.
 
 That is, where actual state has a single value per claim per Target Environment
 applying to one device at one point in time, reference state can have a set of values
-per claim per Target Environment.  The appraisal policy then specifies how to match
-the actual value against the set of Reference Values.
+per claim per Target Environment.  Appraisal policy then specifies how to match
+the actual state values against a set of Reference Values.
 
 Some examples of such matching include:
 
-* The actual value must be in the set of allowed Reference Values.
-* The actual value must not be in the set of disallowed Reference Values.
-* The actual value must be in a range where two Reference Values are the min and max.
+* An actual value must be in the set of allowed Reference Values.
+* An actual value must not be in the set of disallowed Reference Values.
+* An actual value must be in a range where two Reference Values are the min and max.
 
 ## RATS Conceptual Messages
 
@@ -127,8 +128,8 @@ RATS conceptual messages in {{RFC9334}} fall into the above categories as follow
 * Reference state: Reference Values
 * Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy for Attestation Results
 
-The figure below shows an example of Verifier input for a layered Attester
-as discussed in {{RFC9334}}.
+{{input}} below shows an example of Verifier input for a layered Attester
+as discussed in {{Section 3.2 of RFC9334}}.
 
 ~~~~ aasvg
             .-- .------------.   Appraisal    .-----------------. --.
