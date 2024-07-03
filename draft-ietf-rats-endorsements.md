@@ -103,7 +103,7 @@ files in a given location on the device, but in the context of this document suc
 a list is treated as a single unit, representing one Attester at one point in time.
 
 "Reference state" is a group of claim sets about the desired or undesired state of
-an Attester.  Typically, each claim has a name (or key, label, or other ID) and
+an Attester.  Typically, each claim has a name and
 a set of potential values, being the values that are allowed/disallowed
 when determining the trustworthiness of the Attester.  In general, there may be more
 gradation than simply "allowed or disallowed" so each value might include some
