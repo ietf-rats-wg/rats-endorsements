@@ -75,7 +75,7 @@ formats and generate Attestation Results in the formats needed by a Relying Part
 # Actual State vs Reference States {#statetypes}
 
 Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
-Attestation Results) involve comparing the actual-state of an Attester against
+Attestation Results) involve comparing the actual state of an Attester against
 desired or undesired states, in order to determine how trustworthy the Attester
 is for its purposes.  The state of an Attester represents its composition of
 components of execution environments (its "shape" or "composition"), typically in a hierarchical
@@ -93,7 +93,7 @@ Attester has multiple Target Environments, each with their own set of claims (so
 called a "claim sets") representing their actual state.  Additionally, the number of
 Target Environments and Attesting Environments that are components of an Attester are not limited.
 
-"Actual-state" is a group of claim sets about the actual state of the Attester at a
+"Actual state" is a group of claim sets about the actual state of the Attester at a
 given point in time. Each claim set holds claims about a specific Target Environment
 that is essential to determining trustworthiness.  Generally speaking, each claim
 has a name (typically referred to as label and occasionally referred to as a key, code-point, or some other ID)
@@ -109,10 +109,10 @@ when determining the trustworthiness of the Attester.  In general, there may be 
 gradation than simply "allowed or disallowed" so each value might include some
 more complex level of gradation in some implementations.
 
-That is, where actual-state has a single value per claim per Target Environment
+That is, where actual state has a single value per claim per Target Environment
 applying to one device at one point in time, reference state can have a set of values
 per claim per Target Environment.  Appraisal policy then specifies how to match
-the actual-state values against a set of Reference Values.
+the actual state values against a set of Reference Values.
 
 Some examples of such matching include:
 
@@ -124,7 +124,7 @@ Some examples of such matching include:
 
 RATS conceptual messages in {{RFC9334}} fall into the above categories as follows:
 
-* Actual-state: Evidence, Endorsements, Attestation Results
+* Actual state: Evidence, Endorsements, Attestation Results
 * Reference state: Reference Values
 * Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy for Attestation Results
 
