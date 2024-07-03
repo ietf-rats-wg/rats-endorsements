@@ -79,7 +79,8 @@ Attestation Results) involve comparing the actual-state of an Attester against
 desired or undesired states, in order to determine how trustworthy the Attester
 is for its purposes.  The state of an Attester represents its composition of
 components of execution environments (its "shape" or "composition"), typically in a hierarchical
-manner, i.e., a tree graph.  The state of an Attester also encompasses the combination of static and
+manner, i.e., a tree.
+The state of an Attester also encompasses the combination of static and
 dynamic composition (e.g., provisioned and deployed software, firmware, and
 micro-code), static and dynamic configuration, and the resulting operational state
 of its components at a certain point of time. Thus, a Verifier needs to receive
