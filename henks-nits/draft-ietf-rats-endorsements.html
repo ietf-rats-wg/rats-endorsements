@@ -1207,7 +1207,7 @@ formats and generate Attestation Results in the formats needed by a Relying Part
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-actual-state-vs-reference-s" class="section-name selfRef">Actual State vs Reference States</a>
       </h2>
 <p id="section-2-1">Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
-Attestation Results) involve comparing the actual-state of an Attester against
+Attestation Results) involve comparing the actual state of an Attester against
 desired or undesired states, in order to determine how trustworthy the Attester
 is for its purposes.  The state of an Attester represents its composition of
 components of execution environments (its "shape" or "composition"), typically in a hierarchical
@@ -1223,7 +1223,7 @@ Environment (e.g., hardware, firmware, Operating System, etc.).  Typically, each
 Attester has multiple Target Environments, each with their own set of claims (sometimes
 called a "claim sets") representing their actual state.  Additionally, the number of
 Target Environments and Attesting Environments that are components of an Attester are not limited.<a href="#section-2-2" class="pilcrow">¶</a></p>
-<p id="section-2-3">"Actual-state" is a group of claim sets about the actual state of the Attester at a
+<p id="section-2-3">"Actual state" is a group of claim sets about the actual state of the Attester at a
 given point in time. Each claim set holds claims about a specific Target Environment
 that is essential to determining trustworthiness.  Generally speaking, each claim
 has a name (typically referred to as label and occasionally referred to as a key, code-point, or some other ID)
@@ -1237,10 +1237,10 @@ a set of potential values, being the values that are allowed/disallowed
 when determining the trustworthiness of the Attester.  In general, there may be more
 gradation than simply "allowed or disallowed" so each value might include some
 more complex level of gradation in some implementations.<a href="#section-2-4" class="pilcrow">¶</a></p>
-<p id="section-2-5">That is, where actual-state has a single value per claim per Target Environment
+<p id="section-2-5">That is, where actual state has a single value per claim per Target Environment
 applying to one device at one point in time, reference state can have a set of values
 per claim per Target Environment.  Appraisal policy then specifies how to match
-the actual-state values against a set of Reference Values.<a href="#section-2-5" class="pilcrow">¶</a></p>
+the actual state values against a set of Reference Values.<a href="#section-2-5" class="pilcrow">¶</a></p>
 <p id="section-2-6">Some examples of such matching include:<a href="#section-2-6" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2-7.1">
@@ -1261,7 +1261,7 @@ the actual-state values against a set of Reference Values.<a href="#section-2-5"
 <p id="section-2.1-1">RATS conceptual messages in <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> fall into the above categories as follows:<a href="#section-2.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2.1-2.1">
-            <p id="section-2.1-2.1.1">Actual-state: Evidence, Endorsements, Attestation Results<a href="#section-2.1-2.1.1" class="pilcrow">¶</a></p>
+            <p id="section-2.1-2.1.1">Actual state: Evidence, Endorsements, Attestation Results<a href="#section-2.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-2.1-2.2">
             <p id="section-2.1-2.2.1">Reference state: Reference Values<a href="#section-2.1-2.2.1" class="pilcrow">¶</a></p>

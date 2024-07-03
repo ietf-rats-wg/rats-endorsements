@@ -103,7 +103,7 @@ Table of Contents
 2.  Actual State vs Reference States
 
    Appraisal policies (Appraisal Policy for Evidence, and Appraisal
-   Policy for Attestation Results) involve comparing the actual-state of
+   Policy for Attestation Results) involve comparing the actual state of
    an Attester against desired or undesired states, in order to
    determine how trustworthy the Attester is for its purposes.  The
    state of an Attester represents its composition of components of
@@ -125,7 +125,7 @@ Table of Contents
    Environments and Attesting Environments that are components of an
    Attester are not limited.
 
-   "Actual-state" is a group of claim sets about the actual state of the
+   "Actual state" is a group of claim sets about the actual state of the
    Attester at a given point in time.  Each claim set holds claims about
    a specific Target Environment that is essential to determining
    trustworthiness.  Generally speaking, each claim has a name
@@ -145,10 +145,10 @@ Table of Contents
    disallowed" so each value might include some more complex level of
    gradation in some implementations.
 
-   That is, where actual-state has a single value per claim per Target
+   That is, where actual state has a single value per claim per Target
    Environment applying to one device at one point in time, reference
    state can have a set of values per claim per Target Environment.
-   Appraisal policy then specifies how to match the actual-state values
+   Appraisal policy then specifies how to match the actual state values
    against a set of Reference Values.
 
    Some examples of such matching include:
@@ -166,7 +166,7 @@ Table of Contents
    RATS conceptual messages in [RFC9334] fall into the above categories
    as follows:
 
-   *  Actual-state: Evidence, Endorsements, Attestation Results
+   *  Actual state: Evidence, Endorsements, Attestation Results
 
    *  Reference state: Reference Values
 
