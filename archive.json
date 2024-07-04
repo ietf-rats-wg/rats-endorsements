@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-02T00:32:41.128323+00:00",
+  "timestamp": "2024-07-04T00:32:30.192127+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -1728,24 +1728,26 @@
       "id": "PR_kwDOJj8oQM5yf4lR",
       "title": "Henk's review feedback for WGLC",
       "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/20",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "henkbirkholz",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "a little bit late, but there are always little fires everywhere.",
       "createdAt": "2024-06-14T16:00:00Z",
-      "updatedAt": "2024-06-26T12:00:41Z",
+      "updatedAt": "2024-07-03T12:49:19Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
       "baseRefOid": "8f2a73a3ff0cb2f6ae9f024bd5740f846ad19143",
       "headRepository": "ietf-rats-wg/rats-endorsements",
       "headRefName": "henks-nits",
-      "headRefOid": "d1aaa0c2a29bbfb5c6a7abd07be73e882a68a0c8",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "4cea5633700e9cb323250e6f46aa6d58e4d75729",
+      "closedAt": "2024-07-03T12:49:19Z",
+      "mergedAt": "2024-07-03T12:49:18Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "aabba56919a728c5170110d96d8f6f3e853fe24c"
+      },
       "comments": [],
       "reviews": [
         {
@@ -1775,9 +1777,9 @@
           "comments": [
             {
               "originalPosition": 28,
-              "body": "I have never seen \"tree graph\".  You could say \"tree\" or \"connected and acyclic graph\".  My preference is for the latter.",
+              "body": "I have never seen \"tree graph\".  You could say \"tree\" or \"connected and acyclic graph\".  My preference is for the former.",
               "createdAt": "2024-06-26T11:46:24Z",
-              "updatedAt": "2024-06-26T12:00:41Z"
+              "updatedAt": "2024-07-03T12:33:16Z"
             },
             {
               "originalPosition": 41,
@@ -1804,6 +1806,119 @@
               "updatedAt": "2024-06-26T12:00:41Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6AhuUu",
+          "commit": {
+            "abbreviatedOid": "d1aaa0c"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-03T12:33:33Z",
+          "updatedAt": "2024-07-03T12:33:34Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "```suggestion\r\nmanner, i.e., a tree.\r\nThe state of an Attester also encompasses the combination of static and\r\n```\r\n\r\nused former. removed generic part in the redundancy, for the sake simplicity",
+              "createdAt": "2024-07-03T12:33:33Z",
+              "updatedAt": "2024-07-03T12:33:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6AhwvH",
+          "commit": {
+            "abbreviatedOid": "8e9a69c"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-03T12:38:12Z",
+          "updatedAt": "2024-07-03T12:38:13Z",
+          "comments": [
+            {
+              "originalPosition": 42,
+              "body": "```suggestion\r\ncalled a \"claim sets\") representing their actual state.  Additionally, the number of\r\n```",
+              "createdAt": "2024-07-03T12:38:12Z",
+              "updatedAt": "2024-07-03T12:38:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6Ahxj4",
+          "commit": {
+            "abbreviatedOid": "891611c"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-03T12:39:46Z",
+          "updatedAt": "2024-07-03T12:39:46Z",
+          "comments": [
+            {
+              "originalPosition": 51,
+              "body": "```suggestion\r\nhas a name (typically referred to as label and occasionally referred to as a key, code-point, or some other ID)\r\n```",
+              "createdAt": "2024-07-03T12:39:46Z",
+              "updatedAt": "2024-07-03T12:42:11Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6AhzIf",
+          "commit": {
+            "abbreviatedOid": "891611c"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-03T12:42:29Z",
+          "updatedAt": "2024-07-03T12:42:29Z",
+          "comments": [
+            {
+              "originalPosition": 51,
+              "body": "that is making things worse, but it's ok :-)",
+              "createdAt": "2024-07-03T12:42:29Z",
+              "updatedAt": "2024-07-03T12:42:29Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6AhzrK",
+          "commit": {
+            "abbreviatedOid": "c72966c"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-03T12:43:22Z",
+          "updatedAt": "2024-07-03T12:43:22Z",
+          "comments": [
+            {
+              "originalPosition": 63,
+              "body": "```suggestion\r\nan Attester.  Typically, each claim has a name and\r\n```",
+              "createdAt": "2024-07-03T12:43:22Z",
+              "updatedAt": "2024-07-03T12:43:22Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6Ah1aG",
+          "commit": {
+            "abbreviatedOid": "4cea563"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-03T12:46:33Z",
+          "updatedAt": "2024-07-03T12:46:33Z",
+          "comments": []
         }
       ]
     },
