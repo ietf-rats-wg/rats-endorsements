@@ -177,17 +177,14 @@ store, which is part of the layer 0 reference state depicted above.
 Some claims in Endorsements might be conditional. A claim is conditional if
 it only applies if actual state matches Reference Values, according to some
 matching policy.
-
-Endorsers should not use conditionally endorsed values based on immutable
-values of actual state in Evidence (such as an immutable serial number for example).
-An Endorser can, however, use conditionally endorsed values based on mutable
-values.  For example an Endorser for a given CPU might provide additional
+For example an Endorser for a given CPU might provide additional
 information about what the CPU supports based on current firmware configuration
-state.
+state, or an Endorser might provide additional information that if the
+serial number is in a given range, then a specific security guarantee is present.
 
 Policies around matching actual state in Evidence against
-reference states are normally expressed in Appraisal Policy for Evidence.
-Similarly, reference states are normally expressed in the Reference Values
+reference state are normally expressed in Appraisal Policy for Evidence.
+Similarly, reference state is normally expressed in the Reference Values
 conceptual message.  Such policies allow a Verifier and Relying Parties to make
 their decisions about trustworthiness of an Attester.
 
