@@ -318,11 +318,12 @@ can reduce complexity and hence increase security.
 
 ## Scalability Considerations {#scalability}
 
-We currently assume that Reference Value Providers and Endorsers typically
+We currently assume that Reference Value Providers typically
 provide the same information to a potentially large number of clients
 (Verifiers, or potentially to other entities for later relay to a Verifier),
 and are generally on devices that are not constrained nodes, and hence additional
-scalability, including code size, is not a significant concern.
+scalability, including code size, is not a significant concern.  We also assume
+the same is true of Endorsers.
 
 The scenario where scalability in terms of code size is strongest, however, is
 when a Verifier is embedded into a constrained node.  For example, when a constrained
