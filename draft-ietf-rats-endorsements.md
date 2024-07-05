@@ -254,37 +254,37 @@ an Endorsement for their own Target Environment, containing additional claims
 about that Target Environment.  Thus each Target Environment (application, OS, firmware,
 and hardware) has one set of claims in the Evidence, and an additional
 set of claims in the Endorsement from its manufacturer.  A Verifier
-that trusts each Endorser would thus use claims from both conceptual
+that trusts each Endorser would thus use the claim sets from both conceptual
 messages when comparing against reference state for a given Target Environment.
 
 ~~~~ aasvg
-               .-----------------------. .-------------.
-App            |            .--------. | | .--------.  |
-Endorser ----> |Endorsement |  app   | | | |  app   |  |
-               |            |claimset| | | |claimset|  |
-               |            '--------' | | '--------' E|
-               '-----------------------' |            v|
-                                         |            i|
-               .-----------------------. |            d|
-OS             |            .--------. | | .--------. e|
-Endorser ----> |Endorsement |   OS   | | | |   OS   | n|
-               |            |claimset| | | |claimset| c|
-               |            '--------' | | '--------' e|
-               '-----------------------' |             |
-                                         |             |
-               .-----------------------. |             |
-Firmware       |            .--------. | | .--------.  |
-Endorser ----> |Endorsement |firmware| | | |firmware|  |
-               |            |claimset| | | |claimset|  |
-               |            '--------' | | '--------'  |
-               '-----------------------' |             |
-                                         |             |
-               .-----------------------. |             |
-Hardware       |            .--------. | | .--------.  |
-Endorser ----> |Endorsement |hardware| | | |hardware|  |
-               |            |claimset| | | |claimset|  |
-               |            '--------' | | '--------'  |
-               '-----------------------' '-------------'
+               .------------------------. .--------------.
+App            |            .---------. | | .---------.  |
+Endorser ----> |Endorsement |   app   | | | |   app   |  |
+               |            |claim set| | | |claim set|  |
+               |            '---------' | | '---------' E|
+               '------------------------' |             v|
+                                          |             i|
+               .------------------------. |             d|
+OS             |            .---------. | | .---------. e|
+Endorser ----> |Endorsement |   OS    | | | |   OS    | n|
+               |            |claim set| | | |claim set| c|
+               |            '---------' | | '---------' e|
+               '------------------------' |              |
+                                          |              |
+               .------------------------. |              |
+Firmware       |            .---------. | | .---------.  |
+Endorser ----> |Endorsement |firmware | | | |firmware |  |
+               |            |claim set| | | |claim set|  |
+               |            '---------' | | '---------'  |
+               '------------------------' |              |
+                                          |              |
+               .------------------------. |              |
+Hardware       |            .---------. | | .---------.  |
+Endorser ----> |Endorsement |hardware | | | |hardware |  |
+               |            |claim set| | | |claim set|  |
+               |            '---------' | | '---------'  |
+               '------------------------' '--------------'
                                                 ^
                                                 |
 Attester ---------------------------------------'
@@ -299,7 +299,9 @@ provide additional claims about the OS, but not about the hardware.
 Thus it is not as simple as saying that a Verifier has a trusted
 set of Endorsers. The binding between Target Environment and Endorser might
 be part of the Appraisal Policy for Evidence, or might be specified
-as part of the Evidence itself, or some combination of the two.
+as part of the Evidence itself (e.g., claims from a Target Environment
+might include a secure identifier of what Endorser can provide additional
+claims about it), or some combination of the two.
 An Endorsement format specification should explain how this concern
 is addressed.
 
