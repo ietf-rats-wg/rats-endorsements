@@ -128,6 +128,13 @@ RATS conceptual messages in {{RFC9334}} fall into the above categories as follow
 * Reference state: Reference Values
 * Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy for Attestation Results
 
+In some implementations, hints or suggestions for how to do a comparison might
+be supplied by a Reference Value Provider (as part of Reference Values),
+an Endorser (in an Endorsement), and/or an Attester (in Evidence),
+but the Verifier Owner is authoritative for Appraisal Policy for Evidence,
+and the Relying Party Owner is authoritative for Appraisal Policy for
+Attestation Results as depicted in {{Section 3 of RFC9334}}.
+
 {{input}} below shows an example of Verifier input for a layered Attester
 as discussed in {{Section 3.2 of RFC9334}}.
 
