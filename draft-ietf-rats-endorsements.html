@@ -1270,12 +1270,18 @@ the actual state values against a set of Reference Values.<a href="#section-2-5"
             <p id="section-2.1-2.3.1">Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy for Attestation Results<a href="#section-2.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-2.1-3"><a href="#input" class="auto internal xref">Figure 1</a> below shows an example of Verifier input for a layered Attester
-as discussed in <span><a href="https://rfc-editor.org/rfc/rfc9334#section-3.2" class="relref">Section 3.2</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span>.<a href="#section-2.1-3" class="pilcrow">¶</a></p>
+<p id="section-2.1-3">In some implementations, hints or suggestions for how to do a comparison might
+be supplied by a Reference Value Provider (as part of Reference Values),
+an Endorser (in an Endorsement), and/or an Attester (in Evidence),
+but the Verifier Owner is authoritative for Appraisal Policy for Evidence,
+and the Relying Party Owner is authoritative for Appraisal Policy for
+Attestation Results as depicted in <span><a href="https://rfc-editor.org/rfc/rfc9334#section-3" class="relref">Section 3</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span>.<a href="#section-2.1-3" class="pilcrow">¶</a></p>
+<p id="section-2.1-4"><a href="#input" class="auto internal xref">Figure 1</a> below shows an example of Verifier input for a layered Attester
+as discussed in <span><a href="https://rfc-editor.org/rfc/rfc9334#section-3.2" class="relref">Section 3.2</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span>.<a href="#section-2.1-4" class="pilcrow">¶</a></p>
 <span id="name-example-verifier-input"></span><div id="input">
 <figure id="figure-1">
-          <div id="section-2.1-4.1">
-            <div class="alignCenter art-svg artwork" id="section-2.1-4.1.1">
+          <div id="section-2.1-5.1">
+            <div class="alignCenter art-svg artwork" id="section-2.1-5.1.1">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="336" width="576" viewBox="0 0 576 336" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
                 <path d="M 104,32 L 104,240" fill="none" stroke="black"></path>
                 <path d="M 104,272 L 104,320" fill="none" stroke="black"></path>
@@ -1379,28 +1385,28 @@ as discussed in <span><a href="https://rfc-editor.org/rfc/rfc9334#section-3.2" c
                   <text x="476" y="308">0)</text>
                   <text x="568" y="308">s</text>
                 </g>
-              </svg><a href="#section-2.1-4.1.1" class="pilcrow">¶</a>
+              </svg><a href="#section-2.1-5.1.1" class="pilcrow">¶</a>
 </div>
 </div>
 <figcaption><a href="#figure-1" class="selfRef">Figure 1</a>:
 <a href="#name-example-verifier-input" class="selfRef">Example Verifier Input</a>
           </figcaption></figure>
 </div>
-<p id="section-2.1-5">While the above example only shows one layer within Endorsements as
+<p id="section-2.1-6">While the above example only shows one layer within Endorsements as
 the typical case, there could be multiple layers (see <a href="#multiple-endorsements" class="auto internal xref">Section 5</a>), such as
-a chip added to a hardware board potentially from a different vendor.<a href="#section-2.1-5" class="pilcrow">¶</a></p>
-<p id="section-2.1-6">A Trust Anchor Store is a special case of
+a chip added to a hardware board potentially from a different vendor.<a href="#section-2.1-6" class="pilcrow">¶</a></p>
+<p id="section-2.1-7">A Trust Anchor Store is a special case of
 state above, where the Reference State would be the set of trust anchors
 accepted (or rejected) by the Verifier, and the Actual State would be
-a trust anchor used to verify Evidence or Endorsements.<a href="#section-2.1-6" class="pilcrow">¶</a></p>
-<p id="section-2.1-7">In layered attestation using DICE <span>[<a href="#TCG-DICE" class="cite xref">TCG-DICE</a>]</span> for example, the actual state of each layer
+a trust anchor used to verify Evidence or Endorsements.<a href="#section-2.1-7" class="pilcrow">¶</a></p>
+<p id="section-2.1-8">In layered attestation using DICE <span>[<a href="#TCG-DICE" class="cite xref">TCG-DICE</a>]</span> for example, the actual state of each layer
 is signed by a key held by the next lower layer.  Thus in the example diagram
 above, the layer 2 actual state (e.g., OS state) is signed by a layer 1 key
 (e.g., a signing key used by the firmware), the layer 1 actual state (e.g.,
 firmware state) is signed by a layer 0 key (e.g., a hardware key stored in ROM),
 and the layer 0 actual state (hardware specs and key ID) is signed by a layer 0
 key (e.g., a vendor key) which is matched against the Verifier's trust anchor
-store, which is part of the layer 0 reference state depicted above.<a href="#section-2.1-7" class="pilcrow">¶</a></p>
+store, which is part of the layer 0 reference state depicted above.<a href="#section-2.1-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
