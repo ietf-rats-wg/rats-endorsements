@@ -5,10 +5,10 @@
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Intended status: Informational                               H. Birkholz
-Expires: 4 January 2025                                   Fraunhofer SIT
+Expires: 7 January 2025                                   Fraunhofer SIT
                                                               T. Fossati
                                                                   Linaro
-                                                             3 July 2024
+                                                             6 July 2024
 
 
                            RATS Endorsements
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 January 2025.
+   This Internet-Draft will expire on 7 January 2025.
 
 Copyright Notice
 
@@ -313,39 +313,40 @@ Table of Contents
    each Target Environment (application, OS, firmware, and hardware) has
    one set of claims in the Evidence, and an additional set of claims in
    the Endorsement from its manufacturer.  A Verifier that trusts each
-   Endorser would thus use claims from both conceptual messages when
-   comparing against reference state for a given Target Environment.
+   Endorser would thus use the claim sets from both conceptual messages
+   when comparing against reference state for a given Target
+   Environment.
 
-                        .-----------------------. .-------------.
-         App            |            .--------. | | .--------.  |
-         Endorser ----> |Endorsement |  app   | | | |  app   |  |
-                        |            |claimset| | | |claimset|  |
-                        |            '--------' | | '--------' E|
-                        '-----------------------' |            v|
-                                                  |            i|
-                        .-----------------------. |            d|
-         OS             |            .--------. | | .--------. e|
-         Endorser ----> |Endorsement |   OS   | | | |   OS   | n|
-                        |            |claimset| | | |claimset| c|
-                        |            '--------' | | '--------' e|
-                        '-----------------------' |             |
-                                                  |             |
-                        .-----------------------. |             |
-         Firmware       |            .--------. | | .--------.  |
-         Endorser ----> |Endorsement |firmware| | | |firmware|  |
-                        |            |claimset| | | |claimset|  |
-                        |            '--------' | | '--------'  |
-                        '-----------------------' |             |
-                                                  |             |
-                        .-----------------------. |             |
-         Hardware       |            .--------. | | .--------.  |
-         Endorser ----> |Endorsement |hardware| | | |hardware|  |
-                        |            |claimset| | | |claimset|  |
-                        |            '--------' | | '--------'  |
-                        '-----------------------' '-------------'
-                                                         ^
-                                                         |
-         Attester ---------------------------------------'
+                       .------------------------. .--------------.
+        App            |            .---------. | | .---------.  |
+        Endorser ----> |Endorsement |   app   | | | |   app   |  |
+                       |            |claim set| | | |claim set|  |
+                       |            '---------' | | '---------' E|
+                       '------------------------' |             v|
+                                                  |             i|
+                       .------------------------. |             d|
+        OS             |            .---------. | | .---------. e|
+        Endorser ----> |Endorsement |   OS    | | | |   OS    | n|
+                       |            |claim set| | | |claim set| c|
+                       |            '---------' | | '---------' e|
+                       '------------------------' |              |
+                                                  |              |
+                       .------------------------. |              |
+        Firmware       |            .---------. | | .---------.  |
+        Endorser ----> |Endorsement |firmware | | | |firmware |  |
+                       |            |claim set| | | |claim set|  |
+                       |            '---------' | | '---------'  |
+                       '------------------------' |              |
+                                                  |              |
+                       .------------------------. |              |
+        Hardware       |            .---------. | | .---------.  |
+        Endorser ----> |Endorsement |hardware | | | |hardware |  |
+                       |            |claim set| | | |claim set|  |
+                       |            '---------' | | '---------'  |
+                       '------------------------' '--------------'
+                                                        ^
+                                                        |
+        Attester ---------------------------------------'
 
                       Figure 2: Multiple Endorsements
 
@@ -357,9 +358,11 @@ Table of Contents
    Thus it is not as simple as saying that a Verifier has a trusted set
    of Endorsers.  The binding between Target Environment and Endorser
    might be part of the Appraisal Policy for Evidence, or might be
-   specified as part of the Evidence itself, or some combination of the
-   two.  An Endorsement format specification should explain how this
-   concern is addressed.
+   specified as part of the Evidence itself (e.g., claims from a Target
+   Environment might include a secure identifier of what Endorser can
+   provide additional claims about it), or some combination of the two.
+   An Endorsement format specification should explain how this concern
+   is addressed.
 
 6.  Endorsement Format Considerations
 
