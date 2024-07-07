@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-04T00:32:30.192127+00:00",
+  "timestamp": "2024-07-07T00:36:33.966596+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -47,6 +47,11 @@
       "name": "wontfix",
       "description": "This will not be worked on",
       "color": "ffffff"
+    },
+    {
+      "name": "fixed in editors copy",
+      "description": "",
+      "color": "fbca04"
     }
   ],
   "issues": [
@@ -185,10 +190,12 @@
       "author": "nedmsmith",
       "authorAssociation": "NONE",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "fixed in editors copy"
+      ],
       "body": "Section 2.1 describes appraisal policy as the source of comparison rules for relating actual state with reference (possible) state. However, there are significant comparison dynamics that can occur independent of appraisal policy. For example, a verifier can assume exact match semantics given the reference values are identical to the evidence values. No appraisal policy is required to instruct a verifier to apply exact match semantics.\r\n\r\nAdditionally, a profile such as https://datatracker.ietf.org/doc/draft-cds-rats-intel-corim-profile/ defines Reference Values that define actual value must be in the set of allowed Reference Values and actual value must be in a range where two Reference Values are the min and max.\r\n\r\nThis suggests that the RVP has insight on how best a verifier should apply matching rules. \r\n\r\nThe current text seems to ignore this important aspect. \r\n\r\n",
       "createdAt": "2024-06-21T18:44:29Z",
-      "updatedAt": "2024-06-28T19:27:30Z",
+      "updatedAt": "2024-07-06T17:25:05Z",
       "closedAt": null,
       "comments": [
         {
@@ -218,6 +225,20 @@
           "body": "I would prefer to update RATS Arch rather than have multiple RATS Arch specs. I think I-D.DAA also updates a portion of the architecture. ",
           "createdAt": "2024-06-28T19:27:29Z",
           "updatedAt": "2024-06-28T19:27:29Z"
+        },
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> Section 2.1 describes appraisal policy as the source of comparison rules for relating actual state with reference (possible) state. \r\n\r\nYes, appraisal policy is described as the authoritative source of such rules.  Inputs to it can come from an attester (via evidence), from an endorser (via endorsements), and from a reference value provider (via reference values).\r\n\r\n> However, there are significant comparison dynamics that can occur independent of appraisal policy. For example, a verifier can assume exact match semantics given the reference values are identical to the evidence values. No appraisal policy is required to instruct a verifier to apply exact match semantics.\r\n\r\nThe appraisal policy (which is authoritative) in such a case is to assume exact match semantics.  Such an appraisal policy default could be hard coded into a verifier, but is still appraisal policy as defined.\r\n\r\n> Additionally, a profile such as https://datatracker.ietf.org/doc/draft-cds-rats-intel-corim-profile/ defines Reference Values that define actual value must be in the set of allowed Reference Values and actual value must be in a range where two Reference Values are the min and max.\r\n\r\nYes, section 2, and also (as Thomas mentioned) RFC 9334 section 8.5 both explicitly talk about those possibilities being used in appraisal policies.  The fact that a reference value provider can provide such suggestions does not change the fact that the appraisal policy can accept them or override them.\r\n\r\n> This suggests that the RVP has insight on how best a verifier should apply matching rules.\r\n\r\nIt might have insight, as might an endorser and an attester as well.  But the appraisal policy is authoritative.\r\n\r\n> The current text seems to ignore this important aspect.\r\n\r\nWe can add a sentence saying appraisal policy is authoritative though in some implementations other roles (attester, endorser, reference value provider) might provide hints/suggestions that might be used as input.",
+          "createdAt": "2024-07-05T19:52:40Z",
+          "updatedAt": "2024-07-05T19:55:03Z"
+        },
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "> Yes, section 2, and also (as Thomas mentioned) RFC 9334 section 8.5 both explicitly talk about those possibilities being used in appraisal policies. The fact that a reference value provider can provide such suggestions does not change the fact that the appraisal policy can accept them or override them.\r\n\r\nIsn't that the killer argument? Policy trumps suggestions contained in other Conceptual Messages?",
+          "createdAt": "2024-07-05T20:21:22Z",
+          "updatedAt": "2024-07-05T20:21:22Z"
         }
       ]
     },
@@ -230,12 +251,36 @@
       "author": "nedmsmith",
       "authorAssociation": "NONE",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "fixed in editors copy"
+      ],
       "body": "Section 3 seems garbled. Paragraphs 1 and 3 describe reference values interactions (possible states) in a section on actual (endorsed) states.  These should probably be removed from section 3. \r\n\r\nParagraph 2 seems to give attention to immutable vs. immutable unnecessarily. It bans use of conditionally endorsed values that are immutable. But it is reasonable for an AE to have a serial# that is asserted by one AE while another AE asserts, say a model#. It isn't wrong if an endorsement asserts that a model# is X conditional on a serial# Y. \r\n\r\nParagraph 2 uses an example that isn't that intuitive as it assumes / asserts that CPU may support different features based on (mutable) firmware. This seems like an obscure example since there is no consistency across the industry regarding whether a CPU vendor's endorsement will differ based on which firmware happens to be loaded. Hence, it isn't providing intuition about the property of immutableness as it pertains to conditional endorsement.\r\n\r\nThe fourth paragraph seems to derive from the previous 3 but these all have issues, so it is unclear what property is derived. Paragraph 4 simply seems to weigh trade-offs without specifically stating the conditions being compared.\r\n\r\nThe fifth paragraph describes the relationship between conditional endorsements and policies. But there is no such thing as appraisal policy for endorsements. Hence, it is unclear what point the author is making. \r\n\r\nIn toto, section 3 should describe the concept of conditional endorsement as the idea that a second endorsement state may be entered (true) conditional on a first endorsement state being true. \r\n\r\nFor example, if an AE has the serial#_X, then the CC evaluation is EAL4+. \r\n\r\nAppraisal policy for AR might determine whether or not CC evaluation claims are relevant. But appraisal policy would (should) not negate an endorsement claim.\r\n\r\n",
       "createdAt": "2024-06-21T19:17:01Z",
-      "updatedAt": "2024-06-21T19:40:00Z",
+      "updatedAt": "2024-07-06T17:36:25Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> Section 3 seems garbled. Paragraphs 1 and 3 describe reference values interactions (possible states) in a section on actual (endorsed) states. These should probably be removed from section 3.\r\n\r\nParagraph 1 defines what the title of section 3 means.\r\nParagraph 3 is essential in allowing paragraph 4 to explain the difference.\r\nI haven't heard confusion from any other readers yet.\r\n\r\n> Paragraph 2 seems to give attention to immutable vs. immutable unnecessarily. It bans use of conditionally endorsed values that are immutable. \r\n\r\nI think this came from @thomas-fossati.\r\nPersonally I have no objection to removing this ban, but Thomas do you have any technical reason to keep this?\r\n\r\n> But it is reasonable for an AE to have a serial# that is asserted by one AE while another AE asserts, say a model#. It isn't wrong if an endorsement asserts that a model# is X conditional on a serial# Y.\r\n\r\n> Paragraph 2 uses an example that isn't that intuitive as it assumes / asserts that CPU may support different features based on (mutable) firmware. This seems like an obscure example since there is no consistency across the industry regarding whether a CPU vendor's endorsement will differ based on which firmware happens to be loaded. Hence, it isn't providing intuition about the property of immutableness as it pertains to conditional endorsement.\r\n\r\nI think the example is still useful (it certainly helped me understand it), but adding a second example like one you mention in this feedback is fine.  I will try to do that.\r\n\r\n> The fourth paragraph seems to derive from the previous 3 but these all have issues, so it is unclear what property is derived. Paragraph 4 simply seems to weigh trade-offs without specifically stating the conditions being compared.\r\n\r\nIt does to me (I can't say whether it is clear to anyone else, so wordsmithing suggestions welcome.  Thomas?  Henk?\r\nIt says that you conditionally add any appropriate claims before you determine trustworthiness based on their values.\r\n\r\n> The fifth paragraph describes the relationship between conditional endorsements and policies. But there is no such thing as appraisal policy for endorsements. Hence, it is unclear what point the author is making.\r\n\r\nThe conditional matching part is not appraisal policy per se.  The intent of paragraphs 1 and 4 (taken together) are to say that.\r\n\r\n> In toto, section 3 should describe the concept of conditional endorsement \r\n\r\nThere's no \"conditional endorsement\" (so such term is defined or should be in my view).\r\nThere are \"conditionally endorsed values\".\r\nThe same endorsement might contain multiple conditionally endorsed values, with different conditions.\r\n\r\n> as the idea that a second endorsement state may be entered (true) conditional on a first endorsement state being true.\r\n> \r\n> For example, if an AE has the serial#_X, then the CC evaluation is EAL4+.\r\n\r\nI am adding this example (in generic wording so as to not require a reference) in a pull request.\r\n\r\n> Appraisal policy for AR might determine whether or not CC evaluation claims are relevant. But appraisal policy would (should) not negate an endorsement claim.\r\n\r\n",
+          "createdAt": "2024-07-05T21:03:54Z",
+          "updatedAt": "2024-07-05T21:03:54Z"
+        },
+        {
+          "author": "nedmsmith",
+          "authorAssociation": "NONE",
+          "body": "> > Section 3 seems garbled. Paragraphs 1 and 3 describe reference values interactions (possible states) in a section on actual (endorsed) states. These should probably be removed from section 3.\r\n> \r\n> Paragraph 1 defines what the title of section 3 means. Paragraph 3 is essential in allowing paragraph 4 to explain the difference. I haven't heard confusion from any other readers yet.\r\n> \r\nI don't agree that a conditional endorsement can't match Evidence directly or that it can't match other endorsements. Conditional \"matching\" can be applied more generally than to only claims that have matched reference values.  For example, an Attester might sign a random challenge. A certificate might identify the key as belonging to Attester_X. An endorser might assert that there is an SVN for the key belonging to X in an endorsement. Since the random challenge is random, it can't be predicted by an RVP and hence can't expect to have RVs.\r\n\r\nI don't think RATS WG wants to say that the above use case of off limits. \r\n\r\nOther people may not have thought about how the Verifier will process the inputs it receives :-) \r\n\r\n> > Paragraph 2 seems to give attention to immutable vs. immutable unnecessarily. It bans use of conditionally endorsed values that are immutable.\r\n> \r\n> I think this came from @thomas-fossati. Personally I have no objection to removing this ban, but Thomas do you have any technical reason to keep this?\r\n\r\nSince the premise in paragraph 1 is misguided, the statements in paragraph 2 may also be misguided.\r\n\r\n> \r\n> > But it is reasonable for an AE to have a serial# that is asserted by one AE while another AE asserts, say a model#. It isn't wrong if an endorsement asserts that a model# is X conditional on a serial# Y.\r\n> \r\n> > Paragraph 2 uses an example that isn't that intuitive as it assumes / asserts that CPU may support different features based on (mutable) firmware. This seems like an obscure example since there is no consistency across the industry regarding whether a CPU vendor's endorsement will differ based on which firmware happens to be loaded. Hence, it isn't providing intuition about the property of immutableness as it pertains to conditional endorsement.\r\n> \r\n> I think the example is still useful (it certainly helped me understand it), but adding a second example like one you mention in this feedback is fine. I will try to do that.\r\n> \r\n> > The fourth paragraph seems to derive from the previous 3 but these all have issues, so it is unclear what property is derived. Paragraph 4 simply seems to weigh trade-offs without specifically stating the conditions being compared.\r\n> \r\n> It does to me (I can't say whether it is clear to anyone else, so wordsmithing suggestions welcome. Thomas? Henk? It says that you conditionally add any appropriate claims before you determine trustworthiness based on their values.\r\n> \r\n> > The fifth paragraph describes the relationship between conditional endorsements and policies. But there is no such thing as appraisal policy for endorsements. Hence, it is unclear what point the author is making.\r\n> \r\n> The conditional matching part is not appraisal policy per se. The intent of paragraphs 1 and 4 (taken together) are to say that.\r\n> \r\n> > In toto, section 3 should describe the concept of conditional endorsement\r\n\r\nI'm of the opinion that all endorsement is conditional. \r\n\r\n> \r\n> There's no \"conditional endorsement\" (so such term is defined or should be in my view). There are \"conditionally endorsed values\". The same endorsement might contain multiple conditionally endorsed values, with different conditions.\r\n\r\nI can't tell if saying \"there's no conditional endorsement\" and \"There are conditionally endorsed values\" is splitting hairs. I think it is.\r\n\r\nI don't disagree with \"The same endorsement might contain multiple conditionally endorsed values, with different conditions.\". But I don't see how the last sentence has anything to do with the discussion on whether there is/isn't \"conditional endorsement\".\r\n\r\n> \r\n> > as the idea that a second endorsement state may be entered (true) conditional on a first endorsement state being true.\r\n> > For example, if an AE has the serial#_X, then the CC evaluation is EAL4+.\r\n> \r\n> I am adding this example (in generic wording so as to not require a reference) in a pull request.\r\n> \r\n> > Appraisal policy for AR might determine whether or not CC evaluation claims are relevant. But appraisal policy would (should) not negate an endorsement claim.\r\n\r\n",
+          "createdAt": "2024-07-06T16:28:12Z",
+          "updatedAt": "2024-07-06T16:28:12Z"
+        },
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> I don't agree that a conditional endorsement can't match Evidence directly or that it can't match other endorsements. \r\n\r\nI wouldn't agree with that either, but I can't find anywhere that has such text to disagree with.  Paragraph 1 says:\r\n\r\n>   Some claims in Endorsements might be conditional.  A claim is\r\n>   conditional if it only applies if actual state matches Reference\r\n>   Values, according to some matching policy.\r\n\r\nFigure 1 shows that actual state is in both Evidence and Endorsements.  So above already says it can match endorsements.  So I'm confused as to what you disagree with :)\r\n\r\n> Conditional \"matching\" can be applied more generally than to only claims that have matched reference values. For example, an Attester might sign a random challenge. A certificate might identify the key as belonging to Attester_X. An endorser might assert that there is an SVN for the key belonging to X in an endorsement. Since the random challenge is random, it can't be predicted by an RVP and hence can't expect to have RVs.\r\n\r\nIn your example, the certificate is what identifies X, so I would think an identifier in the certificate (subject name or whatever else) is the thing being matched on, not the random challenge per se.  The random challenge would presumably be used for freshness, not for matching.  Otherwise, I'm not following you.\r\n\r\n> I don't think RATS WG wants to say that the above use case of off limits.\r\n\r\nAgree, and I don't think the draft does.\r\n\r\n",
+          "createdAt": "2024-07-06T17:36:24Z",
+          "updatedAt": "2024-07-06T17:36:24Z"
+        }
+      ]
     },
     {
       "number": 23,
@@ -249,9 +294,17 @@
       "labels": [],
       "body": "I find section 4 difficult to read. The heading \"Endorsing Evidence Provenance\" is not an intuitive concept. The authors must explain what it means first. \r\n\r\nThe first paragraph seems to describe that Evidence should be authenticated. This could be stated more plainly. \r\n\r\nThe second paragraph seems to make the same statement, but in a contra indicated way. There is a DICE example in Section 2, that could be referenced as it seems to describe layering. But it isn't clear how paragraph 2 (section 4) pertains to \"provenance\" or \"endorsement\". \r\n\r\nFor example: \"Such a certificate need not be stored by the Verifier when the Endorsement can be resolved on demand or passed to the Verifier along with the Evidence\"\r\nThe concept of \"Endorsement resolution\" is not described in the I-D. The reader is assumed to know what this entails. It's relevance to \"provenance\" is not obvious.\r\n\u00a0\r\nI believe the first sentence of the 3rd paragraph is actually incorrect:\r\n\"No particular algorithm or cryptographic protocol is assumed for the verification of the Attester.\"\r\nA verifier must implement the algorithm/protocol that authenticates the Attester / AE otherwise the integrity of the evidence is suspect. \r\n\r\n\"Evidence typically contains an identifier for the Attester (e.g., [[I-D.ietf-rats-eat](https://www.ietf.org/archive/id/draft-ietf-rats-endorsements-01.html#I-D.ietf-rats-eat)] ueid) in a claim, sometimes termed an \"identity claim\", that can be used by the Verifier to look up its verification key for the Attester.\"\r\nThe 4th paragraph is not typical as Evidence often describes a class of devices rather than a specific instance of a device. \r\nInstead, it is typical for a lead Attester to have authentication credentials that identifies an instance of a device. However, this is also is contradicted by I-D:daa-attestation where a group key maintains the class nature of evidence while also authenticating the evidence. \r\n\r\nThe fifth paragraph seems to take a circumlocutions approach to saying that Evidence must be authenticated (restating what the first paragraph is saying) and that Evidence authentication should be the first step before applying other appraisal steps. Maybe this could be said more directly?\r\n\r\nThe last paragraph seems to be summarizing the steps that a verifier might follow, but seems out of place in a section on evidence provenance. \r\n\r\nIt is still unclear to me if the goal of the section is to assert that Evidence provenance means Evidence should be authenticated, if this is giving general (cherry picked) advice to verifiers, or if this is aimed at Endorsers who may need to do something (???) in order to ensure Endorsements have \"provenance\" (e.g., sign endorsement claims?).\r\n\r\nMaybe a different approach would be to explain that AE's have attestation keys that authenticate evidence and that provenance of attestation keys is needed to build trust in the AEs? This is what the PKIX  Consortium refers to as \"key attestation\". Maybe the authors are saying that AEs' attestation keys should be backed by key attestation?\r\n",
       "createdAt": "2024-06-21T19:59:03Z",
-      "updatedAt": "2024-06-21T20:24:16Z",
+      "updatedAt": "2024-07-05T22:20:28Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> Maybe a different approach would be to explain that AE's have attestation keys that authenticate evidence and that provenance of attestation keys is needed to build trust in the AEs?\r\n\r\nYes, that's exactly the core point.  If it's not clear, we need to improve the prose.\r\n\r\n",
+          "createdAt": "2024-07-05T22:20:27Z",
+          "updatedAt": "2024-07-05T22:20:27Z"
+        }
+      ]
     },
     {
       "number": 24,
@@ -262,12 +315,22 @@
       "author": "nedmsmith",
       "authorAssociation": "NONE",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "fixed in editors copy"
+      ],
       "body": "Figure 2 describes the concept that endorsements can provide additional claims to those provided by evidence. The figure uses \"claimset\" to refer to the set of claims that are asserted by a particular entity (Attester, Hardware Endorseer, etc.). However, it isn't clear in the diagram that the \"Hardware claimset\" asserted by the Attester is different from the \"hardware claimset\" asserted by the Hardware Endorser. A simple terminology change could improve this. For example, the Hardware Endorser might assert \"Additional Hardware Claims\" while the Attester asserts \"Hardware Claims\". The Hardware \"claimset\" = \"Hardware Claims\" + \"Additional Hardware Claims\". \r\n\r\nSection 5 states:\r\n\"The binding between Target Environment and Endorser might be part of the Appraisal Policy for Evidence\"\r\nThis seems incorrect as the binding between Endorsements claims and Evidence claims is based on the matching condition found in the Endorsement claims. \r\n\r\nI'm confused by \"or might be specified as part of the Evidence itself, or some combination of the two\"\r\nbecause it isn't clear what the connection is between Evidence and Appraisal policy for Evidence that defines a binding between a TE and an Endorser. Use of the term \"binding\" seems overloaded with other uses within the same document.  Wouldn't the TE be identified by its class / instance name? Wouldn't the Endorser and Attester developers have to agree on these names?",
       "createdAt": "2024-06-21T20:30:33Z",
-      "updatedAt": "2024-06-21T20:36:41Z",
+      "updatedAt": "2024-07-06T17:24:16Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> Figure 2 describes the concept that endorsements can provide additional claims to those provided by evidence. The figure uses \"claimset\" to refer to the set of claims that are asserted by a particular entity (Attester, Hardware Endorseer, etc.). However, it isn't clear in the diagram that the \"Hardware claimset\" asserted by the Attester is different from the \"hardware claimset\" asserted by the Hardware Endorser. A simple terminology change could improve this. For example, the Hardware Endorser might assert \"Additional Hardware Claims\" while the Attester asserts \"Hardware Claims\". The Hardware \"claimset\" = \"Hardware Claims\" + \"Additional Hardware Claims\".\r\n\r\nIn my view, the sentence right above the diagram makes it pretty clear.  It says:\r\n\r\n\"Thus each Target Environment (application, OS, firmware, and hardware) has **one set** of claims in the Evidence, and an **additional set** of claims in the Endorsement from its manufacturer. A Verifier that trusts each Endorser would thus use **claims from both** conceptual messages when comparing against reference state for a given Target Environment.\"\r\n\r\nI'm hesitant to use a very different term in the diagram since the now-approved EAT spec uses \"claims set\" for the set of claims in Evidence.  We should, however, match that and use \"claims set\" instead of \"claimset\".  (RFC 9334 uses \"Claim set\", so perhaps that would be better, but neither document uses \"claimset\" as one word now.)\r\n\r\n> Section 5 states: \"The binding between Target Environment and Endorser might be part of the Appraisal Policy for Evidence\" This seems incorrect as the binding between Endorsements claims and Evidence claims is based on the matching condition found in the Endorsement claims.\r\n\r\nIt is not incorrect.  Basing the binding solely on a matching condition found in Endorsement claims would be a security vulnerability, as it would allow an Endorser to simply include claims about any other Target Environment in the Attester, rather than just the permitted one(s).  In a secure system, Appraisal Policy must be able to control which Endorsers are believed for claims about which Target Environment and not just allow a free-for-all.\r\n\r\n> I'm confused by \"or might be specified as part of the Evidence itself, or some combination of the two\" because it isn't clear what the connection is between Evidence and Appraisal policy for Evidence that defines a binding between a TE and an Endorser. Use of the term \"binding\" seems overloaded with other uses within the same document. Wouldn't the TE be identified by its class / instance name? Wouldn't the Endorser and Attester developers have to agree on these names?\r\n\r\nAs an example, claims from a Target Environment itself might contain a secure identifier of the Endorser that can provide additional claims about that Target Environment.  I can add that example for clarity.\r\n\r\n",
+          "createdAt": "2024-07-05T20:38:34Z",
+          "updatedAt": "2024-07-05T20:38:34Z"
+        }
+      ]
     },
     {
       "number": 25,
@@ -278,12 +341,22 @@
       "author": "nedmsmith",
       "authorAssociation": "NONE",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "fixed in editors copy"
+      ],
       "body": "Section 6.2 first paragraph:\r\n\"We currently assume that Reference Value Providers and Endorsers typically provide the same information\"\r\nThis sentence seems to contradict what is stated above since RVPs provide \"reference\" or \"possible\" state claimsets while Endorsers provide \"actual\" state claimsets.\r\n\r\nThis line: \"clients ... are generally on devices that are not constrained nodes\"\r\nis not commonly agreed upon as there are many cases of embedded verifiers, BMCs and so forth. The conclusion that scalability of verifiers \"is not a significant concern\" to RATS is not true or that it is not \"typical\". \r\n\r\nThe following paragraph seems to reinforce my point. \r\n\r\nThis may be writing style. But the first paragraph should introduce what will be described in subsequent paragraphs, rather than contradict them.\r\n\r\nThe last two paragraphs seem more focused on complexity than scalability. Maybe they belong in section 6.1? BTW: If this is intended as a security considerations section it shouldn't be a subsection heading. Othewise, this section seems to be about complexity hence it's heading might be more reflective of this.\r\n\r\nSection 6 isn't so much about formats as it is about complexity and scalability.  It is possible to use different formats to encode simple things or a single format to encode complex things. ",
       "createdAt": "2024-06-21T20:45:45Z",
-      "updatedAt": "2024-06-21T20:54:51Z",
+      "updatedAt": "2024-07-06T17:25:50Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> Section 6.2 first paragraph: \"We currently assume that Reference Value Providers and Endorsers typically provide the same information\" This sentence seems to contradict what is stated above since RVPs provide \"reference\" or \"possible\" state claimsets while Endorsers provide \"actual\" state claimsets.\r\n\r\nSounds like a misreading.  The \"same\" means \"across many clients\", not that a RVP and an Endorser provide the same information.  Will reword to be clearer.\r\n\r\n> This line: \"clients ... are generally on devices that are not constrained nodes\" is not commonly agreed upon as there are many cases of embedded verifiers, BMCs and so forth. \r\n\r\nThe above is a misquote.  The word \"and\" (missing from the above quote) is significant as \"clients\" is not the subject of the \"are generally\".  It says that _RVPs and Endorsers_ are generally on devices that are not constrained nodes.  You didn't mention any disagreement regarding those roles.  (I'm not sure what a BMC is.)\r\n\r\n[nms] BMC is Baseboard Management Controller\r\n\r\nRVPs and Endorsers are generally servers or services rather than \"devices\". The idea could be conveyed more succinctly by \"...Verifier), and are generally services on unconstrained nodes....\"\r\n\r\n> The conclusion that scalability of verifiers \"is not a significant concern\" to RATS is not true or that it is not \"typical\".\r\n\r\nThe text never says that scalability of verifiers is not a significant concern.  Indeed as you mention the second paragraph says it is, which I think we all agree on.\r\n\r\n> The following paragraph seems to reinforce my point.\r\n> \r\n> This may be writing style. But the first paragraph should introduce what will be described in subsequent paragraphs, rather than contradict them.\r\n\r\nI don't believe there is any contradiction.  It seems you might have missed the word \"and\".\r\n\r\n[nms] Maybe. A one sentence paragraph with multiple parts is hard to parse.\r\n\r\n> The last two paragraphs seem more focused on complexity than scalability. Maybe they belong in section 6.1? BTW: If this is intended as a security considerations section it shouldn't be a subsection heading. Othewise, this section seems to be about complexity hence it's heading might be more reflective of this.\r\n\r\nCode space does affect scalability in terms of scale down to constrained nodes with limited space, so code complexity is one aspect of scalability.\r\n\r\n> Section 6 isn't so much about formats as it is about complexity and scalability. It is possible to use different formats to encode simple things or a single format to encode complex things.",
+          "createdAt": "2024-07-05T20:18:41Z",
+          "updatedAt": "2024-07-06T16:10:25Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -1968,6 +2041,234 @@
           "body": "",
           "createdAt": "2024-06-24T20:08:09Z",
           "updatedAt": "2024-06-24T20:08:09Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "id": "PR_kwDOJj8oQM50kFZs",
+      "title": "Add sentence about inputs to appraisal policy",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/27",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Addresses #21",
+      "createdAt": "2024-07-05T20:06:52Z",
+      "updatedAt": "2024-07-06T17:24:52Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "aabba56919a728c5170110d96d8f6f3e853fe24c",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "appraisal",
+      "headRefOid": "cba5db2d69d5b3798503ce4ae4f110adca0870a9",
+      "closedAt": "2024-07-06T17:24:49Z",
+      "mergedAt": "2024-07-06T17:24:49Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "8c4c89e7c11b5cd5990c1756954f1cd43897a72e"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM6A0YZ2",
+          "commit": {
+            "abbreviatedOid": "cba5db2"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "Crisp clarification",
+          "createdAt": "2024-07-05T20:15:33Z",
+          "updatedAt": "2024-07-05T20:15:33Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6A0qWQ",
+          "commit": {
+            "abbreviatedOid": "cba5db2"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-05T21:58:09Z",
+          "updatedAt": "2024-07-05T21:58:09Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "id": "PR_kwDOJj8oQM50kI0N",
+      "title": "Wording tweak to prevent misreading",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/28",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Issue #25 implies that one could misread \"same\" as meaning the same between Endorser and Reference Value Provider. This rewording helps clarify that it means same across many clients.\r\n\r\nAddresses #25",
+      "createdAt": "2024-07-05T20:19:57Z",
+      "updatedAt": "2024-07-06T17:25:34Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "aabba56919a728c5170110d96d8f6f3e853fe24c",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "scalability",
+      "headRefOid": "18cc748e5a9c889bc1a59cd3f8676b44f1032be8",
+      "closedAt": "2024-07-06T17:25:31Z",
+      "mergedAt": "2024-07-06T17:25:31Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "56257554fea8f1005530b7f5d00fcef3b88f8995"
+      },
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "tinyfix",
+          "createdAt": "2024-07-06T08:29:15Z",
+          "updatedAt": "2024-07-06T08:29:15Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM6A0q2z",
+          "commit": {
+            "abbreviatedOid": "18cc748"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-05T22:03:09Z",
+          "updatedAt": "2024-07-05T22:03:09Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6A1drY",
+          "commit": {
+            "abbreviatedOid": "18cc748"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-06T08:28:45Z",
+          "updatedAt": "2024-07-06T08:28:45Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "id": "PR_kwDOJj8oQM50kMfi",
+      "title": "Clarifications around figure 2",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/29",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Change \"claimset\" to \"claim set\" to match RFC 9334.\r\nNote that the approved EAT spec uses \"claims set\" whereas RFC 9334 uses \"claim set\"\r\nThis change matches the published RFC rather than the one that might still be changed.\r\n\r\nAddresses #24",
+      "createdAt": "2024-07-05T20:40:15Z",
+      "updatedAt": "2024-07-06T17:23:18Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "aabba56919a728c5170110d96d8f6f3e853fe24c",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "claimset",
+      "headRefOid": "17c7cc0c220ad999c6cb0abf924ce85b109243f3",
+      "closedAt": "2024-07-06T17:23:11Z",
+      "mergedAt": "2024-07-06T17:23:11Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "56d44a33b882e57e0353b59223c56385e46add9d"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM6A0qv0",
+          "commit": {
+            "abbreviatedOid": "17c7cc0"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-05T22:01:59Z",
+          "updatedAt": "2024-07-05T22:01:59Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6A1dtd",
+          "commit": {
+            "abbreviatedOid": "17c7cc0"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "pro consistency",
+          "createdAt": "2024-07-06T08:30:06Z",
+          "updatedAt": "2024-07-06T08:30:06Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "id": "PR_kwDOJj8oQM50kR7L",
+      "title": "Address feedback on conditionally endorsed values",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/30",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "* Remove restriction that a condition cannot be on an immutable property\r\n* Add another example that Ned gave\r\n* Fix term, where \"reference state\" is used earlier in the document to apply to a set of claims, not just one, so \"reference states\" is redundant and reads oddly alongside \"actual state\" without the s.\r\n\r\nAddresses #22",
+      "createdAt": "2024-07-05T21:06:30Z",
+      "updatedAt": "2024-07-06T17:26:15Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "aabba56919a728c5170110d96d8f6f3e853fe24c",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "condition",
+      "headRefOid": "3d1c969e00da7028d4ce29f44065bc0dff4c0d51",
+      "closedAt": "2024-07-06T17:26:12Z",
+      "mergedAt": "2024-07-06T17:26:12Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "ccea26be9f6756486dea85902f8ec56426b3a54b"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM6A0qMS",
+          "commit": {
+            "abbreviatedOid": "3d1c969"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-05T21:56:53Z",
+          "updatedAt": "2024-07-05T21:56:53Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6A1dya",
+          "commit": {
+            "abbreviatedOid": "3d1c969"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "I feel okay with this use of immutable values",
+          "createdAt": "2024-07-06T08:33:00Z",
+          "updatedAt": "2024-07-06T08:33:00Z",
           "comments": []
         }
       ]
