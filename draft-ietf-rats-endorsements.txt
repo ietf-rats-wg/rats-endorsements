@@ -5,10 +5,10 @@
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Intended status: Informational                               H. Birkholz
-Expires: 7 January 2025                                   Fraunhofer SIT
+Expires: 9 January 2025                                   Fraunhofer SIT
                                                               T. Fossati
                                                                   Linaro
-                                                             6 July 2024
+                                                             8 July 2024
 
 
                            RATS Endorsements
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 7 January 2025.
+   This Internet-Draft will expire on 9 January 2025.
 
 Copyright Notice
 
@@ -69,7 +69,7 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Actual State vs Reference States
+   2.  Actual State vs Reference State
      2.1.  RATS Conceptual Messages
    3.  Conditionally Endorsed Values
    4.  Endorsing Evidence Provenance
@@ -100,7 +100,7 @@ Table of Contents
    Results in the formats needed by a Relying Parties it is intended to
    cater.
 
-2.  Actual State vs Reference States
+2.  Actual State vs Reference State
 
    Appraisal policies (Appraisal Policy for Evidence, and Appraisal
    Policy for Attestation Results) involve comparing the actual state of
@@ -263,11 +263,12 @@ Table of Contents
    A Verifier receives Evidence from an Attester that must be considered
    untrusted until verified through cryptography.  Typically, the
    bottom-most Attesting Environment in an Attester will sign claims
-   about one or more Target Environments with a private key that the
-   Attesting Environment possesses and the Verifier will verify the
-   resulting Evidence with a public key it possesses, called a
-   verification key below.  While this is typical, cryptography other
-   than public key may also be used.
+   about one or more Target Environments (see also the DICE example at
+   the end of {conceptual}) with a private key that the Attesting
+   Environment possesses and the Verifier will verify the resulting
+   Evidence with a public key it possesses, called a verification key
+   below.  While this is typical, cryptography other than public key may
+   also be used.
 
    Since it is not possible to establish trust in an Attester without
    cryptography, the Verifier must have access to a verification key for
@@ -276,16 +277,19 @@ Table of Contents
    provisioned with a trusted root CA certificate such that an
    Endorsement from an Endorser includes the Attester's verification key
    material in the form of a certificate that chains up to that trusted
-   root.  Such a certificate need not be stored by the Verifier when the
-   Endorsement can be resolved on demand or passed to the Verifier along
-   with the Evidence to verify, depending on the protocol.
+   root.  Such a certificate might be stored in the Verifier, or might
+   be resolved on demand via some protocol, or might be passed to the
+   Verifier along with the Evidence to verify, depending on the
+   protocol.  Details are out of scope of this document and left to
+   specific protocol documents.
 
-   No particular algorithm or cryptographic protocol is assumed for the
+   Specific protocol documents are also responsible for documenting what
+   particular algorithm or cryptographic protocol is used for the
    verification of the Attester.  The verification key could be,
    typically, a symmetric key, a raw public key, or a certified public
    key.
 
-   Evidence typically contains an identifier for the Attester (e.g.,
+   Evidence can contain an identifier for the Attester (e.g.,
    [I-D.ietf-rats-eat] ueid) in a claim, sometimes termed an "identity
    claim", that can be used by the Verifier to look up its verification
    key for the Attester.
@@ -432,9 +436,9 @@ Table of Contents
    [I-D.ietf-rats-eat]
               Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
               Wallace, "The Entity Attestation Token (EAT)", Work in
-              Progress, Internet-Draft, draft-ietf-rats-eat-28, 25 June
+              Progress, Internet-Draft, draft-ietf-rats-eat-29, 8 July
               2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              rats-eat-28>.
+              rats-eat-29>.
 
    [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
               W. Pan, "Remote ATtestation procedureS (RATS)
