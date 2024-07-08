@@ -5,10 +5,10 @@
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Intended status: Informational                               H. Birkholz
-Expires: 6 January 2025                                   Fraunhofer SIT
+Expires: 9 January 2025                                   Fraunhofer SIT
                                                               T. Fossati
                                                                   Linaro
-                                                             5 July 2024
+                                                             8 July 2024
 
 
                            RATS Endorsements
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 January 2025.
+   This Internet-Draft will expire on 9 January 2025.
 
 Copyright Notice
 
@@ -173,6 +173,14 @@ Table of Contents
    *  Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy
       for Attestation Results
 
+   In some implementations, hints or suggestions for how to do a
+   comparison might be supplied by a Reference Value Provider (as part
+   of Reference Values), an Endorser (in an Endorsement), and/or an
+   Attester (in Evidence), but the Verifier Owner is authoritative for
+   Appraisal Policy for Evidence, and the Relying Party Owner is
+   authoritative for Appraisal Policy for Attestation Results as
+   depicted in Section 3 of [RFC9334].
+
    Figure 1 below shows an example of Verifier input for a layered
    Attester as discussed in Section 3.2 of [RFC9334].
 
@@ -221,16 +229,25 @@ Table of Contents
 
 3.  Conditionally Endorsed Values
 
-   Some claims in Endorsements might be conditional.  A claim is
-   conditional if it only applies if actual state matches Reference
-   Values, according to some matching policy.  For example an Endorser
-   for a given CPU might provide additional information about what the
-   CPU supports based on current firmware configuration state, or an
-   Endorser might provide additional information that if the serial
-   number is in a given range, then a specific security guarantee is
-   present.
+   The example in Figure 1 showed an actual state from Evidence for
+   other layers, and an Endorsement containing actual state for layer 0.
+   However, some claims in Endorsements might be conditional and so are
+   only treated as actual state if a condition is met.
 
-   Policies around matching actual state in Evidence against reference
+   A claim is conditional if it only applies if other actual state
+   matches Reference Values, according to some matching policy.  For
+   example an Endorser for a given CPU might provide additional
+   information about what the CPU supports based on current firmware
+   configuration state, or an Endorser might provide additional
+   information that if the serial number is in a given range, then a
+   specific security guarantee is present.
+
+   Thus, actual state is determined by starting with a collection of
+   unconditional claims, and adding any conditional claims that whose
+   conditions are met based on the actual state, and then repeating
+   until no more conditional claims are added.
+
+   Verifier policies around matching actual state against reference
    state are normally expressed in Appraisal Policy for Evidence.
    Similarly, reference state is normally expressed in the Reference
    Values conceptual message.  Such policies allow a Verifier and
@@ -310,39 +327,40 @@ Table of Contents
    each Target Environment (application, OS, firmware, and hardware) has
    one set of claims in the Evidence, and an additional set of claims in
    the Endorsement from its manufacturer.  A Verifier that trusts each
-   Endorser would thus use claims from both conceptual messages when
-   comparing against reference state for a given Target Environment.
+   Endorser would thus use the claim sets from both conceptual messages
+   when comparing against reference state for a given Target
+   Environment.
 
-                        .-----------------------. .-------------.
-         App            |            .--------. | | .--------.  |
-         Endorser ----> |Endorsement |  app   | | | |  app   |  |
-                        |            |claimset| | | |claimset|  |
-                        |            '--------' | | '--------' E|
-                        '-----------------------' |            v|
-                                                  |            i|
-                        .-----------------------. |            d|
-         OS             |            .--------. | | .--------. e|
-         Endorser ----> |Endorsement |   OS   | | | |   OS   | n|
-                        |            |claimset| | | |claimset| c|
-                        |            '--------' | | '--------' e|
-                        '-----------------------' |             |
-                                                  |             |
-                        .-----------------------. |             |
-         Firmware       |            .--------. | | .--------.  |
-         Endorser ----> |Endorsement |firmware| | | |firmware|  |
-                        |            |claimset| | | |claimset|  |
-                        |            '--------' | | '--------'  |
-                        '-----------------------' |             |
-                                                  |             |
-                        .-----------------------. |             |
-         Hardware       |            .--------. | | .--------.  |
-         Endorser ----> |Endorsement |hardware| | | |hardware|  |
-                        |            |claimset| | | |claimset|  |
-                        |            '--------' | | '--------'  |
-                        '-----------------------' '-------------'
-                                                         ^
-                                                         |
-         Attester ---------------------------------------'
+                       .------------------------. .--------------.
+        App            |            .---------. | | .---------.  |
+        Endorser ----> |Endorsement |   app   | | | |   app   |  |
+                       |            |claim set| | | |claim set|  |
+                       |            '---------' | | '---------' E|
+                       '------------------------' |             v|
+                                                  |             i|
+                       .------------------------. |             d|
+        OS             |            .---------. | | .---------. e|
+        Endorser ----> |Endorsement |   OS    | | | |   OS    | n|
+                       |            |claim set| | | |claim set| c|
+                       |            '---------' | | '---------' e|
+                       '------------------------' |              |
+                                                  |              |
+                       .------------------------. |              |
+        Firmware       |            .---------. | | .---------.  |
+        Endorser ----> |Endorsement |firmware | | | |firmware |  |
+                       |            |claim set| | | |claim set|  |
+                       |            '---------' | | '---------'  |
+                       '------------------------' |              |
+                                                  |              |
+                       .------------------------. |              |
+        Hardware       |            .---------. | | .---------.  |
+        Endorser ----> |Endorsement |hardware | | | |hardware |  |
+                       |            |claim set| | | |claim set|  |
+                       |            '---------' | | '---------'  |
+                       '------------------------' '--------------'
+                                                        ^
+                                                        |
+        Attester ---------------------------------------'
 
                       Figure 2: Multiple Endorsements
 
@@ -354,9 +372,11 @@ Table of Contents
    Thus it is not as simple as saying that a Verifier has a trusted set
    of Endorsers.  The binding between Target Environment and Endorser
    might be part of the Appraisal Policy for Evidence, or might be
-   specified as part of the Evidence itself, or some combination of the
-   two.  An Endorsement format specification should explain how this
-   concern is addressed.
+   specified as part of the Evidence itself (e.g., claims from a Target
+   Environment might include a secure identifier of what Endorser can
+   provide additional claims about it), or some combination of the two.
+   An Endorsement format specification should explain how this concern
+   is addressed.
 
 6.  Endorsement Format Considerations
 
@@ -375,12 +395,12 @@ Table of Contents
 
 6.2.  Scalability Considerations
 
-   We currently assume that Reference Value Providers and Endorsers
-   typically provide the same information to a potentially large number
-   of clients (Verifiers, or potentially to other entities for later
-   relay to a Verifier), and are generally on devices that are not
-   constrained nodes, and hence additional scalability, including code
-   size, is not a significant concern.
+   We currently assume that Reference Value Providers typically provide
+   the same information to a potentially large number of clients
+   (Verifiers, or potentially to other entities for later relay to a
+   Verifier), and are generally on devices that are not constrained
+   nodes, and hence additional scalability, including code size, is not
+   a significant concern.  We also assume the same is true of Endorsers.
 
    The scenario where scalability in terms of code size is strongest,
    however, is when a Verifier is embedded into a constrained node.  For
@@ -421,9 +441,9 @@ Table of Contents
    [I-D.ietf-rats-eat]
               Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
               Wallace, "The Entity Attestation Token (EAT)", Work in
-              Progress, Internet-Draft, draft-ietf-rats-eat-28, 25 June
+              Progress, Internet-Draft, draft-ietf-rats-eat-29, 8 July
               2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              rats-eat-28>.
+              rats-eat-29>.
 
    [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
               W. Pan, "Remote ATtestation procedureS (RATS)
