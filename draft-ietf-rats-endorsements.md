@@ -72,7 +72,7 @@ One of the purposes of a Verifier is depicted
 in Figure 9 of {{-rats-arch}}. A Verifier is intended to be able to accept Evidence in a variety of
 formats and generate Attestation Results in the formats needed by a Relying Parties it is intended to cater.
 
-# Actual State vs Reference States {#statetypes}
+# Actual State vs Reference State {#statetypes}
 
 Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
 Attestation Results) involve comparing the actual state of an Attester against
@@ -120,7 +120,7 @@ Some examples of such matching include:
 * An actual value must not be in the set of disallowed Reference Values.
 * An actual value must be in a range where two Reference Values are the min and max.
 
-## RATS Conceptual Messages
+## RATS Conceptual Messages {#conceptual}
 
 RATS conceptual messages in {{RFC9334}} fall into the above categories as follows:
 
@@ -212,6 +212,7 @@ multiple parsers for matching policies.
 A Verifier receives Evidence from an Attester that must be considered untrusted
 until verified through cryptography. Typically,
 the bottom-most Attesting Environment in an Attester will sign claims about one or more Target Environments
+(see also the DICE example at the end of {conceptual})
 with a private key that the Attesting Environment possesses and the Verifier will verify
 the resulting Evidence with a public key it possesses, called a verification key below. While this is typical,
 cryptography other than public key may also be used.
@@ -222,13 +223,15 @@ could be provisioned directly in the Verifier, though for scalability the Verifi
 typically is provisioned with a trusted root CA certificate such that an
 Endorsement from an Endorser includes the Attester's verification key material
 in the form of a certificate that chains up to that trusted root.  Such a certificate
-need not be stored by the Verifier when the Endorsement can be resolved on demand
-or passed to the Verifier along with the Evidence to verify, depending on the protocol.
+might be stored in the Verifier, or might be resolved on demand via some protocol,
+or might be passed to the Verifier along with the Evidence to verify, depending on the protocol.
+Details are out of scope of this document and left to specific protocol documents.
 
-No particular algorithm or cryptographic protocol is assumed for the verification
+Specific protocol documents are also responsible for documenting what
+particular algorithm or cryptographic protocol is used for the verification
 of the Attester. The verification key could be, typically, a symmetric key, a raw public key, or a certified public key.
 
-Evidence typically contains an identifier for the Attester
+Evidence can contain an identifier for the Attester
 (e.g., {{-rats-eat}} `ueid`) in a claim, sometimes termed an "identity claim",
 that can be used by the Verifier to look up its verification key for the Attester.
 
