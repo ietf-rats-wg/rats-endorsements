@@ -1500,15 +1500,15 @@ the applications they release.<a href="#section-5-1" class="pilcrow">¶</a></p>
 OS, firmware, and hardware, each from a different vendor that provides
 an Endorsement for their own Target Environment, containing additional claims
 about that Target Environment.  Thus each Target Environment (application, OS, firmware,
-and hardware) has one set of claims in the Evidence, and an additional
-set of claims in the Endorsement from its manufacturer.  A Verifier
+and hardware) has one set of claims ("claim set 1") in the Evidence, and an additional
+set of claims ("claim set 2") in the Endorsement from its manufacturer.  A Verifier
 that trusts each Endorser would thus use the claim sets from both conceptual
 messages when comparing against reference state for a given Target Environment.<a href="#section-5-2" class="pilcrow">¶</a></p>
 <span id="name-multiple-endorsements-2"></span><div id="multiple">
 <figure id="figure-2">
         <div id="section-5-3.1">
           <div class="alignCenter art-svg artwork" id="section-5-3.1.1">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="512" width="472" viewBox="0 0 472 512" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="512" width="504" viewBox="0 0 504 512" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
               <path d="M 128,32 L 128,112" fill="none" stroke="black"></path>
               <path d="M 128,144 L 128,224" fill="none" stroke="black"></path>
               <path d="M 128,256 L 128,336" fill="none" stroke="black"></path>
@@ -1517,57 +1517,57 @@ messages when comparing against reference state for a given Target Environment.<
               <path d="M 232,160 L 232,208" fill="none" stroke="black"></path>
               <path d="M 232,272 L 232,320" fill="none" stroke="black"></path>
               <path d="M 232,384 L 232,432" fill="none" stroke="black"></path>
-              <path d="M 312,48 L 312,96" fill="none" stroke="black"></path>
-              <path d="M 312,160 L 312,208" fill="none" stroke="black"></path>
-              <path d="M 312,272 L 312,320" fill="none" stroke="black"></path>
-              <path d="M 312,384 L 312,432" fill="none" stroke="black"></path>
-              <path d="M 328,32 L 328,112" fill="none" stroke="black"></path>
-              <path d="M 328,144 L 328,224" fill="none" stroke="black"></path>
-              <path d="M 328,256 L 328,336" fill="none" stroke="black"></path>
-              <path d="M 328,368 L 328,448" fill="none" stroke="black"></path>
-              <path d="M 344,32 L 344,448" fill="none" stroke="black"></path>
-              <path d="M 360,48 L 360,96" fill="none" stroke="black"></path>
-              <path d="M 360,160 L 360,208" fill="none" stroke="black"></path>
-              <path d="M 360,272 L 360,320" fill="none" stroke="black"></path>
-              <path d="M 360,384 L 360,432" fill="none" stroke="black"></path>
-              <path d="M 392,456 L 392,496" fill="none" stroke="black"></path>
-              <path d="M 440,48 L 440,96" fill="none" stroke="black"></path>
-              <path d="M 440,160 L 440,208" fill="none" stroke="black"></path>
-              <path d="M 440,272 L 440,320" fill="none" stroke="black"></path>
-              <path d="M 440,384 L 440,432" fill="none" stroke="black"></path>
-              <path d="M 464,32 L 464,448" fill="none" stroke="black"></path>
-              <path d="M 128,32 L 328,32" fill="none" stroke="black"></path>
-              <path d="M 344,32 L 464,32" fill="none" stroke="black"></path>
-              <path d="M 232,48 L 312,48" fill="none" stroke="black"></path>
-              <path d="M 360,48 L 440,48" fill="none" stroke="black"></path>
+              <path d="M 328,48 L 328,96" fill="none" stroke="black"></path>
+              <path d="M 328,160 L 328,208" fill="none" stroke="black"></path>
+              <path d="M 328,272 L 328,320" fill="none" stroke="black"></path>
+              <path d="M 328,384 L 328,432" fill="none" stroke="black"></path>
+              <path d="M 344,32 L 344,112" fill="none" stroke="black"></path>
+              <path d="M 344,144 L 344,224" fill="none" stroke="black"></path>
+              <path d="M 344,256 L 344,336" fill="none" stroke="black"></path>
+              <path d="M 344,368 L 344,448" fill="none" stroke="black"></path>
+              <path d="M 360,32 L 360,448" fill="none" stroke="black"></path>
+              <path d="M 376,48 L 376,96" fill="none" stroke="black"></path>
+              <path d="M 376,160 L 376,208" fill="none" stroke="black"></path>
+              <path d="M 376,272 L 376,320" fill="none" stroke="black"></path>
+              <path d="M 376,384 L 376,432" fill="none" stroke="black"></path>
+              <path d="M 424,456 L 424,496" fill="none" stroke="black"></path>
+              <path d="M 472,48 L 472,96" fill="none" stroke="black"></path>
+              <path d="M 472,160 L 472,208" fill="none" stroke="black"></path>
+              <path d="M 472,272 L 472,320" fill="none" stroke="black"></path>
+              <path d="M 472,384 L 472,432" fill="none" stroke="black"></path>
+              <path d="M 496,32 L 496,448" fill="none" stroke="black"></path>
+              <path d="M 128,32 L 344,32" fill="none" stroke="black"></path>
+              <path d="M 360,32 L 496,32" fill="none" stroke="black"></path>
+              <path d="M 232,48 L 328,48" fill="none" stroke="black"></path>
+              <path d="M 376,48 L 472,48" fill="none" stroke="black"></path>
               <path d="M 80,64 L 112,64" fill="none" stroke="black"></path>
-              <path d="M 232,96 L 312,96" fill="none" stroke="black"></path>
-              <path d="M 360,96 L 440,96" fill="none" stroke="black"></path>
-              <path d="M 128,112 L 328,112" fill="none" stroke="black"></path>
-              <path d="M 128,144 L 328,144" fill="none" stroke="black"></path>
-              <path d="M 232,160 L 312,160" fill="none" stroke="black"></path>
-              <path d="M 360,160 L 440,160" fill="none" stroke="black"></path>
+              <path d="M 232,96 L 328,96" fill="none" stroke="black"></path>
+              <path d="M 376,96 L 472,96" fill="none" stroke="black"></path>
+              <path d="M 128,112 L 344,112" fill="none" stroke="black"></path>
+              <path d="M 128,144 L 344,144" fill="none" stroke="black"></path>
+              <path d="M 232,160 L 328,160" fill="none" stroke="black"></path>
+              <path d="M 376,160 L 472,160" fill="none" stroke="black"></path>
               <path d="M 80,176 L 112,176" fill="none" stroke="black"></path>
-              <path d="M 232,208 L 312,208" fill="none" stroke="black"></path>
-              <path d="M 360,208 L 440,208" fill="none" stroke="black"></path>
-              <path d="M 128,224 L 328,224" fill="none" stroke="black"></path>
-              <path d="M 128,256 L 328,256" fill="none" stroke="black"></path>
-              <path d="M 232,272 L 312,272" fill="none" stroke="black"></path>
-              <path d="M 360,272 L 440,272" fill="none" stroke="black"></path>
+              <path d="M 232,208 L 328,208" fill="none" stroke="black"></path>
+              <path d="M 376,208 L 472,208" fill="none" stroke="black"></path>
+              <path d="M 128,224 L 344,224" fill="none" stroke="black"></path>
+              <path d="M 128,256 L 344,256" fill="none" stroke="black"></path>
+              <path d="M 232,272 L 328,272" fill="none" stroke="black"></path>
+              <path d="M 376,272 L 472,272" fill="none" stroke="black"></path>
               <path d="M 80,288 L 112,288" fill="none" stroke="black"></path>
-              <path d="M 232,320 L 312,320" fill="none" stroke="black"></path>
-              <path d="M 360,320 L 440,320" fill="none" stroke="black"></path>
-              <path d="M 128,336 L 328,336" fill="none" stroke="black"></path>
-              <path d="M 128,368 L 328,368" fill="none" stroke="black"></path>
-              <path d="M 232,384 L 312,384" fill="none" stroke="black"></path>
-              <path d="M 360,384 L 440,384" fill="none" stroke="black"></path>
+              <path d="M 232,320 L 328,320" fill="none" stroke="black"></path>
+              <path d="M 376,320 L 472,320" fill="none" stroke="black"></path>
+              <path d="M 128,336 L 344,336" fill="none" stroke="black"></path>
+              <path d="M 128,368 L 344,368" fill="none" stroke="black"></path>
+              <path d="M 232,384 L 328,384" fill="none" stroke="black"></path>
+              <path d="M 376,384 L 472,384" fill="none" stroke="black"></path>
               <path d="M 80,400 L 112,400" fill="none" stroke="black"></path>
-              <path d="M 232,432 L 312,432" fill="none" stroke="black"></path>
-              <path d="M 360,432 L 440,432" fill="none" stroke="black"></path>
-              <path d="M 128,448 L 328,448" fill="none" stroke="black"></path>
-              <path d="M 344,448 L 464,448" fill="none" stroke="black"></path>
-              <path d="M 80,496 L 392,496" fill="none" stroke="black"></path>
-              <polygon class="arrowhead" points="400,456 388,450.4 388,461.6" fill="black" transform="rotate(270,392,456)"></polygon>
+              <path d="M 232,432 L 328,432" fill="none" stroke="black"></path>
+              <path d="M 376,432 L 472,432" fill="none" stroke="black"></path>
+              <path d="M 128,448 L 344,448" fill="none" stroke="black"></path>
+              <path d="M 360,448 L 496,448" fill="none" stroke="black"></path>
+              <path d="M 80,496 L 424,496" fill="none" stroke="black"></path>
+              <polygon class="arrowhead" points="432,456 420,450.4 420,461.6" fill="black" transform="rotate(270,424,456)"></polygon>
               <polygon class="arrowhead" points="120,400 108,394.4 108,405.6" fill="black" transform="rotate(0,112,400)"></polygon>
               <polygon class="arrowhead" points="120,288 108,282.4 108,293.6" fill="black" transform="rotate(0,112,288)"></polygon>
               <polygon class="arrowhead" points="120,176 108,170.4 108,181.6" fill="black" transform="rotate(0,112,176)"></polygon>
@@ -1576,47 +1576,55 @@ messages when comparing against reference state for a given Target Environment.<
                 <text x="16" y="52">App</text>
                 <text x="36" y="68">Endorser</text>
                 <text x="176" y="68">Endorsement</text>
-                <text x="272" y="68">app</text>
-                <text x="400" y="68">app</text>
+                <text x="280" y="68">app</text>
+                <text x="424" y="68">app</text>
                 <text x="256" y="84">claim</text>
                 <text x="296" y="84">set</text>
-                <text x="384" y="84">claim</text>
-                <text x="424" y="84">set</text>
-                <text x="456" y="100">E</text>
-                <text x="456" y="116">v</text>
-                <text x="456" y="132">i</text>
-                <text x="456" y="148">d</text>
+                <text x="320" y="84">2</text>
+                <text x="400" y="84">claim</text>
+                <text x="440" y="84">set</text>
+                <text x="464" y="84">1</text>
+                <text x="488" y="100">E</text>
+                <text x="488" y="116">v</text>
+                <text x="488" y="132">i</text>
+                <text x="488" y="148">d</text>
                 <text x="12" y="164">OS</text>
-                <text x="456" y="164">e</text>
+                <text x="488" y="164">e</text>
                 <text x="36" y="180">Endorser</text>
                 <text x="176" y="180">Endorsement</text>
-                <text x="268" y="180">OS</text>
-                <text x="396" y="180">OS</text>
-                <text x="456" y="180">n</text>
+                <text x="276" y="180">OS</text>
+                <text x="420" y="180">OS</text>
+                <text x="488" y="180">n</text>
                 <text x="256" y="196">claim</text>
                 <text x="296" y="196">set</text>
-                <text x="384" y="196">claim</text>
-                <text x="424" y="196">set</text>
-                <text x="456" y="196">c</text>
-                <text x="456" y="212">e</text>
+                <text x="320" y="196">2</text>
+                <text x="400" y="196">claim</text>
+                <text x="440" y="196">set</text>
+                <text x="464" y="196">1</text>
+                <text x="488" y="196">c</text>
+                <text x="488" y="212">e</text>
                 <text x="36" y="276">Firmware</text>
                 <text x="36" y="292">Endorser</text>
                 <text x="176" y="292">Endorsement</text>
-                <text x="268" y="292">firmware</text>
-                <text x="396" y="292">firmware</text>
+                <text x="276" y="292">firmware</text>
+                <text x="420" y="292">firmware</text>
                 <text x="256" y="308">claim</text>
                 <text x="296" y="308">set</text>
-                <text x="384" y="308">claim</text>
-                <text x="424" y="308">set</text>
+                <text x="320" y="308">2</text>
+                <text x="400" y="308">claim</text>
+                <text x="440" y="308">set</text>
+                <text x="464" y="308">1</text>
                 <text x="36" y="388">Hardware</text>
                 <text x="36" y="404">Endorser</text>
                 <text x="176" y="404">Endorsement</text>
-                <text x="268" y="404">hardware</text>
-                <text x="396" y="404">hardware</text>
+                <text x="276" y="404">hardware</text>
+                <text x="420" y="404">hardware</text>
                 <text x="256" y="420">claim</text>
                 <text x="296" y="420">set</text>
-                <text x="384" y="420">claim</text>
-                <text x="424" y="420">set</text>
+                <text x="320" y="420">2</text>
+                <text x="400" y="420">claim</text>
+                <text x="440" y="420">set</text>
+                <text x="464" y="420">1</text>
                 <text x="36" y="500">Attester</text>
               </g>
             </svg><a href="#section-5-3.1.1" class="pilcrow">¶</a>
