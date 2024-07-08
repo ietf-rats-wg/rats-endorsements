@@ -181,15 +181,24 @@ store, which is part of the layer 0 reference state depicted above.
 
 # Conditionally Endorsed Values
 
-Some claims in Endorsements might be conditional. A claim is conditional if
-it only applies if actual state matches Reference Values, according to some
+The example in {{input}} showed an actual state from Evidence for other layers,
+and an Endorsement containing actual state for layer 0. However,
+some claims in Endorsements might be conditional and so are only treated as actual
+state if a condition is met.
+
+A claim is conditional if
+it only applies if other actual state matches Reference Values, according to some
 matching policy.
 For example an Endorser for a given CPU might provide additional
 information about what the CPU supports based on current firmware configuration
 state, or an Endorser might provide additional information that if the
 serial number is in a given range, then a specific security guarantee is present.
 
-Policies around matching actual state in Evidence against
+Thus, actual state is determined by starting with a collection of unconditional claims,
+and adding any conditional claims that whose conditions are met based on the actual
+state, and then repeating until no more conditional claims are added.
+
+Verifier policies around matching actual state against
 reference state are normally expressed in Appraisal Policy for Evidence.
 Similarly, reference state is normally expressed in the Reference Values
 conceptual message.  Such policies allow a Verifier and Relying Parties to make
