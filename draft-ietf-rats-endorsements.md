@@ -181,7 +181,7 @@ store, which is part of the layer 0 reference state depicted above.
 
 # Conditionally Endorsed Values
 
-The example in {{input}} showed an actual state from Evidence for other layers,
+The example in {{input}} showed Evidence containing actual state for layers 1 through N,
 and an Endorsement containing actual state for layer 0. However,
 some claims in Endorsements might be conditional and so are only treated as actual
 state if a condition is met.
