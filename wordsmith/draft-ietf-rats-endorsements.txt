@@ -5,10 +5,10 @@
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Intended status: Informational                               H. Birkholz
-Expires: 14 December 2024                                 Fraunhofer SIT
+Expires: 20 January 2025                                  Fraunhofer SIT
                                                               T. Fossati
                                                                   Linaro
-                                                            12 June 2024
+                                                            19 July 2024
 
 
                            RATS Endorsements
@@ -19,9 +19,10 @@ Abstract
    In the IETF Remote Attestation Procedures (RATS) architecture, a
    Verifier accepts Evidence and, using Appraisal Policy typically with
    additional input from Endorsements and Reference Values, generates
-   Attestation Results in formats needed by a Relying Parties.  This
-   document explains the purpose and role of Endorsements and discusses
-   some considerations in the choice of message format for Endorsements.
+   Attestation Results in formats that are useful for Relying Parties.
+   This document illustrates the purpose and role of Endorsements and
+   discusses some considerations in the choice of message format for
+   Endorsements in the scope of the RATS architecture.
 
 Discussion Venues
 
@@ -49,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 14 December 2024.
+   This Internet-Draft will expire on 20 January 2025.
 
 Copyright Notice
 
@@ -68,7 +69,7 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Actual State vs Reference States
+   2.  Actual State vs Reference State
      2.1.  RATS Conceptual Messages
    3.  Conditionally Endorsed Values
    4.  Endorsing Evidence Provenance
@@ -78,21 +79,19 @@ Table of Contents
      6.2.  Scalability Considerations
    7.  IANA Considerations
    8.  Acknowledgements
-   9.  References
-     9.1.  Normative References
-     9.2.  Informative References
+   9.  Informative References
    Authors' Addresses
 
 1.  Introduction
 
    Section 3 in the Remote ATtestation procedures (RATS) Architecture
-   [RFC9334] gives an overview of the roles and conceptual messages in
-   the IETF RATS Architecture.  As discussed in that document, a
-   Verifier accepts a well-defined set of RATS conceptual messages:
-   Evidence, Endorsements and Reference Values (as well es Policy for
-   Appraisal of Evidence).  A Verifier appraises Evidence using
-   Appraisal Policy for Evidence, typically against a set of Reference
-   Values.
+   Section 3 of [RFC9334] gives an overview of the roles and conceptual
+   messages in the IETF RATS Architecture.  As discussed in that
+   document, a Verifier accepts a well-defined set of RATS conceptual
+   messages: Evidence, Endorsements and Reference Values, as well as
+   Policy for Appraisal of Evidence.  A Verifier appraises Evidence
+   using Appraisal Policy for Evidence, typically against a set of
+   Reference Values.
 
    Various formats of conceptual messages exist, including standard and
    vendor-specific formats.  One of the purposes of a Verifier is
@@ -101,62 +100,65 @@ Table of Contents
    Results in the formats needed by a Relying Parties it is intended to
    cater.
 
-2.  Actual State vs Reference States
+2.  Actual State vs Reference State
 
    Appraisal policies (Appraisal Policy for Evidence, and Appraisal
    Policy for Attestation Results) involve comparing the actual state of
    an Attester against desired or undesired states, in order to
    determine how trustworthy the Attester is for its purposes.  The
    state of an Attester represents its composition of components of
-   execution environments (its "shape"), typically in a hierarchical
-   manner.  The state of an Attester also encompasses the combination of
-   static and dynamic constitution (e.g., provisioned and deployed
-   software, firmware, and micro-code), static and dynamic
-   configuration, and the resulting operational state of its components
-   at a certain point of time.  Thus, a Verifier needs to receive
-   messages with information about actual state, and information about
-   desired/undesired states, and an appraisal policy that controls how
-   the two are compared.
+   execution environments (its "shape" or "composition"), typically in a
+   hierarchical manner, i.e., a tree.  The state of an Attester also
+   encompasses the combination of static and dynamic composition (e.g.,
+   provisioned and deployed software, firmware, and micro-code), static
+   and dynamic configuration, and the resulting operational state of its
+   components at a certain point of time.  Thus, a Verifier needs to
+   receive conceptual messages with information about actual state, and
+   information about desired/undesired states, and an appraisal policy
+   that controls how the two are compared.
 
    Each Attester in general has at least one Attesting Environment and
    one Target Environment (e.g., hardware, firmware, Operating System,
    etc.).  Typically, each Attester has multiple Target Environments,
-   each with their own set of claims (sometimes called a "claimset")
+   each with their own set of claims (sometimes called a "claim sets")
    representing their actual state.  Additionally, the number of Target
-   Environments is not limited.
+   Environments and Attesting Environments that are components of an
+   Attester are not limited.
 
-   "Actual state" is a group of claimsets about the actual state of the
-   Attester at a given point in time.  Each claimset holds claims about
+   "Actual state" is a group of claim sets about the actual state of the
+   Attester at a given point in time.  Each claim set holds claims about
    a specific Target Environment that is essential to determining
-   trustworthiness.  Generally speaking, each claim has a name (or other
-   ID) and a singleton value, being the value of that specific Attester
-   at a given point in time.  Some claims may inherently have multiple
+   trustworthiness.  Generally speaking, each claim has a name
+   (typically referred to as label and occasionally referred to as a
+   key, code-point, or some other ID) and a singleton value, being a
+   value collected from a Target Environment of a specific Attester at a
+   given point in time.  Some claims may inherently have multiple
    values, such as a list of files in a given location on the device,
-   but for our purposes we will treat such a list as a single unit,
-   meaning one Attester at one point in time.
+   but in the context of this document such a list is treated as a
+   single unit, representing one Attester at one point in time.
 
-   "Reference state" is a group of claimsets about the desired or
-   undesired state of the Attester.  Typically, each claim has a name
-   (or other ID) and a set of potential values, being the values that
-   are allowed/disallowed when determining whether to trust the
-   Attester.  In general there may be more gradation than simply
-   "allowed or disallowed" so each value might include some more complex
-   level of gradation in some implementations.
+   "Reference state" is a group of claim sets about the desired or
+   undesired state of an Attester.  Typically, each claim has a name and
+   a set of potential values, being the values that are allowed/
+   disallowed when determining the trustworthiness of the Attester.  In
+   general, there may be more gradation than simply "allowed or
+   disallowed" so each value might include some more complex level of
+   gradation in some implementations.
 
    That is, where actual state has a single value per claim per Target
    Environment applying to one device at one point in time, reference
-   state can have a set of values per claim per Target Environment.  The
-   appraisal policy then specifies how to match the actual value against
-   the set of Reference Values.
+   state can have a set of values per claim per Target Environment.
+   Appraisal policy then specifies how to match the actual state values
+   against a set of Reference Values.
 
    Some examples of such matching include:
 
-   *  The actual value must be in the set of allowed Reference Values.
+   *  An actual value must be in the set of allowed Reference Values.
 
-   *  The actual value must not be in the set of disallowed Reference
+   *  An actual value must not be in the set of disallowed Reference
       Values.
 
-   *  The actual value must be in a range where two Reference Values are
+   *  An actual value must be in a range where two Reference Values are
       the min and max.
 
 2.1.  RATS Conceptual Messages
@@ -171,8 +173,16 @@ Table of Contents
    *  Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy
       for Attestation Results
 
-   The figure below shows an example of Verifier input for a layered
-   Attester as discussed in [RFC9334].
+   In some implementations, hints or suggestions for how to do a
+   comparison might be supplied by a Reference Value Provider (as part
+   of Reference Values), an Endorser (in an Endorsement), and/or an
+   Attester (in Evidence), but the Verifier Owner is authoritative for
+   Appraisal Policy for Evidence, and the Relying Party Owner is
+   authoritative for Appraisal Policy for Attestation Results as
+   depicted in Section 3 of [RFC9334].
+
+   Figure 1 below shows an example of Verifier input for a layered
+   Attester as discussed in Section 3.2 of [RFC9334].
 
              .-- .------------.   Appraisal    .-----------------. --.
              |   |Actual state|    Policy      | Reference state |   |
@@ -219,21 +229,27 @@ Table of Contents
 
 3.  Conditionally Endorsed Values
 
-   Some claims in Endorsements might be conditional.  A claim is
-   conditional if it only applies if actual state matches Reference
-   Values, according to some matching policy.
+   The example in Figure 1 showed Evidence containing actual state for
+   layers 1 through N, and an Endorsement containing actual state for
+   layer 0.  However, some claims in Endorsements might be conditional
+   and so are only treated as actual state if a condition is met.
 
-   Endorsers should not use conditionally endorsed values based on
-   immutable values of actual state in Evidence (such as an immutable
-   serial number for example).  An Endorser can, however, use
-   conditionally endorsed values based on mutable values.  For example
-   an Endorser for a given CPU might provide additional information
-   about what the CPU supports based on current firmware configuration
-   state.
+   A claim is conditional if it only applies if other actual state
+   matches Reference Values, according to some matching policy.  For
+   example an Endorser for a given CPU might provide additional
+   information about what the CPU supports based on current firmware
+   configuration state, or an Endorser might provide additional
+   information that if the serial number is in a given range, then a
+   specific security guarantee is present.
 
-   Policies around matching actual state in Evidence against reference
-   states are normally expressed in Appraisal Policy for Evidence.
-   Similarly, reference states are normally expressed in the Reference
+   Thus, actual state is determined by starting with a collection of
+   unconditional claims, and adding any conditional claims that whose
+   conditions are met based on the actual state, and then repeating
+   until no more conditional claims are added.
+
+   Verifier policies around matching actual state against reference
+   state are normally expressed in Appraisal Policy for Evidence.
+   Similarly, reference state is normally expressed in the Reference
    Values conceptual message.  Such policies allow a Verifier and
    Relying Parties to make their decisions about trustworthiness of an
    Attester.
@@ -256,11 +272,12 @@ Table of Contents
    A Verifier receives Evidence from an Attester that must be considered
    untrusted until verified through cryptography.  Typically, the
    bottom-most Attesting Environment in an Attester will sign claims
-   about one or more Target Environments with a private key that the
-   Attesting Environment possesses and the Verifier will verify the
-   resulting Evidence with a public key it possesses, called a
-   verification key below.  While this is typical, cryptography other
-   than public key may also be used.
+   about one or more Target Environments (see also the DICE example at
+   the end of {conceptual}) with a private key that the Attesting
+   Environment possesses and the Verifier will verify the resulting
+   Evidence with a public key it possesses, called a verification key
+   below.  While this is typical, cryptography other than public key may
+   also be used.
 
    Since it is not possible to establish trust in an Attester without
    cryptography, the Verifier must have access to a verification key for
@@ -269,16 +286,19 @@ Table of Contents
    provisioned with a trusted root CA certificate such that an
    Endorsement from an Endorser includes the Attester's verification key
    material in the form of a certificate that chains up to that trusted
-   root.  Such a certificate need not be stored by the Verifier when the
-   Endorsement can be resolved on demand or passed to the Verifier along
-   with the Evidence to verify, depending on the protocol.
+   root.  Such a certificate might be stored in the Verifier, or might
+   be resolved on demand via some protocol, or might be passed to the
+   Verifier along with the Evidence to verify, depending on the
+   protocol.  Details are out of scope of this document and left to
+   specific protocol documents.
 
-   No particular algorithm or cryptographic protocol is assumed for the
+   Specific protocol documents are also responsible for documenting what
+   particular algorithm or cryptographic protocol is used for the
    verification of the Attester.  The verification key could be,
    typically, a symmetric key, a raw public key, or a certified public
    key.
 
-   Evidence typically contains an identifier for the Attester (e.g.,
+   Evidence can contain an identifier for the Attester (e.g.,
    [I-D.ietf-rats-eat] ueid) in a claim, sometimes termed an "identity
    claim", that can be used by the Verifier to look up its verification
    key for the Attester.
@@ -309,41 +329,42 @@ Table of Contents
    that provides an Endorsement for their own Target Environment,
    containing additional claims about that Target Environment.  Thus
    each Target Environment (application, OS, firmware, and hardware) has
-   one set of claims in the Evidence, and an additional set of claims in
-   the Endorsement from its manufacturer.  A Verifier that trusts each
-   Endorser would thus use claims from both conceptual messages when
-   comparing against reference state for a given Target Environment.
+   one set of claims ("claim set 1") in the Evidence, and an additional
+   set of claims ("claim set 2") in the Endorsement from its
+   manufacturer.  A Verifier that trusts each Endorser would thus use
+   the claim sets from both conceptual messages when comparing against
+   reference state for a given Target Environment.
 
-                        .-----------------------. .-------------.
-         App            |            .--------. | | .--------.  |
-         Endorser ----> |Endorsement |  app   | | | |  app   |  |
-                        |            |claimset| | | |claimset|  |
-                        |            '--------' | | '--------' E|
-                        '-----------------------' |            v|
-                                                  |            i|
-                        .-----------------------. |            d|
-         OS             |            .--------. | | .--------. e|
-         Endorser ----> |Endorsement |   OS   | | | |   OS   | n|
-                        |            |claimset| | | |claimset| c|
-                        |            '--------' | | '--------' e|
-                        '-----------------------' |             |
-                                                  |             |
-                        .-----------------------. |             |
-         Firmware       |            .--------. | | .--------.  |
-         Endorser ----> |Endorsement |firmware| | | |firmware|  |
-                        |            |claimset| | | |claimset|  |
-                        |            '--------' | | '--------'  |
-                        '-----------------------' |             |
-                                                  |             |
-                        .-----------------------. |             |
-         Hardware       |            .--------. | | .--------.  |
-         Endorser ----> |Endorsement |hardware| | | |hardware|  |
-                        |            |claimset| | | |claimset|  |
-                        |            '--------' | | '--------'  |
-                        '-----------------------' '-------------'
-                                                         ^
-                                                         |
-         Attester ---------------------------------------'
+                     .--------------------------. .----------------.
+      App            |            .-----------. | | .-----------.  |
+      Endorser ----> |Endorsement |    app    | | | |    app    |  |
+                     |            |claim set 2| | | |claim set 1|  |
+                     |            '-----------' | | '-----------' E|
+                     '--------------------------' |               v|
+                                                  |               i|
+                     .--------------------------. |               d|
+      OS             |            .-----------. | | .-----------. e|
+      Endorser ----> |Endorsement |    OS     | | | |    OS     | n|
+                     |            |claim set 2| | | |claim set 1| c|
+                     |            '-----------' | | '-----------' e|
+                     '--------------------------' |                |
+                                                  |                |
+                     .--------------------------. |                |
+      Firmware       |            .-----------. | | .-----------.  |
+      Endorser ----> |Endorsement | firmware  | | | | firmware  |  |
+                     |            |claim set 2| | | |claim set 1|  |
+                     |            '-----------' | | '-----------'  |
+                     '--------------------------' |                |
+                                                  |                |
+                     .--------------------------. |                |
+      Hardware       |            .-----------. | | .-----------.  |
+      Endorser ----> |Endorsement | hardware  | | | | hardware  |  |
+                     |            |claim set 2| | | |claim set 1|  |
+                     |            '-----------' | | '-----------'  |
+                     '--------------------------' '----------------'
+                                                          ^
+                                                          |
+      Attester -------------------------------------------'
 
                       Figure 2: Multiple Endorsements
 
@@ -355,9 +376,11 @@ Table of Contents
    Thus it is not as simple as saying that a Verifier has a trusted set
    of Endorsers.  The binding between Target Environment and Endorser
    might be part of the Appraisal Policy for Evidence, or might be
-   specified as part of the Evidence itself, or some combination of the
-   two.  An Endorsement format specification should explain how this
-   concern is addressed.
+   specified as part of the Evidence itself (e.g., claims from a Target
+   Environment might include a secure identifier of what Endorser can
+   provide additional claims about it), or some combination of the two.
+   An Endorsement format specification should explain how this concern
+   is addressed.
 
 6.  Endorsement Format Considerations
 
@@ -376,12 +399,12 @@ Table of Contents
 
 6.2.  Scalability Considerations
 
-   We currently assume that Reference Value Providers and Endorsers
-   typically provide the same information to a potentially large number
-   of clients (Verifiers, or potentially to other entities for later
-   relay to a Verifier), and are generally on devices that are not
-   constrained nodes, and hence additional scalability, including code
-   size, is not a significant concern.
+   We currently assume that Reference Value Providers typically provide
+   the same information to a potentially large number of clients
+   (Verifiers, or potentially to other entities for later relay to a
+   Verifier), and are generally on devices that are not constrained
+   nodes, and hence additional scalability, including code size, is not
+   a significant concern.  We also assume the same is true of Endorsers.
 
    The scenario where scalability in terms of code size is strongest,
    however, is when a Verifier is embedded into a constrained node.  For
@@ -413,27 +436,23 @@ Table of Contents
 
 8.  Acknowledgements
 
-   The authors wish to thank Thomas Hardjono, Laurence Lundblade, and
-   Kathleen Moriarty for feedback and ideas that contributed to this
-   document.
+   The authors wish to thank Thomas Hardjono, Laurence Lundblade,
+   Kathleen Moriarty, and Ned Smith for feedback and ideas that
+   contributed to this document.
 
-9.  References
+9.  Informative References
 
-9.1.  Normative References
+   [I-D.ietf-rats-eat]
+              Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
+              Wallace, "The Entity Attestation Token (EAT)", Work in
+              Progress, Internet-Draft, draft-ietf-rats-eat-29, 8 July
+              2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
+              rats-eat-29>.
 
    [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
               W. Pan, "Remote ATtestation procedureS (RATS)
               Architecture", RFC 9334, DOI 10.17487/RFC9334, January
               2023, <https://www.rfc-editor.org/rfc/rfc9334>.
-
-9.2.  Informative References
-
-   [I-D.ietf-rats-eat]
-              Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
-              Wallace, "The Entity Attestation Token (EAT)", Work in
-              Progress, Internet-Draft, draft-ietf-rats-eat-27, 26 May
-              2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              rats-eat-27>.
 
    [TCG-DICE] Trusted Computing Group, "DICE Attestation Architecture",
               January 2024, <https://trustedcomputinggroup.org/wp-
