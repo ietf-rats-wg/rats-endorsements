@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-18T00:33:08.248132+00:00",
+  "timestamp": "2024-07-21T00:37:01.408798+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -262,11 +262,11 @@
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [
-        "ready to close"
+        "have proposed text"
       ],
       "body": "Section 3 seems garbled. Paragraphs 1 and 3 describe reference values interactions (possible states) in a section on actual (endorsed) states.  These should probably be removed from section 3. \r\n\r\nParagraph 2 seems to give attention to immutable vs. immutable unnecessarily. It bans use of conditionally endorsed values that are immutable. But it is reasonable for an AE to have a serial# that is asserted by one AE while another AE asserts, say a model#. It isn't wrong if an endorsement asserts that a model# is X conditional on a serial# Y. \r\n\r\nParagraph 2 uses an example that isn't that intuitive as it assumes / asserts that CPU may support different features based on (mutable) firmware. This seems like an obscure example since there is no consistency across the industry regarding whether a CPU vendor's endorsement will differ based on which firmware happens to be loaded. Hence, it isn't providing intuition about the property of immutableness as it pertains to conditional endorsement.\r\n\r\nThe fourth paragraph seems to derive from the previous 3 but these all have issues, so it is unclear what property is derived. Paragraph 4 simply seems to weigh trade-offs without specifically stating the conditions being compared.\r\n\r\nThe fifth paragraph describes the relationship between conditional endorsements and policies. But there is no such thing as appraisal policy for endorsements. Hence, it is unclear what point the author is making. \r\n\r\nIn toto, section 3 should describe the concept of conditional endorsement as the idea that a second endorsement state may be entered (true) conditional on a first endorsement state being true. \r\n\r\nFor example, if an AE has the serial#_X, then the CC evaluation is EAL4+. \r\n\r\nAppraisal policy for AR might determine whether or not CC evaluation claims are relevant. But appraisal policy would (should) not negate an endorsement claim.\r\n\r\n",
       "createdAt": "2024-06-21T19:17:01Z",
-      "updatedAt": "2024-07-08T20:21:46Z",
+      "updatedAt": "2024-07-19T15:43:45Z",
       "closedAt": null,
       "comments": [
         {
@@ -2467,6 +2467,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 34,
+      "id": "PR_kwDOJj8oQM516ky2",
+      "title": "More section 3 wordsmithing",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/34",
+      "state": "OPEN",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "PR #31 used poor sentence construction, which this PR fixes.\r\n\r\nAddresses more of #22",
+      "createdAt": "2024-07-19T15:43:21Z",
+      "updatedAt": "2024-07-19T15:43:22Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "8cada5507351e3f57a2d260877945dddeea2b279",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "wordsmith",
+      "headRefOid": "ab3f13688bd933208241fc1781603d7ca78536e6",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
