@@ -218,7 +218,7 @@ multiple parsers for matching policies.
 
 # Endorsing Verification Keys
 
-Attesting Environments have cryptographic keys that authenticate the Evidence that they produce.
+Attesting Environments have cryptographic keys that allow authenticating the Evidence that they produce.
 
 Typically,
 the bottom-most Attesting Environment in an Attester will sign claims about one or more Target Environments
