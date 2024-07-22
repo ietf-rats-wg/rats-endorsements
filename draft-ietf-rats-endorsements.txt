@@ -72,7 +72,7 @@ Table of Contents
    2.  Actual State vs Reference State
      2.1.  RATS Conceptual Messages
    3.  Conditionally Endorsed Values
-   4.  Endorsing Evidence Provenance
+   4.  Endorsing Verification Keys
    5.  Multiple Endorsements
    6.  Endorsement Format Considerations
      6.1.  Security Considerations
@@ -267,30 +267,33 @@ Table of Contents
    against a singleton reference value).  This unfortunately complicates
    design as a Verifier may need multiple parsers for matching policies.
 
-4.  Endorsing Evidence Provenance
+4.  Endorsing Verification Keys
 
-   A Verifier receives Evidence from an Attester that must be considered
-   untrusted until verified through cryptography.  Typically, the
-   bottom-most Attesting Environment in an Attester will sign claims
-   about one or more Target Environments (see also the DICE example at
-   the end of {conceptual}) with a private key that the Attesting
-   Environment possesses and the Verifier will verify the resulting
-   Evidence with a public key it possesses, called a verification key
-   below.  While this is typical, cryptography other than public key may
-   also be used.
+   Attesting Environments have cryptographic keys that allow
+   authenticating the Evidence that they produce.
 
-   Since it is not possible to establish trust in an Attester without
-   cryptography, the Verifier must have access to a verification key for
-   each Attester.  Such a key could be provisioned directly in the
-   Verifier, though for scalability the Verifier typically is
-   provisioned with a trusted root CA certificate such that an
-   Endorsement from an Endorser includes the Attester's verification key
-   material in the form of a certificate that chains up to that trusted
-   root.  Such a certificate might be stored in the Verifier, or might
-   be resolved on demand via some protocol, or might be passed to the
-   Verifier along with the Evidence to verify, depending on the
-   protocol.  Details are out of scope of this document and left to
-   specific protocol documents.
+   Typically, the bottom-most Attesting Environment in an Attester will
+   sign claims about one or more Target Environments (see also the DICE
+   example at the end of Section 2.1) with a private key that the
+   Attesting Environment possesses, and the Verifier will verify the
+   resulting Evidence with a public key it possesses, called a
+   verification key below.  While this is typical, cryptography other
+   than public key may also be used.
+
+   Endorsing the linkage between such verification keys and their
+   associated Attesting Environments is crucial to the verification
+   process.
+
+   The Verifier must have access to a verification key for each
+   Attester.  Such a key could be provisioned directly in the Verifier,
+   though for scalability the Verifier typically is provisioned with a
+   trusted root CA certificate such that an Endorsement from an Endorser
+   includes the Attester's verification key material in the form of a
+   certificate that chains up to that trusted root.  Such a certificate
+   might be stored in the Verifier, or might be resolved on demand via
+   some protocol, or might be passed to the Verifier along with the
+   Evidence to verify, depending on the protocol.  Details are out of
+   scope of this document and left to specific protocol documents.
 
    Specific protocol documents are also responsible for documenting what
    particular algorithm or cryptographic protocol is used for the
