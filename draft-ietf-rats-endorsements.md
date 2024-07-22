@@ -216,18 +216,20 @@ some minimal matching policy (e.g., exact match against a singleton reference
 value).  This unfortunately complicates design as a Verifier may need
 multiple parsers for matching policies.
 
-# Endorsing Evidence Provenance
+# Endorsing Verification Keys
 
-A Verifier receives Evidence from an Attester that must be considered untrusted
-until verified through cryptography. Typically,
+Attesting Environments have cryptographic keys that authenticate the Evidence that they produce.
+
+Typically,
 the bottom-most Attesting Environment in an Attester will sign claims about one or more Target Environments
-(see also the DICE example at the end of {conceptual})
-with a private key that the Attesting Environment possesses and the Verifier will verify
+(see also the DICE example at the end of {{conceptual}})
+with a private key that the Attesting Environment possesses, and the Verifier will verify
 the resulting Evidence with a public key it possesses, called a verification key below. While this is typical,
 cryptography other than public key may also be used.
 
-Since it is not possible to establish trust in an Attester without cryptography,
-the Verifier must have access to a verification key for each Attester. Such a key
+Endorsing the linkage between such verification keys and their associated Attesting Environments is crucial to the verification process.
+
+The Verifier must have access to a verification key for each Attester. Such a key
 could be provisioned directly in the Verifier, though for scalability the Verifier
 typically is provisioned with a trusted root CA certificate such that an
 Endorsement from an Endorser includes the Attester's verification key material
