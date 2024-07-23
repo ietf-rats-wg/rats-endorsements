@@ -5,10 +5,10 @@
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Intended status: Informational                               H. Birkholz
-Expires: 23 January 2025                                  Fraunhofer SIT
+Expires: 24 January 2025                                  Fraunhofer SIT
                                                               T. Fossati
                                                                   Linaro
-                                                            22 July 2024
+                                                            23 July 2024
 
 
                            RATS Endorsements
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 January 2025.
+   This Internet-Draft will expire on 24 January 2025.
 
 Copyright Notice
 
@@ -243,9 +243,9 @@ Table of Contents
    specific security guarantee is present.
 
    Thus, actual state is determined by starting with a collection of
-   unconditional claims, and adding any conditional claims that whose
-   conditions are met based on the actual state, and then repeating
-   until no more conditional claims are added.
+   unconditional claims and adding any conditional claims whose
+   conditions are met based on the actual state.  This process is then
+   repeated until no more conditional claims are added.
 
    Verifier policies around matching actual state against reference
    state are normally expressed in Appraisal Policy for Evidence.
