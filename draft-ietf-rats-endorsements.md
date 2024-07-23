@@ -194,9 +194,9 @@ information about what the CPU supports based on current firmware configuration
 state, or an Endorser might provide additional information that if the
 serial number is in a given range, then a specific security guarantee is present.
 
-Thus, actual state is determined by starting with a collection of unconditional claims,
-and adding any conditional claims that whose conditions are met based on the actual
-state, and then repeating until no more conditional claims are added.
+Thus, actual state is determined by starting with a collection of unconditional claims
+and adding any conditional claims whose conditions are met based on the actual
+state.  This process is then repeated until no more conditional claims are added.
 
 Verifier policies around matching actual state against
 reference state are normally expressed in Appraisal Policy for Evidence.
