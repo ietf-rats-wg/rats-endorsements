@@ -2,6 +2,7 @@
 title: 'RATS Endorsements'
 abbrev: RATS Endorsements
 docname: draft-ietf-rats-endorsements-latest
+updates: 9334
 submissiontype: IETF
 consensus: true
 wg: RATS Working Group
