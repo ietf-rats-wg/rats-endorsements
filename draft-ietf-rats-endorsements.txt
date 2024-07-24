@@ -4,11 +4,11 @@
 
 RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
-Intended status: Informational                               H. Birkholz
-Expires: 24 January 2025                                  Fraunhofer SIT
-                                                              T. Fossati
+Updates: 9334 (if approved)                                  H. Birkholz
+Intended status: Informational                            Fraunhofer SIT
+Expires: 25 January 2025                                      T. Fossati
                                                                   Linaro
-                                                            23 July 2024
+                                                            24 July 2024
 
 
                            RATS Endorsements
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 January 2025.
+   This Internet-Draft will expire on 25 January 2025.
 
 Copyright Notice
 
