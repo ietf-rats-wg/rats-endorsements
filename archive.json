@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-09-26T00:38:03.640137+00:00",
+  "timestamp": "2024-09-29T00:42:32.626546+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -62,6 +62,11 @@
       "name": "ready to close",
       "description": "Fixed in latest draft, ready to close if WG consensus is confirmed",
       "color": "e99695"
+    },
+    {
+      "name": "wglc",
+      "description": "working group last call",
+      "color": "f9d0c4"
     }
   ],
   "issues": [
@@ -504,6 +509,24 @@
       "body": "From the IETF 120 RATS WG session minutes:\r\n\r\n> _\"The endorsement draft should be flagged as Updates:9334; the RATS architecture draft because it adds definitions that should be part of core RATS Architecture\"_",
       "createdAt": "2024-07-24T08:26:16Z",
       "updatedAt": "2024-07-24T15:10:50Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 39,
+      "id": "I_kwDOJj8oQM6YQ2qX",
+      "title": "Carl's WGLC review",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/39",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [
+        "wglc"
+      ],
+      "body": "@carl-wallace [review](https://mailarchive.ietf.org/arch/msg/rats/I1ZTK_p-dQTHEssBZB6-md8Chaw/):\r\n\r\n* [ ] _\"[...] I think it may benefit from a bit more discussion on how trust is established in endorsements and how the binding from endorsements to target environment is established. There is no mention of either in the security considerations section. RFC 9334 defines endorsements as being a \u201csecure statement\u201d, so piggybacking off that definition to reference some (abstract) state that must be present in the verifier to verify the endorsement may suffice.\"_\r\n \r\n* [ ] _\"Commenting on the need (or lack of need) for timeliness of endorsements may be worthwhile as well. There is discussion of actual state relative to points in time but not how endorsements fit on the timeline.\"_\r\n \r\n* [ ] _\"One nit, section 5 states the following: \u201cThe binding between Target Environment and Endorser might be part of the Appraisal Policy for Evidence, or might be specified as part of the Evidence itself (e.g., claims from a Target Environment might include a secure identifier of what Endorser can provide additional claims about it), or some combination of the two.\u201c Given the evidence has not yet been verified, referring to the identifier as a \u201csecure identifier\u201d is probably not appropriate.\"_",
+      "createdAt": "2024-09-28T23:16:54Z",
+      "updatedAt": "2024-09-28T23:16:54Z",
       "closedAt": null,
       "comments": []
     }
