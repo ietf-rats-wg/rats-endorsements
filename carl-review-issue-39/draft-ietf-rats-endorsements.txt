@@ -467,8 +467,8 @@ Table of Contents
 9.  Acknowledgements
 
    The authors wish to thank Thomas Hardjono, Laurence Lundblade,
-   Kathleen Moriarty, and Ned Smith for feedback and ideas that
-   contributed to this document.
+   Kathleen Moriarty, Ned Smith, and Carl Wallace for feedback and ideas
+   that contributed to this document.
 
 10.  Informative References
 
