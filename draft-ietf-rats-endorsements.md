@@ -19,6 +19,7 @@ pi:
 author:
 - ins: D. Thaler
   name: Dave Thaler
+  organization: Armidale Consulting
   email: dave.thaler.ietf@gmail.com
   street: ""
   code: ""
