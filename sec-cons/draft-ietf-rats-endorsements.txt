@@ -438,9 +438,9 @@ Table of Contents
 
    [RFC9334] (especially Section 3.2 and Section 12) discusses security
    considerations around the attestation of layers, and around sources
-   of appraisal policies.  Section Section 4 of this document covers
-   additional considerations in these areas, and Section 6.1 covers
-   additional considerations around Endorsement formats.
+   of appraisal policies.  Section 4 of this document covers additional
+   considerations in these areas, and Section 6.1 covers additional
+   considerations around Endorsement formats.
 
 8.  IANA Considerations
 
