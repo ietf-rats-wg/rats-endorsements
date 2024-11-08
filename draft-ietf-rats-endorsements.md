@@ -367,7 +367,12 @@ endorsed values, in order to avoid complexity introduced by such.
 
 # Security Considerations
 
-{{RFC9334}} (especially Section 3.2 and Section 12) discusses security considerations
+{{Section 8.4 of RFC9334}} discusses how a Verifier stores one or more trust anchors
+in its trust anchor store.  The Verifier's trust in an Endorser is expressed via
+storing a trust anchor for the Endorser.  The binding from an Endorsement to
+a given Target Environment is done as discussed in {{endorsing-keys}} of this document.
+
+{{RFC9334}} (especially Section 3.2 and Section 12) also discusses security considerations
 around the attestation of layers, and around sources of appraisal policies.
 {{endorsing-keys}} of this document covers additional considerations in these areas,
 and {{formats-security}} covers additional considerations around Endorsement formats.
