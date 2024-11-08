@@ -3,12 +3,12 @@
 
 
 RATS Working Group                                             D. Thaler
-Internet-Draft                                                          
+Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 25 January 2025                                      T. Fossati
+Expires: 12 May 2025                                          T. Fossati
                                                                   Linaro
-                                                            24 July 2024
+                                                         8 November 2024
 
 
                            RATS Endorsements
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 January 2025.
+   This Internet-Draft will expire on 12 May 2025.
 
 Copyright Notice
 
@@ -448,9 +448,9 @@ Table of Contents
    [I-D.ietf-rats-eat]
               Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
               Wallace, "The Entity Attestation Token (EAT)", Work in
-              Progress, Internet-Draft, draft-ietf-rats-eat-29, 8 July
-              2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              rats-eat-29>.
+              Progress, Internet-Draft, draft-ietf-rats-eat-31, 6
+              September 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-rats-eat-31>.
 
    [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
               W. Pan, "Remote ATtestation procedureS (RATS)
@@ -465,6 +465,7 @@ Table of Contents
 Authors' Addresses
 
    Dave Thaler
+   Armidale Consulting
    United States of America
    Email: dave.thaler.ietf@gmail.com
 
