@@ -75,11 +75,12 @@ Table of Contents
    4.  Endorsing Verification Keys
    5.  Multiple Endorsements
    6.  Endorsement Format Considerations
-     6.1.  Security Considerations
-     6.2.  Scalability Considerations
-   7.  IANA Considerations
-   8.  Acknowledgements
-   9.  Informative References
+     6.1.  Security Considerations for Formats
+     6.2.  Scalability Considerations for Formats
+   7.  Security Considerations
+   8.  IANA Considerations
+   9.  Acknowledgements
+   10. Informative References
    Authors' Addresses
 
 1.  Introduction
@@ -390,7 +391,7 @@ Table of Contents
    This section discusses considerations around formats for
    Endorsements.
 
-6.1.  Security Considerations
+6.1.  Security Considerations for Formats
 
    In many scenarios, a Verifier can also support a variety of different
    formats, and while code size may not be a huge concern, simplicity
@@ -400,7 +401,7 @@ Table of Contents
    format for both Evidence and Endorsements can reduce complexity and
    hence increase security.
 
-6.2.  Scalability Considerations
+6.2.  Scalability Considerations for Formats
 
    We currently assume that Reference Value Providers typically provide
    the same information to a potentially large number of clients
@@ -433,17 +434,31 @@ Table of Contents
    conditionally endorsed values, in order to avoid complexity
    introduced by such.
 
-7.  IANA Considerations
+7.  Security Considerations
+
+   Section 8.4 of [RFC9334] discusses how a Verifier stores one or more
+   trust anchors in its trust anchor store.  The Verifier's trust in an
+   Endorser is expressed via storing a trust anchor for the Endorser.
+   The binding from an Endorsement to a given Target Environment is done
+   as discussed in Section 4 of this document.
+
+   [RFC9334] (especially Section 3.2 and Section 12) also discusses
+   security considerations around the attestation of layers, and around
+   sources of appraisal policies.  Section 4 of this document covers
+   additional considerations in these areas, and Section 6.1 covers
+   additional considerations around Endorsement formats.
+
+8.  IANA Considerations
 
    This document does not require any actions by IANA.
 
-8.  Acknowledgements
+9.  Acknowledgements
 
    The authors wish to thank Thomas Hardjono, Laurence Lundblade,
    Kathleen Moriarty, and Ned Smith for feedback and ideas that
    contributed to this document.
 
-9.  Informative References
+10.  Informative References
 
    [I-D.ietf-rats-eat]
               Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
