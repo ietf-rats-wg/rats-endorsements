@@ -218,7 +218,7 @@ some minimal matching policy (e.g., exact match against a singleton reference
 value).  This unfortunately complicates design as a Verifier may need
 multiple parsers for matching policies.
 
-# Endorsing Verification Keys
+# Endorsing Verification Keys {#endorsing-keys}
 
 Attesting Environments have cryptographic keys that allow authenticating the Evidence that they produce.
 
@@ -329,7 +329,7 @@ is addressed.
 
 This section discusses considerations around formats for Endorsements.
 
-## Security Considerations
+## Security Considerations for Formats {#formats-security}
 
 In many scenarios, a Verifier can also support a variety of different formats,
 and while code size may not be a huge concern, simplicity and correctness of code
@@ -338,7 +338,7 @@ security mantra and hence to increase security, any decrease in complexity
 helps.  As such, using the same format for both Evidence and Endorsements
 can reduce complexity and hence increase security.
 
-## Scalability Considerations {#scalability}
+## Scalability Considerations for Formats {#scalability}
 
 We currently assume that Reference Value Providers typically
 provide the same information to a potentially large number of clients
@@ -365,6 +365,18 @@ in this limited case.
 
 Similarly, an embedded constrained Verifier can choose to not support conditionally
 endorsed values, in order to avoid complexity introduced by such.
+
+# Security Considerations
+
+{{Section 8.4 of RFC9334}} discusses how a Verifier stores one or more trust anchors
+in its trust anchor store.  The Verifier's trust in an Endorser is expressed via
+storing a trust anchor for the Endorser.  The binding from an Endorsement to
+a given Target Environment is done as discussed in {{endorsing-keys}} of this document.
+
+{{RFC9334}} (especially Section 3.2 and Section 12) also discusses security considerations
+around the attestation of layers, and around sources of appraisal policies.
+{{endorsing-keys}} of this document covers additional considerations in these areas,
+and {{formats-security}} covers additional considerations around Endorsement formats.
 
 # IANA Considerations
 
