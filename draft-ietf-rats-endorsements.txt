@@ -73,14 +73,15 @@ Table of Contents
      2.1.  RATS Conceptual Messages
    3.  Conditionally Endorsed Values
    4.  Endorsing Verification Keys
-   5.  Multiple Endorsements
-   6.  Endorsement Format Considerations
-     6.1.  Security Considerations for Formats
-     6.2.  Scalability Considerations for Formats
-   7.  Security Considerations
-   8.  IANA Considerations
-   9.  Acknowledgements
-   10. Informative References
+   5.  Timeliness
+   6.  Multiple Endorsements
+   7.  Endorsement Format Considerations
+     7.1.  Security Considerations for Formats
+     7.2.  Scalability Considerations for Formats
+   8.  Security Considerations
+   9.  IANA Considerations
+   10. Acknowledgements
+   11. Informative References
    Authors' Addresses
 
 1.  Introduction
@@ -208,7 +209,7 @@ Table of Contents
                     Figure 1: Example Verifier Input
 
    While the above example only shows one layer within Endorsements as
-   the typical case, there could be multiple layers (see Section 5),
+   the typical case, there could be multiple layers (see Section 6),
    such as a chip added to a hardware board potentially from a different
    vendor.
 
@@ -319,7 +320,27 @@ Table of Contents
    allows Appraisal Policy for Evidence to have multiple steps if
    desired.
 
-5.  Multiple Endorsements
+5.  Timeliness
+
+   Specific protocol documents are also responsible for documenting how
+   Timeliness of the Endorsement itself (e.g., using a certificate
+   lifetime) is provided.
+
+   Section 8.1 of [RFC9334] discusses timeliness of claims in Evidence.
+   When additional static claims are provided in Endorsements, no
+   additional steps are needed for timeliness of those claims since they
+   are static rather than dynamically varying by time.  Once timeliness
+   of Evidence is verified, any matching conditionally endorsed values
+   can be applied.
+
+   If Endorsements ever carry dynamic claims in the future (e.g.,
+   whether any vulnerabilities in the version of firmware are currently
+   known), then the same timeliness considerations as for claims in
+   Evidence would apply, and would be the responsibility of specific
+   protocol documents.  See Section 10 of [RFC9334] and Appendix A of
+   [RFC9334] for further discussion.
+
+6.  Multiple Endorsements
 
    Figure Figure 1 showed an example with an Endorsement at layer 0,
    such as a hardware manufacturer providing claims about the hardware.
@@ -381,17 +402,17 @@ Table of Contents
    of Endorsers.  The binding between Target Environment and Endorser
    might be part of the Appraisal Policy for Evidence, or might be
    specified as part of the Evidence itself (e.g., claims from a Target
-   Environment might include a secure identifier of what Endorser can
-   provide additional claims about it), or some combination of the two.
-   An Endorsement format specification should explain how this concern
-   is addressed.
+   Environment might include an identifier of what Endorser can provide
+   additional claims about it), or some combination of the two.  An
+   Endorsement format specification should explain how this concern is
+   addressed.
 
-6.  Endorsement Format Considerations
+7.  Endorsement Format Considerations
 
    This section discusses considerations around formats for
    Endorsements.
 
-6.1.  Security Considerations for Formats
+7.1.  Security Considerations for Formats
 
    In many scenarios, a Verifier can also support a variety of different
    formats, and while code size may not be a huge concern, simplicity
@@ -401,7 +422,7 @@ Table of Contents
    format for both Evidence and Endorsements can reduce complexity and
    hence increase security.
 
-6.2.  Scalability Considerations for Formats
+7.2.  Scalability Considerations for Formats
 
    We currently assume that Reference Value Providers typically provide
    the same information to a potentially large number of clients
@@ -434,7 +455,7 @@ Table of Contents
    conditionally endorsed values, in order to avoid complexity
    introduced by such.
 
-7.  Security Considerations
+8.  Security Considerations
 
    Section 8.4 of [RFC9334] discusses how a Verifier stores one or more
    trust anchors in its trust anchor store.  The Verifier's trust in an
@@ -445,20 +466,20 @@ Table of Contents
    [RFC9334] (especially Section 3.2 and Section 12) also discusses
    security considerations around the attestation of layers, and around
    sources of appraisal policies.  Section 4 of this document covers
-   additional considerations in these areas, and Section 6.1 covers
+   additional considerations in these areas, and Section 7.1 covers
    additional considerations around Endorsement formats.
 
-8.  IANA Considerations
+9.  IANA Considerations
 
    This document does not require any actions by IANA.
 
-9.  Acknowledgements
+10.  Acknowledgements
 
    The authors wish to thank Thomas Hardjono, Laurence Lundblade,
-   Kathleen Moriarty, and Ned Smith for feedback and ideas that
-   contributed to this document.
+   Kathleen Moriarty, Ned Smith, and Carl Wallace for feedback and ideas
+   that contributed to this document.
 
-10.  Informative References
+11.  Informative References
 
    [I-D.ietf-rats-eat]
               Lundblade, L., Mandyam, G., O'Donoghue, J., and C.

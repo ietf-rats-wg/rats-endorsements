@@ -1214,33 +1214,36 @@ message format for Endorsements in the scope of the RATS architecture.<a href="#
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-endorsing-verification-keys" class="internal xref">Endorsing Verification Keys</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
-            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-multiple-endorsements" class="internal xref">Multiple Endorsements</a></p>
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-timeliness" class="internal xref">Timeliness</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-endorsement-format-consider" class="internal xref">Endorsement Format Considerations</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1">
-                <p id="section-toc.1-1.6.2.1.1"><a href="#section-6.1" class="auto internal xref">6.1</a>.  <a href="#name-security-considerations-for" class="internal xref">Security Considerations for Formats</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-multiple-endorsements" class="internal xref">Multiple Endorsements</a></p>
 </li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.2">
-                <p id="section-toc.1-1.6.2.2.1"><a href="#section-6.2" class="auto internal xref">6.2</a>.  <a href="#name-scalability-considerations-" class="internal xref">Scalability Considerations for Formats</a></p>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-endorsement-format-consider" class="internal xref">Endorsement Format Considerations</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.1">
+                <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="auto internal xref">7.1</a>.  <a href="#name-security-considerations-for" class="internal xref">Security Considerations for Formats</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2">
+                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-scalability-considerations-" class="internal xref">Scalability Considerations for Formats</a></p>
 </li>
             </ul>
 </li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
-</li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-acknowledgements" class="internal xref">Acknowledgements</a></p>
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-acknowledgements" class="internal xref">Acknowledgements</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
-            <p id="section-toc.1-1.11.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.11.1"><a href="#section-11" class="auto internal xref">11</a>. <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
+            <p id="section-toc.1-1.12.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1453,7 +1456,7 @@ as discussed in <span><a href="https://rfc-editor.org/rfc/rfc9334#section-3.2" c
           </figcaption></figure>
 </div>
 <p id="section-2.1-6">While the above example only shows one layer within Endorsements as
-the typical case, there could be multiple layers (see <a href="#multiple-endorsements" class="auto internal xref">Section 5</a>), such as
+the typical case, there could be multiple layers (see <a href="#multiple-endorsements" class="auto internal xref">Section 6</a>), such as
 a chip added to a hardware board potentially from a different vendor.<a href="#section-2.1-6" class="pilcrow">¶</a></p>
 <p id="section-2.1-7">A Trust Anchor Store is a special case of
 state above, where the Reference State would be the set of trust anchors
@@ -1545,29 +1548,48 @@ another step to appraise other claims for determining trustworthiness.<a href="#
 Appraisal Policy for Evidence to have multiple steps if desired.<a href="#section-4-8" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="multiple-endorsements">
+<div id="timeliness">
 <section id="section-5">
-      <h2 id="name-multiple-endorsements">
-<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-multiple-endorsements" class="section-name selfRef">Multiple Endorsements</a>
+      <h2 id="name-timeliness">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-timeliness" class="section-name selfRef">Timeliness</a>
       </h2>
-<p id="section-5-1">Figure <a href="#input" class="auto internal xref">Figure 1</a> showed an example with an Endorsement at layer 0, such as
+<p id="section-5-1">Specific protocol documents are also responsible for documenting how Timeliness
+of the Endorsement itself (e.g., using a certificate lifetime) is provided.<a href="#section-5-1" class="pilcrow">¶</a></p>
+<p id="section-5-2"><span><a href="https://rfc-editor.org/rfc/rfc9334#section-8.1" class="relref">Section 8.1</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> discusses timeliness of claims in Evidence.  When
+additional static claims are provided in Endorsements, no additional steps
+are needed for timeliness of those claims since they are static rather than
+dynamically varying by time.  Once timeliness of Evidence is verified,
+any matching conditionally endorsed values can be applied.<a href="#section-5-2" class="pilcrow">¶</a></p>
+<p id="section-5-3">If Endorsements ever carry dynamic claims in the future (e.g., whether
+any vulnerabilities in the version of firmware are currently known), then
+the same timeliness considerations as for claims in Evidence would apply,
+and would be the responsibility of specific protocol documents. See
+<span><a href="https://rfc-editor.org/rfc/rfc9334#section-10" class="relref">Section 10</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> and <span><a href="https://rfc-editor.org/rfc/rfc9334#appendix-A" class="relref">Appendix A</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> for further discussion.<a href="#section-5-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="multiple-endorsements">
+<section id="section-6">
+      <h2 id="name-multiple-endorsements">
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-multiple-endorsements" class="section-name selfRef">Multiple Endorsements</a>
+      </h2>
+<p id="section-6-1">Figure <a href="#input" class="auto internal xref">Figure 1</a> showed an example with an Endorsement at layer 0, such as
 a hardware manufacturer providing claims about the hardware. However, the
 same could be done at other layers in addition.  For example, an OS vendor
 might provide additional static claims about the OS software it provides,
 and application developers might provide additional static claims about
-the applications they release.<a href="#section-5-1" class="pilcrow">¶</a></p>
-<p id="section-5-2"><a href="#multiple" class="auto internal xref">Figure 2</a> depicts an example with an Attester consisting of an application,
+the applications they release.<a href="#section-6-1" class="pilcrow">¶</a></p>
+<p id="section-6-2"><a href="#multiple" class="auto internal xref">Figure 2</a> depicts an example with an Attester consisting of an application,
 OS, firmware, and hardware, each from a different vendor that provides
 an Endorsement for their own Target Environment, containing additional claims
 about that Target Environment.  Thus each Target Environment (application, OS, firmware,
 and hardware) has one set of claims ("claim set 1") in the Evidence, and an additional
 set of claims ("claim set 2") in the Endorsement from its manufacturer.  A Verifier
 that trusts each Endorser would thus use the claim sets from both conceptual
-messages when comparing against reference state for a given Target Environment.<a href="#section-5-2" class="pilcrow">¶</a></p>
+messages when comparing against reference state for a given Target Environment.<a href="#section-6-2" class="pilcrow">¶</a></p>
 <span id="name-multiple-endorsements-2"></span><div id="multiple">
 <figure id="figure-2">
-        <div id="section-5-3.1">
-          <div class="alignCenter art-svg artwork" id="section-5-3.1.1">
+        <div id="section-6-3.1">
+          <div class="alignCenter art-svg artwork" id="section-6-3.1.1">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="512" width="504" viewBox="0 0 504 512" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
               <path d="M 128,32 L 128,112" fill="none" stroke="black"></path>
               <path d="M 128,144 L 128,224" fill="none" stroke="black"></path>
@@ -1687,14 +1709,14 @@ messages when comparing against reference state for a given Target Environment.<
                 <text x="464" y="420">1</text>
                 <text x="36" y="500">Attester</text>
               </g>
-            </svg><a href="#section-5-3.1.1" class="pilcrow">¶</a>
+            </svg><a href="#section-6-3.1.1" class="pilcrow">¶</a>
 </div>
 </div>
 <figcaption><a href="#figure-2" class="selfRef">Figure 2</a>:
 <a href="#name-multiple-endorsements-2" class="selfRef">Multiple Endorsements</a>
         </figcaption></figure>
 </div>
-<p id="section-5-4">When Target Environments from different vendors each have their own
+<p id="section-6-4">When Target Environments from different vendors each have their own
 Endorser, it is important that a Verifier be able to distinguish
 which Endorser is allowed to provide an Endorsement about which
 Target Environment.  For example, the OS Endorser might be trusted to
@@ -1703,43 +1725,43 @@ Thus it is not as simple as saying that a Verifier has a trusted
 set of Endorsers. The binding between Target Environment and Endorser might
 be part of the Appraisal Policy for Evidence, or might be specified
 as part of the Evidence itself (e.g., claims from a Target Environment
-might include a secure identifier of what Endorser can provide additional
+might include an identifier of what Endorser can provide additional
 claims about it), or some combination of the two.
 An Endorsement format specification should explain how this concern
-is addressed.<a href="#section-5-4" class="pilcrow">¶</a></p>
+is addressed.<a href="#section-6-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="endorsement-format-considerations">
-<section id="section-6">
+<section id="section-7">
       <h2 id="name-endorsement-format-consider">
-<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-endorsement-format-consider" class="section-name selfRef">Endorsement Format Considerations</a>
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-endorsement-format-consider" class="section-name selfRef">Endorsement Format Considerations</a>
       </h2>
-<p id="section-6-1">This section discusses considerations around formats for Endorsements.<a href="#section-6-1" class="pilcrow">¶</a></p>
+<p id="section-7-1">This section discusses considerations around formats for Endorsements.<a href="#section-7-1" class="pilcrow">¶</a></p>
 <div id="formats-security">
-<section id="section-6.1">
+<section id="section-7.1">
         <h3 id="name-security-considerations-for">
-<a href="#section-6.1" class="section-number selfRef">6.1. </a><a href="#name-security-considerations-for" class="section-name selfRef">Security Considerations for Formats</a>
+<a href="#section-7.1" class="section-number selfRef">7.1. </a><a href="#name-security-considerations-for" class="section-name selfRef">Security Considerations for Formats</a>
         </h3>
-<p id="section-6.1-1">In many scenarios, a Verifier can also support a variety of different formats,
+<p id="section-7.1-1">In many scenarios, a Verifier can also support a variety of different formats,
 and while code size may not be a huge concern, simplicity and correctness of code
 is essential to security.  "Complexity is the enemy of security" is a popular
 security mantra and hence to increase security, any decrease in complexity
 helps.  As such, using the same format for both Evidence and Endorsements
-can reduce complexity and hence increase security.<a href="#section-6.1-1" class="pilcrow">¶</a></p>
+can reduce complexity and hence increase security.<a href="#section-7.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="scalability">
-<section id="section-6.2">
+<section id="section-7.2">
         <h3 id="name-scalability-considerations-">
-<a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-scalability-considerations-" class="section-name selfRef">Scalability Considerations for Formats</a>
+<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-scalability-considerations-" class="section-name selfRef">Scalability Considerations for Formats</a>
         </h3>
-<p id="section-6.2-1">We currently assume that Reference Value Providers typically
+<p id="section-7.2-1">We currently assume that Reference Value Providers typically
 provide the same information to a potentially large number of clients
 (Verifiers, or potentially to other entities for later relay to a Verifier),
 and are generally on devices that are not constrained nodes, and hence additional
 scalability, including code size, is not a significant concern.  We also assume
-the same is true of Endorsers.<a href="#section-6.2-1" class="pilcrow">¶</a></p>
-<p id="section-6.2-2">The scenario where scalability in terms of code size is strongest, however, is
+the same is true of Endorsers.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
+<p id="section-7.2-2">The scenario where scalability in terms of code size is strongest, however, is
 when a Verifier is embedded into a constrained node.  For example, when a constrained
 node is a Relying Party for most purposes, but still needs a way to establish
 trust in the Verifier it will use.  In such a case, the Relying Party may have
@@ -1749,52 +1771,52 @@ for purposes of appraising its desired Verifier which it treats as only an Attes
 and once verified, then uses it for verification of all other Attesters.
 In this scenario, the embedded Verifier may have code and data size constraints,
 and a very simple (by comparison) Appraisal Policy for Evidence and desired state (e.g.,
-a required trust anchor that Evidence must be signed with and little else).<a href="#section-6.2-2" class="pilcrow">¶</a></p>
-<p id="section-6.2-3">Using the same message format for Evidence, Endorsements, and (later) Attestation Results received
+a required trust anchor that Evidence must be signed with and little else).<a href="#section-7.2-2" class="pilcrow">¶</a></p>
+<p id="section-7.2-3">Using the same message format for Evidence, Endorsements, and (later) Attestation Results received
 from the later Verifier, can provide a code size savings due to having only a single parser
-in this limited case.<a href="#section-6.2-3" class="pilcrow">¶</a></p>
-<p id="section-6.2-4">Similarly, an embedded constrained Verifier can choose to not support conditionally
-endorsed values, in order to avoid complexity introduced by such.<a href="#section-6.2-4" class="pilcrow">¶</a></p>
+in this limited case.<a href="#section-7.2-3" class="pilcrow">¶</a></p>
+<p id="section-7.2-4">Similarly, an embedded constrained Verifier can choose to not support conditionally
+endorsed values, in order to avoid complexity introduced by such.<a href="#section-7.2-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
 </div>
 <div id="security-considerations">
-<section id="section-7">
+<section id="section-8">
       <h2 id="name-security-considerations">
-<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-7-1"><span><a href="https://rfc-editor.org/rfc/rfc9334#section-8.4" class="relref">Section 8.4</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> discusses how a Verifier stores one or more trust anchors
+<p id="section-8-1"><span><a href="https://rfc-editor.org/rfc/rfc9334#section-8.4" class="relref">Section 8.4</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> discusses how a Verifier stores one or more trust anchors
 in its trust anchor store.  The Verifier's trust in an Endorser is expressed via
 storing a trust anchor for the Endorser.  The binding from an Endorsement to
-a given Target Environment is done as discussed in <a href="#endorsing-keys" class="auto internal xref">Section 4</a> of this document.<a href="#section-7-1" class="pilcrow">¶</a></p>
-<p id="section-7-2"><span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> (especially Section 3.2 and Section 12) also discusses security considerations
+a given Target Environment is done as discussed in <a href="#endorsing-keys" class="auto internal xref">Section 4</a> of this document.<a href="#section-8-1" class="pilcrow">¶</a></p>
+<p id="section-8-2"><span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> (especially Section 3.2 and Section 12) also discusses security considerations
 around the attestation of layers, and around sources of appraisal policies.
 <a href="#endorsing-keys" class="auto internal xref">Section 4</a> of this document covers additional considerations in these areas,
-and <a href="#formats-security" class="auto internal xref">Section 6.1</a> covers additional considerations around Endorsement formats.<a href="#section-7-2" class="pilcrow">¶</a></p>
+and <a href="#formats-security" class="auto internal xref">Section 7.1</a> covers additional considerations around Endorsement formats.<a href="#section-8-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
-<section id="section-8">
+<section id="section-9">
       <h2 id="name-iana-considerations">
-<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-8-1">This document does not require any actions by IANA.<a href="#section-8-1" class="pilcrow">¶</a></p>
+<p id="section-9-1">This document does not require any actions by IANA.<a href="#section-9-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="acknowledgements">
-<section id="section-9">
+<section id="section-10">
       <h2 id="name-acknowledgements">
-<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-acknowledgements" class="section-name selfRef">Acknowledgements</a>
+<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-acknowledgements" class="section-name selfRef">Acknowledgements</a>
       </h2>
-<p id="section-9-1">The authors wish to thank Thomas Hardjono, Laurence Lundblade, Kathleen Moriarty, and Ned Smith
-for feedback and ideas that contributed to this document.<a href="#section-9-1" class="pilcrow">¶</a></p>
+<p id="section-10-1">The authors wish to thank Thomas Hardjono, Laurence Lundblade, Kathleen Moriarty, Ned Smith,
+and Carl Wallace for feedback and ideas that contributed to this document.<a href="#section-10-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-informative-references">
-<section id="section-10">
+<section id="section-11">
       <h2 id="name-informative-references">
-<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+<a href="#section-11" class="section-number selfRef">11. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
       </h2>
 <dl class="references">
 <dt id="I-D.ietf-rats-eat">[I-D.ietf-rats-eat]</dt>
