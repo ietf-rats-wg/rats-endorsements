@@ -259,6 +259,23 @@ another step to appraise other claims for determining trustworthiness.
 This document treats identity claims as with any other claims but allows
 Appraisal Policy for Evidence to have multiple steps if desired.
 
+# Timeliness
+
+Specific protocol documents are also responsible for documenting how Timeliness
+of the Endorsement itself (e.g., using a certificate lifetime) is provided.
+
+{{Section 8.1 of RFC9334}} discusses timeliness of claims in Evidence.  When
+additional static claims are provided in Endorsements, no additional steps
+are needed for timeliness of those claims since they are static rather than
+dynamically varying by time.  Once timeliness of Evidence is verified,
+any matching conditionally endorsed values can be applied.
+
+If Endorsements ever carry dynamic claims in the future (e.g., whether
+any vulnerabilities in the version of firmware are currently known), then
+the same timeliness considerations as for claims in Evidence would apply,
+and would be the responsibility of specific protocol documents. See
+{{Section 10 of RFC9334}} and {{Appendix A of RFC9334}} for further discussion.
+
 # Multiple Endorsements {#multiple-endorsements}
 
 Figure {{input}} showed an example with an Endorsement at layer 0, such as
@@ -320,7 +337,7 @@ Thus it is not as simple as saying that a Verifier has a trusted
 set of Endorsers. The binding between Target Environment and Endorser might
 be part of the Appraisal Policy for Evidence, or might be specified
 as part of the Evidence itself (e.g., claims from a Target Environment
-might include a secure identifier of what Endorser can provide additional
+might include an identifier of what Endorser can provide additional
 claims about it), or some combination of the two.
 An Endorsement format specification should explain how this concern
 is addressed.
@@ -384,7 +401,7 @@ This document does not require any actions by IANA.
 
 # Acknowledgements
 
-The authors wish to thank Thomas Hardjono, Laurence Lundblade, Kathleen Moriarty, and Ned Smith
-for feedback and ideas that contributed to this document.
+The authors wish to thank Thomas Hardjono, Laurence Lundblade, Kathleen Moriarty, Ned Smith,
+and Carl Wallace for feedback and ideas that contributed to this document.
 
 --- back
