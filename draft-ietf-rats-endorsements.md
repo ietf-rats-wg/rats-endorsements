@@ -219,11 +219,6 @@ multiple parsers for matching policies.
 
 # Endorsing Verification Keys
 
-{{Section 8.4 of RFC9334}} discusses how a Verifier stores one or more trust anchors
-in its trust anchor store.  The Verifier's trust in an Endorser is expressed via
-storing a trust anchor for the Endorser.  The binding from an Endorsement to
-a given Target Environment is done as follows.
-
 Attesting Environments have cryptographic keys that allow authenticating the Evidence that they produce.
 
 Typically,
