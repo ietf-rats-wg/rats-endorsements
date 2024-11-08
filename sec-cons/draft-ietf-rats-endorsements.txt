@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                                          
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 11 May 2025                                          T. Fossati
+Expires: 12 May 2025                                          T. Fossati
                                                                   Linaro
-                                                         7 November 2024
+                                                         8 November 2024
 
 
                            RATS Endorsements
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 May 2025.
+   This Internet-Draft will expire on 12 May 2025.
 
 Copyright Notice
 
@@ -436,11 +436,17 @@ Table of Contents
 
 7.  Security Considerations
 
-   [RFC9334] (especially Section 3.2 and Section 12) discusses security
-   considerations around the attestation of layers, and around sources
-   of appraisal policies.  Section 4 of this document covers additional
-   considerations in these areas, and Section 6.1 covers additional
-   considerations around Endorsement formats.
+   Section 8.4 of [RFC9334] discusses how a Verifier stores one or more
+   trust anchors in its trust anchor store.  The Verifier's trust in an
+   Endorser is expressed via storing a trust anchor for the Endorser.
+   The binding from an Endorsement to a given Target Environment is done
+   as discussed in Section 4 of this document.
+
+   [RFC9334] (especially Section 3.2 and Section 12) also discusses
+   security considerations around the attestation of layers, and around
+   sources of appraisal policies.  Section 4 of this document covers
+   additional considerations in these areas, and Section 6.1 covers
+   additional considerations around Endorsement formats.
 
 8.  IANA Considerations
 
