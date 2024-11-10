@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-07T00:38:32.565382+00:00",
+  "timestamp": "2024-11-10T00:41:31.784252+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -522,11 +522,12 @@
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [
+        "fixed in editors copy",
         "wglc"
       ],
       "body": "@carl-wallace [review](https://mailarchive.ietf.org/arch/msg/rats/I1ZTK_p-dQTHEssBZB6-md8Chaw/):\r\n\r\n* [ ] _\"[...] I think it may benefit from a bit more discussion on how trust is established in endorsements and how the binding from endorsements to target environment is established. There is no mention of either in the security considerations section. RFC 9334 defines endorsements as being a \u201csecure statement\u201d, so piggybacking off that definition to reference some (abstract) state that must be present in the verifier to verify the endorsement may suffice.\"_\r\n \r\n* [ ] _\"Commenting on the need (or lack of need) for timeliness of endorsements may be worthwhile as well. There is discussion of actual state relative to points in time but not how endorsements fit on the timeline.\"_\r\n \r\n* [ ] _\"One nit, section 5 states the following: \u201cThe binding between Target Environment and Endorser might be part of the Appraisal Policy for Evidence, or might be specified as part of the Evidence itself (e.g., claims from a Target Environment might include a secure identifier of what Endorser can provide additional claims about it), or some combination of the two.\u201c Given the evidence has not yet been verified, referring to the identifier as a \u201csecure identifier\u201d is probably not appropriate.\"_",
       "createdAt": "2024-09-28T23:16:54Z",
-      "updatedAt": "2024-09-28T23:16:54Z",
+      "updatedAt": "2024-11-08T16:41:51Z",
       "closedAt": null,
       "comments": []
     },
@@ -540,11 +541,12 @@
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [
+        "fixed in editors copy",
         "wglc"
       ],
       "body": "@KME [review](https://mailarchive.ietf.org/arch/msg/rats/A9ufARyqbjBnBAEA0lmZPwRTUic/)\r\n\r\n> _\"[...] wondering if there are additional security considerations on the layers, differing sources for policies mentioned in the draft, and formats for developers or implementers.\"_\r\n",
       "createdAt": "2024-10-09T08:37:53Z",
-      "updatedAt": "2024-10-09T08:37:53Z",
+      "updatedAt": "2024-11-08T16:42:05Z",
       "closedAt": null,
       "comments": []
     }
@@ -2790,6 +2792,208 @@
           "body": "",
           "createdAt": "2024-07-24T15:10:29Z",
           "updatedAt": "2024-07-24T15:10:29Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 41,
+      "id": "PR_kwDOJj8oQM6BPjWQ",
+      "title": "Address comments from Carl's WGLC review",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/41",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Addresses #39",
+      "createdAt": "2024-11-07T21:33:33Z",
+      "updatedAt": "2024-11-08T16:41:24Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "bb2e529c45d54a2e79ec6f3e910da51e39e27df4",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "carl-review-issue-39",
+      "headRefOid": "a1c094afa4f942d9f20b0ea30ce0bdc885b1d57d",
+      "closedAt": "2024-11-08T16:41:24Z",
+      "mergedAt": "2024-11-08T16:41:24Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "aaaaf4d93c339e4123c46a019342799e546bc5cd"
+      },
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Merging per WG meeting discussion today",
+          "createdAt": "2024-11-08T16:41:20Z",
+          "updatedAt": "2024-11-08T16:41:20Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM6QasNm",
+          "commit": {
+            "abbreviatedOid": "71b2d56"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-08T07:42:29Z",
+          "updatedAt": "2024-11-08T07:42:30Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "This new paragraph doesn't flow well in the context of the section.\r\n\r\nReading Carl's comment:\r\n\r\n> \"[...] I think it may benefit from a bit more discussion on how trust is established in endorsements and how the binding from endorsements to target environment is established. There is no mention of either in the security considerations section. RFC 9334 defines endorsements as being a \u201csecure statement\u201d, so piggybacking off that definition to reference some (abstract) state that must be present in the verifier to verify the endorsement may suffice.\"\r\n\r\nhe wanted us to add the missing prose to the security considerations section instead of Section 4.\r\n",
+              "createdAt": "2024-11-08T07:42:29Z",
+              "updatedAt": "2024-11-08T07:42:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6Qe4Tv",
+          "commit": {
+            "abbreviatedOid": "71b2d56"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-08T14:51:57Z",
+          "updatedAt": "2024-11-08T14:51:58Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "Ok moved this into PR #43",
+              "createdAt": "2024-11-08T14:51:57Z",
+              "updatedAt": "2024-11-08T14:51:58Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6QfCXq",
+          "commit": {
+            "abbreviatedOid": "71b2d56"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-08T15:09:02Z",
+          "updatedAt": "2024-11-08T15:09:02Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "thank you!",
+              "createdAt": "2024-11-08T15:09:02Z",
+              "updatedAt": "2024-11-08T15:09:02Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 42,
+      "id": "PR_kwDOJj8oQM6BPmvf",
+      "title": "Add organization for D. Thaler",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/42",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "It's my personal consulting LLC.  Just replaces the blank line in the header.",
+      "createdAt": "2024-11-07T21:44:16Z",
+      "updatedAt": "2024-11-08T07:27:43Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "bb2e529c45d54a2e79ec6f3e910da51e39e27df4",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "thaler",
+      "headRefOid": "0401be538758715df8e5f468551df16a21a25774",
+      "closedAt": "2024-11-08T07:27:39Z",
+      "mergedAt": "2024-11-08T07:27:39Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "718d44aab612d9b596981d99a6351e03e2ce7428"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM6Qakmo",
+          "commit": {
+            "abbreviatedOid": "0401be5"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-11-08T07:24:17Z",
+          "updatedAt": "2024-11-08T07:24:17Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 43,
+      "id": "PR_kwDOJj8oQM6BPrWs",
+      "title": "Add more security considerations text",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/43",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Addresses Kathleen's question in #40",
+      "createdAt": "2024-11-07T22:00:22Z",
+      "updatedAt": "2024-11-08T16:40:35Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "bb2e529c45d54a2e79ec6f3e910da51e39e27df4",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "sec-cons",
+      "headRefOid": "8705e7604eaa04825931751d73e1f4a369a4b622",
+      "closedAt": "2024-11-08T16:40:34Z",
+      "mergedAt": "2024-11-08T16:40:34Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "c72d98e2309bf739c0d4c0d2c053d0c35c956444"
+      },
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Merging per WG meeting discussion",
+          "createdAt": "2024-11-08T16:40:01Z",
+          "updatedAt": "2024-11-08T16:40:01Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM6Qati2",
+          "commit": {
+            "abbreviatedOid": "a453875"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "LGTM!",
+          "createdAt": "2024-11-08T07:46:06Z",
+          "updatedAt": "2024-11-08T07:46:06Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6QfCPt",
+          "commit": {
+            "abbreviatedOid": "8705e76"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "awesome, thanks",
+          "createdAt": "2024-11-08T15:08:48Z",
+          "updatedAt": "2024-11-08T15:08:48Z",
           "comments": []
         }
       ]
