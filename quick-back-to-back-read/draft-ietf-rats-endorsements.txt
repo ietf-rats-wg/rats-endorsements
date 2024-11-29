@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 1 June 2025                                          T. Fossati
+Expires: 2 June 2025                                          T. Fossati
                                                                   Linaro
-                                                        28 November 2024
+                                                        29 November 2024
 
 
                            RATS Endorsements
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 June 2025.
+   This Internet-Draft will expire on 2 June 2025.
 
 Copyright Notice
 
@@ -131,13 +131,13 @@ Table of Contents
    Attester at a given point in time.  Each claim set holds claims about
    a specific Target Environment that is essential to determining
    trustworthiness.  Generally speaking, each claim has a name
-   (typically referred to as label, and occasionally referred to as key
-   or code-point) and a singleton value, being a value collected from a
-   Target Environment of a specific Attester at a given point in time.
-   Some claims may inherently have multiple values, such as a list of
-   files in a given location on the device, but in the context of this
-   document such a list is treated as a single unit, representing one
-   Attester at one point in time.
+   (typically referred to as a label, and occasionally referred to as a
+   key or code-point) and a singleton value, being a value collected
+   from a Target Environment of a specific Attester at a given point in
+   time.  Some claims may inherently have multiple values, such as a
+   list of files in a given location on the device, but in the context
+   of this document such a list is treated as a single unit,
+   representing one Attester at one point in time.
 
    "Reference state" is a group of claim sets about the desired or
    undesired state of an Attester.  Typically, each claim has a name and
