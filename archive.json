@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-28T00:42:06.067126+00:00",
+  "timestamp": "2024-12-01T00:51:54.274416+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -2994,6 +2994,68 @@
           "body": "awesome, thanks",
           "createdAt": "2024-11-08T15:08:48Z",
           "updatedAt": "2024-11-08T15:08:48Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 44,
+      "id": "PR_kwDOJj8oQM6Df-ox",
+      "title": "Tiny editorial corrections",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/44",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Small corrections made during my review of the entire document.",
+      "createdAt": "2024-11-28T18:03:39Z",
+      "updatedAt": "2024-11-29T17:22:05Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "aaaaf4d93c339e4123c46a019342799e546bc5cd",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "quick-back-to-back-read",
+      "headRefOid": "fc88baedb289d2f1772eacd79b1939e3adb78519",
+      "closedAt": "2024-11-29T17:22:05Z",
+      "mergedAt": "2024-11-29T17:22:05Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "18fa1d8119aced1749e348c73c7ea9d8a6e59c6c"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM6TK5Fd",
+          "commit": {
+            "abbreviatedOid": "03aca61"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-29T05:18:11Z",
+          "updatedAt": "2024-11-29T05:18:44Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "```suggestion\r\nhas a name (typically referred to as a label, and occasionally referred to as a key or code-point)\r\n```\r\nI think it reads better to add \"a\" than remove it",
+              "createdAt": "2024-11-29T05:18:11Z",
+              "updatedAt": "2024-11-29T05:18:44Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6TPng_",
+          "commit": {
+            "abbreviatedOid": "fc88bae"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-11-29T17:21:35Z",
+          "updatedAt": "2024-11-29T17:21:35Z",
           "comments": []
         }
       ]
