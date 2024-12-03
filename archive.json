@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-01T00:51:54.274416+00:00",
+  "timestamp": "2024-12-03T00:43:36.222600+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -3010,7 +3010,7 @@
       "labels": [],
       "body": "Small corrections made during my review of the entire document.",
       "createdAt": "2024-11-28T18:03:39Z",
-      "updatedAt": "2024-11-29T17:22:05Z",
+      "updatedAt": "2024-12-02T07:06:39Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
       "baseRefOid": "aaaaf4d93c339e4123c46a019342799e546bc5cd",
