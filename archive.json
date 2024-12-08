@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-05T00:43:08.547747+00:00",
+  "timestamp": "2024-12-08T00:47:06.873147+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -499,7 +499,7 @@
       "id": "I_kwDOJj8oQM6Qp8dI",
       "title": "Update: 9334",
       "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/37",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
@@ -508,16 +508,24 @@
       ],
       "body": "From the IETF 120 RATS WG session minutes:\r\n\r\n> _\"The endorsement draft should be flagged as Updates:9334; the RATS architecture draft because it adds definitions that should be part of core RATS Architecture\"_",
       "createdAt": "2024-07-24T08:26:16Z",
-      "updatedAt": "2024-07-24T15:10:50Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2024-12-05T17:44:00Z",
+      "closedAt": "2024-12-05T17:44:00Z",
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Fixed in -05",
+          "createdAt": "2024-12-05T17:44:00Z",
+          "updatedAt": "2024-12-05T17:44:00Z"
+        }
+      ]
     },
     {
       "number": 39,
       "id": "I_kwDOJj8oQM6YQ2qX",
       "title": "Carl's WGLC review",
       "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/39",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
@@ -527,16 +535,24 @@
       ],
       "body": "@carl-wallace [review](https://mailarchive.ietf.org/arch/msg/rats/I1ZTK_p-dQTHEssBZB6-md8Chaw/):\r\n\r\n* [ ] _\"[...] I think it may benefit from a bit more discussion on how trust is established in endorsements and how the binding from endorsements to target environment is established. There is no mention of either in the security considerations section. RFC 9334 defines endorsements as being a \u201csecure statement\u201d, so piggybacking off that definition to reference some (abstract) state that must be present in the verifier to verify the endorsement may suffice.\"_\r\n \r\n* [ ] _\"Commenting on the need (or lack of need) for timeliness of endorsements may be worthwhile as well. There is discussion of actual state relative to points in time but not how endorsements fit on the timeline.\"_\r\n \r\n* [ ] _\"One nit, section 5 states the following: \u201cThe binding between Target Environment and Endorser might be part of the Appraisal Policy for Evidence, or might be specified as part of the Evidence itself (e.g., claims from a Target Environment might include a secure identifier of what Endorser can provide additional claims about it), or some combination of the two.\u201c Given the evidence has not yet been verified, referring to the identifier as a \u201csecure identifier\u201d is probably not appropriate.\"_",
       "createdAt": "2024-09-28T23:16:54Z",
-      "updatedAt": "2024-11-08T16:41:51Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2024-12-05T17:46:00Z",
+      "closedAt": "2024-12-05T17:46:00Z",
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Fixed in draft -05 and presented at IETF 121",
+          "createdAt": "2024-12-05T17:46:00Z",
+          "updatedAt": "2024-12-05T17:46:00Z"
+        }
+      ]
     },
     {
       "number": 40,
       "id": "I_kwDOJj8oQM6Zfq1G",
       "title": "Kathleen's WGLC comments",
       "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/40",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
@@ -546,9 +562,17 @@
       ],
       "body": "@KME [review](https://mailarchive.ietf.org/arch/msg/rats/A9ufARyqbjBnBAEA0lmZPwRTUic/)\r\n\r\n> _\"[...] wondering if there are additional security considerations on the layers, differing sources for policies mentioned in the draft, and formats for developers or implementers.\"_\r\n",
       "createdAt": "2024-10-09T08:37:53Z",
-      "updatedAt": "2024-11-08T16:42:05Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2024-12-05T17:44:30Z",
+      "closedAt": "2024-12-05T17:44:30Z",
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Fixed in draft -05 and presented at IETF",
+          "createdAt": "2024-12-05T17:44:30Z",
+          "updatedAt": "2024-12-05T17:44:30Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -3056,6 +3080,108 @@
           "body": "",
           "createdAt": "2024-11-29T17:21:35Z",
           "updatedAt": "2024-11-29T17:21:35Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "id": "PR_kwDOJj8oQM6EKxR6",
+      "title": "Some polish due to WGLC feedback",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/45",
+      "state": "MERGED",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "* some terminology\r\n* a few synonyms\r\n* restructuring of the acknowledgement section\r\n\r\nPlease feel free to bash.",
+      "createdAt": "2024-12-05T11:21:19Z",
+      "updatedAt": "2024-12-05T17:42:54Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "18fa1d8119aced1749e348c73c7ea9d8a6e59c6c",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "nits-henk",
+      "headRefOid": "df036108feb7da0c0c1d98c251e84abaff668c1f",
+      "closedAt": "2024-12-05T17:42:54Z",
+      "mergedAt": "2024-12-05T17:42:54Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "beb73d51ecf98fa68c79262d52b3a563b2fc3fda"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM6T6ZyP",
+          "commit": {
+            "abbreviatedOid": "f635eab"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "LGTM, with one small comment.",
+          "createdAt": "2024-12-05T12:32:37Z",
+          "updatedAt": "2024-12-05T12:33:01Z",
+          "comments": [
+            {
+              "originalPosition": 85,
+              "body": "I find _\"verified via appraisal\"_ unnecessarily heavy.\r\n\r\nLet's do _\"appraised\"_, or leave it as-is.\r\n\r\n(The former seems more in line with the PR's spirit.)",
+              "createdAt": "2024-12-05T12:32:37Z",
+              "updatedAt": "2024-12-05T12:33:01Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6T6uYq",
+          "commit": {
+            "abbreviatedOid": "f635eab"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-05T13:05:31Z",
+          "updatedAt": "2024-12-05T13:05:31Z",
+          "comments": [
+            {
+              "originalPosition": 85,
+              "body": "okay",
+              "createdAt": "2024-12-05T13:05:31Z",
+              "updatedAt": "2024-12-05T13:05:32Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6T6utm",
+          "commit": {
+            "abbreviatedOid": "f635eab"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-05T13:06:08Z",
+          "updatedAt": "2024-12-05T13:06:08Z",
+          "comments": [
+            {
+              "originalPosition": 85,
+              "body": "```suggestion\r\nand once appraised, then uses it for appraisal of all other Attesters.\r\n```",
+              "createdAt": "2024-12-05T13:06:08Z",
+              "updatedAt": "2024-12-05T13:06:09Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6T9x12",
+          "commit": {
+            "abbreviatedOid": "df03610"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-12-05T17:42:46Z",
+          "updatedAt": "2024-12-05T17:42:46Z",
           "comments": []
         }
       ]
