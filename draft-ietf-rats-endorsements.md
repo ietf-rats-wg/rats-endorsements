@@ -60,6 +60,9 @@ in formats that are useful for Relying Parties.  This document illustrates the p
 role of Endorsements and discusses some considerations in the choice of
 message format for Endorsements in the scope of the RATS architecture.
 
+This document does not aim to define a conceptual message format for Endorsements and Reference Values.
+Instead, it extends RFC9334 to provide further details on Reference Values and Endorsements, as these topics were outside the scope of the RATS charter when RFC9334 was developed.
+
 --- middle
 
 # Introduction
