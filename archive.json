@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-17T00:42:48.122191+00:00",
+  "timestamp": "2024-12-19T00:41:36.819246+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -3185,6 +3185,40 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 46,
+      "id": "PR_kwDOJj8oQM6Fffvq",
+      "title": "this is not a protocol document",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/46",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Clarify in the abstract that this document does not define any message formats.\r\n\r\nThe original prose was provided by Ned in https://mailarchive.ietf.org/arch/msg/rats/xv2V295_jzvevQ6WsYA96P7bJ_s/",
+      "createdAt": "2024-12-17T13:09:11Z",
+      "updatedAt": "2024-12-18T16:52:12Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "beb73d51ecf98fa68c79262d52b3a563b2fc3fda",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "neds",
+      "headRefOid": "2bde25daded1570a23a79133f32abd6620048ff0",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "nedmsmith",
+          "authorAssociation": "NONE",
+          "body": "+1",
+          "createdAt": "2024-12-18T16:52:10Z",
+          "updatedAt": "2024-12-18T16:52:10Z"
+        }
+      ],
+      "reviews": []
     }
   ]
 }
