@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 8 June 2025                                          T. Fossati
+Expires: 26 June 2025                                         T. Fossati
                                                                   Linaro
-                                                         5 December 2024
+                                                        23 December 2024
 
 
                            RATS Endorsements
@@ -23,6 +23,12 @@ Abstract
    This document illustrates the purpose and role of Endorsements and
    discusses some considerations in the choice of message format for
    Endorsements in the scope of the RATS architecture.
+
+   This document does not aim to define a conceptual message format for
+   Endorsements and Reference Values.  Instead, it extends RFC9334 to
+   provide further details on Reference Values and Endorsements, as
+   these topics were outside the scope of the RATS charter when RFC9334
+   was developed.
 
 Discussion Venues
 
@@ -50,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 June 2025.
+   This Internet-Draft will expire on 26 June 2025.
 
 Copyright Notice
 
