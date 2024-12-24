@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-22T00:43:08.494601+00:00",
+  "timestamp": "2024-12-24T00:39:25.366157+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -3191,24 +3191,26 @@
       "id": "PR_kwDOJj8oQM6Fffvq",
       "title": "this is not a protocol document",
       "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/46",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Clarify in the abstract that this document does not define any message formats.\r\n\r\nThe original prose was provided by Ned in https://mailarchive.ietf.org/arch/msg/rats/xv2V295_jzvevQ6WsYA96P7bJ_s/",
       "createdAt": "2024-12-17T13:09:11Z",
-      "updatedAt": "2024-12-18T16:52:12Z",
+      "updatedAt": "2024-12-23T05:20:34Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
       "baseRefOid": "beb73d51ecf98fa68c79262d52b3a563b2fc3fda",
       "headRepository": "ietf-rats-wg/rats-endorsements",
       "headRefName": "neds",
       "headRefOid": "2bde25daded1570a23a79133f32abd6620048ff0",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-12-23T05:20:33Z",
+      "mergedAt": "2024-12-23T05:20:33Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "0dc7da38d39b7a76c196339095fd8f98557b58b3"
+      },
       "comments": [
         {
           "author": "nedmsmith",
@@ -3218,7 +3220,34 @@
           "updatedAt": "2024-12-18T16:52:10Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM6WMbAm",
+          "commit": {
+            "abbreviatedOid": "2bde25d"
+          },
+          "author": "mcr",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-12-23T03:42:36Z",
+          "updatedAt": "2024-12-23T03:42:36Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6WMsMs",
+          "commit": {
+            "abbreviatedOid": "2bde25d"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-12-23T05:20:29Z",
+          "updatedAt": "2024-12-23T05:20:29Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
