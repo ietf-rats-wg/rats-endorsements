@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-23T00:38:40.856327+00:00",
+  "timestamp": "2025-01-26T00:39:43.674884+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -573,6 +573,24 @@
           "updatedAt": "2024-12-05T17:44:30Z"
         }
       ]
+    },
+    {
+      "number": 47,
+      "id": "I_kwDOJj8oQM6nRiF8",
+      "title": "MCR's WGLC review (the nits)",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/47",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [
+        "wglc"
+      ],
+      "body": "Archived-at: https://mailarchive.ietf.org/arch/msg/rats/2QO5c4m6lq7HvEjBiccQy8-JakM/\n\n```\nnits:\n\nI found 2. Actual State vs Reference State could be more clear about\nActual/Reference being things.  I suggest that maybe paragraph 3 and 4 could\neither be subsections, or maybe definition list if you prefer.\n\nAlso:\n        That is, where actual state has a single value per claim per Target\n        Environment applying to one device at one point in time, reference\n        state can have a set of values per claim per Target Environment.\n\nI found this single sentence to be too much.\nCould it be reworded into two sentences?  Perhaps\n\n        A reference state can have a set of values per claim per Target\n        Environment.  This is contrasted with actual state, which has a\n        single value per claim per Target Environment.\n        Actual states apply to one device at one point in time.\n\nFigure 1 has this anomaly of actual state layer-0 being an Endorsement vs\nEvidence.  This is explained two paragraphs layer.  I wonder if that\nparagraph could be earlier?\n\nsection 4:\ns/While this is typical, cryptography other than public key may also be\n        used./\n /While use of public key cryptography is typical for a verification key,\n        cryptography other than public key may also be used./\n\nQuestions like that given in paragraph 4 of section 4, about a certificate\nthat passes up to a trusted root, or... that belongs in Protocol\ndocumentation ought to be collected into a section or appendix.\n\nThe 'sometimes' is used twice. Not sure it should even be used once :-)\nAlso: \"Some implementations..\", and to me these read like SHOULDs that\nhaven't had their exceptions explained.\nI recognize the authors are trying to be inclusive of many views, but it\nmight be better to just be opininated, and make the exceptions more clearly\narticulated.\n```",
+      "createdAt": "2025-01-23T09:32:59Z",
+      "updatedAt": "2025-01-23T09:32:59Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
