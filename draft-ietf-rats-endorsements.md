@@ -228,8 +228,8 @@ Typically,
 the bottom-most Attesting Environment in an Attester will sign claims about one or more Target Environments
 (see also the DICE example at the end of {{conceptual}})
 with a private key that the Attesting Environment possesses, and the Verifier will appraise
-the resulting Evidence with a public key it possesses, called a verification key below. While this is typical,
-cryptography other than public key may also be used.
+the resulting Evidence with a public key it possesses, called a verification key below.
+While use of public key cryptography is typical for a verification key, cryptography other than public key may also be used.
 
 Endorsing the linkage between such verification keys and their associated Attesting Environments is crucial to the verification process.
 
