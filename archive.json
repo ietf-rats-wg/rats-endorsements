@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-30T00:37:55.169238+00:00",
+  "timestamp": "2025-02-02T00:41:14.394996+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -67,6 +67,11 @@
       "name": "wglc",
       "description": "working group last call",
       "color": "f9d0c4"
+    },
+    {
+      "name": "dependencies",
+      "description": "Pull requests that update a dependency file",
+      "color": "0366d6"
     }
   ],
   "issues": [
@@ -589,6 +594,102 @@
       "body": "Archived-at: https://mailarchive.ietf.org/arch/msg/rats/2QO5c4m6lq7HvEjBiccQy8-JakM/\n\n```\nnits:\n\nI found 2. Actual State vs Reference State could be more clear about\nActual/Reference being things.  I suggest that maybe paragraph 3 and 4 could\neither be subsections, or maybe definition list if you prefer.\n\nAlso:\n        That is, where actual state has a single value per claim per Target\n        Environment applying to one device at one point in time, reference\n        state can have a set of values per claim per Target Environment.\n\nI found this single sentence to be too much.\nCould it be reworded into two sentences?  Perhaps\n\n        A reference state can have a set of values per claim per Target\n        Environment.  This is contrasted with actual state, which has a\n        single value per claim per Target Environment.\n        Actual states apply to one device at one point in time.\n\nFigure 1 has this anomaly of actual state layer-0 being an Endorsement vs\nEvidence.  This is explained two paragraphs layer.  I wonder if that\nparagraph could be earlier?\n\nsection 4:\ns/While this is typical, cryptography other than public key may also be\n        used./\n /While use of public key cryptography is typical for a verification key,\n        cryptography other than public key may also be used./\n\nQuestions like that given in paragraph 4 of section 4, about a certificate\nthat passes up to a trusted root, or... that belongs in Protocol\ndocumentation ought to be collected into a section or appendix.\n\nThe 'sometimes' is used twice. Not sure it should even be used once :-)\nAlso: \"Some implementations..\", and to me these read like SHOULDs that\nhaven't had their exceptions explained.\nI recognize the authors are trying to be inclusive of many views, but it\nmight be better to just be opininated, and make the exceptions more clearly\narticulated.\n```",
       "createdAt": "2025-01-23T09:32:59Z",
       "updatedAt": "2025-01-23T09:32:59Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 48,
+      "id": "I_kwDOJj8oQM6oKIrd",
+      "title": "clarify that Actual/Reference are things",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/48",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "I found 2. Actual State vs Reference State could be more clear about\nActual/Reference being things.  I suggest that maybe paragraph 3 and 4 could\neither be subsections, or maybe definition list if you prefer.\n",
+      "createdAt": "2025-01-30T16:07:10Z",
+      "updatedAt": "2025-01-30T16:07:10Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 49,
+      "id": "I_kwDOJj8oQM6oKI4v",
+      "title": "Split long line",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/49",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Also:\n        That is, where actual state has a single value per claim per Target\n        Environment applying to one device at one point in time, reference\n        state can have a set of values per claim per Target Environment.\n\nI found this single sentence to be too much.\nCould it be reworded into two sentences?  Perhaps\n\n        A reference state can have a set of values per claim per Target\n        Environment.  This is contrasted with actual state, which has a\n        single value per claim per Target Environment.\n        Actual states apply to one device at one point in time.\n",
+      "createdAt": "2025-01-30T16:07:32Z",
+      "updatedAt": "2025-01-30T16:07:32Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 50,
+      "id": "I_kwDOJj8oQM6oKJD6",
+      "title": "layer-0 anomaly",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/50",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Figure 1 has this anomaly of actual state layer-0 being an Endorsement vs\nEvidence.  This is explained two paragraphs layer.  I wonder if that\nparagraph could be earlier?",
+      "createdAt": "2025-01-30T16:07:52Z",
+      "updatedAt": "2025-01-30T16:07:52Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 51,
+      "id": "I_kwDOJj8oQM6oKJVD",
+      "title": "editorial suggestion",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/51",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "section 4:\ns/While this is typical, cryptography other than public key may also be\n        used./\n /While use of public key cryptography is typical for a verification key,\n        cryptography other than public key may also be used./\n",
+      "createdAt": "2025-01-30T16:08:20Z",
+      "updatedAt": "2025-01-30T16:08:20Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 52,
+      "id": "I_kwDOJj8oQM6oKKbb",
+      "title": "separate protocol documentation considerations",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/52",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Questions like that given in paragraph 4 of section 4, about a certificate\nthat passes up to a trusted root, or... that belongs in Protocol\ndocumentation ought to be collected into a section or appendix.",
+      "createdAt": "2025-01-30T16:10:22Z",
+      "updatedAt": "2025-01-30T16:10:22Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 53,
+      "id": "I_kwDOJj8oQM6oKL-d",
+      "title": "moar opinionation?",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/53",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The 'sometimes' is used twice. Not sure it should even be used once :-)\nAlso: \"Some implementations..\", and to me these read like SHOULDs that\nhaven't had their exceptions explained.\nI recognize the authors are trying to be inclusive of many views, but it\nmight be better to just be opininated, and make the exceptions more clearly\narticulated.",
+      "createdAt": "2025-01-30T16:13:12Z",
+      "updatedAt": "2025-01-30T16:13:12Z",
       "closedAt": null,
       "comments": []
     }
@@ -3266,6 +3367,151 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 54,
+      "id": "PR_kwDOJj8oQM6JhbXJ",
+      "title": "editorial suggestions",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/54",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The actual changes to review are:\r\n\r\n* dcccca5b512bb27c34ee0ce40ff2b6f1ed1220af\r\n* c61ebe81234c3369ad706173c24e00fca62d8acd\r\n\r\nThe rest is the result of running `make update-files` which was required to fix GitHub's CI.\r\n\r\nFix #49 \r\nFix #51 \r\n",
+      "createdAt": "2025-01-30T16:13:42Z",
+      "updatedAt": "2025-02-01T05:13:48Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "daf51c06a0c77deb7e159d7c2ba63e6f791b3c0a",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "mcr-wglc",
+      "headRefOid": "2a4b70e3a9892976dfc0fe439f16b3b157ec1215",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 55,
+      "id": "PR_kwDOJj8oQM6Jm2rR",
+      "title": "small reflow",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/55",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "An attempt to eliminate some awkwardness from a single sentence.",
+      "createdAt": "2025-01-31T09:33:41Z",
+      "updatedAt": "2025-01-31T20:31:54Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "c8735584c0cc56b79743824c2a495e76fb5c86cb",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "smalledit",
+      "headRefOid": "5a913cd350d444727fdf3de814b30718a075de39",
+      "closedAt": "2025-01-31T20:31:54Z",
+      "mergedAt": "2025-01-31T20:31:54Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "daf51c06a0c77deb7e159d7c2ba63e6f791b3c0a"
+      },
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I rebased to get rid of github errors about the upload-artifact use in the workflow.",
+          "createdAt": "2025-01-31T20:19:17Z",
+          "updatedAt": "2025-01-31T20:19:17Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM6aJVDL",
+          "commit": {
+            "abbreviatedOid": "5a913cd"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "still true, but less complex",
+          "createdAt": "2025-01-31T09:45:24Z",
+          "updatedAt": "2025-01-31T20:18:51Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6aPjqn",
+          "commit": {
+            "abbreviatedOid": "5a913cd"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-01-31T20:02:45Z",
+          "updatedAt": "2025-01-31T20:18:51Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 56,
+      "id": "PR_kwDOJj8oQM6Jrwuj",
+      "title": "Add dependabot config to update github actions as needed",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/56",
+      "state": "MERGED",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "https://github.com/ietf-rats-wg/rats-endorsements/pull/55 is failing with this error:\r\n\r\nError: This request has been automatically failed because it uses a deprecated version of `actions/upload-artifact: v3`. Learn more: https://github.blog/changelog/2024-04-16-deprecation-notice-v3-of-the-artifact-actions/\r\n",
+      "createdAt": "2025-01-31T20:04:59Z",
+      "updatedAt": "2025-01-31T20:18:00Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "0dc7da38d39b7a76c196339095fd8f98557b58b3",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "dependabot",
+      "headRefOid": "c95cdd33fc348b25ac113935a2a59deaa06673ce",
+      "closedAt": "2025-01-31T20:17:59Z",
+      "mergedAt": "2025-01-31T20:17:59Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "c8735584c0cc56b79743824c2a495e76fb5c86cb"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 57,
+      "id": "PR_kwDOJj8oQM6Jr1OL",
+      "title": "Bump the actions group with 2 updates",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/57",
+      "state": "OPEN",
+      "author": "dependabot",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [
+        "dependencies"
+      ],
+      "body": "Bumps the actions group with 2 updates: [actions/checkout](https://github.com/actions/checkout) and [actions/cache](https://github.com/actions/cache).\n\nUpdates `actions/checkout` from 2 to 4\n<details>\n<summary>Release notes</summary>\n<p><em>Sourced from <a href=\"https://github.com/actions/checkout/releases\">actions/checkout's releases</a>.</em></p>\n<blockquote>\n<h2>v4.0.0</h2>\n<h2>What's Changed</h2>\n<ul>\n<li>Update default runtime to node20 by <a href=\"https://github.com/takost\"><code>@\u200btakost</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1436\">actions/checkout#1436</a></li>\n<li>Support fetching without the --progress option by <a href=\"https://github.com/simonbaird\"><code>@\u200bsimonbaird</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1067\">actions/checkout#1067</a></li>\n<li>Release 4.0.0 by <a href=\"https://github.com/takost\"><code>@\u200btakost</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1447\">actions/checkout#1447</a></li>\n</ul>\n<h2>New Contributors</h2>\n<ul>\n<li><a href=\"https://github.com/takost\"><code>@\u200btakost</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/1436\">actions/checkout#1436</a></li>\n<li><a href=\"https://github.com/simonbaird\"><code>@\u200bsimonbaird</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/1067\">actions/checkout#1067</a></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/actions/checkout/compare/v3...v4.0.0\">https://github.com/actions/checkout/compare/v3...v4.0.0</a></p>\n<h2>v3.6.0</h2>\n<h2>What's Changed</h2>\n<ul>\n<li>Mark test scripts with Bash'isms to be run via Bash by <a href=\"https://github.com/dscho\"><code>@\u200bdscho</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1377\">actions/checkout#1377</a></li>\n<li>Add option to fetch tags even if fetch-depth &gt; 0 by <a href=\"https://github.com/RobertWieczoreck\"><code>@\u200bRobertWieczoreck</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/579\">actions/checkout#579</a></li>\n<li>Release 3.6.0 by <a href=\"https://github.com/luketomlinson\"><code>@\u200bluketomlinson</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1437\">actions/checkout#1437</a></li>\n</ul>\n<h2>New Contributors</h2>\n<ul>\n<li><a href=\"https://github.com/RobertWieczoreck\"><code>@\u200bRobertWieczoreck</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/579\">actions/checkout#579</a></li>\n<li><a href=\"https://github.com/luketomlinson\"><code>@\u200bluketomlinson</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/1437\">actions/checkout#1437</a></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/actions/checkout/compare/v3.5.3...v3.6.0\">https://github.com/actions/checkout/compare/v3.5.3...v3.6.0</a></p>\n<h2>v3.5.3</h2>\n<h2>What's Changed</h2>\n<ul>\n<li>Fix: Checkout Issue in self hosted runner due to faulty submodule check-ins by <a href=\"https://github.com/megamanics\"><code>@\u200bmegamanics</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1196\">actions/checkout#1196</a></li>\n<li>Fix typos found by codespell by <a href=\"https://github.com/DimitriPapadopoulos\"><code>@\u200bDimitriPapadopoulos</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1287\">actions/checkout#1287</a></li>\n<li>Add support for sparse checkouts by <a href=\"https://github.com/dscho\"><code>@\u200bdscho</code></a> and <a href=\"https://github.com/dfdez\"><code>@\u200bdfdez</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1369\">actions/checkout#1369</a></li>\n<li>Release v3.5.3 by <a href=\"https://github.com/TingluoHuang\"><code>@\u200bTingluoHuang</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1376\">actions/checkout#1376</a></li>\n</ul>\n<h2>New Contributors</h2>\n<ul>\n<li><a href=\"https://github.com/megamanics\"><code>@\u200bmegamanics</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/1196\">actions/checkout#1196</a></li>\n<li><a href=\"https://github.com/DimitriPapadopoulos\"><code>@\u200bDimitriPapadopoulos</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/1287\">actions/checkout#1287</a></li>\n<li><a href=\"https://github.com/dfdez\"><code>@\u200bdfdez</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/1369\">actions/checkout#1369</a></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/actions/checkout/compare/v3...v3.5.3\">https://github.com/actions/checkout/compare/v3...v3.5.3</a></p>\n<h2>v3.5.2</h2>\n<h2>What's Changed</h2>\n<ul>\n<li>Fix: Use correct API url / endpoint in GHES by <a href=\"https://github.com/fhammerl\"><code>@\u200bfhammerl</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1289\">actions/checkout#1289</a> based on <a href=\"https://redirect.github.com/actions/checkout/issues/1286\">#1286</a> by <a href=\"https://github.com/1newsr\"><code>@\u200b1newsr</code></a></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/actions/checkout/compare/v3.5.1...v3.5.2\">https://github.com/actions/checkout/compare/v3.5.1...v3.5.2</a></p>\n<h2>v3.5.1</h2>\n<h2>What's Changed</h2>\n<ul>\n<li>Improve checkout performance on Windows runners by upgrading <code>@\u200bactions/github</code> dependency by <a href=\"https://github.com/BrettDong\"><code>@\u200bBrettDong</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1246\">actions/checkout#1246</a></li>\n</ul>\n<h2>New Contributors</h2>\n<ul>\n<li><a href=\"https://github.com/BrettDong\"><code>@\u200bBrettDong</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/1246\">actions/checkout#1246</a></li>\n</ul>\n<!-- raw HTML omitted -->\n</blockquote>\n<p>... (truncated)</p>\n</details>\n<details>\n<summary>Changelog</summary>\n<p><em>Sourced from <a href=\"https://github.com/actions/checkout/blob/main/CHANGELOG.md\">actions/checkout's changelog</a>.</em></p>\n<blockquote>\n<h1>Changelog</h1>\n<h2>v4.2.2</h2>\n<ul>\n<li><code>url-helper.ts</code> now leverages well-known environment variables by <a href=\"https://github.com/jww3\"><code>@\u200bjww3</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1941\">actions/checkout#1941</a></li>\n<li>Expand unit test coverage for <code>isGhes</code> by <a href=\"https://github.com/jww3\"><code>@\u200bjww3</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1946\">actions/checkout#1946</a></li>\n</ul>\n<h2>v4.2.1</h2>\n<ul>\n<li>Check out other refs/* by commit if provided, fall back to ref by <a href=\"https://github.com/orhantoy\"><code>@\u200borhantoy</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1924\">actions/checkout#1924</a></li>\n</ul>\n<h2>v4.2.0</h2>\n<ul>\n<li>Add Ref and Commit outputs by <a href=\"https://github.com/lucacome\"><code>@\u200blucacome</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1180\">actions/checkout#1180</a></li>\n<li>Dependency updates by <a href=\"https://github.com/dependabot\"><code>@\u200bdependabot</code></a>- <a href=\"https://redirect.github.com/actions/checkout/pull/1777\">actions/checkout#1777</a>, <a href=\"https://redirect.github.com/actions/checkout/pull/1872\">actions/checkout#1872</a></li>\n</ul>\n<h2>v4.1.7</h2>\n<ul>\n<li>Bump the minor-npm-dependencies group across 1 directory with 4 updates by <a href=\"https://github.com/dependabot\"><code>@\u200bdependabot</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1739\">actions/checkout#1739</a></li>\n<li>Bump actions/checkout from 3 to 4 by <a href=\"https://github.com/dependabot\"><code>@\u200bdependabot</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1697\">actions/checkout#1697</a></li>\n<li>Check out other refs/* by commit by <a href=\"https://github.com/orhantoy\"><code>@\u200borhantoy</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1774\">actions/checkout#1774</a></li>\n<li>Pin actions/checkout's own workflows to a known, good, stable version. by <a href=\"https://github.com/jww3\"><code>@\u200bjww3</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1776\">actions/checkout#1776</a></li>\n</ul>\n<h2>v4.1.6</h2>\n<ul>\n<li>Check platform to set archive extension appropriately by <a href=\"https://github.com/cory-miller\"><code>@\u200bcory-miller</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1732\">actions/checkout#1732</a></li>\n</ul>\n<h2>v4.1.5</h2>\n<ul>\n<li>Update NPM dependencies by <a href=\"https://github.com/cory-miller\"><code>@\u200bcory-miller</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1703\">actions/checkout#1703</a></li>\n<li>Bump github/codeql-action from 2 to 3 by <a href=\"https://github.com/dependabot\"><code>@\u200bdependabot</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1694\">actions/checkout#1694</a></li>\n<li>Bump actions/setup-node from 1 to 4 by <a href=\"https://github.com/dependabot\"><code>@\u200bdependabot</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1696\">actions/checkout#1696</a></li>\n<li>Bump actions/upload-artifact from 2 to 4 by <a href=\"https://github.com/dependabot\"><code>@\u200bdependabot</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1695\">actions/checkout#1695</a></li>\n<li>README: Suggest <code>user.email</code> to be <code>41898282+github-actions[bot]@users.noreply.github.com</code> by <a href=\"https://github.com/cory-miller\"><code>@\u200bcory-miller</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1707\">actions/checkout#1707</a></li>\n</ul>\n<h2>v4.1.4</h2>\n<ul>\n<li>Disable <code>extensions.worktreeConfig</code> when disabling <code>sparse-checkout</code> by <a href=\"https://github.com/jww3\"><code>@\u200bjww3</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1692\">actions/checkout#1692</a></li>\n<li>Add dependabot config by <a href=\"https://github.com/cory-miller\"><code>@\u200bcory-miller</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1688\">actions/checkout#1688</a></li>\n<li>Bump the minor-actions-dependencies group with 2 updates by <a href=\"https://github.com/dependabot\"><code>@\u200bdependabot</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1693\">actions/checkout#1693</a></li>\n<li>Bump word-wrap from 1.2.3 to 1.2.5 by <a href=\"https://github.com/dependabot\"><code>@\u200bdependabot</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1643\">actions/checkout#1643</a></li>\n</ul>\n<h2>v4.1.3</h2>\n<ul>\n<li>Check git version before attempting to disable <code>sparse-checkout</code> by <a href=\"https://github.com/jww3\"><code>@\u200bjww3</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1656\">actions/checkout#1656</a></li>\n<li>Add SSH user parameter by <a href=\"https://github.com/cory-miller\"><code>@\u200bcory-miller</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1685\">actions/checkout#1685</a></li>\n<li>Update <code>actions/checkout</code> version in <code>update-main-version.yml</code> by <a href=\"https://github.com/jww3\"><code>@\u200bjww3</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1650\">actions/checkout#1650</a></li>\n</ul>\n<h2>v4.1.2</h2>\n<ul>\n<li>Fix: Disable sparse checkout whenever <code>sparse-checkout</code> option is not present <a href=\"https://github.com/dscho\"><code>@\u200bdscho</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1598\">actions/checkout#1598</a></li>\n</ul>\n<h2>v4.1.1</h2>\n<ul>\n<li>Correct link to GitHub Docs by <a href=\"https://github.com/peterbe\"><code>@\u200bpeterbe</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1511\">actions/checkout#1511</a></li>\n<li>Link to release page from what's new section by <a href=\"https://github.com/cory-miller\"><code>@\u200bcory-miller</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1514\">actions/checkout#1514</a></li>\n</ul>\n<h2>v4.1.0</h2>\n<ul>\n<li><a href=\"https://redirect.github.com/actions/checkout/pull/1396\">Add support for partial checkout filters</a></li>\n</ul>\n<!-- raw HTML omitted -->\n</blockquote>\n<p>... (truncated)</p>\n</details>\n<details>\n<summary>Commits</summary>\n<ul>\n<li><a href=\"https://github.com/actions/checkout/commit/11bd71901bbe5b1630ceea73d27597364c9af683\"><code>11bd719</code></a> Prepare 4.2.2 Release (<a href=\"https://redirect.github.com/actions/checkout/issues/1953\">#1953</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/e3d2460bbb42d7710191569f88069044cfb9d8cf\"><code>e3d2460</code></a> Expand unit test coverage (<a href=\"https://redirect.github.com/actions/checkout/issues/1946\">#1946</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/163217dfcd28294438ea1c1c149cfaf66eec283e\"><code>163217d</code></a> <code>url-helper.ts</code> now leverages well-known environment variables. (<a href=\"https://redirect.github.com/actions/checkout/issues/1941\">#1941</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871\"><code>eef6144</code></a> Prepare 4.2.1 release (<a href=\"https://redirect.github.com/actions/checkout/issues/1925\">#1925</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/6b42224f41ee5dfe5395e27c8b2746f1f9955030\"><code>6b42224</code></a> Add workflow file for publishing releases to immutable action package (<a href=\"https://redirect.github.com/actions/checkout/issues/1919\">#1919</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/de5a000abf73b6f4965bd1bcdf8f8d94a56ea815\"><code>de5a000</code></a> Check out other refs/* by commit if provided, fall back to ref (<a href=\"https://redirect.github.com/actions/checkout/issues/1924\">#1924</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/d632683dd7b4114ad314bca15554477dd762a938\"><code>d632683</code></a> Prepare 4.2.0 release (<a href=\"https://redirect.github.com/actions/checkout/issues/1878\">#1878</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/6d193bf28034eafb982f37bd894289fe649468fc\"><code>6d193bf</code></a> Bump braces from 3.0.2 to 3.0.3 (<a href=\"https://redirect.github.com/actions/checkout/issues/1777\">#1777</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/db0cee9a514becbbd4a101a5fbbbf47865ee316c\"><code>db0cee9</code></a> Bump the minor-npm-dependencies group across 1 directory with 4 updates (<a href=\"https://redirect.github.com/actions/checkout/issues/1872\">#1872</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/b6849436894e144dbce29d7d7fda2ae3bf9d8365\"><code>b684943</code></a> Add Ref and Commit outputs (<a href=\"https://redirect.github.com/actions/checkout/issues/1180\">#1180</a>)</li>\n<li>Additional commits viewable in <a href=\"https://github.com/actions/checkout/compare/v2...v4\">compare view</a></li>\n</ul>\n</details>\n<br />\n\nUpdates `actions/cache` from 3 to 4\n<details>\n<summary>Release notes</summary>\n<p><em>Sourced from <a href=\"https://github.com/actions/cache/releases\">actions/cache's releases</a>.</em></p>\n<blockquote>\n<h2>v4.0.0</h2>\n<h2>What's Changed</h2>\n<ul>\n<li>Update action to node20 by <a href=\"https://github.com/takost\"><code>@\u200btakost</code></a> in <a href=\"https://redirect.github.com/actions/cache/pull/1284\">actions/cache#1284</a></li>\n<li>feat: save-always flag by <a href=\"https://github.com/to-s\"><code>@\u200bto-s</code></a> in <a href=\"https://redirect.github.com/actions/cache/pull/1242\">actions/cache#1242</a></li>\n</ul>\n<h2>New Contributors</h2>\n<ul>\n<li><a href=\"https://github.com/takost\"><code>@\u200btakost</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/cache/pull/1284\">actions/cache#1284</a></li>\n<li><a href=\"https://github.com/to-s\"><code>@\u200bto-s</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/cache/pull/1242\">actions/cache#1242</a></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/actions/cache/compare/v3...v4.0.0\">https://github.com/actions/cache/compare/v3...v4.0.0</a></p>\n<h2>v3.4.0</h2>\n<h2>\u26a0\ufe0f Important Changes</h2>\n<p>The cache backend service has been rewritten from the ground up for improved performance and reliability. <a href=\"https://github.com/actions/cache\">actions/cache</a> now integrates with the new cache service (v2) APIs.</p>\n<p>The new service will gradually roll out as of <strong>February 1st, 2025</strong>. The legacy service will also be sunset on the same date. Changes in these release are <strong>fully backward compatible</strong>.</p>\n<p><strong>We are deprecating some versions of this action</strong>. We recommend upgrading to version <code>v4</code> or <code>v3</code> as soon as possible before <strong>February 1st, 2025.</strong> (Upgrade instructions below).</p>\n<p>If you are using pinned SHAs, please use the SHAs of versions <code>v4.2.0</code> or <code>v3.4.0</code></p>\n<p>If you do not upgrade, all workflow runs using any of the deprecated <a href=\"https://github.com/actions/cache\">actions/cache</a> will fail.</p>\n<p>Upgrading to the recommended versions will not break your workflows.</p>\n<p>Read more about the change &amp; access the migration guide: <a href=\"https://github.com/actions/cache/discussions/1510\">reference to the announcement</a>.</p>\n<h3>Minor changes</h3>\n<p>Minor and patch version updates for these dependencies:</p>\n<ul>\n<li><code>@\u200bactions/core</code>: <code>1.11.1</code></li>\n<li><code>@\u200bactions/io</code>: <code>1.1.3</code></li>\n<li><code>@\u200bvercel/ncc</code>: <code>0.38.3</code></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/actions/cache/compare/v3...v3.4.0\">https://github.com/actions/cache/compare/v3...v3.4.0</a></p>\n<h2>v3.3.3</h2>\n<h2>What's Changed</h2>\n<ul>\n<li>Cache v3.3.3 by <a href=\"https://github.com/robherley\"><code>@\u200brobherley</code></a> in <a href=\"https://redirect.github.com/actions/cache/pull/1302\">actions/cache#1302</a></li>\n</ul>\n<h2>New Contributors</h2>\n<ul>\n<li><a href=\"https://github.com/robherley\"><code>@\u200brobherley</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/cache/pull/1302\">actions/cache#1302</a></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/actions/cache/compare/v3...v3.3.3\">https://github.com/actions/cache/compare/v3...v3.3.3</a></p>\n<h2>v3.3.2</h2>\n<h2>What's Changed</h2>\n<ul>\n<li>Fixed readme with new segment timeout values by <a href=\"https://github.com/kotewar\"><code>@\u200bkotewar</code></a> in <a href=\"https://redirect.github.com/actions/cache/pull/1133\">actions/cache#1133</a></li>\n<li>Readme fixes by <a href=\"https://github.com/kotewar\"><code>@\u200bkotewar</code></a> in <a href=\"https://redirect.github.com/actions/cache/pull/1134\">actions/cache#1134</a></li>\n</ul>\n<!-- raw HTML omitted -->\n</blockquote>\n<p>... (truncated)</p>\n</details>\n<details>\n<summary>Changelog</summary>\n<p><em>Sourced from <a href=\"https://github.com/actions/cache/blob/main/RELEASES.md\">actions/cache's changelog</a>.</em></p>\n<blockquote>\n<h1>Releases</h1>\n<h3>4.2.0</h3>\n<p>TLDR; The cache backend service has been rewritten from the ground up for improved performance and reliability. <a href=\"https://github.com/actions/cache\">actions/cache</a> now integrates with the new cache service (v2) APIs.</p>\n<p>The new service will gradually roll out as of <strong>February 1st, 2025</strong>. The legacy service will also be sunset on the same date. Changes in these release are <strong>fully backward compatible</strong>.</p>\n<p><strong>We are deprecating some versions of this action</strong>. We recommend upgrading to version <code>v4</code> or <code>v3</code> as soon as possible before <strong>February 1st, 2025.</strong> (Upgrade instructions below).</p>\n<p>If you are using pinned SHAs, please use the SHAs of versions <code>v4.2.0</code> or <code>v3.4.0</code></p>\n<p>If you do not upgrade, all workflow runs using any of the deprecated <a href=\"https://github.com/actions/cache\">actions/cache</a> will fail.</p>\n<p>Upgrading to the recommended versions will not break your workflows.</p>\n<h3>4.1.2</h3>\n<ul>\n<li>Add GitHub Enterprise Cloud instances hostname filters to inform API endpoint choices - <a href=\"https://redirect.github.com/actions/cache/pull/1474\">#1474</a></li>\n<li>Security fix: Bump braces from 3.0.2 to 3.0.3 - <a href=\"https://redirect.github.com/actions/cache/pull/1475\">#1475</a></li>\n</ul>\n<h3>4.1.1</h3>\n<ul>\n<li>Restore original behavior of <code>cache-hit</code> output - <a href=\"https://redirect.github.com/actions/cache/pull/1467\">#1467</a></li>\n</ul>\n<h3>4.1.0</h3>\n<ul>\n<li>Ensure <code>cache-hit</code> output is set when a cache is missed - <a href=\"https://redirect.github.com/actions/cache/pull/1404\">#1404</a></li>\n<li>Deprecate <code>save-always</code> input - <a href=\"https://redirect.github.com/actions/cache/pull/1452\">#1452</a></li>\n</ul>\n<h3>4.0.2</h3>\n<ul>\n<li>Fixed restore <code>fail-on-cache-miss</code> not working.</li>\n</ul>\n<h3>4.0.1</h3>\n<ul>\n<li>Updated <code>isGhes</code> check</li>\n</ul>\n<h3>4.0.0</h3>\n<ul>\n<li>Updated minimum runner version support from node 12 -&gt; node 20</li>\n</ul>\n<h3>3.4.0</h3>\n<ul>\n<li>Integrated with the new cache service (v2) APIs</li>\n</ul>\n<h3>3.3.3</h3>\n<ul>\n<li>Updates <code>@\u200bactions/cache</code> to v3.2.3 to fix accidental mutated path arguments to <code>getCacheVersion</code> <a href=\"https://redirect.github.com/actions/toolkit/pull/1378\">actions/toolkit#1378</a></li>\n<li>Additional audit fixes of npm package(s)</li>\n</ul>\n<!-- raw HTML omitted -->\n</blockquote>\n<p>... (truncated)</p>\n</details>\n<details>\n<summary>Commits</summary>\n<ul>\n<li><a href=\"https://github.com/actions/cache/commit/1bd1e32a3bdc45362d1e726936510720a7c30a57\"><code>1bd1e32</code></a> Merge pull request <a href=\"https://redirect.github.com/actions/cache/issues/1509\">#1509</a> from actions/Link-/cache-4.2.0</li>\n<li><a href=\"https://github.com/actions/cache/commit/882d7ced4c9b8af53ed67bfa36ee600195e62940\"><code>882d7ce</code></a> Add 3.4.0 release notes</li>\n<li><a href=\"https://github.com/actions/cache/commit/f2695d7a42dd0d7ad21976ed7ab91dbdbc3c2216\"><code>f2695d7</code></a> Rerun CI</li>\n<li><a href=\"https://github.com/actions/cache/commit/f46ceeb60d3da27b7cbac269520a4b1bfb15f199\"><code>f46ceeb</code></a> Add licensed output</li>\n<li><a href=\"https://github.com/actions/cache/commit/e6f5858749f178cf4a01b0d777917ba913710560\"><code>e6f5858</code></a> Add lodash to list of reviewed licenses</li>\n<li><a href=\"https://github.com/actions/cache/commit/4ae6f21c0d820c73db2589af6983e001d8c19c1d\"><code>4ae6f21</code></a> Add reviewed licensed packages</li>\n<li><a href=\"https://github.com/actions/cache/commit/c16df86586baf94b0deaa873e22eb739c59e5b15\"><code>c16df86</code></a> Add licensed output</li>\n<li><a href=\"https://github.com/actions/cache/commit/b109c12f3bdd6fb6a7dd42b202df645243efbd2f\"><code>b109c12</code></a> Upgrade <code>@\u200bactions/core</code> to 1.11.1 and other deps</li>\n<li><a href=\"https://github.com/actions/cache/commit/b7d227d702af06e6be1fa308c014252c10bbc267\"><code>b7d227d</code></a> Upgrade <code>@\u200bvercel/ncc</code> to 0.38.3</li>\n<li><a href=\"https://github.com/actions/cache/commit/faf639248d95d2a6c5884b8e6588e233eb3b10a0\"><code>faf6392</code></a> Update RELEASES.md</li>\n<li>Additional commits viewable in <a href=\"https://github.com/actions/cache/compare/v3...v4\">compare view</a></li>\n</ul>\n</details>\n<br />\n\n\nDependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `@dependabot rebase`.\n\n[//]: # (dependabot-automerge-start)\n[//]: # (dependabot-automerge-end)\n\n---\n\n<details>\n<summary>Dependabot commands and options</summary>\n<br />\n\nYou can trigger Dependabot actions by commenting on this PR:\n- `@dependabot rebase` will rebase this PR\n- `@dependabot recreate` will recreate this PR, overwriting any edits that have been made to it\n- `@dependabot merge` will merge this PR after your CI passes on it\n- `@dependabot squash and merge` will squash and merge this PR after your CI passes on it\n- `@dependabot cancel merge` will cancel a previously requested merge and block automerging\n- `@dependabot reopen` will reopen this PR if it is closed\n- `@dependabot close` will close this PR and stop Dependabot recreating it. You can achieve the same result by closing it manually\n- `@dependabot show <dependency name> ignore conditions` will show all of the ignore conditions of the specified dependency\n- `@dependabot ignore <dependency name> major version` will close this group update PR and stop Dependabot creating any more for the specific dependency's major version (unless you unignore this specific dependency's major version or upgrade to it yourself)\n- `@dependabot ignore <dependency name> minor version` will close this group update PR and stop Dependabot creating any more for the specific dependency's minor version (unless you unignore this specific dependency's minor version or upgrade to it yourself)\n- `@dependabot ignore <dependency name>` will close this group update PR and stop Dependabot creating any more for the specific dependency (unless you unignore this specific dependency or upgrade to it yourself)\n- `@dependabot unignore <dependency name>` will remove all of the ignore conditions of the specified dependency\n- `@dependabot unignore <dependency name> <ignore condition>` will remove the ignore condition of the specified dependency and ignore conditions\n\n\n</details>",
+      "createdAt": "2025-01-31T20:18:44Z",
+      "updatedAt": "2025-02-01T11:33:29Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "daf51c06a0c77deb7e159d7c2ba63e6f791b3c0a",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "1c1fdependabot/github_actions/actions-69b2579018",
+      "headRefOid": "b2f854a2398e6e8fd47e724fd42c11fd3bf89e1b",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
