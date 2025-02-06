@@ -113,7 +113,7 @@ a set of potential values, being the values that are allowed/disallowed
 when determining the trustworthiness of the Attester.  In general, there may be more
 gradation than simply "allowed or disallowed" so each value might include some
 more complex level of gradation in some implementations.
-A reference state can have a set of values per claim per Target Environment.
+Reference state can have a set of values per claim per Target Environment.
 This is contrasted with actual state, which has a single value per claim per Target Environment.
 Actual state applies to one device at one point in time.
 Appraisal policy then specifies how to match the actual state values against a set of Reference Values.
