@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 4 August 2025                                        T. Fossati
+Expires: 10 August 2025                                       T. Fossati
                                                                   Linaro
-                                                         31 January 2025
+                                                         6 February 2025
 
 
                            RATS Endorsements
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 August 2025.
+   This Internet-Draft will expire on 10 August 2025.
 
 Copyright Notice
 
@@ -151,13 +151,12 @@ Table of Contents
    disallowed when determining the trustworthiness of the Attester.  In
    general, there may be more gradation than simply "allowed or
    disallowed" so each value might include some more complex level of
-   gradation in some implementations.
-
-   That is, where actual state has a single value per claim per Target
-   Environment applying to one device at one point in time, reference
-   state can have a set of values per claim per Target Environment.
-   Appraisal policy then specifies how to match the actual state values
-   against a set of Reference Values.
+   gradation in some implementations.  Reference state can have a set of
+   values per claim per Target Environment.  This is contrasted with
+   actual state, which has a single value per claim per Target
+   Environment.  Actual state applies to one device at one point in
+   time.  Appraisal policy then specifies how to match the actual state
+   values against a set of Reference Values.
 
    Some examples of such matching include:
 
@@ -285,8 +284,9 @@ Table of Contents
    example at the end of Section 2.1) with a private key that the
    Attesting Environment possesses, and the Verifier will appraise the
    resulting Evidence with a public key it possesses, called a
-   verification key below.  While this is typical, cryptography other
-   than public key may also be used.
+   verification key below.  While use of public key cryptography is
+   typical for a verification key, cryptography other than public key
+   may also be used.
 
    Endorsing the linkage between such verification keys and their
    associated Attesting Environments is crucial to the verification
