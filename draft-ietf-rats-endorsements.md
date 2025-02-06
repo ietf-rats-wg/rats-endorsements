@@ -113,11 +113,10 @@ a set of potential values, being the values that are allowed/disallowed
 when determining the trustworthiness of the Attester.  In general, there may be more
 gradation than simply "allowed or disallowed" so each value might include some
 more complex level of gradation in some implementations.
-
-That is, where actual state has a single value per claim per Target Environment
-applying to one device at one point in time, reference state can have a set of values
-per claim per Target Environment.  Appraisal policy then specifies how to match
-the actual state values against a set of Reference Values.
+Reference state can have a set of values per claim per Target Environment.
+This is contrasted with actual state, which has a single value per claim per Target Environment.
+Actual state applies to one device at one point in time.
+Appraisal policy then specifies how to match the actual state values against a set of Reference Values.
 
 Some examples of such matching include:
 
@@ -229,8 +228,8 @@ Typically,
 the bottom-most Attesting Environment in an Attester will sign claims about one or more Target Environments
 (see also the DICE example at the end of {{conceptual}})
 with a private key that the Attesting Environment possesses, and the Verifier will appraise
-the resulting Evidence with a public key it possesses, called a verification key below. While this is typical,
-cryptography other than public key may also be used.
+the resulting Evidence with a public key it possesses, called a verification key below.
+While use of public key cryptography is typical for a verification key, cryptography other than public key may also be used.
 
 Endorsing the linkage between such verification keys and their associated Attesting Environments is crucial to the verification process.
 

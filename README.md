@@ -1,17 +1,17 @@
 # RATS Endorsements
 
-This is the working area for the individual Internet-Draft, "RATS Endorsements".
+This is the working area for the IETF [RATS Working Group](https://datatracker.ietf.org/group/rats/documents/) Internet-Draft, "RATS Endorsements".
 
-* [Editor's Copy](https://htmlpreview.github.io/?https://raw.githubusercontent.com/ietf-rats-wg/rats-endorsements/gh-pages/draft-ietf-rats-endorsements.html)
+* [Editor's Copy](https://ietf-rats-wg.github.io/rats-endorsements/#go.draft-ietf-rats-endorsements.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-rats-endorsements)
-* [WG Draft](https://datatracker.ietf.org/doc/html/draft-ietf-rats-endorsements)
-* [Compare Editor's Copy to WG Draft](https://author-tools.ietf.org/diff?doc_1=draft-ietf-rats-endorsements&url_2=https://raw.githubusercontent.com/ietf-rats-wg/rats-endorsements/gh-pages/draft-ietf-rats-endorsements.txt&wdiff=1)
+* [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-rats-endorsements)
+* [Compare Editor's Copy to Working Group Draft](https://ietf-rats-wg.github.io/rats-endorsements/#go.draft-ietf-rats-endorsements.diff)
 
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/dthaler/rats-endorsements/blob/main/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/ietf-rats-wg/rats-endorsements/blob/main/CONTRIBUTING.md).
 
 Contributions can be made by creating pull requests.
 The GitHub interface supports creating pull requests using the Edit (✏) button.
