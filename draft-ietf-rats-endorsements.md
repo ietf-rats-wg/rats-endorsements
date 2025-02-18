@@ -108,8 +108,9 @@ files in a given location on the device, but in the context of this document suc
 a list is treated as a single unit, representing one Attester at one point in time.
 
 "Reference state" is a group of claim sets about the desired or undesired state of
-an Attester.
-Each claim typically has a name and a set of potential values, which determine the trustworthiness of the Attester.
+an Attester.  Typically, each claim has a name and
+a set of potential values, being the values that are allowed/disallowed
+when determining the trustworthiness of the Attester.
 Generally, there may be varying degrees of gradation beyond just "allowed" or "disallowed."
 Reference state can have a set of values per claim per Target Environment.
 This is contrasted with actual state, which has a single value per claim per Target Environment.
