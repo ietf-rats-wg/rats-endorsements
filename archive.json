@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-02-18T00:39:12.586220+00:00",
+  "timestamp": "2025-02-20T00:40:08.082718+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -3576,6 +3576,46 @@
         }
       ],
       "reviews": []
+    },
+    {
+      "number": 58,
+      "id": "PR_kwDOJj8oQM6Lm2q1",
+      "title": "slight sentence reflow",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/58",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Rephrase a slightly convoluted sentence.",
+      "createdAt": "2025-02-18T14:27:24Z",
+      "updatedAt": "2025-02-18T14:57:18Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "b026688bd64632607746fbe7ae4fc636de851cd1",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "slight-reflow",
+      "headRefOid": "2b6de7e5cdef5bfc9f8516548f339b37c438bc87",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM6cZQ55",
+          "commit": {
+            "abbreviatedOid": "2b6de7e"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-02-18T14:57:18Z",
+          "updatedAt": "2025-02-18T14:57:18Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
