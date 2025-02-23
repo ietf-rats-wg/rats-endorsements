@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-02-20T00:40:08.082718+00:00",
+  "timestamp": "2025-02-23T00:42:57.725898+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -3589,7 +3589,7 @@
       "labels": [],
       "body": "Rephrase a slightly convoluted sentence.",
       "createdAt": "2025-02-18T14:27:24Z",
-      "updatedAt": "2025-02-18T14:57:18Z",
+      "updatedAt": "2025-02-22T22:32:32Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
       "baseRefOid": "b026688bd64632607746fbe7ae4fc636de851cd1",
@@ -3613,6 +3613,19 @@
           "body": "",
           "createdAt": "2025-02-18T14:57:18Z",
           "updatedAt": "2025-02-18T14:57:18Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJj8oQM6dFAmZ",
+          "commit": {
+            "abbreviatedOid": "2b6de7e"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-02-22T22:32:32Z",
+          "updatedAt": "2025-02-22T22:32:32Z",
           "comments": []
         }
       ]
