@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-02-23T00:42:57.725898+00:00",
+  "timestamp": "2025-02-25T00:40:59.896753+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -3582,24 +3582,26 @@
       "id": "PR_kwDOJj8oQM6Lm2q1",
       "title": "slight sentence reflow",
       "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/58",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Rephrase a slightly convoluted sentence.",
       "createdAt": "2025-02-18T14:27:24Z",
-      "updatedAt": "2025-02-22T22:32:32Z",
+      "updatedAt": "2025-02-24T20:32:35Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
       "baseRefOid": "b026688bd64632607746fbe7ae4fc636de851cd1",
       "headRepository": "ietf-rats-wg/rats-endorsements",
       "headRefName": "slight-reflow",
       "headRefOid": "2b6de7e5cdef5bfc9f8516548f339b37c438bc87",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-02-24T20:32:35Z",
+      "mergedAt": "2025-02-24T20:32:35Z",
+      "mergedBy": "dthaler",
+      "mergeCommit": {
+        "oid": "b1e014a3254728b3d6e3914e09e4580482770216"
+      },
       "comments": [],
       "reviews": [
         {
