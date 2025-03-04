@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-02T00:43:33.484505+00:00",
+  "timestamp": "2025-03-04T00:41:22.702160+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -3628,6 +3628,48 @@
           "body": "",
           "createdAt": "2025-02-22T22:32:32Z",
           "updatedAt": "2025-02-22T22:32:32Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 59,
+      "id": "PR_kwDOJj8oQM6NJrdJ",
+      "title": "ACK += MCR",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/59",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-03-03T13:14:05Z",
+      "updatedAt": "2025-03-03T13:59:46Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "b1e014a3254728b3d6e3914e09e4580482770216",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "ack-mcr",
+      "headRefOid": "ef5948674d37ba95e6cdffe89f33e152f9908ae2",
+      "closedAt": "2025-03-03T13:59:42Z",
+      "mergedAt": "2025-03-03T13:59:42Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "272a85562ad5a5dedac3f41143110d179d0ba140"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM6eM963",
+          "commit": {
+            "abbreviatedOid": "ef59486"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-03-03T13:56:41Z",
+          "updatedAt": "2025-03-03T13:56:41Z",
           "comments": []
         }
       ]
