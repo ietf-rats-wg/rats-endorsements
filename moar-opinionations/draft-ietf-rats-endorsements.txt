@@ -310,8 +310,8 @@ Table of Contents
    key, a raw public key, or a certified public key.
 
    Evidence can contain an identifier for the Attester (e.g.,
-   [I-D.ietf-rats-eat] ueid) in a claim, an "identity claim", that can
-   be used by the Verifier to look up its verification key for the
+   [I-D.ietf-rats-eat] ueid) in a dedicated "identity claim" that can be
+   used by the Verifier to look up its verification key for the
    Attester.
 
    While identity claims are just another type of claims that may be
