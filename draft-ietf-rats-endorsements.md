@@ -246,7 +246,7 @@ particular algorithm or cryptographic protocol is used for the verification
 of the Attester. The verification key (i.e., a key with the purpose of signature checking) could be, typically, a symmetric key, a raw public key, or a certified public key.
 
 Evidence can contain an identifier for the Attester
-(e.g., {{-rats-eat}} `ueid`) in a claim, an "identity claim",
+(e.g., {{-rats-eat}} `ueid`) in a dedicated "identity claim"
 that can be used by the Verifier to look up its verification key for the Attester.
 
 While identity claims are just another
