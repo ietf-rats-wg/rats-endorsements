@@ -291,17 +291,18 @@ Table of Contents
    process.
 
    The Verifier must have access to a verification key for each
-   Attester.  Such a key could be provisioned directly in the Verifier,
-   though for scalability the Verifier typically is provisioned with a
-   trusted root CA certificate such that an Endorsement from an Endorser
-   includes the Attester's verification key material in the form of a
-   certificate that chains up to that trusted root (i.e., a
-   certification path).  Such a certificate might be stored in the
-   Verifier, or might be resolved on demand via some protocol, or might
-   be passed to the Verifier along with the Evidence to appraise,
-   depending on the protocol or general remote attestation procedure.
-   Details are out of scope of this document and left to specific
-   protocol or procedure documents.
+   Attesting Environment.  Such a key could be provisioned directly in
+   the Verifier.  However, for scalability the Verifier typically is
+   provisioned with a trusted root CA certificate (a trust anchor).
+   This means that an Endorsement from an Endorser includes the
+   Attesting Enviroment's verification key material in the form of a
+   certificate that chains up to that trust anchor (a certification
+   path).  Such a certificate might be stored in the Verifier, or might
+   be resolved on demand via some protocol, or might be passed to the
+   Verifier along with the Evidence to appraise, depending on the
+   protocol or general remote attestation procedure.  Details are out of
+   scope of this document and left to protocol or procedure
+   specifications.
 
    Specific protocol documents are also responsible for documenting what
    particular algorithm or cryptographic protocol is used for the

@@ -1493,14 +1493,14 @@ with a private key that the Attesting Environment possesses, and the Verifier wi
 the resulting Evidence with a public key it possesses, called a verification key below.
 While use of public key cryptography is typical for a verification key, cryptography other than public key may also be used.<a href="#section-4-2" class="pilcrow">¶</a></p>
 <p id="section-4-3">Endorsing the linkage between such verification keys and their associated Attesting Environments is crucial to the verification process.<a href="#section-4-3" class="pilcrow">¶</a></p>
-<p id="section-4-4">The Verifier must have access to a verification key for each Attester. Such a key
-could be provisioned directly in the Verifier, though for scalability the Verifier
-typically is provisioned with a trusted root CA certificate such that an
-Endorsement from an Endorser includes the Attester's verification key material
-in the form of a certificate that chains up to that trusted root (i.e., a certification path).  Such a certificate
+<p id="section-4-4">The Verifier must have access to a verification key for each Attesting Environment. Such a key
+could be provisioned directly in the Verifier. However, for scalability the Verifier
+typically is provisioned with a trusted root CA certificate (a trust anchor). This means that an
+Endorsement from an Endorser includes the Attesting Enviroment's verification key material
+in the form of a certificate that chains up to that trust anchor (a certification path).  Such a certificate
 might be stored in the Verifier, or might be resolved on demand via some protocol,
 or might be passed to the Verifier along with the Evidence to appraise, depending on the protocol or general remote attestation procedure.
-Details are out of scope of this document and left to specific protocol or procedure documents.<a href="#section-4-4" class="pilcrow">¶</a></p>
+Details are out of scope of this document and left to protocol or procedure specifications.<a href="#section-4-4" class="pilcrow">¶</a></p>
 <p id="section-4-5">Specific protocol documents are also responsible for documenting what
 particular algorithm or cryptographic protocol is used for the verification
 of the Attester. The verification key (i.e., a key with the purpose of signature checking) could be, typically, a symmetric key, a raw public key, or a certified public key.<a href="#section-4-5" class="pilcrow">¶</a></p>
