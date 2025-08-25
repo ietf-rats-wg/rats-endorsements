@@ -94,8 +94,8 @@ states, and an appraisal policy that controls how the two are compared.
 
 Each Attester in general has at least one Attesting Environment and one Target
 Environment (e.g., hardware, firmware, Operating System, etc.).  Typically, each
-Attester has multiple Target Environments, each with their own set of claims (sometimes
-called "claim sets") representing their actual state.  Additionally, the number of
+Attester has multiple Target Environments, each with their own set of claims
+(called "claim sets") representing their actual state.  Additionally, the number of
 Target Environments and Attesting Environments that are components of an Attester are not limited.
 
 "Actual state" is a group of claim sets about the actual state of the Attester at a
@@ -131,7 +131,7 @@ RATS conceptual messages in {{RFC9334}} fall into the above categories as follow
 * Reference state: Reference Values
 * Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy for Attestation Results
 
-In some implementations, hints or suggestions for how to do a comparison might
+Hints or suggestions for how to do a comparison might
 be supplied by a Reference Value Provider (as part of Reference Values),
 an Endorser (in an Endorsement), and/or an Attester (in Evidence),
 but the Verifier Owner is authoritative for Appraisal Policy for Evidence,
@@ -246,7 +246,7 @@ particular algorithm or cryptographic protocol is used for the verification
 of the Attester. The verification key (i.e., a key with the purpose of signature checking) could be, typically, a symmetric key, a raw public key, or a certified public key.
 
 Evidence can contain an identifier for the Attester
-(e.g., {{-rats-eat}} `ueid`) in a claim, sometimes termed an "identity claim",
+(e.g., {{-rats-eat}} `ueid`) in a claim, an "identity claim",
 that can be used by the Verifier to look up its verification key for the Attester.
 
 While identity claims are just another
