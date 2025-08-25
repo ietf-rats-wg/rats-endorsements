@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 4 September 2025                                     T. Fossati
+Expires: 26 February 2026                                     T. Fossati
                                                                   Linaro
-                                                            3 March 2025
+                                                          25 August 2025
 
 
                            RATS Endorsements
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 September 2025.
+   This Internet-Draft will expire on 26 February 2026.
 
 Copyright Notice
 
@@ -128,10 +128,10 @@ Table of Contents
    Each Attester in general has at least one Attesting Environment and
    one Target Environment (e.g., hardware, firmware, Operating System,
    etc.).  Typically, each Attester has multiple Target Environments,
-   each with their own set of claims (sometimes called "claim sets")
-   representing their actual state.  Additionally, the number of Target
-   Environments and Attesting Environments that are components of an
-   Attester are not limited.
+   each with their own set of claims (called "claim sets") representing
+   their actual state.  Additionally, the number of Target Environments
+   and Attesting Environments that are components of an Attester are not
+   limited.
 
    "Actual state" is a group of claim sets about the actual state of the
    Attester at a given point in time.  Each claim set holds claims about
@@ -179,13 +179,12 @@ Table of Contents
    *  Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy
       for Attestation Results
 
-   In some implementations, hints or suggestions for how to do a
-   comparison might be supplied by a Reference Value Provider (as part
-   of Reference Values), an Endorser (in an Endorsement), and/or an
-   Attester (in Evidence), but the Verifier Owner is authoritative for
-   Appraisal Policy for Evidence, and the Relying Party Owner is
-   authoritative for Appraisal Policy for Attestation Results as
-   depicted in Section 3 of [RFC9334].
+   Hints or suggestions for how to do a comparison might be supplied by
+   a Reference Value Provider (as part of Reference Values), an Endorser
+   (in an Endorsement), and/or an Attester (in Evidence), but the
+   Verifier Owner is authoritative for Appraisal Policy for Evidence,
+   and the Relying Party Owner is authoritative for Appraisal Policy for
+   Attestation Results as depicted in Section 3 of [RFC9334].
 
    Figure 1 below shows an example of Verifier input for a layered
    Attester as discussed in Section 3.2 of [RFC9334].
@@ -311,9 +310,9 @@ Table of Contents
    key, a raw public key, or a certified public key.
 
    Evidence can contain an identifier for the Attester (e.g.,
-   [I-D.ietf-rats-eat] ueid) in a claim, sometimes termed an "identity
-   claim", that can be used by the Verifier to look up its verification
-   key for the Attester.
+   [I-D.ietf-rats-eat] ueid) in a dedicated "identity claim" that can be
+   used by the Verifier to look up its verification key for the
+   Attester.
 
    While identity claims are just another type of claims that may be
    endorsed, some implementations might treat them differently.  For
