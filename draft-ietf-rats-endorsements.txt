@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 4 March 2026                                         T. Fossati
+Expires: 28 April 2026                                        T. Fossati
                                                                   Linaro
-                                                          31 August 2025
+                                                         25 October 2025
 
 
                            RATS Endorsements
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 March 2026.
+   This Internet-Draft will expire on 28 April 2026.
 
 Copyright Notice
 
