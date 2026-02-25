@@ -42,13 +42,13 @@ author:
 
 informative:
   RFC9334: rats-arch
-  I-D.ietf-rats-eat: rats-eat
+  RFC9711: rats-eat
   TCG-DICE:
     author:
       org: "Trusted Computing Group"
     title: "DICE Attestation Architecture"
-    target: https://trustedcomputinggroup.org/wp-content/uploads/DICE-Attestation-Architecture-Version-1.1-Revision-18_pub.pdf
-    date: January, 2024
+    target: https://trustedcomputinggroup.org/wp-content/uploads/DICE-Attestation-Architecture-v1.2_pub.pdf
+    date: April, 2025
 
 --- abstract
 
@@ -405,7 +405,7 @@ This document does not require any actions by IANA.
 # Acknowledgements
 {: numbered="false"}
 
-The authors wish to thank the following individuals for feedback and ideas that contributed to this docuement:
+The authors wish to thank the following individuals for feedback and ideas that contributed to this document:
 {{{Thomas Hardjono}}},
 {{{Laurence Lundblade}}},
 {{{Kathleen Moriarty}}},
