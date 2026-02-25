@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 28 April 2026                                        T. Fossati
+Expires: 29 August 2026                                       T. Fossati
                                                                   Linaro
-                                                         25 October 2025
+                                                        25 February 2026
 
 
                            RATS Endorsements
@@ -56,11 +56,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 April 2026.
+   This Internet-Draft will expire on 29 August 2026.
 
 Copyright Notice
 
-   Copyright (c) 2025 IETF Trust and the persons identified as the
+   Copyright (c) 2026 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -310,10 +310,9 @@ Table of Contents
    the purpose of signature checking) could be, typically, a symmetric
    key, a raw public key, or a certified public key.
 
-   Evidence can contain an identifier for the Attester (e.g.,
-   [I-D.ietf-rats-eat] ueid) in a dedicated "identity claim" that can be
-   used by the Verifier to look up its verification key for the
-   Attester.
+   Evidence can contain an identifier for the Attester (e.g., [RFC9711]
+   ueid) in a dedicated "identity claim" that can be used by the
+   Verifier to look up its verification key for the Attester.
 
    While identity claims are just another type of claims that may be
    endorsed, some implementations might treat them differently.  For
@@ -481,27 +480,25 @@ Table of Contents
 
 10.  Informative References
 
-   [I-D.ietf-rats-eat]
-              Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
-              Wallace, "The Entity Attestation Token (EAT)", Work in
-              Progress, Internet-Draft, draft-ietf-rats-eat-31, 6
-              September 2024, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-rats-eat-31>.
-
    [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
               W. Pan, "Remote ATtestation procedureS (RATS)
               Architecture", RFC 9334, DOI 10.17487/RFC9334, January
               2023, <https://www.rfc-editor.org/rfc/rfc9334>.
 
+   [RFC9711]  Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
+              Wallace, "The Entity Attestation Token (EAT)", RFC 9711,
+              DOI 10.17487/RFC9711, April 2025,
+              <https://www.rfc-editor.org/rfc/rfc9711>.
+
    [TCG-DICE] Trusted Computing Group, "DICE Attestation Architecture",
-              January 2024, <https://trustedcomputinggroup.org/wp-
-              content/uploads/DICE-Attestation-Architecture-Version-1.1-
-              Revision-18_pub.pdf>.
+              April 2025, <https://trustedcomputinggroup.org/wp-
+              content/uploads/DICE-Attestation-Architecture-
+              v1.2_pub.pdf>.
 
 Acknowledgements
 
    The authors wish to thank the following individuals for feedback and
-   ideas that contributed to this docuement: Thomas Hardjono, Laurence
+   ideas that contributed to this document: Thomas Hardjono, Laurence
    Lundblade, Kathleen Moriarty, Michael Richardson, Ned Smith, and Carl
    Wallace
 
