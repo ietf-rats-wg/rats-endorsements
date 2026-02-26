@@ -53,12 +53,8 @@ informative:
 --- abstract
 
 
-In the IETF Remote Attestation Procedures (RATS) architecture, a Verifier
-accepts Evidence and, using Appraisal Policy for Evidence typically with additional
-input from Endorsements and Reference Values, generates Attestation Results
-in formats that are useful for Relying Parties.  This document illustrates the purpose and
-role of Endorsements and discusses some considerations in the choice of
-message format for Endorsements in the scope of the RATS architecture.
+In the IETF Remote Attestation Procedures (RATS) architecture, a Verifier accepts Evidence and uses Appraisal Policy for Evidence, typically with additional input from Endorsements and Reference Values, to generate Attestation Results in formats that are useful for Relying Parties.
+This document illustrates the purpose and role of Endorsements and discusses some considerations in the choice of message format for Endorsements in the scope of the RATS architecture.
 
 This document does not aim to define a conceptual message format for Endorsements and Reference Values.
 Instead, it extends RFC9334 to provide further details on Reference Values and Endorsements, as these topics were outside the scope of the RATS charter when RFC9334 was developed.
@@ -67,15 +63,13 @@ Instead, it extends RFC9334 to provide further details on Reference Values and E
 
 # Introduction
 
-Section 3 in the Remote ATtestation procedures (RATS) Architecture {{Section 3 of -rats-arch}} gives an overview of the roles
-and conceptual messages in the IETF RATS Architecture.
+{{Section 3 of -rats-arch}} provides an overview of the roles and conceptual messages in the IETF RATS architecture.
 As discussed in that document, a Verifier accepts a well-defined set of RATS conceptual messages: Evidence, Endorsements
-and Reference Values, as well as Appraisal Policy for Evidence.  A Verifier appraises Evidence using Appraisal Policy for Evidence, typically against a set of Reference Values.
+and Reference Values, as well as Appraisal Policy for Evidence.
+A Verifier appraises Evidence using Appraisal Policy for Evidence, typically against a set of Reference Values.
 
-Various formats of conceptual messages exist, including standard and vendor-specific formats.
-One of the purposes of a Verifier is depicted
-in Figure 9 of {{-rats-arch}}. A Verifier is intended to be able to accept Evidence in a variety of
-formats and generate Attestation Results in the formats needed by a Relying Parties it is intended to cater.
+When {{-rats-arch}} was developed, Reference Values and Endorsements were outside the scope of the RATS Working Group's charter.
+However, this has since changed, and the purpose of this document is to update {{-rats-arch}} to provide further details on Reference Values and Endorsements.
 
 # Actual State vs Reference State {#statetypes}
 
