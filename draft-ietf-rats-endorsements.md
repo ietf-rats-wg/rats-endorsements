@@ -136,25 +136,25 @@ Attestation Results as depicted in {{Section 3 of -rats-arch}}.
 as discussed in {{Section 3.2 of -rats-arch}}.
 
 ~~~~ aasvg
-            .-- .------------.   Appraisal    .-----------------. --.
-            |   |Actual state|    Policy      | Reference state |   |
-            |   |  (layer N) |                |    (layer N)    |   | R
-            |   '------------'       |        '-----------------'   | e
-            |                        |                              | f
-            |   .------------.       |        .-----------------.   | e
-   Evidence |   |Actual state|       |        | Reference state |   | r
-            |   |  (layer 2) |       |        |    (layer 2)    |   | e
-            |   '------------'       |        '-----------------'   | n
-            |                        v                              | c
-            |   .------------.  <==========>  .-----------------.   | e
-            |   |Actual state|   Comparison   | Reference state |   |
-            |   |  (layer 1) |     Rules      |    (layer 1)    |   | V
-            '-- '------------'                '-----------------'   | a
-                                                                    | l
-            .-- .------------.                .-----------------.   | u
-Endorsement |   |Actual state|                | Reference state |   | e
-            |   |  (layer 0) |                |    (layer 0)    |   | s
-            '-- '------------'                '-----------------' --'
+             .-- .------------.   Appraisal    .-----------------. --.
+             |   |Actual state|   Policy for   | Reference state |   |
+             |   |  (layer N) |   Evidence     |    (layer N)    |   | R
+             |   '------------'       |        '-----------------'   | e
+             |                        |                              | f
+             |   .------------.       |        .-----------------.   | e
+    Evidence |   |Actual state|       |        | Reference state |   | r
+             |   |  (layer 2) |       |        |    (layer 2)    |   | e
+             |   '------------'       |        '-----------------'   | n
+             |                        v                              | c
+             |   .------------.  <==========>  .-----------------.   | e
+             |   |Actual state|   Comparison   | Reference state |   |
+             |   |  (layer 1) |   Rules        |    (layer 1)    |   | V
+             '-- '------------'                '-----------------'   | a
+                                                                     | l
+             .-- .------------.                .-----------------.   | u
+Endorsements |   |Actual state|                | Reference state |   | e
+             |   |  (layer 0) |                |    (layer 0)    |   | s
+             '-- '------------'                '-----------------' --'
 ~~~~
 {: #input artwork-align="center" title="Example Verifier Input"}
 
