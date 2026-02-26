@@ -259,7 +259,7 @@ Specific protocol documents are also responsible for documenting how Timeliness
 of the Endorsement itself (e.g., using a certificate lifetime) is provided.
 
 {{Section 8.1 of -rats-arch}} discusses timeliness of claims in Evidence.  When
-additional static claims are provided in Endorsements, no additional steps
+additional "static" claims (i.e., claims representing invariant properties of the Environment) are provided in Endorsements, no additional steps
 are needed for timeliness of those claims since they are static rather than
 dynamically varying over time.  Once timeliness of Evidence is appraised,
 any matching conditionally endorsed values can be applied.
