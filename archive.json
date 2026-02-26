@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-02-17T01:11:41.991143+00:00",
+  "timestamp": "2026-02-26T01:08:46.666591+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -4011,6 +4011,42 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 68,
+      "id": "PR_kwDOJj8oQM7GSxRH",
+      "title": "refresh references",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/68",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-02-25T17:26:30Z",
+      "updatedAt": "2026-02-25T17:45:55Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "2e39f5f395623f4aa23ed484b43a91bbdb8c98d2",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "ref-resh",
+      "headRefOid": "63b8961cf2741f65344a67672f6b443103a43220",
+      "closedAt": "2026-02-25T17:45:50Z",
+      "mergedAt": "2026-02-25T17:45:50Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "75e45f31ea35b3bb6aa54370dd9df97d0484d0e3"
+      },
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This is non controversial.  I\u2019ll merge it and publish a new version before the document expires.",
+          "createdAt": "2026-02-25T17:45:46Z",
+          "updatedAt": "2026-02-25T17:45:46Z"
+        }
+      ],
       "reviews": []
     }
   ]
