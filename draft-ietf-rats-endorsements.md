@@ -125,7 +125,7 @@ Some examples of such matching include:
 
 ## RATS Conceptual Messages {#conceptual}
 
-RATS conceptual messages in {{RFC9334}} fall into the above categories as follows:
+RATS conceptual messages in {{-rats-arch}} fall into the above categories as follows:
 
 * Actual state: Evidence, Endorsements, Attestation Results
 * Reference state: Reference Values
@@ -136,10 +136,10 @@ be supplied by a Reference Value Provider (as part of Reference Values),
 an Endorser (in an Endorsement), and/or an Attester (in Evidence),
 but the Verifier Owner is authoritative for Appraisal Policy for Evidence,
 and the Relying Party Owner is authoritative for Appraisal Policy for
-Attestation Results as depicted in {{Section 3 of RFC9334}}.
+Attestation Results as depicted in {{Section 3 of -rats-arch}}.
 
 {{input}} below shows an example of Verifier input for a layered Attester
-as discussed in {{Section 3.2 of RFC9334}}.
+as discussed in {{Section 3.2 of -rats-arch}}.
 
 ~~~~ aasvg
             .-- .------------.   Appraisal    .-----------------. --.
@@ -265,7 +265,7 @@ Appraisal Policy for Evidence to have multiple phases if desired.
 Specific protocol documents are also responsible for documenting how Timeliness
 of the Endorsement itself (e.g., using a certificate lifetime) is provided.
 
-{{Section 8.1 of RFC9334}} discusses timeliness of claims in Evidence.  When
+{{Section 8.1 of -rats-arch}} discusses timeliness of claims in Evidence.  When
 additional static claims are provided in Endorsements, no additional steps
 are needed for timeliness of those claims since they are static rather than
 dynamically varying over time.  Once timeliness of Evidence is appraised,
@@ -275,7 +275,7 @@ If Endorsements ever carry dynamic claims in the future (e.g., whether
 any vulnerabilities in the version of firmware are currently known), then
 the same timeliness considerations as for claims in Evidence would apply,
 and would be the responsibility of specific protocol documents. See
-{{Section 10 of RFC9334}} and {{Appendix A of RFC9334}} for further discussion.
+{{Section 10 of -rats-arch}} and {{Appendix A of -rats-arch}} for further discussion.
 
 # Multiple Endorsements {#multiple-endorsements}
 
@@ -386,12 +386,12 @@ endorsed values, in order to avoid the complexity introduced by such.
 
 # Security Considerations
 
-{{Section 8.4 of RFC9334}} discusses how a Verifier stores one or more trust anchors
+{{Section 8.4 of -rats-arch}} discusses how a Verifier stores one or more trust anchors
 in its trust anchor store.  The Verifier's trust in an Endorser is expressed via
 storing a trust anchor for the Endorser.  The binding from an Endorsement to
 a given Target Environment is done as discussed in {{endorsing-keys}} of this document.
 
-{{RFC9334}} (especially Section 3.2 and Section 12) also discusses security considerations
+{{-rats-arch}} (especially Section 3.2 and Section 12) also discusses security considerations
 around the remote attestation of layers, and sources of appraisal policies.
 {{endorsing-keys}} of this document covers additional considerations in these areas,
 and {{formats-security}} covers additional considerations around Endorsement formats.
