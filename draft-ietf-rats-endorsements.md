@@ -43,6 +43,7 @@ author:
 informative:
   RFC9334: rats-arch
   RFC9711: rats-eat
+  I-D.ietf-rats-corim: rats-corim
   TCG-DICE:
     author:
       org: "Trusted Computing Group"
@@ -182,17 +183,25 @@ and an Endorsement containing actual state for layer 0. However,
 some claims in Endorsements might be conditional and so are only treated as actual
 state if a condition is met.
 
-A claim is conditional if
-it only applies if other actual state matches Reference Values, according to some
-matching policy.
-For example, an Endorser for a given CPU might provide additional
-information about what the CPU supports based on current firmware configuration
-state, or an Endorser might provide additional information that if the
-serial number is in a given range, then a specific security guarantee is present.
+A claim is conditional if it only applies if other actual state matches Reference Values, according to some matching policy.
+For example, an Endorser for a given CPU might provide additional information about the CPU's supported features based on the current firmware configuration.
+Alternatively, an Endorser might provide information indicating that a specific security certification (e.g., [GlobalPlaftorm Certification](https://globalplatform.org/certifications/security-certification/) and [OCP S.A.F.E.](https://www.opencompute.org/projects/ocp-safe-program)) is associated with the device if the serial number falls within a given range and the firmware is configured in a specific way.
 
-Thus, actual state is determined by starting with a collection of unconditional claims
-and adding any conditional claims whose conditions are met based on the actual
-state.  This process is then repeated until no more conditional claims are added.
+~~~ aasvg
+                                Conditional Endorsement
+                              .'''''''''''''''''''''''''.
+.--------------.              .-----------+-------------.
+| Actual State | <==========> | Condition | Endorsement |
+'--------------'  Endorsement '-----------+---+---------'
+        ^         Matching                    |
+        |         Rules                [condition is met]
+        |                                     |
+         '-----------------------------------'
+~~~
+{: #conditional artwork-align="center" title="Conditional Endorsements"}
+
+Thus, actual state is determined by starting with a collection of unconditional claims and adding any conditional claims whose conditions are met based on the actual state ({{conditional}}).
+This process is then repeated until no more conditional claims are added.
 
 Verifier policies around matching actual state against
 reference state are normally expressed in Appraisal Policy for Evidence.
@@ -205,12 +214,9 @@ a matching policy is not about trustworthiness (and hence not "appraisal" per se
 but rather about whether an Endorser's claim is applicable or not, and thus
 usable as input to trustworthiness appraisal or not.
 
-As such the matching policy for conditionally endorsed values must be
-up to the Endorser not the Appraisal Policy Provider.  Thus, an Endorsement
-format that supports conditionally endorsed values would probably include
-some minimal matching policy (e.g., exact match against a singleton reference
-value).  This unfortunately complicates design as a Verifier may need
-multiple parsers for matching policies.
+As such the matching policy for conditionally endorsed values must be up to the Endorser not the Appraisal Policy Provider.
+Thus, an Endorsement format that supports conditionally endorsed values (e.g., {{-rats-corim}}) would probably include some minimal matching policy (e.g., exact match against a singleton reference value).
+This unfortunately complicates design as a Verifier may need multiple parsers for matching policies.
 
 # Endorsing Verification Keys {#endorsing-keys}
 
