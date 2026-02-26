@@ -52,7 +52,6 @@ informative:
 
 --- abstract
 
-
 In the IETF Remote Attestation Procedures (RATS) architecture, a Verifier accepts Evidence and uses Appraisal Policy for Evidence, typically with additional input from Endorsements and Reference Values, to generate Attestation Results in formats that are useful for Relying Parties.
 This document illustrates the purpose and role of Endorsements and discusses some considerations in the choice of message format for Endorsements in the scope of the RATS architecture.
 
@@ -88,8 +87,8 @@ states, and an appraisal policy that controls how the two are compared.
 
 Each Attester in general has at least one Attesting Environment and one Target
 Environment (e.g., hardware, firmware, Operating System, etc.).  Typically, each
-Attester has multiple Target Environments, each with their own set of claims
-(called "claim sets") representing their actual state.  Additionally, the number of
+Attester has multiple Target Environments, each with their own "claim sets"
+representing their actual state.  Additionally, the number of
 Target Environments and Attesting Environments that are components of an Attester are not limited.
 
 "Actual state" is a group of claim sets about the actual state of the Attester at a
