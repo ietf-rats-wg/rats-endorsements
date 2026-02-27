@@ -252,14 +252,16 @@ Endorsements |   |Actual state|                | Reference state |   | e
    way.
 
                                          Conditional Endorsement
-                                       .'''''''''''''''''''''''''.
+                                        .-----------------------.
+                                       /                         \
          .--------------.              .-----------+-------------.
          | Actual State | <==========> | Condition | Endorsement |
          '--------------'  Endorsement '-----------+---+---------'
                  ^         Matching                    |
                  |         Rules                [condition is met]
-                 |                                     |
-                  '-----------------------------------'
+                 |           .-------------.           |
+                  '----------+ Endorsement +----------'
+                             '-------------'
 
                      Figure 2: Conditional Endorsements
 
