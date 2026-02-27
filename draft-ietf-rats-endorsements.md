@@ -189,14 +189,16 @@ Alternatively, an Endorser might provide information indicating that a specific 
 
 ~~~ aasvg
                                 Conditional Endorsement
-                              .'''''''''''''''''''''''''.
+                               .-----------------------.
+                              /                         \
 .--------------.              .-----------+-------------.
 | Actual State | <==========> | Condition | Endorsement |
 '--------------'  Endorsement '-----------+---+---------'
         ^         Matching                    |
         |         Rules                [condition is met]
-        |                                     |
-         '-----------------------------------'
+        |           .-------------.           |
+         '----------+ Endorsement +----------'
+                    '-------------'
 ~~~
 {: #conditional artwork-align="center" title="Conditional Endorsements"}
 
