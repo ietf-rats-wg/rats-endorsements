@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: "Checkout"
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
 
     # See https://github.com/actions/checkout/issues/290
     - name: "Get Tag Annotations"
@@ -28,7 +28,7 @@ jobs:
       run: date -u "+date=%FT%T" >>"$GITHUB_OUTPUT"
 
     - name: "Caching"
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: |
           .refcache
@@ -52,6 +52,6 @@ jobs:
         UPLOAD_EMAIL: ${{ inputs.email }}
 
     - name: "Archive Submitted Drafts"
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         path: "versioned/draft-*-[0-9][0-9].*"
