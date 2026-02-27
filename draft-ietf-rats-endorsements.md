@@ -100,20 +100,20 @@ states, and an appraisal policy that controls how the two are compared.
 
 Each Attester in general has at least one Attesting Environment and one Target
 Environment (e.g., hardware, firmware, Operating System, etc.).  Typically, each
-Attester has multiple Target Environments, each with their own "claim sets"
+Attester has multiple Target Environments, each with their own "claims sets"
 representing their actual state.  Additionally, the number of
 Target Environments and Attesting Environments that are components of an Attester are not limited.
 
-"Actual state" is a group of claim sets about the actual state of the Attester at a
-given point in time. Each claim set holds claims about a specific Target Environment
+"Actual state" is a group of claims sets about the actual state of the Attester at a
+given point in time. Each claims set holds claims about a specific Target Environment
 that is essential to determining trustworthiness.  Generally speaking, each claim
-has a name (typically referred to as a label, and occasionally referred to as a key or code-point)
+has a name
 and a singleton value, being a value collected from a Target Environment of a specific Attester at a given point
 in time. Some claims may inherently have multiple values, such as a list of
 files in a given location on the device, but in the context of this document such
 a list is treated as a single unit, representing one Attester at one point in time.
 
-"Reference state" is a group of claim sets about the desired or undesired state of
+"Reference state" is a group of claims sets about the desired or undesired state of
 an Attester.  Typically, each claim has a name and
 a set of potential values, being the values that are allowed/disallowed
 when determining the trustworthiness of the Attester.
@@ -303,40 +303,40 @@ the applications they release.
 OS, firmware, and hardware, each from a different vendor that provides
 an Endorsement for their own Target Environment, containing additional claims
 about that Target Environment.  Thus each Target Environment (application, OS, firmware,
-and hardware) has one set of claims ("claim set 1") in the Evidence, and an additional
-set of claims ("claim set 2") in the Endorsement from its manufacturer.
-A Verifier that trusts each Endorser would thus use the claim sets from both conceptual messages (Endorsements and Evidence) when comparing against reference state for a given Target Environment.
+and hardware) has one set of claims ("claims set 1") in the Evidence, and an additional
+set of claims ("claims set 2") in the Endorsement from its manufacturer.
+A Verifier that trusts each Endorser would thus use the claims sets from both conceptual messages (Endorsements and Evidence) when comparing against reference state for a given Target Environment.
 
 ~~~~ aasvg
-               .--------------------------. .----------------.
-App            |            .-----------. | | .-----------.  |
-Endorser ----> |Endorsement |    app    | | | |    app    |  |
-               |            |claim set 2| | | |claim set 1|  |
-               |            '-----------' | | '-----------' E|
-               '--------------------------' |               v|
-                                            |               i|
-               .--------------------------. |               d|
-OS             |            .-----------. | | .-----------. e|
-Endorser ----> |Endorsement |    OS     | | | |    OS     | n|
-               |            |claim set 2| | | |claim set 1| c|
-               |            '-----------' | | '-----------' e|
-               '--------------------------' |                |
-                                            |                |
-               .--------------------------. |                |
-Firmware       |            .-----------. | | .-----------.  |
-Endorser ----> |Endorsement | firmware  | | | | firmware  |  |
-               |            |claim set 2| | | |claim set 1|  |
-               |            '-----------' | | '-----------'  |
-               '--------------------------' |                |
-                                            |                |
-               .--------------------------. |                |
-Hardware       |            .-----------. | | .-----------.  |
-Endorser ----> |Endorsement | hardware  | | | | hardware  |  |
-               |            |claim set 2| | | |claim set 1|  |
-               |            '-----------' | | '-----------'  |
-               '--------------------------' '----------------'
-                                                    ^
-                                                    |
+               .---------------------------. .-----------------.
+App            |            .------------. | | .------------.  |
+Endorser ----> |Endorsement |    app     | | | |    app     |  |
+               |            |claims set 2| | | |claims set 1|  |
+               |            '------------' | | '------------' E|
+               '---------------------------' |                v|
+                                             |                i|
+               .---------------------------. |                d|
+OS             |            .------------. | | .------------. e|
+Endorser ----> |Endorsement |     OS     | | | |     OS     | n|
+               |            |claims set 2| | | |claims set 1| c|
+               |            '------------' | | '------------' e|
+               '---------------------------' |                 |
+                                             |                 |
+               .---------------------------. |                 |
+Firmware       |            .------------. | | .------------.  |
+Endorser ----> |Endorsement |  firmware  | | | |  firmware  |  |
+               |            |claims set 2| | | |claims set 1|  |
+               |            '------------' | | '------------'  |
+               '---------------------------' |                 |
+                                             |                 |
+               .---------------------------. |                 |
+Hardware       |            .------------. | | .------------.  |
+Endorser ----> |Endorsement |  hardware  | | | |  hardware  |  |
+               |            |claims set 2| | | |claims set 1|  |
+               |            '------------' | | '------------'  |
+               '---------------------------' '-----------------'
+                                                     ^
+                                                     |
 Attester -------------------------------------------'
 ~~~~
 {: #multiple artwork-align="center" title="Multiple Endorsements"}
