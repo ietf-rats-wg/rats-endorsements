@@ -290,9 +290,8 @@ OS, firmware, and hardware, each from a different vendor that provides
 an Endorsement for their own Target Environment, containing additional claims
 about that Target Environment.  Thus each Target Environment (application, OS, firmware,
 and hardware) has one set of claims ("claim set 1") in the Evidence, and an additional
-set of claims ("claim set 2") in the Endorsement from its manufacturer.  A Verifier
-that trusts each Endorser would thus use the claim sets from both conceptual
-messages when comparing against reference state for a given Target Environment.
+set of claims ("claim set 2") in the Endorsement from its manufacturer.
+A Verifier that trusts each Endorser would thus use the claim sets from both conceptual messages (Endorsements and Evidence) when comparing against reference state for a given Target Environment.
 
 ~~~~ aasvg
                .--------------------------. .----------------.
