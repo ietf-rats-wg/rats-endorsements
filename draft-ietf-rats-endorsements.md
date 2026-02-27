@@ -208,6 +208,7 @@ Alternatively, an Endorser might provide information indicating that a specific 
 '--------------'  Endorsement '-----------+---+---------'
         ^         Matching                    |
         |         Rules                [condition is met]
+        |                                     |
         |           .-------------.           |
          '----------+ Endorsement +----------'
                     '-------------'
