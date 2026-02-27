@@ -258,6 +258,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
          '--------------'  Endorsement '-----------+---+---------'
                  ^         Matching                    |
                  |         Rules                [condition is met]
+                 |                                     |
                  |           .-------------.           |
                   '----------+ Endorsement +----------'
                              '-------------'
