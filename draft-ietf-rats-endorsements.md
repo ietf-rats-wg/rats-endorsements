@@ -384,15 +384,28 @@ endorsed values, in order to avoid the complexity introduced by such.
 
 # Security Considerations
 
-{{Section 8.4 of -rats-arch}} discusses how a Verifier stores one or more trust anchors
-in its trust anchor store.  The Verifier's trust in an Endorser is expressed via
-storing a trust anchor for the Endorser.  The binding from an Endorsement to
-a given Target Environment is done as discussed in {{endorsing-keys}} of this document.
+{{Section 8.4 of -rats-arch}} discusses how a Verifier stores one or more trust anchors in its trust anchor store.
+A Verifier expresses its trust in an Endorser by storing a trust anchor for that Endorser.
+The binding from an Endorsement to a given Target Environment is done as discussed in {{endorsing-keys}} of this document.
 
-{{-rats-arch}} (especially Section 3.2 and Section 12) also discusses security considerations
-around the remote attestation of layers, and sources of appraisal policies.
-{{endorsing-keys}} of this document covers additional considerations in these areas,
-and {{formats-security}} covers additional considerations around Endorsement formats.
+{{-rats-arch}} (especially Sections 3.2 and 12) also discusses security considerations around the remote attestation of layers, and sources of appraisal policies.
+{{endorsing-keys}} of this document covers additional considerations in these areas, while {{formats-security}} covers additional considerations around Endorsement formats.
+
+The integrity of public and private key material and the secrecy of private key material must be ensured at all times.
+This includes public keys that identify trusted supply chain actors.
+For more detailed information on protecting Trust Anchors, refer to {{Section 12.4 of -rats-arch}}.
+
+A Verifier can use cryptographically protected, mutually authenticated secure channels to all its trusted input sources, particularly, Endorsers and Reference Value Providers.
+These links should reach as deep as possible into the Verifier, potentially terminating within the appraisal session context, to avoid man-in-the-middle attacks.
+Minimizing the use of intermediaries is also vital, as each intermediary is another party that might need to be trusted.
+Refer to {{Section 12.2 of -rats-arch}} for information on conceptual message protection.
+
+# Privacy Considerations
+
+The privacy considerations regarding conceptual messages, as discussed in {{Section 11 of -rats-arch}}, apply.
+In particular, since Endorsements and Reference Values can contain personally identifiable information (PII) about a large number of devices, strong confidentiality protection is required at the time of conveyance.
+
+Utilizing the public part of an asymmetric key pair that is used for Evidence generation to identify an Attesting Environment raises privacy considerations that must be carefully considered.
 
 # IANA Considerations
 
@@ -404,6 +417,7 @@ This document does not require any actions by IANA.
 {: numbered="false"}
 
 The authors wish to thank the following individuals for feedback and ideas that contributed to this document:
+{{{Yogesh Deshpande}}},
 {{{Thomas Hardjono}}},
 {{{Laurence Lundblade}}},
 {{{Kathleen Moriarty}}},
