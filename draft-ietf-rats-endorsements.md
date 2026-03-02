@@ -50,6 +50,18 @@ informative:
     title: "DICE Attestation Architecture"
     target: https://trustedcomputinggroup.org/wp-content/uploads/DICE-Attestation-Architecture-v1.2_pub.pdf
     date: April, 2025
+  GP-Cert:
+    author:
+      org: GlobalPlatform
+    title: "Security Certification"
+    target: https://globalplatform.org/certifications/security-certification/
+    date: March, 2026
+  OCP-SAFE:
+    author:
+      org: Open Compute Project
+    title: "The OCP Security Appraisal Framework and Enablement (S.A.F.E.) Program"
+    target: https://www.opencompute.org/projects/ocp-safe-program
+    date: March, 2026
 
 --- abstract
 
@@ -185,7 +197,7 @@ state if a condition is met.
 
 A claim is conditional if it only applies if other actual state matches Reference Values, according to some matching policy.
 For example, an Endorser for a given CPU might provide additional information about the CPU's supported features based on the current firmware configuration.
-Alternatively, an Endorser might provide information indicating that a specific security certification (e.g., [GlobalPlaftorm Certification](https://globalplatform.org/certifications/security-certification/) and [OCP S.A.F.E.](https://www.opencompute.org/projects/ocp-safe-program)) is associated with the device if the serial number falls within a given range and the firmware is configured in a specific way.
+Alternatively, an Endorser might provide information indicating that a specific security certification (e.g., {{GP-Cert}} and {{OCP-SAFE}}) is associated with the device if the serial number falls within a given range and the firmware is configured in a specific way.
 
 ~~~ aasvg
                                 Conditional Endorsements
