@@ -251,7 +251,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
    within a given range and the firmware is configured in a specific
    way.
 
-                                         Conditional Endorsement
+                                         Conditional Endorsements
                                         .-----------------------.
                                        /                         \
          .--------------.              .-----------+-------------.
