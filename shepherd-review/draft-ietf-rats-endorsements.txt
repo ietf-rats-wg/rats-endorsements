@@ -288,7 +288,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
    Endorsement format that supports conditionally endorsed values (e.g.,
    [I-D.ietf-rats-corim]) would probably include some minimal matching
    policy (e.g., exact match against a singleton reference value).  This
-   unfortunately complicates design as a Verifier may need multiple
+   unfortunately complicates the Verifier design as it may need multiple
    parsers for matching policies.
 
 4.  Endorsing Verification Keys
