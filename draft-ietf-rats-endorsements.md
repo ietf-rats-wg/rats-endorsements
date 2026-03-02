@@ -204,13 +204,13 @@ Alternatively, an Endorser might provide information indicating that a specific 
                                .-----------------------.
                               /                         \
 .--------------.              .-----------+-------------.
-| Actual State | <==========> | Condition | Endorsement |
+| Actual State | <==========> | Condition | claims-sets |
 '--------------'  Endorsement '-----------+---+---------'
         ^         Matching                    |
         |         Rules                [condition is met]
         |                                     |
         |           .-------------.           |
-         '----------+ Endorsement +----------'
+         '----------+ claims-sets +----------'
                     '-------------'
 ~~~
 {: #conditional artwork-align="center" title="Conditional Endorsements"}
