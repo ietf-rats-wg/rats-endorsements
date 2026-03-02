@@ -218,7 +218,7 @@ usable as input to trustworthiness appraisal or not.
 
 As such the matching policy for conditionally endorsed values must be up to the Endorser not the Appraisal Policy Provider.
 Thus, an Endorsement format that supports conditionally endorsed values (e.g., {{-rats-corim}}) would probably include some minimal matching policy (e.g., exact match against a singleton reference value).
-This unfortunately complicates design as a Verifier may need multiple parsers for matching policies.
+This unfortunately complicates the Verifier design as it may need multiple parsers for matching policies.
 
 # Endorsing Verification Keys {#endorsing-keys}
 
