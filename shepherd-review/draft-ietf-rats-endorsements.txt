@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 31 August 2026                                       T. Fossati
+Expires: 3 September 2026                                     T. Fossati
                                                                   Linaro
-                                                        27 February 2026
+                                                            2 March 2026
 
 
                            RATS Endorsements
@@ -57,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 31 August 2026.
+   This Internet-Draft will expire on 3 September 2026.
 
 Copyright Notice
 
@@ -102,11 +102,11 @@ Table of Contents
    using Appraisal Policy for Evidence, typically against a set of
    Reference Values.
 
-   When [RFC9334] was developed, Reference Values and Endorsements were
-   outside the scope of the RATS Working Group's charter.  However, this
-   has since changed, and the purpose of this document is to update
-   [RFC9334] to provide further details on Reference Values and
-   Endorsements.
+   When [RFC9334] was developed, details of Reference Values and
+   Endorsements were outside the scope of the RATS Working Group's
+   charter.  However, this has since changed, and the purpose of this
+   document is to update [RFC9334] to provide further details on
+   Reference Values and Endorsements.
 
 2.  Actual State vs Reference State
 
