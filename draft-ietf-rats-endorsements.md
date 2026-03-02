@@ -188,7 +188,7 @@ For example, an Endorser for a given CPU might provide additional information ab
 Alternatively, an Endorser might provide information indicating that a specific security certification (e.g., [GlobalPlaftorm Certification](https://globalplatform.org/certifications/security-certification/) and [OCP S.A.F.E.](https://www.opencompute.org/projects/ocp-safe-program)) is associated with the device if the serial number falls within a given range and the firmware is configured in a specific way.
 
 ~~~ aasvg
-                                Conditional Endorsement
+                                Conditional Endorsements
                                .-----------------------.
                               /                         \
 .--------------.              .-----------+-------------.
