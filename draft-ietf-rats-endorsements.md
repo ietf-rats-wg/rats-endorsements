@@ -80,7 +80,7 @@ As discussed in that document, a Verifier accepts a well-defined set of RATS con
 and Reference Values, as well as Appraisal Policy for Evidence.
 A Verifier appraises Evidence using Appraisal Policy for Evidence, typically against a set of Reference Values.
 
-When {{-rats-arch}} was developed, details of Reference Values and Endorsements were outside the scope of the RATS Working Group's charter.
+When {{-rats-arch}} was developed, providing details of Reference Values and Endorsements were outside the scope of the RATS Working Group's charter.
 However, this has since changed, and the purpose of this document is to update {{-rats-arch}} to provide further details on Reference Values and Endorsements.
 
 # Actual State vs Reference State {#statetypes}
