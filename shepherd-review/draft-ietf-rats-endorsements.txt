@@ -102,8 +102,8 @@ Table of Contents
    using Appraisal Policy for Evidence, typically against a set of
    Reference Values.
 
-   When [RFC9334] was developed, details of Reference Values and
-   Endorsements were outside the scope of the RATS Working Group's
+   When [RFC9334] was developed, providing details of Reference Values
+   and Endorsements were outside the scope of the RATS Working Group's
    charter.  However, this has since changed, and the purpose of this
    document is to update [RFC9334] to provide further details on
    Reference Values and Endorsements.
