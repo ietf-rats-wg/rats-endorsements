@@ -251,13 +251,13 @@ Endorsements |   |Actual state|                | Reference state |   | e
                                         .-----------------------.
                                        /                         \
          .--------------.              .-----------+-------------.
-         | Actual State | <==========> | Condition | Endorsement |
+         | Actual State | <==========> | Condition | claims-sets |
          '--------------'  Endorsement '-----------+---+---------'
                  ^         Matching                    |
                  |         Rules                [condition is met]
                  |                                     |
                  |           .-------------.           |
-                  '----------+ Endorsement +----------'
+                  '----------+ claims-sets +----------'
                              '-------------'
 
                      Figure 2: Conditional Endorsements
