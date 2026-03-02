@@ -244,12 +244,9 @@ Endorsements |   |Actual state|                | Reference state |   | e
    information about the CPU's supported features based on the current
    firmware configuration.  Alternatively, an Endorser might provide
    information indicating that a specific security certification (e.g.,
-   GlobalPlaftorm Certification
-   (https://globalplatform.org/certifications/security-certification/)
-   and OCP S.A.F.E. (https://www.opencompute.org/projects/ocp-safe-
-   program)) is associated with the device if the serial number falls
-   within a given range and the firmware is configured in a specific
-   way.
+   [GP-Cert] and [OCP-SAFE]) is associated with the device if the serial
+   number falls within a given range and the firmware is configured in a
+   specific way.
 
                                          Conditional Endorsements
                                         .-----------------------.
@@ -529,12 +526,20 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
 11.  Informative References
 
+   [GP-Cert]  GlobalPlatform, "Security Certification", March 2026,
+              <https://globalplatform.org/certifications/security-
+              certification/>.
+
    [I-D.ietf-rats-corim]
               Birkholz, H., Fossati, T., Deshpande, Y., Smith, N., and
               W. Pan, "Concise Reference Integrity Manifest", Work in
               Progress, Internet-Draft, draft-ietf-rats-corim-09, 20
               October 2025, <https://datatracker.ietf.org/doc/html/
               draft-ietf-rats-corim-09>.
+
+   [OCP-SAFE] Open Compute Project, "The OCP Security Appraisal
+              Framework and Enablement (S.A.F.E.) Program", March 2026,
+              <https://www.opencompute.org/projects/ocp-safe-program>.
 
    [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
               W. Pan, "Remote ATtestation procedureS (RATS)
