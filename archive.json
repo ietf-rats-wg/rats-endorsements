@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-03-01T01:17:26.961158+00:00",
+  "timestamp": "2026-03-03T01:11:52.689519+00:00",
   "repo": "ietf-rats-wg/rats-endorsements",
   "labels": [
     {
@@ -761,15 +761,15 @@
       "id": "I_kwDOJj8oQM7o2pOA",
       "title": "Shepherd Review",
       "url": "https://github.com/ietf-rats-wg/rats-endorsements/issues/67",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yogeshbdeshpande",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Review Comments of the RATS Endorsements Draft:\n\n# Abstract:\n\n## Minor comment:\n\nThe abstract needs to clearly state :\nUsing Appraisal Policy for Evidence (for the sake of clarity)  not use just appraisal policy\n\n## Major Comment:\n It says the document extends RFC9334 to provide further details on Reference Values and Endorsements.\nIt would be better, if it clarifies, further details as to how the RefVals and Endorsements can be put to use\u2026\n\n# Section 1: Introduction:\n\n## Major Comment:\n\nThe Introduction in the first paragraph refers to RATS Architecture and talks in general about all Conceptual Messages.\n\nHowever, the second paragraph MUST focus on the aspects relevant to the Subject described in this document,(which is Endorsements) and its pain points.\n\nThere is no such aspect introduced in the document\u2026\n\n# Section 2:\n\nSeems a bit vague to start a section describing Actual State Versus Reference State\nPerhaps Start Section 2: With Use of RATS Conceptual Messages - aligning with RFC 9334, stating generic Verification Principles and then refer to \n\nActual State Versus Reference State\n\n# Section 2.1\n\nFigure 1: Endorsement in the figure should be changed to Endorsements\n\nFigure 1: Rename Appraisal Policy for Evidence (to be consistent with RATS Terminology)\n\n# Section 3:\n\nIt would be highly beneficial to pictorially depict, how Endorsements becomes actual state, upon matching certain conditions from Endorsements or Reference Values (at lower layer).\nThis will connect well with the readers trying to understand the concept.\n\n# Section 4, 5: No comments\n\n# Section 6: First paragraph\nNeeds clarity what it means to say \"Static Claims\" versus dynamic claims.\n\nIt is not clear whether the document is referring to Endorsements ??\n\nSection 6 picture, uses Endorsement as claims which is fine, till this point.\n\nHowever, the statement:\n\"A Verifier that trusts each Endorser would thus use the claim sets from both conceptual messages when comparing against reference state for a given Target Environment.\"\n\nThis implies the Endorsement becomes, Reference State, however Section 2.1 precisely is stating Opposite where Endorsements are stated as Actual State and Reference Values indicates possible Reference State.\n\nThe document should clarify these aspects, before proceeding any further..\n\n# Section 8: Security Considerations is Incomplete..\n\nIt should cover aspects of Secure conveyance of Endorsements.\n\nIt should also add Privacy considerations..\n\n",
       "createdAt": "2026-02-06T12:57:26Z",
-      "updatedAt": "2026-02-16T10:30:01Z",
-      "closedAt": null,
+      "updatedAt": "2026-03-02T08:42:56Z",
+      "closedAt": "2026-03-02T08:42:56Z",
       "comments": []
     }
   ],
@@ -4070,24 +4070,26 @@
       "id": "PR_kwDOJj8oQM7G0LDC",
       "title": "Shepherd review",
       "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/69",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "This PR should fully address the Shepherd\u2019s review\r\n\r\nFix #67 \r\n\r\nCC @yogeshbdeshpande ",
       "createdAt": "2026-02-27T12:37:04Z",
-      "updatedAt": "2026-02-27T17:40:40Z",
+      "updatedAt": "2026-03-02T08:52:44Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
       "baseRefOid": "75e45f31ea35b3bb6aa54370dd9df97d0484d0e3",
       "headRepository": "ietf-rats-wg/rats-endorsements",
       "headRefName": "shepherd-review",
-      "headRefOid": "2c332b189920652346dc5464bdab0759c0af81c6",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "45cea3008a559922a3c316b7943e356093ace40d",
+      "closedAt": "2026-03-02T08:42:54Z",
+      "mergedAt": "2026-03-02T08:42:54Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "420b73c56fa1ada97d789575ad1695f1d7272583"
+      },
       "comments": [],
       "reviews": [
         {
@@ -4135,7 +4137,7 @@
             "abbreviatedOid": "2c332b1"
           },
           "author": "yogeshbdeshpande",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "APPROVED",
           "body": "Made some minor typographical comments, but in general LGTM!",
           "createdAt": "2026-02-27T16:50:07Z",
@@ -4178,6 +4180,26 @@
               "updatedAt": "2026-02-27T17:40:40Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM7m9Tn-",
+          "commit": {
+            "abbreviatedOid": "2c332b1"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-03-02T08:52:44Z",
+          "updatedAt": "2026-03-02T08:52:44Z",
+          "comments": [
+            {
+              "originalPosition": 152,
+              "body": "Nice catch.  Addressed in #71 ",
+              "createdAt": "2026-03-02T08:52:44Z",
+              "updatedAt": "2026-03-02T08:52:44Z"
+            }
+          ]
         }
       ]
     },
@@ -4186,24 +4208,26 @@
       "id": "PR_kwDOJj8oQM7G0tKe",
       "title": "Claims set",
       "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/70",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Wholesale replacement of \u201cclaim set\u201d with \u201cclaims set\u201d to align with RFC9711 and RFC9781.\r\n\r\nThis PR sits on top of #69, so the only relevant commit to review is 44103bc6f223b3d357ae306027f55533835c626d",
       "createdAt": "2026-02-27T13:16:39Z",
-      "updatedAt": "2026-02-27T16:41:35Z",
+      "updatedAt": "2026-03-02T08:47:28Z",
       "baseRepository": "ietf-rats-wg/rats-endorsements",
       "baseRefName": "main",
-      "baseRefOid": "75e45f31ea35b3bb6aa54370dd9df97d0484d0e3",
+      "baseRefOid": "420b73c56fa1ada97d789575ad1695f1d7272583",
       "headRepository": "ietf-rats-wg/rats-endorsements",
       "headRefName": "claims-set",
-      "headRefOid": "bf2a5d48466a1140fcfee81ed2a836c581180c07",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "6cf8441455b087296c65891d33b9a75cbf723170",
+      "closedAt": "2026-03-02T08:47:25Z",
+      "mergedAt": "2026-03-02T08:47:25Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "79270935cd0cda59d9e152d0d1493edb016c4eb0"
+      },
       "comments": [],
       "reviews": [
         {
@@ -4231,6 +4255,88 @@
               "updatedAt": "2026-02-27T16:41:35Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM7m9Idm",
+          "commit": {
+            "abbreviatedOid": "bf2a5d4"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-03-02T08:41:53Z",
+          "updatedAt": "2026-03-02T08:41:53Z",
+          "comments": [
+            {
+              "originalPosition": 40,
+              "body": "Thanks, done in https://github.com/ietf-rats-wg/rats-endorsements/compare/bf2a5d48466a1140fcfee81ed2a836c581180c07..4ebc845bc8577bcd02318c78d1895fbeb42b195a",
+              "createdAt": "2026-03-02T08:41:53Z",
+              "updatedAt": "2026-03-02T08:41:53Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJj8oQM7m9It4",
+          "commit": {
+            "abbreviatedOid": "bf2a5d4"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-03-02T08:42:09Z",
+          "updatedAt": "2026-03-02T08:42:09Z",
+          "comments": [
+            {
+              "originalPosition": 151,
+              "body": "\ud83d\udc4d also done in https://github.com/ietf-rats-wg/rats-endorsements/compare/bf2a5d48466a1140fcfee81ed2a836c581180c07..4ebc845bc8577bcd02318c78d1895fbeb42b195a",
+              "createdAt": "2026-03-02T08:42:09Z",
+              "updatedAt": "2026-03-02T08:42:09Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 71,
+      "id": "PR_kwDOJj8oQM7HRPlw",
+      "title": "align CE pic with prose",
+      "url": "https://github.com/ietf-rats-wg/rats-endorsements/pull/71",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Addresses https://github.com/ietf-rats-wg/rats-endorsements/pull/69#discussion_r2865336265",
+      "createdAt": "2026-03-02T08:52:19Z",
+      "updatedAt": "2026-03-02T09:50:39Z",
+      "baseRepository": "ietf-rats-wg/rats-endorsements",
+      "baseRefName": "main",
+      "baseRefOid": "79270935cd0cda59d9e152d0d1493edb016c4eb0",
+      "headRepository": "ietf-rats-wg/rats-endorsements",
+      "headRefName": "ce-pic-fix",
+      "headRefOid": "736979b80e4e53c1a6eeefb6ff1716a4dd3ec610",
+      "closedAt": "2026-03-02T09:50:36Z",
+      "mergedAt": "2026-03-02T09:50:36Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "3a5ec2f9ad266a132ffff1931fbd8f0d4f7c766c"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJj8oQM7m-Hjp",
+          "commit": {
+            "abbreviatedOid": "736979b"
+          },
+          "author": "yogeshbdeshpande",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "LGTM!",
+          "createdAt": "2026-03-02T09:38:50Z",
+          "updatedAt": "2026-03-02T09:38:50Z",
+          "comments": []
         }
       ]
     }
