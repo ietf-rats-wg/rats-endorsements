@@ -399,7 +399,7 @@ endorsed values, in order to avoid the complexity introduced by such.
 
 # Security Considerations
 
-{{Section 8.4 of -rats-arch}} discusses how a Verifier stores one or more trust anchors in its trust anchor store.
+{{Section 7.4 of -rats-arch}} discusses how a Verifier stores one or more trust anchors in its trust anchor store.
 A Verifier expresses its trust in an Endorser by storing a trust anchor for that Endorser.
 The binding from an Endorsement to a given Target Environment is done as discussed in {{endorsing-keys}} of this document.
 
