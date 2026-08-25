@@ -87,8 +87,8 @@ However, this has since changed, and the purpose of this document is to update {
 
 Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
 Attestation Results) involve comparing the actual state of an Attester against
-desired or undesired states, in order to determine how trustworthy the Attester
-is for its purposes.  The state of an Attester represents the Attester's
+desired or undesired states, to determine how trustworthy the Attester
+is for the Relying Party's purposes.  The state of an Attester represents the Attester's
 "shape" as the arrangement of its various execution environments, which are
 typically organized hierarchically.
 The state of an Attester also encompasses the combination of static and
@@ -99,7 +99,7 @@ conceptual messages with information about actual state, and information about d
 states, and an appraisal policy that controls how the two are compared.
 
 Each Attester in general has at least one Attesting Environment and one Target
-Environment (e.g., hardware, firmware, Operating System, etc.).  Typically, each
+Environment (e.g., hardware, firmware, operating system, etc.).  Typically, each
 Attester has multiple Target Environments, each with their own "claims sets"
 representing their actual state.
 
