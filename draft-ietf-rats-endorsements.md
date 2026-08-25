@@ -171,7 +171,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
 While the above example only shows one layer within Endorsements as
 the typical case, there could be multiple layers (see {{multiple-endorsements}}), such as
-a chip added to a hardware board that is potentially from a different vendor.
+a chip, potentially from a different vendor, that is added to a hardware board.
 
 A Trust Anchor Store is a special case of
 state above, where the Reference State would be the set of trust anchors
