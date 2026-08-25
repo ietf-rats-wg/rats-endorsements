@@ -37,8 +37,8 @@ author:
   country: Germany
 - ins: T. Fossati
   name: Thomas Fossati
-  organization: Linaro
-  email: Thomas.Fossati@linaro.org
+  organization: NVIDIA
+  email: tfossati@nvidia.com
 
 informative:
   RFC9334: rats-arch
