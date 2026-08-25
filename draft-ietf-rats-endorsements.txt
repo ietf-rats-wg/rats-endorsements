@@ -480,7 +480,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
 8.  Security Considerations
 
-   Section 8.4 of [RFC9334] discusses how a Verifier stores one or more
+   Section 7.4 of [RFC9334] discusses how a Verifier stores one or more
    trust anchors in its trust anchor store.  A Verifier expresses its
    trust in an Endorser by storing a trust anchor for that Endorser.
    The binding from an Endorsement to a given Target Environment is done
