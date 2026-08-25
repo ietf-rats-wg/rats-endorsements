@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 3 September 2026                                     T. Fossati
-                                                                  Linaro
-                                                            2 March 2026
+Expires: 26 February 2027                                     T. Fossati
+                                                                  NVIDIA
+                                                          25 August 2026
 
 
                            RATS Endorsements
@@ -57,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 September 2026.
+   This Internet-Draft will expire on 26 February 2027.
 
 Copyright Notice
 
@@ -533,9 +533,9 @@ Endorsements |   |Actual state|                | Reference state |   | e
    [I-D.ietf-rats-corim]
               Birkholz, H., Fossati, T., Deshpande, Y., Smith, N., and
               W. Pan, "Concise Reference Integrity Manifest", Work in
-              Progress, Internet-Draft, draft-ietf-rats-corim-09, 20
-              October 2025, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-rats-corim-09>.
+              Progress, Internet-Draft, draft-ietf-rats-corim-11, 6 July
+              2026, <https://datatracker.ietf.org/doc/html/draft-ietf-
+              rats-corim-11>.
 
    [OCP-SAFE] Open Compute Project, "The OCP Security Appraisal
               Framework and Enablement (S.A.F.E.) Program", March 2026,
@@ -580,5 +580,5 @@ Authors' Addresses
 
 
    Thomas Fossati
-   Linaro
-   Email: Thomas.Fossati@linaro.org
+   NVIDIA
+   Email: tfossati@nvidia.com
