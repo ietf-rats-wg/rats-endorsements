@@ -291,6 +291,40 @@ the same timeliness considerations as for claims in Evidence would apply,
 and would be the responsibility of specific protocol documents. See
 {{Section 10 of -rats-arch}} and {{Appendix A of -rats-arch}} for further discussion.
 
+This distinction between static and dynamic claims is about the invariance
+of properties of the Environment, not about the Endorser's assessment of
+those properties.  A condition in a Conditionally Endorsed Value ({{conditional}})
+is static in the sense that, once matched against sufficiently timely
+Evidence, it deterministically selects a claims-set; however, the verdict an
+Endorser attaches to a given condition can itself change over time as the
+Endorser's own knowledge evolves, even though the condition's matching value
+does not.  For example, an Endorser might issue a Conditional Endorsement
+stating that if a given RoT firmware measurement matches value H, the device
+is trusted, and later, after a vulnerability is discovered in that firmware,
+issue a further Conditional Endorsement stating that if the same value H is
+matched, the device is untrusted.  Both Endorsements may be signed by an
+Endorser that remains in good standing, so this is a different problem than
+Endorser standing: it is about which of two (or more) temporally scoped,
+and potentially contradicting, Endorsements applies at the time of
+appraisal.  Endorsement formats therefore need a way to bind a validity
+period to Endorsement content, in addition to any validity information
+about the Endorser's standing, so that a Verifier can determine which
+Endorsement supersedes another for the same condition.  For example,
+{{-rats-corim}} provides a `rim-validity` window in the corim-map for this
+purpose, distinct from the `signature-validity` window.
+
+Note also that the Endorser's standing (i.e., the fact that its signing key
+or certificate is still valid or its trust anchor is still recognized) is a
+further, independent consideration, logically separate from the validity
+of the Endorsement content discussed above.  Whether the Endorser's standing
+is evaluated relative to the time the Evidence was generated or the time of
+appraisal is a decision for the specific protocol or appraisal policy, and
+needs to be documented as part of the Timeliness of the Endorsement itself.
+For example, the CoRIM data model provides a `signature-validity` window
+that bounds the validity of the Endorser's signature, and the CoRIM
+processor described in {{Section 8 of -rats-corim}} checks it, together
+with revocation and trust anchor status, relative to the time of appraisal.
+
 # Multiple Endorsements {#multiple-endorsements}
 
 {{input}} shows an example with an Endorsement at layer 0, such as
