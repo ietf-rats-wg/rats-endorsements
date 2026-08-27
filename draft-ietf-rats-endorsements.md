@@ -288,7 +288,8 @@ any matching conditionally endorsed values can be applied.
 If Endorsements ever carry dynamic claims in the future (e.g., whether
 any vulnerabilities in the version of firmware are currently known), then
 the same timeliness considerations as for claims in Evidence would apply,
-and would be the responsibility of specific protocol documents. See
+the same timeliness considerations as for claims in Evidence apply,
+and be the responsibility of specific protocol documents. See
 {{Section 10 of -rats-arch}} and {{Appendix A of -rats-arch}} for further discussion.
 
 This distinction between static and dynamic claims is about the invariance
