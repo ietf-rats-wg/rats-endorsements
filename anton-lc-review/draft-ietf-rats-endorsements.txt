@@ -388,19 +388,19 @@ Endorsements |   |Actual state|                | Reference state |   | e
    [I-D.ietf-rats-corim] provides a rim-validity window in the corim-map
    for this purpose, distinct from the signature-validity window.
 
-   Note also that the Endorser's standing (i.e., the fact that its
-   signing key or certificate is still valid or its trust anchor is
-   still recognized) is a further, independent consideration, logically
-   separate from the validity of the Endorsement content discussed
-   above.  Whether the Endorser's standing is evaluated relative to the
-   time the Evidence was generated or the time of appraisal is a
-   decision for the specific protocol or appraisal policy, and needs to
-   be documented as part of the Timeliness of the Endorsement itself.
-   For example, the CoRIM data model provides a signature-validity
-   window that bounds the validity of the Endorser's signature, and the
-   CoRIM processor described in Section 8 of [I-D.ietf-rats-corim]
-   checks it, together with revocation and trust anchor status, relative
-   to the time of appraisal.
+   The Endorser's standing (i.e., the fact that its signing key or
+   certificate is still valid or its trust anchor is still recognized)
+   is a further, independent consideration, logically separate from the
+   validity of the Endorsement content discussed above.  Whether the
+   Endorser's standing is evaluated relative to the time the Evidence
+   was generated or the time of appraisal is a decision for the specific
+   protocol or appraisal policy, and needs to be documented as part of
+   the Timeliness of the Endorsement itself.  For example, the CoRIM
+   data model provides a signature-validity window that bounds the
+   validity of the Endorser's signature, and the CoRIM processor
+   described in Section 8 of [I-D.ietf-rats-corim] checks it, together
+   with revocation and trust anchor status, relative to the time of
+   appraisal.
 
 6.  Multiple Endorsements
 
