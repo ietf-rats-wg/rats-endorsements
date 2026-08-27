@@ -359,8 +359,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
    If Endorsements ever carry dynamic claims in the future (e.g.,
    whether any vulnerabilities in the version of firmware are currently
    known), then the same timeliness considerations as for claims in
-   Evidence would apply, the same timeliness considerations as for
-   claims in Evidence apply, and be the responsibility of specific
+   Evidence would apply, and would be the responsibility of specific
    protocol documents.  See Section 10 of [RFC9334] and Appendix A of
    [RFC9334] for further discussion.
 
