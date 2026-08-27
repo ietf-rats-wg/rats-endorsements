@@ -276,7 +276,7 @@ Appraisal Policy for Evidence to have multiple phases if desired.
 
 # Timeliness
 
-Specific protocol documents are also responsible for documenting how Timeliness
+Specific protocol documents are also responsible for documenting how timeliness
 of the Endorsement itself (e.g., using a certificate lifetime) is provided.
 
 {{Section 8.1 of -rats-arch}} discusses timeliness of claims in Evidence.  When
@@ -319,7 +319,7 @@ further, independent consideration, logically separate from the validity
 of the Endorsement content discussed above.  Whether the Endorser's standing
 is evaluated relative to the time the Evidence was generated or the time of
 appraisal is a decision for the specific protocol or appraisal policy, and
-needs to be documented as part of the Timeliness of the Endorsement itself.
+needs to be documented as part of the timeliness of the Endorsement itself.
 For example, the CoRIM data model provides a `signature-validity` window
 that bounds the validity of the Endorser's signature, and the CoRIM
 processor described in {{Section 8 of -rats-corim}} checks it, together
