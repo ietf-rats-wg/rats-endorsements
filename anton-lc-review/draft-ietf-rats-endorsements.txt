@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 26 February 2027                                     T. Fossati
+Expires: 28 February 2027                                     T. Fossati
                                                                   Linaro
-                                                          25 August 2026
+                                                          27 August 2026
 
 
                            RATS Endorsements
@@ -57,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 February 2027.
+   This Internet-Draft will expire on 28 February 2027.
 
 Copyright Notice
 
@@ -359,7 +359,8 @@ Endorsements |   |Actual state|                | Reference state |   | e
    If Endorsements ever carry dynamic claims in the future (e.g.,
    whether any vulnerabilities in the version of firmware are currently
    known), then the same timeliness considerations as for claims in
-   Evidence would apply, and would be the responsibility of specific
+   Evidence would apply, the same timeliness considerations as for
+   claims in Evidence apply, and be the responsibility of specific
    protocol documents.  See Section 10 of [RFC9334] and Appendix A of
    [RFC9334] for further discussion.
 
