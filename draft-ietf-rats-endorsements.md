@@ -314,7 +314,7 @@ Endorsement supersedes another for the same condition.  For example,
 {{-rats-corim}} provides a `rim-validity` window in the corim-map for this
 purpose, distinct from the `signature-validity` window.
 
-Note also that the Endorser's standing (i.e., the fact that its signing key
+The Endorser's standing (i.e., the fact that its signing key
 or certificate is still valid or its trust anchor is still recognized) is a
 further, independent consideration, logically separate from the validity
 of the Endorsement content discussed above.  Whether the Endorser's standing
