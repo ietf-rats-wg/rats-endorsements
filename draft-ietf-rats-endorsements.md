@@ -310,7 +310,7 @@ and potentially contradicting, Endorsements apply at the time of
 appraisal.  Endorsement formats therefore need a way to bind a validity
 period to Endorsement content, in addition to any validity information
 about the Endorser's standing, so that a Verifier can determine which
-Endorsement supersedes another for the same condition.  For example,
+Endorsement supersedes others given the same condition.  For example,
 {{-rats-corim}} provides a `rim-validity` window in the corim-map for this
 purpose, distinct from the `signature-validity` window.
 
