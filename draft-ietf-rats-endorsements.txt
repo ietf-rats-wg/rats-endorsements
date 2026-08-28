@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 26 February 2027                                     T. Fossati
+Expires: 1 March 2027                                         T. Fossati
                                                                   NVIDIA
-                                                          25 August 2026
+                                                          28 August 2026
 
 
                            RATS Endorsements
@@ -57,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 February 2027.
+   This Internet-Draft will expire on 1 March 2027.
 
 Copyright Notice
 
@@ -345,7 +345,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
 5.  Timeliness
 
    Specific protocol documents are also responsible for documenting how
-   Timeliness of the Endorsement itself (e.g., using a certificate
+   timeliness of the Endorsement itself (e.g., using a certificate
    lifetime) is provided.
 
    Section 8.1 of [RFC9334] discusses timeliness of claims in Evidence.
@@ -362,6 +362,44 @@ Endorsements |   |Actual state|                | Reference state |   | e
    Evidence would apply, and would be the responsibility of specific
    protocol documents.  See Section 10 of [RFC9334] and Appendix A of
    [RFC9334] for further discussion.
+
+   This distinction between static and dynamic claims is about the
+   invariance of properties of the Environment, not about the Endorser's
+   assessment of those properties.  A condition in a Conditionally
+   Endorsed Value (Figure 2) is static in the sense that, once matched
+   against sufficiently timely Evidence, it deterministically selects a
+   claims-set; however, the verdict an Endorser attaches to a given
+   condition can itself change over time as the Endorser's own knowledge
+   evolves, even though the condition's matching value does not.  For
+   example, an Endorser might issue a Conditional Endorsement stating
+   that if a given RoT firmware measurement matches value H, the device
+   is trusted, and later, after a vulnerability is discovered in that
+   firmware, issue a further Conditional Endorsement stating that if the
+   same value H is matched, the device is untrusted.  Both Endorsements
+   may be signed by an Endorser that remains in good standing, so this
+   is a different problem than Endorser standing: it is about which of
+   two (or more) temporally scoped, and potentially contradicting,
+   Endorsements apply at the time of appraisal.  Endorsement formats
+   therefore need a way to bind a validity period to Endorsement
+   content, in addition to any validity information about the Endorser's
+   standing, so that a Verifier can determine which Endorsement
+   supersedes others given the same condition.  For example,
+   [I-D.ietf-rats-corim] provides a rim-validity window in the corim-map
+   for this purpose, distinct from the signature-validity window.
+
+   The Endorser's standing (i.e., the fact that its signing key or
+   certificate is still valid or its trust anchor is still recognized)
+   is a further, independent consideration, logically separate from the
+   validity of the Endorsement content discussed above.  Whether the
+   Endorser's standing is evaluated relative to the time the Evidence
+   was generated or the time of appraisal is a decision for the specific
+   protocol or appraisal policy, and needs to be documented as part of
+   the timeliness of the Endorsement itself.  For example, the CoRIM
+   data model provides a signature-validity window that bounds the
+   validity of the Endorser's signature, and the CoRIM processor
+   described in Section 8 of [I-D.ietf-rats-corim] checks it, together
+   with revocation and trust anchor status, relative to the time of
+   appraisal.
 
 6.  Multiple Endorsements
 
@@ -559,9 +597,9 @@ Endorsements |   |Actual state|                | Reference state |   | e
 Acknowledgements
 
    The authors wish to thank the following individuals for feedback and
-   ideas that contributed to this document: Yogesh Deshpande, Thomas
-   Hardjono, Laurence Lundblade, Kathleen Moriarty, Michael Richardson,
-   Ned Smith, and Carl Wallace
+   ideas that contributed to this document: Anton Sokolov, Yogesh
+   Deshpande, Thomas Hardjono, Laurence Lundblade, Kathleen Moriarty,
+   Michael Richardson, Ned Smith, and Carl Wallace
 
 Authors' Addresses
 
