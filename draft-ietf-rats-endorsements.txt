@@ -40,7 +40,7 @@ Discussion Venues
    archived at https://mailarchive.ietf.org/arch/browse/rats/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/dthaler/rats-endorsements.
+   https://github.com/ietf-rats-wg/rats-endorsements.
 
 Status of This Memo
 
