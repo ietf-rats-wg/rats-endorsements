@@ -318,7 +318,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
    Verifier along with the Evidence to appraise, depending on the
    protocol or general remote attestation procedure.  Details are out of
    scope of this document and left to protocol or procedure
-   specifications.  This includes whether a unreachable Endorser only
+   specifications.  This includes whether an unreachable Endorser only
    defers the appraisal or renders it permanently impossible, which
    depends on whether the Endorsement remains retrievable and applicable
    to the previously collected Evidence.
