@@ -254,6 +254,9 @@ in the form of a certificate that chains up to that trust anchor (a certificatio
 might be stored in the Verifier, or might be resolved on demand via some protocol,
 or might be passed to the Verifier along with the Evidence to appraise, depending on the protocol or general remote attestation procedure.
 Details are out of scope of this document and left to protocol or procedure specifications.
+A specific detail that is out of scope is whether an unreachable Endorser only postpones the appraisal of Evidence or
+renders it permanently impossible, which depends on whether the Endorsement
+remains retrievable and applicable to the previously collected Evidence.
 
 Specific protocol documents are also responsible for documenting what
 particular algorithm or cryptographic protocol is used for the verification
@@ -262,6 +265,9 @@ of the Attester. The verification key (i.e., a key with the purpose of signature
 Evidence can contain an identifier for the Attester
 (e.g., {{-rats-eat}} `ueid`) in a dedicated "identity claim"
 that can be used by the Verifier to look up its verification key for the Attester.
+The granularity at which such identifiers, and therefore the signature-checking keys
+endorsed for them, apply (e.g., per instance, class, or other claims) is out of scope
+of this document.
 
 While identity claims are just another
 type of claims that may be endorsed, some implementations might treat them
@@ -466,6 +472,7 @@ This document does not require any actions by IANA.
 {: numbered="false"}
 
 The authors wish to thank the following individuals for feedback and ideas that contributed to this document:
+{{{Serhii Nikolaichuk}}},
 {{{Anton Sokolov}}},
 {{{Yogesh Deshpande}}},
 {{{Thomas Hardjono}}},
