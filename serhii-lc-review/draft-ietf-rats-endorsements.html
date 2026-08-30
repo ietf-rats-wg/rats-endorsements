@@ -1050,7 +1050,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Thaler, et al.</td>
-<td class="center">Expires 1 March 2027</td>
+<td class="center">Expires 3 March 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1066,12 +1066,12 @@ svg {
 <a href="https://www.rfc-editor.org/rfc/rfc9334" class="eref">9334</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-08-28" class="published">28 August 2026</time>
+<time datetime="2026-08-30" class="published">30 August 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-03-01">1 March 2027</time></dd>
+<dd class="expires"><time datetime="2027-03-03">3 March 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1106,7 +1106,7 @@ Instead, it extends RFC9334 to provide further details on Reference Values and E
     Remote ATtestation ProcedureS Working Group mailing list (rats@ietf.org),
     which is archived at <span><a href="https://mailarchive.ietf.org/arch/browse/rats/">https://mailarchive.ietf.org/arch/browse/rats/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
 <p id="section-note.1-3">Source for this draft and an issue tracker can be found at
-    <span><a href="https://github.com/dthaler/rats-endorsements">https://github.com/dthaler/rats-endorsements</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
+    <span><a href="https://github.com/ietf-rats-wg/rats-endorsements">https://github.com/ietf-rats-wg/rats-endorsements</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
 </section>
 <div id="status-of-memo">
 <section id="section-boilerplate.1">
@@ -1127,7 +1127,7 @@ Instead, it extends RFC9334 to provide further details on Reference Values and E
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 1 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 3 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1569,7 +1569,7 @@ Appraisal Policy for Evidence to have multiple phases if desired.<a href="#secti
       <h2 id="name-timeliness">
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-timeliness" class="section-name selfRef">Timeliness</a>
       </h2>
-<p id="section-5-1">Specific protocol documents are also responsible for documenting how Timeliness
+<p id="section-5-1">Specific protocol documents are also responsible for documenting how timeliness
 of the Endorsement itself (e.g., using a certificate lifetime) is provided.<a href="#section-5-1" class="pilcrow">¶</a></p>
 <p id="section-5-2"><span><a href="https://rfc-editor.org/rfc/rfc9334#section-8.1" class="relref">Section 8.1</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> discusses timeliness of claims in Evidence.  When
 additional "static" claims (i.e., claims representing invariant properties of the Environment) are provided in Endorsements, no additional steps
@@ -1581,6 +1581,38 @@ any vulnerabilities in the version of firmware are currently known), then
 the same timeliness considerations as for claims in Evidence would apply,
 and would be the responsibility of specific protocol documents. See
 <span><a href="https://rfc-editor.org/rfc/rfc9334#section-10" class="relref">Section 10</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> and <span><a href="https://rfc-editor.org/rfc/rfc9334#appendix-A" class="relref">Appendix A</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> for further discussion.<a href="#section-5-3" class="pilcrow">¶</a></p>
+<p id="section-5-4">This distinction between static and dynamic claims is about the invariance
+of properties of the Environment, not about the Endorser's assessment of
+those properties.  A condition in a Conditionally Endorsed Value (<a href="#conditional" class="auto internal xref">Figure 2</a>)
+is static in the sense that, once matched against sufficiently timely
+Evidence, it deterministically selects a claims-set; however, the verdict an
+Endorser attaches to a given condition can itself change over time as the
+Endorser's own knowledge evolves, even though the condition's matching value
+does not.  For example, an Endorser might issue a Conditional Endorsement
+stating that if a given RoT firmware measurement matches value H, the device
+is trusted, and later, after a vulnerability is discovered in that firmware,
+issue a further Conditional Endorsement stating that if the same value H is
+matched, the device is untrusted.  Both Endorsements may be signed by an
+Endorser that remains in good standing, so this is a different problem than
+Endorser standing: it is about which of two (or more) temporally scoped,
+and potentially contradicting, Endorsements apply at the time of
+appraisal.  Endorsement formats therefore need a way to bind a validity
+period to Endorsement content, in addition to any validity information
+about the Endorser's standing, so that a Verifier can determine which
+Endorsement supersedes others given the same condition.  For example,
+<span>[<a href="#I-D.ietf-rats-corim" class="cite xref">I-D.ietf-rats-corim</a>]</span> provides a <code>rim-validity</code> window in the corim-map for this
+purpose, distinct from the <code>signature-validity</code> window.<a href="#section-5-4" class="pilcrow">¶</a></p>
+<p id="section-5-5">The Endorser's standing (i.e., the fact that its signing key
+or certificate is still valid or its trust anchor is still recognized) is a
+further, independent consideration, logically separate from the validity
+of the Endorsement content discussed above.  Whether the Endorser's standing
+is evaluated relative to the time the Evidence was generated or the time of
+appraisal is a decision for the specific protocol or appraisal policy, and
+needs to be documented as part of the timeliness of the Endorsement itself.
+For example, the CoRIM data model provides a <code>signature-validity</code> window
+that bounds the validity of the Endorser's signature, and the CoRIM
+processor described in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-rats-corim-11#section-8" class="relref">Section 8</a> of [<a href="#I-D.ietf-rats-corim" class="cite xref">I-D.ietf-rats-corim</a>]</span> checks it, together
+with revocation and trust anchor status, relative to the time of appraisal.<a href="#section-5-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="multiple-endorsements">
@@ -1874,6 +1906,8 @@ In particular, since Endorsements and Reference Values can contain personally id
       </h2>
 <p id="appendix-A-1">The authors wish to thank the following individuals for feedback and ideas that contributed to this document:
 <span class="contact-name">Serhii Nikolaichuk</span>,
+<span class="contact-name">Steven Bellock</span>,
+<span class="contact-name">Anton Sokolov</span>,
 <span class="contact-name">Yogesh Deshpande</span>,
 <span class="contact-name">Thomas Hardjono</span>,
 <span class="contact-name">Laurence Lundblade</span>,
