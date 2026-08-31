@@ -333,10 +333,9 @@ Endorsements |   |Actual state|                | Reference state |   | e
    Evidence can contain an identifier for the Attester (e.g., [RFC9711]
    ueid) in a dedicated "identity claim" that can be used by the
    Verifier to look up its verification key for the Attester.  The
-   granularity at which such identifiers, and therefore the verification
-   keys endorsed for them, apply (e.g., per security module or per
-   physical package, in which case a single Endorsement may cover
-   multiple Attesters) is out of scope of this document.
+   granularity at which such identifiers, and therefore the signature-
+   checking keys endorsed for them, apply (e.g., per instance, class, or
+   other claims) is out of scope of this document.
 
    While identity claims are just another type of claims that may be
    endorsed, some implementations might treat them differently.  For

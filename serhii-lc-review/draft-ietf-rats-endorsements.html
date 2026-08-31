@@ -1549,9 +1549,8 @@ of the Attester. The verification key (i.e., a key with the purpose of signature
 <p id="section-4-6">Evidence can contain an identifier for the Attester
 (e.g., <span>[<a href="#RFC9711" class="cite xref">RFC9711</a>]</span> <code>ueid</code>) in a dedicated "identity claim"
 that can be used by the Verifier to look up its verification key for the Attester.
-The granularity at which such identifiers, and therefore the verification keys
-endorsed for them, apply (e.g., per security module or per physical package, in
-which case a single Endorsement may cover multiple Attesters) is out of scope
+The granularity at which such identifiers, and therefore the signature-checking keys
+endorsed for them, apply (e.g., per instance, class, or other claims) is out of scope
 of this document.<a href="#section-4-6" class="pilcrow">¶</a></p>
 <p id="section-4-7">While identity claims are just another
 type of claims that may be endorsed, some implementations might treat them
