@@ -604,11 +604,10 @@ Endorsements |   |Actual state|                | Reference state |   | e
 Acknowledgements
 
    The authors wish to thank the following individuals for feedback and
-   ideas that contributed to this document:
-
-   Serhii Nikolaichuk, Anton Sokolov, Yogesh Deshpande, Thomas Hardjono,
-   Laurence Lundblade, Kathleen Moriarty, Michael Richardson, Steven
-   Bellock, Ned Smith, and Carl Wallace
+   ideas that contributed to this document: Serhii Nikolaichuk, Steven
+   Bellock, Anton Sokolov, Yogesh Deshpande, Thomas Hardjono, Laurence
+   Lundblade, Kathleen Moriarty, Michael Richardson, Steven Bellock, Ned
+   Smith, and Carl Wallace
 
 Authors' Addresses
 
