@@ -545,7 +545,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
    Endorsement or Reference Values themselves protects their integrity
    and authenticates their source, but a mutually authenticated channel
    additionally lets the source authenticate and authorize the
-   requesting Verifier, protects potentially sensitive content (see
+   requesting Verifier and protects potentially sensitive content (see
    Section 9) against disclosure to unauthorized parties.  These links
    should reach as deep as possible into the Verifier, potentially
    terminating within the appraisal session context, to avoid man-in-
