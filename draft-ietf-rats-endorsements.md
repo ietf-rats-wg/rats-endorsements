@@ -229,7 +229,7 @@ a matching policy is not about trustworthiness (and hence not "appraisal" per se
 but rather about whether an Endorser's claim is applicable or not, and thus
 usable as input to trustworthiness appraisal or not.
 
-As such the matching policy for conditionally endorsed values must be up to the Endorser not the Appraisal Policy Provider.
+As such the matching policy for conditionally endorsed values must be up to the Endorser not the Verifier Owner and/or Relying Party Owner.
 Thus, an Endorsement format that supports conditionally endorsed values (e.g., {{-rats-corim}}) would probably include some minimal matching policy (e.g., exact match against a singleton reference value).
 This unfortunately complicates the Verifier design as it may need multiple parsers for matching policies.
 
