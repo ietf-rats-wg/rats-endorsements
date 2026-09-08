@@ -40,8 +40,10 @@ author:
   organization: NVIDIA
   email: tfossati@nvidia.com
 
-informative:
+normative:
   RFC9334: rats-arch
+
+informative:
   RFC9711: rats-eat
   I-D.ietf-rats-corim: rats-corim
   TCG-DICE:
@@ -88,9 +90,10 @@ However, this has since changed, and the purpose of this document is to update {
 Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
 Attestation Results) involve comparing the actual state of an Attester against
 desired or undesired states, in order to determine how trustworthy the Attester
-is for its purposes.  The state of an Attester represents the Attester's
-"shape" as the arrangement of its various execution environments, which are
-typically organized hierarchically.
+is for its purposes.  The state of an Attester includes its "shape",
+i.e., the structural composition of the Attester as the arrangement of its
+various execution environments, which are typically organized
+hierarchically.
 The state of an Attester also encompasses the combination of static and
 dynamic composition (e.g., provisioned and deployed software, firmware, and
 micro-code), static and dynamic configuration, and the resulting operational state
@@ -280,7 +283,7 @@ Specific protocol documents are also responsible for documenting how timeliness
 of the Endorsement itself (e.g., using a certificate lifetime) is provided.
 
 {{Section 8.1 of -rats-arch}} discusses timeliness of claims in Evidence.  When
-additional "static" claims (i.e., claims representing invariant properties of the Environment) are provided in Endorsements, no additional steps
+additional "static" claims (i.e., claims representing invariant properties of the environment) are provided in Endorsements, no additional steps
 are needed for timeliness of those claims since they are static rather than
 dynamically varying over time.  Once timeliness of Evidence is appraised,
 any matching conditionally endorsed values can be applied.
@@ -292,7 +295,7 @@ and would be the responsibility of specific protocol documents. See
 {{Section 10 of -rats-arch}} and {{Appendix A of -rats-arch}} for further discussion.
 
 This distinction between static and dynamic claims is about the invariance
-of properties of the Environment, not about the Endorser's assessment of
+of properties of the environment, not about the Endorser's assessment of
 those properties.  A condition in a Conditionally Endorsed Value ({{conditional}})
 is static in the sense that, once matched against sufficiently timely
 Evidence, it deterministically selects a claims-set; however, the verdict an
@@ -445,11 +448,12 @@ This includes public keys that identify trusted supply chain actors.
 For more detailed information on protecting Trust Anchors, refer to {{Section 12.4 of -rats-arch}}.
 
 A Verifier can use cryptographically protected, mutually authenticated secure channels to all its trusted input sources, particularly, Endorsers and Reference Value Providers.
+Signing the Endorsement or Reference Values themselves protects their integrity and authenticates their source, but a mutually authenticated channel additionally lets the source authenticate and authorize the requesting Verifier, protects potentially sensitive content (see {{privacy}}) against disclosure to unauthorized parties.
 These links should reach as deep as possible into the Verifier, potentially terminating within the appraisal session context, to avoid man-in-the-middle attacks.
 Minimizing the use of intermediaries is also vital, as each intermediary is another party that might need to be trusted.
 Refer to {{Section 12.2 of -rats-arch}} for information on conceptual message protection.
 
-# Privacy Considerations
+# Privacy Considerations {#privacy}
 
 The privacy considerations regarding conceptual messages, as discussed in {{Section 11 of -rats-arch}}, apply.
 In particular, since Endorsements and Reference Values can contain personally identifiable information (PII) about a large number of devices, strong confidentiality protection is required at the time of conveyance.
