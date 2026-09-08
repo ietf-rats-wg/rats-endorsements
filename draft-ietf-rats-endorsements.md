@@ -448,7 +448,7 @@ This includes public keys that identify trusted supply chain actors.
 For more detailed information on protecting Trust Anchors, refer to {{Section 12.4 of -rats-arch}}.
 
 A Verifier can use cryptographically protected, mutually authenticated secure channels to all its trusted input sources, particularly, Endorsers and Reference Value Providers.
-Signing the Endorsement or Reference Values themselves protects their integrity and authenticates their source, but a mutually authenticated channel additionally lets the source authenticate and authorize the requesting Verifier, protects potentially sensitive content (see {{privacy}}) against disclosure to unauthorized parties.
+Signing the Endorsement or Reference Values themselves protects their integrity and authenticates their source, but a mutually authenticated channel additionally lets the source authenticate and authorize the requesting Verifier and protects potentially sensitive content (see {{privacy}}) against disclosure to unauthorized parties.
 These links should reach as deep as possible into the Verifier, potentially terminating within the appraisal session context, to avoid man-in-the-middle attacks.
 Minimizing the use of intermediaries is also vital, as each intermediary is another party that might need to be trusted.
 Refer to {{Section 12.2 of -rats-arch}} for information on conceptual message protection.
