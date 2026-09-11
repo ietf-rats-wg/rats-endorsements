@@ -26,11 +26,11 @@ Instead, it extends RFC9334 to provide further details on Reference Values and E
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.11.5
+    platformdirs 4.11.7
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
-    wcwidth 0.8.2
+    wcwidth 0.8.3
 -->
 <link href="draft-ietf-rats-endorsements.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1046,11 +1046,11 @@ svg {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">RATS Endorsements</td>
-<td class="right">August 2026</td>
+<td class="right">September 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Thaler, et al.</td>
-<td class="center">Expires 4 March 2027</td>
+<td class="center">Expires 15 March 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1066,12 +1066,12 @@ svg {
 <a href="https://www.rfc-editor.org/rfc/rfc9334" class="eref">9334</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-08-31" class="published">31 August 2026</time>
+<time datetime="2026-09-11" class="published">11 September 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-03-04">4 March 2027</time></dd>
+<dd class="expires"><time datetime="2027-03-15">15 March 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1127,7 +1127,7 @@ Instead, it extends RFC9334 to provide further details on Reference Values and E
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 4 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 15 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1200,7 +1200,15 @@ Instead, it extends RFC9334 to provide further details on Reference Values and E
             <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
-            <p id="section-toc.1-1.11.1"><a href="#section-11" class="auto internal xref">11</a>. <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+            <p id="section-toc.1-1.11.1"><a href="#section-11" class="auto internal xref">11</a>. <a href="#name-references" class="internal xref">References</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11.2.1">
+                <p id="section-toc.1-1.11.2.1.1"><a href="#section-11.1" class="auto internal xref">11.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11.2.2">
+                <p id="section-toc.1-1.11.2.2.1"><a href="#section-11.2" class="auto internal xref">11.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
             <p id="section-toc.1-1.12.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgements" class="internal xref">Acknowledgements</a></p>
@@ -1233,9 +1241,10 @@ However, this has since changed, and the purpose of this document is to update <
 <p id="section-2-1">Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
 Attestation Results) involve comparing the actual state of an Attester against
 desired or undesired states, in order to determine how trustworthy the Attester
-is for its purposes.  The state of an Attester represents the Attester's
-"shape" as the arrangement of its various execution environments, which are
-typically organized hierarchically.
+is for its purposes.  The state of an Attester includes its "shape",
+i.e., the structural composition of the Attester as the arrangement of its
+various execution environments, which are typically organized
+hierarchically.
 The state of an Attester also encompasses the combination of static and
 dynamic composition (e.g., provisioned and deployed software, firmware, and
 micro-code), static and dynamic configuration, and the resulting operational state
@@ -1565,7 +1574,7 @@ Appraisal Policy for Evidence to have multiple phases if desired.<a href="#secti
 <p id="section-5-1">Specific protocol documents are also responsible for documenting how timeliness
 of the Endorsement itself (e.g., using a certificate lifetime) is provided.<a href="#section-5-1" class="pilcrow">¶</a></p>
 <p id="section-5-2"><span><a href="https://rfc-editor.org/rfc/rfc9334#section-8.1" class="relref">Section 8.1</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> discusses timeliness of claims in Evidence.  When
-additional "static" claims (i.e., claims representing invariant properties of the Environment) are provided in Endorsements, no additional steps
+additional "static" claims (i.e., claims representing invariant properties of the environment) are provided in Endorsements, no additional steps
 are needed for timeliness of those claims since they are static rather than
 dynamically varying over time.  Once timeliness of Evidence is appraised,
 any matching conditionally endorsed values can be applied.<a href="#section-5-2" class="pilcrow">¶</a></p>
@@ -1575,7 +1584,7 @@ the same timeliness considerations as for claims in Evidence would apply,
 and would be the responsibility of specific protocol documents. See
 <span><a href="https://rfc-editor.org/rfc/rfc9334#section-10" class="relref">Section 10</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> and <span><a href="https://rfc-editor.org/rfc/rfc9334#appendix-A" class="relref">Appendix A</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> for further discussion.<a href="#section-5-3" class="pilcrow">¶</a></p>
 <p id="section-5-4">This distinction between static and dynamic claims is about the invariance
-of properties of the Environment, not about the Endorser's assessment of
+of properties of the environment, not about the Endorser's assessment of
 those properties.  A condition in a Conditionally Endorsed Value (<a href="#conditional" class="auto internal xref">Figure 2</a>)
 is static in the sense that, once matched against sufficiently timely
 Evidence, it deterministically selects a claims-set; however, the verdict an
@@ -1836,12 +1845,13 @@ The binding from an Endorsement to a given Target Environment is done as discuss
 This includes public keys that identify trusted supply chain actors.
 For more detailed information on protecting Trust Anchors, refer to <span><a href="https://rfc-editor.org/rfc/rfc9334#section-12.4" class="relref">Section 12.4</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span>.<a href="#section-8-3" class="pilcrow">¶</a></p>
 <p id="section-8-4">A Verifier can use cryptographically protected, mutually authenticated secure channels to all its trusted input sources, particularly, Endorsers and Reference Value Providers.
+Signing the Endorsement or Reference Values themselves protects their integrity and authenticates their source, but a mutually authenticated channel additionally lets the source authenticate and authorize the requesting Verifier and protects potentially sensitive content (see <a href="#privacy" class="auto internal xref">Section 9</a>) against disclosure to unauthorized parties.
 These links should reach as deep as possible into the Verifier, potentially terminating within the appraisal session context, to avoid man-in-the-middle attacks.
 Minimizing the use of intermediaries is also vital, as each intermediary is another party that might need to be trusted.
 Refer to <span><a href="https://rfc-editor.org/rfc/rfc9334#section-12.2" class="relref">Section 12.2</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> for information on conceptual message protection.<a href="#section-8-4" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="privacy-considerations">
+<div id="privacy">
 <section id="section-9">
       <h2 id="name-privacy-considerations">
 <a href="#section-9" class="section-number selfRef">9. </a><a href="#name-privacy-considerations" class="section-name selfRef">Privacy Considerations</a>
@@ -1859,37 +1869,53 @@ In particular, since Endorsements and Reference Values can contain personally id
 <p id="section-10-1">This document does not require any actions by IANA.<a href="#section-10-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="sec-informative-references">
+<div id="sec-combined-references">
 <section id="section-11">
-      <h2 id="name-informative-references">
-<a href="#section-11" class="section-number selfRef">11. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+      <h2 id="name-references">
+<a href="#section-11" class="section-number selfRef">11. </a><a href="#name-references" class="section-name selfRef">References</a>
       </h2>
+<div id="sec-normative-references">
+<section id="section-11.1">
+        <h3 id="name-normative-references">
+<a href="#section-11.1" class="section-number selfRef">11.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+        </h3>
 <dl class="references">
-<dt id="GP-Cert">[GP-Cert]</dt>
-      <dd>
-<span class="refAuthor">GlobalPlatform</span>, <span class="refTitle">"Security Certification"</span>, <time datetime="2026-03" class="refDate">March 2026</time>, <span>&lt;<a href="https://globalplatform.org/certifications/security-certification/">https://globalplatform.org/certifications/security-certification/</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="I-D.ietf-rats-corim">[I-D.ietf-rats-corim]</dt>
-      <dd>
-<span class="refAuthor">Birkholz, H.</span>, <span class="refAuthor">Fossati, T.</span>, <span class="refAuthor">Deshpande, Y.</span>, <span class="refAuthor">Smith, N.</span>, and <span class="refAuthor">W. Pan</span>, <span class="refTitle">"Concise Reference Integrity Manifest"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-rats-corim-11</span>, <time datetime="2026-07-06" class="refDate">6 July 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-rats-corim-11">https://datatracker.ietf.org/doc/html/draft-ietf-rats-corim-11</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="OCP-SAFE">[OCP-SAFE]</dt>
-      <dd>
-<span class="refAuthor">Open Compute Project</span>, <span class="refTitle">"The OCP Security Appraisal Framework and Enablement (S.A.F.E.) Program"</span>, <time datetime="2026-03" class="refDate">March 2026</time>, <span>&lt;<a href="https://www.opencompute.org/projects/ocp-safe-program">https://www.opencompute.org/projects/ocp-safe-program</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="RFC9334">[RFC9334]</dt>
       <dd>
 <span class="refAuthor">Birkholz, H.</span>, <span class="refAuthor">Thaler, D.</span>, <span class="refAuthor">Richardson, M.</span>, <span class="refAuthor">Smith, N.</span>, and <span class="refAuthor">W. Pan</span>, <span class="refTitle">"Remote ATtestation procedureS (RATS) Architecture"</span>, <span class="seriesInfo">RFC 9334</span>, <span class="seriesInfo">DOI 10.17487/RFC9334</span>, <time datetime="2023-01" class="refDate">January 2023</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9334">https://www.rfc-editor.org/rfc/rfc9334</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+</dl>
+</section>
+</div>
+<div id="sec-informative-references">
+<section id="section-11.2">
+        <h3 id="name-informative-references">
+<a href="#section-11.2" class="section-number selfRef">11.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+        </h3>
+<dl class="references">
+<dt id="GP-Cert">[GP-Cert]</dt>
+        <dd>
+<span class="refAuthor">GlobalPlatform</span>, <span class="refTitle">"Security Certification"</span>, <time datetime="2026-03" class="refDate">March 2026</time>, <span>&lt;<a href="https://globalplatform.org/certifications/security-certification/">https://globalplatform.org/certifications/security-certification/</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.ietf-rats-corim">[I-D.ietf-rats-corim]</dt>
+        <dd>
+<span class="refAuthor">Birkholz, H.</span>, <span class="refAuthor">Fossati, T.</span>, <span class="refAuthor">Deshpande, Y.</span>, <span class="refAuthor">Smith, N.</span>, and <span class="refAuthor">W. Pan</span>, <span class="refTitle">"Concise Reference Integrity Manifest"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-rats-corim-11</span>, <time datetime="2026-07-06" class="refDate">6 July 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-rats-corim-11">https://datatracker.ietf.org/doc/html/draft-ietf-rats-corim-11</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="OCP-SAFE">[OCP-SAFE]</dt>
+        <dd>
+<span class="refAuthor">Open Compute Project</span>, <span class="refTitle">"The OCP Security Appraisal Framework and Enablement (S.A.F.E.) Program"</span>, <time datetime="2026-03" class="refDate">March 2026</time>, <span>&lt;<a href="https://www.opencompute.org/projects/ocp-safe-program">https://www.opencompute.org/projects/ocp-safe-program</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC9711">[RFC9711]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Lundblade, L.</span>, <span class="refAuthor">Mandyam, G.</span>, <span class="refAuthor">O'Donoghue, J.</span>, and <span class="refAuthor">C. Wallace</span>, <span class="refTitle">"The Entity Attestation Token (EAT)"</span>, <span class="seriesInfo">RFC 9711</span>, <span class="seriesInfo">DOI 10.17487/RFC9711</span>, <time datetime="2025-04" class="refDate">April 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9711">https://www.rfc-editor.org/rfc/rfc9711</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="TCG-DICE">[TCG-DICE]</dt>
-    <dd>
+      <dd>
 <span class="refAuthor">Trusted Computing Group</span>, <span class="refTitle">"DICE Attestation Architecture"</span>, <time datetime="2025-04" class="refDate">April 2025</time>, <span>&lt;<a href="https://trustedcomputinggroup.org/wp-content/uploads/DICE-Attestation-Architecture-v1.2_pub.pdf">https://trustedcomputinggroup.org/wp-content/uploads/DICE-Attestation-Architecture-v1.2_pub.pdf</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
+</section>
+</div>
 </section>
 </div>
 <div id="acknowledgements">
@@ -1904,6 +1930,8 @@ In particular, since Endorsements and Reference Values can contain personally id
 <span class="contact-name">Laurence Lundblade</span>,
 <span class="contact-name">Kathleen Moriarty</span>,
 <span class="contact-name">Michael Richardson</span>,
+<span class="contact-name">Jim Fenton</span>,
+<span class="contact-name">Jen Linkova</span>,
 <span class="contact-name">Steven Bellock</span>,
 <span class="contact-name">Ned Smith</span>, and
 <span class="contact-name">Carl Wallace</span><a href="#appendix-A-1" class="pilcrow">¶</a></p>

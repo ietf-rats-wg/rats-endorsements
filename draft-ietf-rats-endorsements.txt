@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 4 March 2027                                         T. Fossati
+Expires: 15 March 2027                                        T. Fossati
                                                                   NVIDIA
-                                                          31 August 2026
+                                                       11 September 2026
 
 
                            RATS Endorsements
@@ -57,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 March 2027.
+   This Internet-Draft will expire on 15 March 2027.
 
 Copyright Notice
 
@@ -88,7 +88,9 @@ Table of Contents
    8.  Security Considerations
    9.  Privacy Considerations
    10. IANA Considerations
-   11. Informative References
+   11. References
+     11.1.  Normative References
+     11.2.  Informative References
    Acknowledgements
    Authors' Addresses
 
@@ -114,16 +116,17 @@ Table of Contents
    Policy for Attestation Results) involve comparing the actual state of
    an Attester against desired or undesired states, in order to
    determine how trustworthy the Attester is for its purposes.  The
-   state of an Attester represents the Attester's "shape" as the
-   arrangement of its various execution environments, which are
-   typically organized hierarchically.  The state of an Attester also
-   encompasses the combination of static and dynamic composition (e.g.,
-   provisioned and deployed software, firmware, and micro-code), static
-   and dynamic configuration, and the resulting operational state of its
-   components at a certain point in time.  Thus, a Verifier needs to
-   receive conceptual messages with information about actual state, and
-   information about desired/undesired states, and an appraisal policy
-   that controls how the two are compared.
+   state of an Attester includes its "shape", i.e., the structural
+   composition of the Attester as the arrangement of its various
+   execution environments, which are typically organized hierarchically.
+   The state of an Attester also encompasses the combination of static
+   and dynamic composition (e.g., provisioned and deployed software,
+   firmware, and micro-code), static and dynamic configuration, and the
+   resulting operational state of its components at a certain point in
+   time.  Thus, a Verifier needs to receive conceptual messages with
+   information about actual state, and information about desired/
+   undesired states, and an appraisal policy that controls how the two
+   are compared.
 
    Each Attester in general has at least one Attesting Environment and
    one Target Environment (e.g., hardware, firmware, Operating System,
@@ -350,7 +353,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
    Section 8.1 of [RFC9334] discusses timeliness of claims in Evidence.
    When additional "static" claims (i.e., claims representing invariant
-   properties of the Environment) are provided in Endorsements, no
+   properties of the environment) are provided in Endorsements, no
    additional steps are needed for timeliness of those claims since they
    are static rather than dynamically varying over time.  Once
    timeliness of Evidence is appraised, any matching conditionally
@@ -364,7 +367,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
    [RFC9334] for further discussion.
 
    This distinction between static and dynamic claims is about the
-   invariance of properties of the Environment, not about the Endorser's
+   invariance of properties of the environment, not about the Endorser's
    assessment of those properties.  A condition in a Conditionally
    Endorsed Value (Figure 2) is static in the sense that, once matched
    against sufficiently timely Evidence, it deterministically selects a
@@ -538,7 +541,12 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
    A Verifier can use cryptographically protected, mutually
    authenticated secure channels to all its trusted input sources,
-   particularly, Endorsers and Reference Value Providers.  These links
+   particularly, Endorsers and Reference Value Providers.  Signing the
+   Endorsement or Reference Values themselves protects their integrity
+   and authenticates their source, but a mutually authenticated channel
+   additionally lets the source authenticate and authorize the
+   requesting Verifier and protects potentially sensitive content (see
+   Section 9) against disclosure to unauthorized parties.  These links
    should reach as deep as possible into the Verifier, potentially
    terminating within the appraisal session context, to avoid man-in-
    the-middle attacks.  Minimizing the use of intermediaries is also
@@ -562,7 +570,16 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
    This document does not require any actions by IANA.
 
-11.  Informative References
+11.  References
+
+11.1.  Normative References
+
+   [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
+              W. Pan, "Remote ATtestation procedureS (RATS)
+              Architecture", RFC 9334, DOI 10.17487/RFC9334, January
+              2023, <https://www.rfc-editor.org/rfc/rfc9334>.
+
+11.2.  Informative References
 
    [GP-Cert]  GlobalPlatform, "Security Certification", March 2026,
               <https://globalplatform.org/certifications/security-
@@ -579,11 +596,6 @@ Endorsements |   |Actual state|                | Reference state |   | e
               Framework and Enablement (S.A.F.E.) Program", March 2026,
               <https://www.opencompute.org/projects/ocp-safe-program>.
 
-   [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
-              W. Pan, "Remote ATtestation procedureS (RATS)
-              Architecture", RFC 9334, DOI 10.17487/RFC9334, January
-              2023, <https://www.rfc-editor.org/rfc/rfc9334>.
-
    [RFC9711]  Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
               Wallace, "The Entity Attestation Token (EAT)", RFC 9711,
               DOI 10.17487/RFC9711, April 2025,
@@ -599,7 +611,8 @@ Acknowledgements
    The authors wish to thank the following individuals for feedback and
    ideas that contributed to this document: Anton Sokolov, Yogesh
    Deshpande, Thomas Hardjono, Laurence Lundblade, Kathleen Moriarty,
-   Michael Richardson, Steven Bellock, Ned Smith, and Carl Wallace
+   Michael Richardson, Jim Fenton, Jen Linkova, Steven Bellock, Ned
+   Smith, and Carl Wallace
 
 Authors' Addresses
 
