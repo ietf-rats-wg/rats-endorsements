@@ -321,7 +321,11 @@ Endorsements |   |Actual state|                | Reference state |   | e
    Verifier along with the Evidence to appraise, depending on the
    protocol or general remote attestation procedure.  Details are out of
    scope of this document and left to protocol or procedure
-   specifications.
+   specifications.  A specific detail that is out of scope is whether an
+   unreachable Endorser only postpones the appraisal of Evidence or
+   renders it permanently impossible, which depends on whether the
+   Endorsement remains retrievable and applicable to the previously
+   collected Evidence.
 
    Specific protocol documents are also responsible for documenting what
    particular algorithm or cryptographic protocol is used for the
@@ -331,7 +335,10 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
    Evidence can contain an identifier for the Attester (e.g., [RFC9711]
    ueid) in a dedicated "identity claim" that can be used by the
-   Verifier to look up its verification key for the Attester.
+   Verifier to look up its verification key for the Attester.  The
+   granularity at which such identifiers, and therefore the signature-
+   checking keys endorsed for them, apply (e.g., per instance, class, or
+   other claims) is out of scope of this document.
 
    While identity claims are just another type of claims that may be
    endorsed, some implementations might treat them differently.  For
@@ -610,10 +617,10 @@ Endorsements |   |Actual state|                | Reference state |   | e
 Acknowledgements
 
    The authors wish to thank the following individuals for feedback and
-   ideas that contributed to this document: Anton Sokolov, Yogesh
-   Deshpande, Thomas Hardjono, Laurence Lundblade, Kathleen Moriarty,
-   Michael Richardson, Jim Fenton, Jen Linkova, Steven Bellock, Ned
-   Smith, and Carl Wallace
+   ideas that contributed to this document: Serhii Nikolaichuk, Anton
+   Sokolov, Yogesh Deshpande, Thomas Hardjono, Laurence Lundblade,
+   Kathleen Moriarty, Michael Richardson, Jim Fenton, Jen Linkova,
+   Steven Bellock, Ned Smith, and Carl Wallace
 
 Authors' Addresses
 
