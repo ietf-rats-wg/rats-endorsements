@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 15 March 2027                                        T. Fossati
+Expires: 20 March 2027                                        T. Fossati
                                                                   NVIDIA
-                                                       11 September 2026
+                                                       16 September 2026
 
 
                            RATS Endorsements
@@ -57,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 March 2027.
+   This Internet-Draft will expire on 20 March 2027.
 
 Copyright Notice
 
@@ -114,8 +114,8 @@ Table of Contents
 
    Appraisal policies (Appraisal Policy for Evidence, and Appraisal
    Policy for Attestation Results) involve comparing the actual state of
-   an Attester against desired or undesired states, in order to
-   determine how trustworthy the Attester is for its purposes.  The
+   an Attester against desired or undesired states, to determine how
+   trustworthy the Attester is for the Relying Party's purposes.  The
    state of an Attester includes its "shape", i.e., the structural
    composition of the Attester as the arrangement of its various
    execution environments, which are typically organized hierarchically.
@@ -129,11 +129,11 @@ Table of Contents
    are compared.
 
    Each Attester in general has at least one Attesting Environment and
-   one Target Environment (e.g., hardware, firmware, Operating System,
+   one Target Environment (e.g., hardware, firmware, operating system,
    etc.).  Typically, each Attester has multiple Target Environments,
    each with their own "claims sets" representing their actual state.
-   Additionally, the number of Target Environments and Attesting
-   Environments that are components of an Attester are not limited.
+   Additionally, there can be multiple Target Environments and Attesting
+   Environments that are components of an Attester.
 
    "Actual state" is a group of claims sets about the actual state of
    the Attester at a given point in time.  Each claims set holds claims
@@ -214,8 +214,8 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
    While the above example only shows one layer within Endorsements as
    the typical case, there could be multiple layers (see Section 6),
-   such as a chip added to a hardware board potentially from a different
-   vendor.
+   such as a chip, potentially from a different vendor, that is added to
+   a hardware board.
 
    A Trust Anchor Store is a special case of state above, where the
    Reference State would be the set of trust anchors accepted (or
@@ -314,7 +314,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
    the Verifier.  However, for scalability the Verifier typically is
    provisioned with a trusted root CA certificate (a trust anchor).
    This means that an Endorsement from an Endorser includes the
-   Attesting Enviroment's verification key material in the form of a
+   Attesting Environment's verification key material in the form of a
    certificate that chains up to that trust anchor (a certification
    path).  Such a certificate might be stored in the Verifier, or might
    be resolved on demand via some protocol, or might be passed to the
@@ -341,7 +341,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
    claim(s) before spending effort on another step to appraise other
    claims for determining trustworthiness.
 
-   This document treats identity claims as with any other claims but
+   This document treats identity claims the same as other claims but
    allows Appraisal Policy for Evidence to have multiple phases if
    desired.
 
@@ -488,12 +488,13 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
 7.2.  Scalability Considerations for Formats
 
-   We currently assume that Reference Value Providers typically provide
-   the same information to a potentially large number of clients
+   This document assumes that Reference Value Providers typically
+   provide the same information to a potentially large number of clients
    (Verifiers, or potentially to other entities for later relay to a
    Verifier), and are generally on devices that are not constrained
    nodes, and hence additional scalability, including code size, is not
-   a significant concern.  We also assume the same is true of Endorsers.
+   a significant concern.  This document also assumes the same is true
+   of Endorsers.
 
    The scenario where scalability in terms of code size is strongest,
    however, is when a Verifier is embedded into a constrained node.  For
@@ -516,8 +517,8 @@ Endorsements |   |Actual state|                | Reference state |   | e
    case.
 
    Similarly, an embedded constrained Verifier can choose to not support
-   conditionally endorsed values, in order to avoid the complexity
-   introduced by such.
+   conditionally endorsed values to avoid the complexity introduced by
+   them.
 
 8.  Security Considerations
 

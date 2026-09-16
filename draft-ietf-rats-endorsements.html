@@ -1050,7 +1050,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Thaler, et al.</td>
-<td class="center">Expires 15 March 2027</td>
+<td class="center">Expires 20 March 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1066,12 +1066,12 @@ svg {
 <a href="https://www.rfc-editor.org/rfc/rfc9334" class="eref">9334</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-09-11" class="published">11 September 2026</time>
+<time datetime="2026-09-16" class="published">16 September 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-03-15">15 March 2027</time></dd>
+<dd class="expires"><time datetime="2027-03-20">20 March 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1127,7 +1127,7 @@ Instead, it extends RFC9334 to provide further details on Reference Values and E
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 15 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 20 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1240,8 +1240,8 @@ However, this has since changed, and the purpose of this document is to update <
       </h2>
 <p id="section-2-1">Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
 Attestation Results) involve comparing the actual state of an Attester against
-desired or undesired states, in order to determine how trustworthy the Attester
-is for its purposes.  The state of an Attester includes its "shape",
+desired or undesired states, to determine how trustworthy the Attester
+is for the Relying Party's purposes. The state of an Attester includes its "shape",
 i.e., the structural composition of the Attester as the arrangement of its
 various execution environments, which are typically organized
 hierarchically.
@@ -1252,10 +1252,10 @@ of its components at a certain point in time. Thus, a Verifier needs to receive
 conceptual messages with information about actual state, and information about desired/undesired
 states, and an appraisal policy that controls how the two are compared.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <p id="section-2-2">Each Attester in general has at least one Attesting Environment and one Target
-Environment (e.g., hardware, firmware, Operating System, etc.).  Typically, each
+Environment (e.g., hardware, firmware, operating system, etc.).  Typically, each
 Attester has multiple Target Environments, each with their own "claims sets"
-representing their actual state.  Additionally, the number of
-Target Environments and Attesting Environments that are components of an Attester are not limited.<a href="#section-2-2" class="pilcrow">¶</a></p>
+representing their actual state. Additionally,
+there can be multiple Target Environments and Attesting Environments that are components of an Attester.<a href="#section-2-2" class="pilcrow">¶</a></p>
 <p id="section-2-3">"Actual state" is a group of claims sets about the actual state of the Attester at a
 given point in time. Each claims set holds claims about a specific Target Environment
 that is essential to determining trustworthiness.  Generally speaking, each claim
@@ -1428,7 +1428,7 @@ as discussed in <span><a href="https://rfc-editor.org/rfc/rfc9334#section-3.2" c
 </div>
 <p id="section-2.1-6">While the above example only shows one layer within Endorsements as
 the typical case, there could be multiple layers (see <a href="#multiple-endorsements" class="auto internal xref">Section 6</a>), such as
-a chip added to a hardware board potentially from a different vendor.<a href="#section-2.1-6" class="pilcrow">¶</a></p>
+a chip, potentially from a different vendor, that is added to a hardware board.<a href="#section-2.1-6" class="pilcrow">¶</a></p>
 <p id="section-2.1-7">A Trust Anchor Store is a special case of
 state above, where the Reference State would be the set of trust anchors
 accepted (or rejected) by the Verifier, and the Actual State would be
@@ -1544,7 +1544,7 @@ While use of public key cryptography is typical for a verification key, cryptogr
 <p id="section-4-4">The Verifier must have access to a verification key for each Attesting Environment. Such a key
 could be provisioned directly in the Verifier. However, for scalability the Verifier
 typically is provisioned with a trusted root CA certificate (a trust anchor). This means that an
-Endorsement from an Endorser includes the Attesting Enviroment's verification key material
+Endorsement from an Endorser includes the Attesting Environment's verification key material
 in the form of a certificate that chains up to that trust anchor (a certification path).  Such a certificate
 might be stored in the Verifier, or might be resolved on demand via some protocol,
 or might be passed to the Verifier along with the Evidence to appraise, depending on the protocol or general remote attestation procedure.
@@ -1562,7 +1562,7 @@ cryptographically appraise that the Evidence
 has been generated by the Attester that has the key material associated
 with the identifier in the identity claim(s) before spending effort on
 another step to appraise other claims for determining trustworthiness.<a href="#section-4-7" class="pilcrow">¶</a></p>
-<p id="section-4-8">This document treats identity claims as with any other claims but allows
+<p id="section-4-8">This document treats identity claims the same as other claims but allows
 Appraisal Policy for Evidence to have multiple phases if desired.<a href="#section-4-8" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1805,11 +1805,11 @@ can reduce complexity and hence increase security.<a href="#section-7.1-1" class
         <h3 id="name-scalability-considerations-">
 <a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-scalability-considerations-" class="section-name selfRef">Scalability Considerations for Formats</a>
         </h3>
-<p id="section-7.2-1">We currently assume that Reference Value Providers typically
+<p id="section-7.2-1">This document assumes that Reference Value Providers typically
 provide the same information to a potentially large number of clients
 (Verifiers, or potentially to other entities for later relay to a Verifier),
 and are generally on devices that are not constrained nodes, and hence additional
-scalability, including code size, is not a significant concern.  We also assume
+scalability, including code size, is not a significant concern.  This document also assumes
 the same is true of Endorsers.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <p id="section-7.2-2">The scenario where scalability in terms of code size is strongest, however, is
 when a Verifier is embedded into a constrained node.  For example, when a constrained
@@ -1826,7 +1826,7 @@ a required trust anchor that Evidence must be signed with and little else).<a hr
 from the later Verifier, can provide code size savings due to having only a single parser
 in this limited case.<a href="#section-7.2-3" class="pilcrow">¶</a></p>
 <p id="section-7.2-4">Similarly, an embedded constrained Verifier can choose to not support conditionally
-endorsed values, in order to avoid the complexity introduced by such.<a href="#section-7.2-4" class="pilcrow">¶</a></p>
+endorsed values to avoid the complexity introduced by them.<a href="#section-7.2-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
