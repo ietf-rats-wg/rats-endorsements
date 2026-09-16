@@ -140,6 +140,11 @@ RATS conceptual messages in {{-rats-arch}} fall into the above categories as fol
 * Reference state: Reference Values
 * Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy for Attestation Results
 
+Evidence and Endorsements are both "actual state" messages, but they differ in who asserts the claims and about which Environment.
+Evidence is a set of claims about a Target Environment, generated (and typically signed) by the Attesting Environment.
+Endorsements, by contrast, are provided by an Endorser -- a role distinct from the Attester, such as a manufacturer or certification body -- and typically carry claims about an Attesting Environment that has no lower-layer Attesting Environment of its own to vouch for it, or other claims about the Attester's features that the Attester is not in a position to self-assert.
+See also {{Section 4.2 of -rats-arch}}.
+
 Hints or suggestions for how to do a comparison might
 be supplied by a Reference Value Provider (as part of Reference Values),
 an Endorser (in an Endorsement), and/or an Attester (in Evidence),
@@ -173,9 +178,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
 ~~~~
 {: #input artwork-align="center" title="Example Verifier Input"}
 
-While the above example only shows one layer within Endorsements as
-the typical case, there could be multiple layers (see {{multiple-endorsements}}), such as
-a chip, potentially from a different vendor, that is added to a hardware board.
+({{input}} shows Endorsements only at layer 0 as a typical example, not as a general rule.)
 
 A Trust Anchor Store is a special case of
 state above, where the Reference State would be the set of trust anchors
