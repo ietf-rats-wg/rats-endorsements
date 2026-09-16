@@ -37,11 +37,13 @@ author:
   country: Germany
 - ins: T. Fossati
   name: Thomas Fossati
-  organization: Linaro
-  email: Thomas.Fossati@linaro.org
+  organization: NVIDIA
+  email: tfossati@nvidia.com
+
+normative:
+  RFC9334: rats-arch
 
 informative:
-  RFC9334: rats-arch
   RFC9711: rats-eat
   I-D.ietf-rats-corim: rats-corim
   TCG-DICE:
@@ -88,9 +90,10 @@ However, this has since changed, and the purpose of this document is to update {
 Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
 Attestation Results) involve comparing the actual state of an Attester against
 desired or undesired states, to determine how trustworthy the Attester
-is for the Relying Party's purposes.  The state of an Attester represents the Attester's
-"shape" as the arrangement of its various execution environments, which are
-typically organized hierarchically.
+is for the Relying Party's purposes. The state of an Attester includes its "shape",
+i.e., the structural composition of the Attester as the arrangement of its
+various execution environments, which are typically organized
+hierarchically.
 The state of an Attester also encompasses the combination of static and
 dynamic composition (e.g., provisioned and deployed software, firmware, and
 micro-code), static and dynamic configuration, and the resulting operational state
@@ -276,11 +279,11 @@ Appraisal Policy for Evidence to have multiple phases if desired.
 
 # Timeliness
 
-Specific protocol documents are also responsible for documenting how Timeliness
+Specific protocol documents are also responsible for documenting how timeliness
 of the Endorsement itself (e.g., using a certificate lifetime) is provided.
 
 {{Section 8.1 of -rats-arch}} discusses timeliness of claims in Evidence.  When
-additional "static" claims (i.e., claims representing invariant properties of the Environment) are provided in Endorsements, no additional steps
+additional "static" claims (i.e., claims representing invariant properties of the environment) are provided in Endorsements, no additional steps
 are needed for timeliness of those claims since they are static rather than
 dynamically varying over time.  Once timeliness of Evidence is appraised,
 any matching conditionally endorsed values can be applied.
@@ -290,6 +293,40 @@ any vulnerabilities in the version of firmware are currently known), then
 the same timeliness considerations as for claims in Evidence would apply,
 and would be the responsibility of specific protocol documents. See
 {{Section 10 of -rats-arch}} and {{Appendix A of -rats-arch}} for further discussion.
+
+This distinction between static and dynamic claims is about the invariance
+of properties of the environment, not about the Endorser's assessment of
+those properties.  A condition in a Conditionally Endorsed Value ({{conditional}})
+is static in the sense that, once matched against sufficiently timely
+Evidence, it deterministically selects a claims-set; however, the verdict an
+Endorser attaches to a given condition can itself change over time as the
+Endorser's own knowledge evolves, even though the condition's matching value
+does not.  For example, an Endorser might issue a Conditional Endorsement
+stating that if a given RoT firmware measurement matches value H, the device
+is trusted, and later, after a vulnerability is discovered in that firmware,
+issue a further Conditional Endorsement stating that if the same value H is
+matched, the device is untrusted.  Both Endorsements may be signed by an
+Endorser that remains in good standing, so this is a different problem than
+Endorser standing: it is about which of two (or more) temporally scoped,
+and potentially contradicting, Endorsements apply at the time of
+appraisal.  Endorsement formats therefore need a way to bind a validity
+period to Endorsement content, in addition to any validity information
+about the Endorser's standing, so that a Verifier can determine which
+Endorsement supersedes others given the same condition.  For example,
+{{-rats-corim}} provides a `rim-validity` window in the corim-map for this
+purpose, distinct from the `signature-validity` window.
+
+The Endorser's standing (i.e., the fact that its signing key
+or certificate is still valid or its trust anchor is still recognized) is a
+further, independent consideration, logically separate from the validity
+of the Endorsement content discussed above.  Whether the Endorser's standing
+is evaluated relative to the time the Evidence was generated or the time of
+appraisal is a decision for the specific protocol or appraisal policy, and
+needs to be documented as part of the timeliness of the Endorsement itself.
+For example, the CoRIM data model provides a `signature-validity` window
+that bounds the validity of the Endorser's signature, and the CoRIM
+processor described in {{Section 8 of -rats-corim}} checks it, together
+with revocation and trust anchor status, relative to the time of appraisal.
 
 # Multiple Endorsements {#multiple-endorsements}
 
@@ -399,7 +436,7 @@ endorsed values to avoid the complexity introduced by them.
 
 # Security Considerations
 
-{{Section 8.4 of -rats-arch}} discusses how a Verifier stores one or more trust anchors in its trust anchor store.
+{{Section 7.4 of -rats-arch}} discusses how a Verifier stores one or more trust anchors in its trust anchor store.
 A Verifier expresses its trust in an Endorser by storing a trust anchor for that Endorser.
 The binding from an Endorsement to a given Target Environment is done as discussed in {{endorsing-keys}} of this document.
 
@@ -411,11 +448,12 @@ This includes public keys that identify trusted supply chain actors.
 For more detailed information on protecting Trust Anchors, refer to {{Section 12.4 of -rats-arch}}.
 
 A Verifier can use cryptographically protected, mutually authenticated secure channels to all its trusted input sources, particularly, Endorsers and Reference Value Providers.
+Signing the Endorsement or Reference Values themselves protects their integrity and authenticates their source, but a mutually authenticated channel additionally lets the source authenticate and authorize the requesting Verifier and protects potentially sensitive content (see {{privacy}}) against disclosure to unauthorized parties.
 These links should reach as deep as possible into the Verifier, potentially terminating within the appraisal session context, to avoid man-in-the-middle attacks.
 Minimizing the use of intermediaries is also vital, as each intermediary is another party that might need to be trusted.
 Refer to {{Section 12.2 of -rats-arch}} for information on conceptual message protection.
 
-# Privacy Considerations
+# Privacy Considerations {#privacy}
 
 The privacy considerations regarding conceptual messages, as discussed in {{Section 11 of -rats-arch}}, apply.
 In particular, since Endorsements and Reference Values can contain personally identifiable information (PII) about a large number of devices, strong confidentiality protection is required at the time of conveyance.
@@ -432,10 +470,14 @@ This document does not require any actions by IANA.
 {: numbered="false"}
 
 The authors wish to thank the following individuals for feedback and ideas that contributed to this document:
+{{{Anton Sokolov}}},
 {{{Yogesh Deshpande}}},
 {{{Thomas Hardjono}}},
 {{{Laurence Lundblade}}},
 {{{Kathleen Moriarty}}},
 {{{Michael Richardson}}},
+{{{Jim Fenton}}},
+{{{Jen Linkova}}},
+{{{Steven Bellock}}},
 {{{Ned Smith}}}, and
 {{{Carl Wallace}}}
