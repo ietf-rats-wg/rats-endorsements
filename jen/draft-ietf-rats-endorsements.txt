@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 12 March 2027                                        T. Fossati
+Expires: 20 March 2027                                        T. Fossati
                                                                   NVIDIA
-                                                        8 September 2026
+                                                       16 September 2026
 
 
                            RATS Endorsements
@@ -57,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 March 2027.
+   This Internet-Draft will expire on 20 March 2027.
 
 Copyright Notice
 
@@ -88,7 +88,9 @@ Table of Contents
    8.  Security Considerations
    9.  Privacy Considerations
    10. IANA Considerations
-   11. Informative References
+   11. References
+     11.1.  Normative References
+     11.2.  Informative References
    Acknowledgements
    Authors' Addresses
 
@@ -112,25 +114,26 @@ Table of Contents
 
    Appraisal policies (Appraisal Policy for Evidence, and Appraisal
    Policy for Attestation Results) involve comparing the actual state of
-   an Attester against desired or undesired states, in order to
-   determine how trustworthy the Attester is for its purposes.  The
-   state of an Attester represents the Attester's "shape" as the
-   arrangement of its various execution environments, which are
-   typically organized hierarchically.  The state of an Attester also
-   encompasses the combination of static and dynamic composition (e.g.,
-   provisioned and deployed software, firmware, and micro-code), static
-   and dynamic configuration, and the resulting operational state of its
-   components at a certain point in time.  Thus, a Verifier needs to
-   receive conceptual messages with information about actual state, and
-   information about desired/undesired states, and an appraisal policy
-   that controls how the two are compared.
+   an Attester against desired or undesired states, to determine how
+   trustworthy the Attester is for the Relying Party's purposes.  The
+   state of an Attester includes its "shape", i.e., the structural
+   composition of the Attester as the arrangement of its various
+   execution environments, which are typically organized hierarchically.
+   The state of an Attester also encompasses the combination of static
+   and dynamic composition (e.g., provisioned and deployed software,
+   firmware, and micro-code), static and dynamic configuration, and the
+   resulting operational state of its components at a certain point in
+   time.  Thus, a Verifier needs to receive conceptual messages with
+   information about actual state, and information about desired/
+   undesired states, and an appraisal policy that controls how the two
+   are compared.
 
    Each Attester in general has at least one Attesting Environment and
-   one Target Environment (e.g., hardware, firmware, Operating System,
+   one Target Environment (e.g., hardware, firmware, operating system,
    etc.).  Typically, each Attester has multiple Target Environments,
    each with their own "claims sets" representing their actual state.
-   Additionally, the number of Target Environments and Attesting
-   Environments that are components of an Attester are not limited.
+   Additionally, there can be multiple Target Environments and Attesting
+   Environments that are components of an Attester.
 
    "Actual state" is a group of claims sets about the actual state of
    the Attester at a given point in time.  Each claims set holds claims
@@ -320,14 +323,18 @@ Endorsements |   |Actual state|                | Reference state |   | e
    the Verifier.  However, for scalability the Verifier typically is
    provisioned with a trusted root CA certificate (a trust anchor).
    This means that an Endorsement from an Endorser includes the
-   Attesting Enviroment's verification key material in the form of a
+   Attesting Environment's verification key material in the form of a
    certificate that chains up to that trust anchor (a certification
    path).  Such a certificate might be stored in the Verifier, or might
    be resolved on demand via some protocol, or might be passed to the
    Verifier along with the Evidence to appraise, depending on the
    protocol or general remote attestation procedure.  Details are out of
    scope of this document and left to protocol or procedure
-   specifications.
+   specifications.  A specific detail that is out of scope is whether an
+   unreachable Endorser only postpones the appraisal of Evidence or
+   renders it permanently impossible, which depends on whether the
+   Endorsement remains retrievable and applicable to the previously
+   collected Evidence.
 
    Specific protocol documents are also responsible for documenting what
    particular algorithm or cryptographic protocol is used for the
@@ -337,7 +344,10 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
    Evidence can contain an identifier for the Attester (e.g., [RFC9711]
    ueid) in a dedicated "identity claim" that can be used by the
-   Verifier to look up its verification key for the Attester.
+   Verifier to look up its verification key for the Attester.  The
+   granularity at which such identifiers, and therefore the signature-
+   checking keys endorsed for them, apply (e.g., per instance, class, or
+   other claims) is out of scope of this document.
 
    While identity claims are just another type of claims that may be
    endorsed, some implementations might treat them differently.  For
@@ -347,7 +357,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
    claim(s) before spending effort on another step to appraise other
    claims for determining trustworthiness.
 
-   This document treats identity claims as with any other claims but
+   This document treats identity claims the same as other claims but
    allows Appraisal Policy for Evidence to have multiple phases if
    desired.
 
@@ -359,7 +369,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
    Section 8.1 of [RFC9334] discusses timeliness of claims in Evidence.
    When additional "static" claims (i.e., claims representing invariant
-   properties of the Environment) are provided in Endorsements, no
+   properties of the environment) are provided in Endorsements, no
    additional steps are needed for timeliness of those claims since they
    are static rather than dynamically varying over time.  Once
    timeliness of Evidence is appraised, any matching conditionally
@@ -373,7 +383,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
    [RFC9334] for further discussion.
 
    This distinction between static and dynamic claims is about the
-   invariance of properties of the Environment, not about the Endorser's
+   invariance of properties of the environment, not about the Endorser's
    assessment of those properties.  A condition in a Conditionally
    Endorsed Value (Figure 2) is static in the sense that, once matched
    against sufficiently timely Evidence, it deterministically selects a
@@ -494,12 +504,13 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
 7.2.  Scalability Considerations for Formats
 
-   We currently assume that Reference Value Providers typically provide
-   the same information to a potentially large number of clients
+   This document assumes that Reference Value Providers typically
+   provide the same information to a potentially large number of clients
    (Verifiers, or potentially to other entities for later relay to a
    Verifier), and are generally on devices that are not constrained
    nodes, and hence additional scalability, including code size, is not
-   a significant concern.  We also assume the same is true of Endorsers.
+   a significant concern.  This document also assumes the same is true
+   of Endorsers.
 
    The scenario where scalability in terms of code size is strongest,
    however, is when a Verifier is embedded into a constrained node.  For
@@ -522,8 +533,8 @@ Endorsements |   |Actual state|                | Reference state |   | e
    case.
 
    Similarly, an embedded constrained Verifier can choose to not support
-   conditionally endorsed values, in order to avoid the complexity
-   introduced by such.
+   conditionally endorsed values to avoid the complexity introduced by
+   them.
 
 8.  Security Considerations
 
@@ -547,7 +558,12 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
    A Verifier can use cryptographically protected, mutually
    authenticated secure channels to all its trusted input sources,
-   particularly, Endorsers and Reference Value Providers.  These links
+   particularly, Endorsers and Reference Value Providers.  Signing the
+   Endorsement or Reference Values themselves protects their integrity
+   and authenticates their source, but a mutually authenticated channel
+   additionally lets the source authenticate and authorize the
+   requesting Verifier and protects potentially sensitive content (see
+   Section 9) against disclosure to unauthorized parties.  These links
    should reach as deep as possible into the Verifier, potentially
    terminating within the appraisal session context, to avoid man-in-
    the-middle attacks.  Minimizing the use of intermediaries is also
@@ -571,7 +587,16 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
    This document does not require any actions by IANA.
 
-11.  Informative References
+11.  References
+
+11.1.  Normative References
+
+   [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
+              W. Pan, "Remote ATtestation procedureS (RATS)
+              Architecture", RFC 9334, DOI 10.17487/RFC9334, January
+              2023, <https://www.rfc-editor.org/rfc/rfc9334>.
+
+11.2.  Informative References
 
    [GP-Cert]  GlobalPlatform, "Security Certification", March 2026,
               <https://globalplatform.org/certifications/security-
@@ -588,11 +613,6 @@ Endorsements |   |Actual state|                | Reference state |   | e
               Framework and Enablement (S.A.F.E.) Program", March 2026,
               <https://www.opencompute.org/projects/ocp-safe-program>.
 
-   [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
-              W. Pan, "Remote ATtestation procedureS (RATS)
-              Architecture", RFC 9334, DOI 10.17487/RFC9334, January
-              2023, <https://www.rfc-editor.org/rfc/rfc9334>.
-
    [RFC9711]  Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
               Wallace, "The Entity Attestation Token (EAT)", RFC 9711,
               DOI 10.17487/RFC9711, April 2025,
@@ -606,9 +626,10 @@ Endorsements |   |Actual state|                | Reference state |   | e
 Acknowledgements
 
    The authors wish to thank the following individuals for feedback and
-   ideas that contributed to this document: Anton Sokolov, Yogesh
-   Deshpande, Thomas Hardjono, Laurence Lundblade, Kathleen Moriarty,
-   Michael Richardson, Steven Bellock, Ned Smith, and Carl Wallace
+   ideas that contributed to this document: Serhii Nikolaichuk, Anton
+   Sokolov, Yogesh Deshpande, Thomas Hardjono, Laurence Lundblade,
+   Kathleen Moriarty, Michael Richardson, Jim Fenton, Jen Linkova,
+   Steven Bellock, Ned Smith, and Carl Wallace
 
 Authors' Addresses
 
