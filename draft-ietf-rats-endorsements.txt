@@ -293,12 +293,12 @@ Endorsements |   |Actual state|                | Reference state |   | e
    appraisal or not.
 
    As such the matching policy for conditionally endorsed values must be
-   up to the Endorser not the Appraisal Policy Provider.  Thus, an
-   Endorsement format that supports conditionally endorsed values (e.g.,
-   [I-D.ietf-rats-corim]) would probably include some minimal matching
-   policy (e.g., exact match against a singleton reference value).  This
-   unfortunately complicates the Verifier design as it may need multiple
-   parsers for matching policies.
+   up to the Endorser not the Verifier Owner and/or Relying Party Owner.
+   Thus, an Endorsement format that supports conditionally endorsed
+   values (e.g., [I-D.ietf-rats-corim]) would probably include some
+   minimal matching policy (e.g., exact match against a singleton
+   reference value).  This unfortunately complicates the Verifier design
+   as it may need multiple parsers for matching policies.
 
 4.  Endorsing Verification Keys
 
