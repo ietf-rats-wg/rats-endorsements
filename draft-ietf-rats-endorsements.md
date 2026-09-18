@@ -320,10 +320,10 @@ Endorser standing: it is about which of two (or more) temporally scoped,
 and potentially contradicting, Endorsements apply at the time of
 appraisal.  Endorsement formats therefore need a way to bind a validity
 period to Endorsement content, in addition to any validity information
-about the Endorser's standing, so that a Verifier can determine which
-Endorsement supersedes others given the same condition.  For example,
-{{-rats-corim}} provides a `rim-validity` window in the corim-map for this
-purpose, distinct from the `signature-validity` window.
+about the Endorser's standing (discussed below), so that a Verifier can
+determine which Endorsement supersedes others given the same condition.
+For example, {{-rats-corim}} provides a `rim-validity` window in the
+corim-map for this purpose.
 
 The Endorser's standing (i.e., the fact that its signing key
 or certificate is still valid or its trust anchor is still recognized) is a
@@ -333,9 +333,10 @@ is evaluated relative to the time the Evidence was generated or the time of
 appraisal is a decision for the specific protocol or appraisal policy, and
 needs to be documented as part of the timeliness of the Endorsement itself.
 For example, the CoRIM data model provides a `signature-validity` window
-that bounds the validity of the Endorser's signature, and the CoRIM
-processor described in {{Section 8 of -rats-corim}} checks it, together
-with revocation and trust anchor status, relative to the time of appraisal.
+that bounds the validity of the Endorser's signature, distinct from the
+`rim-validity` window discussed above, and the CoRIM processor described
+in {{Section 8 of -rats-corim}} checks it, together with revocation and
+trust anchor status, relative to the time of appraisal.
 
 # Multiple Endorsements {#multiple-endorsements}
 
