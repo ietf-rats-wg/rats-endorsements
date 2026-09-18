@@ -14,23 +14,23 @@ This document illustrates the purpose and role of Endorsements and discusses som
        This document does not aim to define a conceptual message format for Endorsements and Reference Values.
 Instead, it extends RFC9334 to provide further details on Reference Values and Endorsements, as these topics were outside the scope of the RATS charter when RFC9334 was developed. 
     " name="description">
-<meta content="xml2rfc 3.34.0" name="generator">
+<meta content="xml2rfc 3.34.1" name="generator">
 <meta content="Internet-Draft" name="keyword">
 <meta content="draft-ietf-rats-endorsements-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.34.0
+  xml2rfc 3.34.1
     Python 3.14.7
-    ConfigArgParse 1.7.5
+    ConfigArgParse 1.7.7
     google-i18n-address 3.1.1
     intervaltree 3.2.1
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.11.7
+    platformdirs 4.11.10
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
-    wcwidth 0.8.3
+    wcwidth 0.8.4
 -->
 <link href="draft-ietf-rats-endorsements.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1050,7 +1050,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Thaler, et al.</td>
-<td class="center">Expires 20 March 2027</td>
+<td class="center">Expires 22 March 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1066,12 +1066,12 @@ svg {
 <a href="https://www.rfc-editor.org/rfc/rfc9334" class="eref">9334</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-09-16" class="published">16 September 2026</time>
+<time datetime="2026-09-18" class="published">18 September 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-03-20">20 March 2027</time></dd>
+<dd class="expires"><time datetime="2027-03-22">22 March 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1127,7 +1127,7 @@ Instead, it extends RFC9334 to provide further details on Reference Values and E
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 20 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 22 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1608,10 +1608,10 @@ Endorser standing: it is about which of two (or more) temporally scoped,
 and potentially contradicting, Endorsements apply at the time of
 appraisal.  Endorsement formats therefore need a way to bind a validity
 period to Endorsement content, in addition to any validity information
-about the Endorser's standing, so that a Verifier can determine which
-Endorsement supersedes others given the same condition.  For example,
-<span>[<a href="#I-D.ietf-rats-corim" class="cite xref">I-D.ietf-rats-corim</a>]</span> provides a <code>rim-validity</code> window in the corim-map for this
-purpose, distinct from the <code>signature-validity</code> window.<a href="#section-5-4" class="pilcrow">¶</a></p>
+about the Endorser's standing (discussed below), so that a Verifier can
+determine which Endorsement supersedes others given the same condition.
+For example, <span>[<a href="#I-D.ietf-rats-corim" class="cite xref">I-D.ietf-rats-corim</a>]</span> provides a <code>rim-validity</code> window in the
+corim-map for this purpose.<a href="#section-5-4" class="pilcrow">¶</a></p>
 <p id="section-5-5">The Endorser's standing (i.e., the fact that its signing key
 or certificate is still valid or its trust anchor is still recognized) is a
 further, independent consideration, logically separate from the validity
@@ -1620,9 +1620,10 @@ is evaluated relative to the time the Evidence was generated or the time of
 appraisal is a decision for the specific protocol or appraisal policy, and
 needs to be documented as part of the timeliness of the Endorsement itself.
 For example, the CoRIM data model provides a <code>signature-validity</code> window
-that bounds the validity of the Endorser's signature, and the CoRIM
-processor described in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-rats-corim-11#section-8" class="relref">Section 8</a> of [<a href="#I-D.ietf-rats-corim" class="cite xref">I-D.ietf-rats-corim</a>]</span> checks it, together
-with revocation and trust anchor status, relative to the time of appraisal.<a href="#section-5-5" class="pilcrow">¶</a></p>
+that bounds the validity of the Endorser's signature, distinct from the
+<code>rim-validity</code> window discussed above, and the CoRIM processor described
+in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-rats-corim-11#section-8" class="relref">Section 8</a> of [<a href="#I-D.ietf-rats-corim" class="cite xref">I-D.ietf-rats-corim</a>]</span> checks it, together with revocation and
+trust anchor status, relative to the time of appraisal.<a href="#section-5-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="multiple-endorsements">
