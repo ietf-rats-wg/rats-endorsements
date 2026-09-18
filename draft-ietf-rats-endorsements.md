@@ -250,7 +250,7 @@ with a private key that the Attesting Environment possesses, and the Verifier wi
 the resulting Evidence with a public key it possesses, called a verification key below.
 While use of public key cryptography is typical for a verification key, cryptography other than public key may also be used.
 
-Endorsing the linkage between such verification keys and their associated Attesting Environments is crucial to the verification process.
+Endorsing the linkage between such verification keys and their associated Attesting Environments is crucial to the appraisal process.
 
 The Verifier must have access to a verification key for each Attesting Environment. Such a key
 could be provisioned directly in the Verifier. However, for scalability the Verifier
@@ -265,8 +265,8 @@ renders it permanently impossible, which depends on whether the Endorsement
 remains retrievable and applicable to the previously collected Evidence.
 
 Specific protocol documents are also responsible for documenting what
-particular algorithm or cryptographic protocol is used for the verification
-of the Attester. The verification key (i.e., a key with the purpose of signature checking) could be, typically, a symmetric key, a raw public key, or a certified public key.
+particular algorithm or cryptographic protocol is used for the appraisal
+of the Evidence. The verification key (i.e., a key with the purpose of signature checking) could be, typically, a symmetric key, a raw public key, or a certified public key.
 
 Evidence can contain an identifier for the Attester
 (e.g., {{-rats-eat}} `ueid`) in a dedicated "identity claim"
@@ -317,7 +317,7 @@ issue a further Conditional Endorsement stating that if the same value H is
 matched, the device is untrusted.  Both Endorsements may be signed by an
 Endorser that remains in good standing, so this is a different problem than
 Endorser standing: it is about which of two (or more) temporally scoped,
-and potentially contradicting, Endorsements apply at the time of
+and potentially contradictory, Endorsements apply at the time of
 appraisal.  Endorsement formats therefore need a way to bind a validity
 period to Endorsement content, in addition to any validity information
 about the Endorser's standing (discussed below), so that a Verifier can
