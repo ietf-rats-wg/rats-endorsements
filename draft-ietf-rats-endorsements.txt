@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 22 March 2027                                        T. Fossati
+Expires: 26 March 2027                                        T. Fossati
                                                                   NVIDIA
-                                                       18 September 2026
+                                                       22 September 2026
 
 
                            RATS Endorsements
@@ -57,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 March 2027.
+   This Internet-Draft will expire on 26 March 2027.
 
 Copyright Notice
 
@@ -315,7 +315,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
    may also be used.
 
    Endorsing the linkage between such verification keys and their
-   associated Attesting Environments is crucial to the verification
+   associated Attesting Environments is crucial to the appraisal
    process.
 
    The Verifier must have access to a verification key for each
@@ -338,7 +338,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
 
    Specific protocol documents are also responsible for documenting what
    particular algorithm or cryptographic protocol is used for the
-   verification of the Attester.  The verification key (i.e., a key with
+   appraisal of the Evidence.  The verification key (i.e., a key with
    the purpose of signature checking) could be, typically, a symmetric
    key, a raw public key, or a certified public key.
 
@@ -397,7 +397,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
    same value H is matched, the device is untrusted.  Both Endorsements
    may be signed by an Endorser that remains in good standing, so this
    is a different problem than Endorser standing: it is about which of
-   two (or more) temporally scoped, and potentially contradicting,
+   two (or more) temporally scoped, and potentially contradictory,
    Endorsements apply at the time of appraisal.  Endorsement formats
    therefore need a way to bind a validity period to Endorsement
    content, in addition to any validity information about the Endorser's
