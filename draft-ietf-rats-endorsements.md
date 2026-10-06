@@ -514,6 +514,7 @@ The authors wish to thank the following individuals for feedback and ideas that 
 {{{Thomas Hardjono}}},
 {{{Laurence Lundblade}}},
 {{{Kathleen Moriarty}}},
+{{{Ketan Talaulikar}}},
 {{{Michael Richardson}}},
 {{{Jim Fenton}}},
 {{{Jen Linkova}}},
