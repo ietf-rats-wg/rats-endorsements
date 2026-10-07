@@ -1,5 +1,5 @@
 ---
-title: 'RATS Endorsements'
+title: 'Remote Attestation Procedures (RATS) Endorsements'
 abbrev: RATS Endorsements
 docname: draft-ietf-rats-endorsements-latest
 updates: 9334
@@ -67,23 +67,23 @@ informative:
 
 --- abstract
 
-In the IETF Remote Attestation Procedures (RATS) architecture, a Verifier accepts Evidence and uses Appraisal Policy for Evidence, typically with additional input from Endorsements and Reference Values, to generate Attestation Results in formats that are useful for Relying Parties.
+In the IETF Remote Attestation Procedures (RATS) architecture (RFC 9334), a Verifier accepts Evidence and uses Appraisal Policy for Evidence, typically with additional input from Endorsements and Reference Values, to generate Attestation Results in formats that are useful for Relying Parties.
 This document illustrates the purpose and role of Endorsements and discusses some considerations in the choice of message format for Endorsements in the scope of the RATS architecture.
 
-This document does not aim to define a conceptual message format for Endorsements and Reference Values.
-Instead, it extends RFC9334 to provide further details on Reference Values and Endorsements, as these topics were outside the scope of the RATS charter when RFC9334 was developed.
+This document does not aim to define a conceptual message format for Endorsements and Reference Values. Instead, it extends RFC 9334 to provide further details on Reference Values and Endorsements. Otherwise, the document does not change any other part of RFC 9334.
 
 --- middle
 
 # Introduction
 
-{{Section 3 of -rats-arch}} provides an overview of the roles and conceptual messages in the IETF RATS architecture.
-As discussed in that document, a Verifier accepts a well-defined set of RATS conceptual messages: Evidence, Endorsements
+{{Section 3 of -rats-arch}} provides an overview of the roles and conceptual messages in the IETF Remote ATtestation procedureS (RATS) architecture.
+As discussed in that document, a Verifier accepts a well-defined set of RATS conceptual messages: Evidence, Endorsements,
 and Reference Values, as well as Appraisal Policy for Evidence.
 A Verifier appraises Evidence using Appraisal Policy for Evidence, typically against a set of Reference Values.
 
-When {{-rats-arch}} was developed, providing details of Reference Values and Endorsements were outside the scope of the RATS Working Group's charter.
-However, this has since changed, and the purpose of this document is to update {{-rats-arch}} to provide further details on Reference Values and Endorsements.
+This document updates {{-rats-arch}} to provide further details on Reference Values and Endorsements.
+
+Readers are assumed to be familiar with the terms and concepts defined in {{-rats-arch}}.
 
 # Actual State vs Reference State {#statetypes}
 
@@ -94,6 +94,7 @@ is for the Relying Party's purposes. The state of an Attester includes its "shap
 i.e., the structural composition of the Attester as the arrangement of its
 various execution environments, which are typically organized
 hierarchically.
+
 The state of an Attester also encompasses the combination of static and
 dynamic composition (e.g., provisioned and deployed software, firmware, and
 micro-code), static and dynamic configuration, and the resulting operational state
@@ -102,22 +103,22 @@ conceptual messages with information about actual state, and information about d
 states, and an appraisal policy that controls how the two are compared.
 
 Each Attester in general has at least one Attesting Environment and one Target
-Environment (e.g., hardware, firmware, operating system, etc.).  Typically, each
-Attester has multiple Target Environments, each with their own "claims sets"
+Environment (e.g., hardware, firmware, or operating system).  Typically, each
+Attester has multiple Target Environments, each with their own "Claims sets"
 representing their actual state. Additionally,
 there can be multiple Target Environments and Attesting Environments that are components of an Attester.
 
-"Actual state" is a group of claims sets about the actual state of the Attester at a
-given point in time. Each claims set holds claims about a specific Target Environment
-that is essential to determining trustworthiness.  Generally speaking, each claim
+"Actual state" is a group of Claims sets about the actual state of the Attester at a
+given point in time. Each Claims set holds Claims about a specific Target Environment
+that is essential to determining trustworthiness. Each Claim
 has a name
 and a singleton value, being a value collected from a Target Environment of a specific Attester at a given point
-in time. Some claims may inherently have multiple values, such as a list of
+in time. Some Claims may inherently have multiple values, such as a list of
 files in a given location on the device, but in the context of this document such
 a list is treated as a single unit, representing one Attester at one point in time.
 
-"Reference state" is a group of claims sets about the desired or undesired state of
-an Attester.  Typically, each claim has a name and
+"Reference state" is a group of Claims sets about the desired or undesired state of
+an Attester.  Typically, each Claim has a name and
 a set of potential values, being the values that are allowed/disallowed
 when determining the trustworthiness of the Attester.
 Generally, there may be varying degrees of gradation beyond just "allowed" or "disallowed."
@@ -140,19 +141,19 @@ RATS conceptual messages in {{-rats-arch}} fall into the above categories as fol
 * Reference state: Reference Values
 * Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy for Attestation Results
 
-Evidence and Endorsements are both "actual state" messages, but they differ in who asserts the claims and about which Environment.
-Evidence is a set of claims about a Target Environment, generated (and typically signed) by the Attesting Environment.
-Endorsements, by contrast, are provided by an Endorser -- a role distinct from the Attester, such as a manufacturer or certification body -- and typically carry claims about an Attesting Environment that has no lower-layer Attesting Environment of its own to vouch for it, or other claims about the Attester's features that the Attester is not in a position to self-assert.
+Evidence and Endorsements are both "actual state" messages, but they differ in who asserts the Claims and about which Environment.
+Evidence is a set of Claims about a Target Environment, generated (and typically signed) by the Attesting Environment.
+Endorsements, by contrast, are provided by an Endorser -- a role distinct from the Attester, such as a manufacturer or certification body -- and typically carry Claims about an Attesting Environment that has no lower-layer Attesting Environment of its own to vouch for it, or other Claims about the Attester's features that the Attester is not in a position to self-assert.
 See also {{Section 4.2 of -rats-arch}}.
 
-Hints or suggestions for how to do a comparison might
+Hints (or suggestions) for how to perform a comparison might
 be supplied by a Reference Value Provider (as part of Reference Values),
 an Endorser (in an Endorsement), and/or an Attester (in Evidence),
 but the Verifier Owner is authoritative for Appraisal Policy for Evidence,
 and the Relying Party Owner is authoritative for Appraisal Policy for
 Attestation Results as depicted in {{Section 3 of -rats-arch}}.
 
-{{input}} below shows an example of Verifier input for a layered Attester
+{{input}} shows an example of Verifier input for a layered Attester
 as discussed in {{Section 3.2 of -rats-arch}}.
 
 ~~~~ aasvg
@@ -178,14 +179,14 @@ Endorsements |   |Actual state|                | Reference state |   | e
 ~~~~
 {: #input artwork-align="center" title="Example Verifier Input"}
 
-({{input}} shows Endorsements only at layer 0 as a typical example, not as a general rule.)
+{{input}} shows Endorsements only at layer 0 as a typical example, not as a general rule.
 
 A Trust Anchor Store is a special case of
 state above, where the Reference State would be the set of trust anchors
 accepted (or rejected) by the Verifier, and the Actual State would be
 a trust anchor used to appraise Evidence or Endorsements.
 
-In layered attestation using DICE {{TCG-DICE}} for example, the actual state of each layer
+In layered attestation using DICE {{TCG-DICE}}, for example, the actual state of each layer
 is signed by a key held by the next lower layer.  Thus in the example diagram
 above, the layer 2 actual state (e.g., OS state) is signed by a layer 1 key
 (e.g., a signing key used by the firmware), the layer 1 actual state (e.g.,
@@ -196,7 +197,7 @@ store, which is part of the layer 0 reference state depicted above.
 
 # Conditionally Endorsed Values
 
-The example in {{input}} shows Evidence containing actual state for layers 1 through N,
+The example depicted in {{input}} shows Evidence containing actual state for layers 1 through N,
 and an Endorsement containing actual state for layer 0. However,
 some claims in Endorsements might be conditional and so are only treated as actual
 state if a condition is met.
@@ -221,8 +222,8 @@ Alternatively, an Endorser might provide information indicating that a specific 
 ~~~
 {: #conditional artwork-align="center" title="Conditional Endorsements"}
 
-Thus, actual state is determined by starting with a collection of unconditional claims and adding any conditional claims whose conditions are met based on the actual state ({{conditional}}).
-This process is then repeated until no more conditional claims are added.
+Thus, actual state is determined by starting with a collection of unconditional Claims and adding any conditional Claims whose conditions are met based on the actual state ({{conditional}}).
+This process is then repeated until no more conditional Claims are added.
 
 Verifier policies around matching actual state against
 reference state are normally expressed in Appraisal Policy for Evidence.
@@ -244,10 +245,10 @@ This unfortunately complicates the Verifier design as it may need multiple parse
 Attesting Environments have cryptographic keys that allow authenticating the Evidence that they produce.
 
 Typically,
-the bottom-most Attesting Environment in an Attester will sign claims about one or more Target Environments
+the bottom-most Attesting Environment in an Attester will sign Claims about one or more Target Environments
 (see also the DICE example at the end of {{conceptual}})
 with a private key that the Attesting Environment possesses, and the Verifier will appraise
-the resulting Evidence with a public key it possesses, called a verification key below.
+the resulting Evidence with a public key it possesses, called a verification key.
 While use of public key cryptography is typical for a verification key, cryptography other than public key may also be used.
 
 Endorsing the linkage between such verification keys and their associated Attesting Environments is crucial to the appraisal process.
@@ -269,41 +270,38 @@ particular algorithm or cryptographic protocol is used for the appraisal
 of the Evidence. The verification key (i.e., a key with the purpose of signature checking) could be, typically, a symmetric key, a raw public key, or a certified public key.
 
 Evidence can contain an identifier for the Attester
-(e.g., {{-rats-eat}} `ueid`) in a dedicated "identity claim"
+(e.g., `ueid` {{-rats-eat}}) in a dedicated "identity claim"
 that can be used by the Verifier to look up its verification key for the Attester.
 The granularity at which such identifiers, and therefore the signature-checking keys
-endorsed for them, apply (e.g., per instance, class, or other claims) is out of scope
+endorsed for them, apply (e.g., per instance, class, or other Claims) is out of scope
 of this document.
 
-While identity claims are just another
-type of claims that may be endorsed, some implementations might treat them
+While identity Claims are another
+type of Claims that may be endorsed, some implementations might treat them
 differently. For example, a Verifier might perform a first step to
 cryptographically appraise that the Evidence
 has been generated by the Attester that has the key material associated
-with the identifier in the identity claim(s) before spending effort on
-another step to appraise other claims for determining trustworthiness.
+with the identifier in the identity Claim(s) before spending effort on
+another step to appraise other Claims for determining trustworthiness.
 
-This document treats identity claims the same as other claims but allows
+This document treats identity Claims the same as other Claims but allows
 Appraisal Policy for Evidence to have multiple phases if desired.
 
 # Timeliness
 
-Specific protocol documents are also responsible for documenting how timeliness
-of the Endorsement itself (e.g., using a certificate lifetime) is provided.
-
-{{Section 8.1 of -rats-arch}} discusses timeliness of claims in Evidence.  When
-additional "static" claims (i.e., claims representing invariant properties of the environment) are provided in Endorsements, no additional steps
-are needed for timeliness of those claims since they are static rather than
+{{Section 8.1 of -rats-arch}} discusses timeliness of Claims in Evidence.  When
+additional "static" Claims (i.e., Claims representing invariant properties of the environment) are provided in Endorsements, no additional steps
+are needed for timeliness of those Claims since they are static rather than
 dynamically varying over time.  Once timeliness of Evidence is appraised,
 any matching conditionally endorsed values can be applied.
 
-If Endorsements ever carry dynamic claims in the future (e.g., whether
+If Endorsements ever carry dynamic Claims in the future (e.g., whether
 any vulnerabilities in the version of firmware are currently known), then
-the same timeliness considerations as for claims in Evidence would apply,
+the same timeliness considerations as for Claims in Evidence would apply,
 and would be the responsibility of specific protocol documents. See
 {{Section 10 of -rats-arch}} and {{Appendix A of -rats-arch}} for further discussion.
 
-This distinction between static and dynamic claims is about the invariance
+This distinction between static and dynamic Claims is about the invariance
 of properties of the environment, not about the Endorser's assessment of
 those properties.  A condition in a Conditionally Endorsed Value ({{conditional}})
 is static in the sense that, once matched against sufficiently timely
@@ -343,17 +341,17 @@ trust anchor status, relative to the time of appraisal.
 {{input}} shows an example with an Endorsement at layer 0, such as
 a hardware manufacturer providing claims about the hardware. However, the
 same could be done at other layers in addition.  For example, an OS vendor
-might provide additional static claims about the OS software it provides,
-and application developers might provide additional static claims about
+might provide additional static Claims about the OS software it provides,
+and application developers might provide additional static Claims about
 the applications they release.
 
 {{multiple}} depicts an example with an Attester consisting of an application,
 OS, firmware, and hardware, each from a different vendor that provides
-an Endorsement for their own Target Environment, containing additional claims
+an Endorsement for their own Target Environment, containing additional Claims
 about that Target Environment.  Thus each Target Environment (application, OS, firmware,
-and hardware) has one set of claims ("claims set 1") in the Evidence, and an additional
-set of claims ("claims set 2") in the Endorsement from its manufacturer.
-A Verifier that trusts each Endorser would thus use the claims sets from both conceptual messages (Endorsements and Evidence) when comparing against reference state for a given Target Environment.
+and hardware) has one set of Claims ("claims set 1") in the Evidence, and an additional
+set of Claims ("claims set 2") in the Endorsement from its manufacturer.
+A Verifier that trusts each Endorser would thus use the Claims sets from both conceptual messages (Endorsements and Evidence) when comparing against reference state for a given Target Environment.
 
 ~~~~ aasvg
                .---------------------------. .-----------------.
@@ -397,9 +395,9 @@ provide additional claims about the OS, but not about the hardware.
 Thus, it is not as simple as saying that a Verifier has a trusted
 set of Endorsers. The binding between Target Environment and Endorser might
 be part of the Appraisal Policy for Evidence, or might be specified
-as part of the Evidence itself (e.g., claims from a Target Environment
+as part of the Evidence itself (e.g., Claims from a Target Environment
 might include an identifier of what Endorser can provide additional
-claims about it), or some combination of the two.
+Claims about it), or some combination of the two.
 An Endorsement format specification should explain how this concern
 is addressed.
 
@@ -455,18 +453,18 @@ The binding from an Endorsement to a given Target Environment is done as discuss
 
 The integrity of public and private key material and the secrecy of private key material must be ensured at all times.
 This includes public keys that identify trusted supply chain actors.
-For more detailed information on protecting Trust Anchors, refer to {{Section 12.4 of -rats-arch}}.
+For more detailed information on protecting trust anchors, refer to {{Section 12.4 of -rats-arch}}.
 
 A Verifier can use cryptographically protected, mutually authenticated secure channels to all its trusted input sources, particularly, Endorsers and Reference Value Providers.
 Signing the Endorsement or Reference Values themselves protects their integrity and authenticates their source, but a mutually authenticated channel additionally lets the source authenticate and authorize the requesting Verifier and protects potentially sensitive content (see {{privacy}}) against disclosure to unauthorized parties.
-These links should reach as deep as possible into the Verifier, potentially terminating within the appraisal session context, to avoid man-in-the-middle attacks.
-Minimizing the use of intermediaries is also vital, as each intermediary is another party that might need to be trusted.
+These links should reach as deep as possible into the Verifier, potentially terminating within the appraisal session context, to avoid on-path attacks.
+Minimizing the use of intermediaries is also important, as each intermediary is another party that might need to be trusted.
 Refer to {{Section 12.2 of -rats-arch}} for information on conceptual message protection.
 
 # Privacy Considerations {#privacy}
 
 The privacy considerations regarding conceptual messages, as discussed in {{Section 11 of -rats-arch}}, apply.
-In particular, since Endorsements and Reference Values can contain personally identifiable information (PII) about a large number of devices, strong confidentiality protection is required at the time of conveyance.
+In particular, since Endorsements and Reference Values can contain privacy-sensitive information (e.g., Personally Identifiable Information (PII)) about a large number of devices, strong confidentiality protection is required at the time of conveyance.
 
 Utilizing the public part of an asymmetric key pair that is used for Evidence generation to identify an Attesting Environment raises privacy considerations that must be carefully considered.
 
