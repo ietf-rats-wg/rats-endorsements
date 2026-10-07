@@ -395,11 +395,18 @@ which Endorser is allowed to provide an Endorsement about which
 Target Environment.  For example, the OS Endorser might be trusted to
 provide additional claims about the OS, but not about the hardware.
 Thus, it is not as simple as saying that a Verifier has a trusted
-set of Endorsers. The binding between Target Environment and Endorser might
-be part of the Appraisal Policy for Evidence, or might be specified
-as part of the Evidence itself (e.g., claims from a Target Environment
-might include an identifier of what Endorser can provide additional
-claims about it), or some combination of the two.
+set of Endorsers. The authority for the binding between Target Environment
+and Endorser comes from the Appraisal Policy for Evidence, which is
+independent of the Endorser, the Target Environment, and the Evidence.
+Evidence cannot establish that authority on its own: a Verifier that relied
+solely on a claim in Evidence naming the Endorser for a Target Environment
+would be trusting the Attester to select the party allowed to vouch for it.
+Evidence can still play a supporting role, e.g., claims from a Target
+Environment might include an identifier that the Verifier uses to locate
+candidate Endorsements, but the Verifier accepts an Endorsement
+only if the Appraisal Policy for Evidence authorizes that Endorser
+for that Target Environment (for example, by listing the Endorser's
+trust anchor as acceptable for that class of Target Environment).
 An Endorsement format specification should explain how this concern
 is addressed.
 
