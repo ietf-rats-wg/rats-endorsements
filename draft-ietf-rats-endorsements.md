@@ -464,7 +464,7 @@ Refer to {{Section 12.2 of -rats-arch}} for information on conceptual message pr
 # Privacy Considerations {#privacy}
 
 The privacy considerations regarding conceptual messages, as discussed in {{Section 11 of -rats-arch}}, apply.
-In particular, since Endorsements and Reference Values can contain privacy-sensistive inforamation (e.g., Personally Identifiable Information (PII)) about a large number of devices, strong confidentiality protection is required at the time of conveyance.
+In particular, since Endorsements and Reference Values can contain privacy-sensistive information (e.g., Personally Identifiable Information (PII)) about a large number of devices, strong confidentiality protection is required at the time of conveyance.
 
 Utilizing the public part of an asymmetric key pair that is used for Evidence generation to identify an Attesting Environment raises privacy considerations that must be carefully considered.
 
