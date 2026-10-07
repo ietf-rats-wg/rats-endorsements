@@ -179,7 +179,7 @@ Endorsements |   |Actual state|                | Reference state |   | e
 ~~~~
 {: #input artwork-align="center" title="Example Verifier Input"}
 
-> {{input}} shows Endorsements only at layer 0 as a typical example, not as a general rule.
+{{input}} shows Endorsements only at layer 0 as a typical example, not as a general rule.
 
 A Trust Anchor Store is a special case of
 state above, where the Reference State would be the set of trust anchors
