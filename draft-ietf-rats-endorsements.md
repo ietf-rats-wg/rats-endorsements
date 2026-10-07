@@ -71,7 +71,9 @@ In the IETF Remote Attestation Procedures (RATS) architecture, a Verifier accept
 This document illustrates the purpose and role of Endorsements and discusses some considerations in the choice of message format for Endorsements in the scope of the RATS architecture.
 
 This document does not aim to define a conceptual message format for Endorsements and Reference Values.
-Instead, it extends RFC9334 to provide further details on Reference Values and Endorsements, as these topics were outside the scope of the RATS charter when RFC9334 was developed.
+Instead, it updates RFC 9334 by refining the description of Endorsements and Reference Values.
+Specifically, this document classifies the RATS conceptual messages as actual state, reference state, or appraisal policy, and adds considerations on conditionally endorsed values, endorsing verification keys, timeliness, and multiple Endorsements.
+Readers of RFC9334 are expected to read it together with this document.
 
 --- middle
 
@@ -84,6 +86,14 @@ A Verifier appraises Evidence using Appraisal Policy for Evidence, typically aga
 
 When {{-rats-arch}} was developed, providing details of Reference Values and Endorsements were outside the scope of the RATS Working Group's charter.
 However, this has since changed, and the purpose of this document is to update {{-rats-arch}} to provide further details on Reference Values and Endorsements.
+
+Specifically, this document updates {{-rats-arch}} as follows:
+
+* It classifies the conceptual messages defined in {{-rats-arch}} into actual state, reference state, and appraisal policy ({{statetypes}}).
+*  It clarifies how Endorsements differ from Evidence and Reference Values ({{conceptual}}).
+* It refines the treatment of Endorsements in {{-rats-arch}} by adding considerations on conditionally endorsed values, the endorsement of verification keys, timeliness, and the handling of multiple Endorsements.
+
+Readers of {{-rats-arch}} are expected to read it together with this document; where the two differ in their description of Endorsements and Reference Values, this document takes precedence.
 
 # Actual State vs Reference State {#statetypes}
 
@@ -486,6 +496,7 @@ The authors wish to thank the following individuals for feedback and ideas that 
 {{{Thomas Hardjono}}},
 {{{Laurence Lundblade}}},
 {{{Kathleen Moriarty}}},
+{{{Ketan Talaulikar}}},
 {{{Michael Richardson}}},
 {{{Jim Fenton}}},
 {{{Jen Linkova}}},
