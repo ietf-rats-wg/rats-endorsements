@@ -89,7 +89,8 @@ However, this has since changed, and the purpose of this document is to update {
 
 Specifically, this document updates {{-rats-arch}} as follows:
 
-* It classifies the conceptual messages defined in {{-rats-arch}} into actual state, reference state, and appraisal policy ({{statetypes}}), and clarifies how Endorsements differ from Evidence and Reference Values ({{conceptual}}).
+* It classifies the conceptual messages defined in {{-rats-arch}} into actual state, reference state, and appraisal policy ({{statetypes}}).
+*  It clarifies how Endorsements differ from Evidence and Reference Values ({{conceptual}}).
 * It refines the treatment of Endorsements in {{-rats-arch}} by adding considerations on conditionally endorsed values, the endorsement of verification keys, timeliness, and the handling of multiple Endorsements.
 
 Readers of {{-rats-arch}} are expected to read it together with this document; where the two differ in their description of Endorsements and Reference Values, this document takes precedence.
