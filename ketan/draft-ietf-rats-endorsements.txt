@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 9 April 2027                                         T. Fossati
+Expires: 10 April 2027                                        T. Fossati
                                                                   NVIDIA
-                                                          6 October 2026
+                                                          7 October 2026
 
 
                            RATS Endorsements
@@ -26,13 +26,13 @@ Abstract
    architecture.
 
    This document does not aim to define a conceptual message format for
-   Endorsements and Reference Values.  Instead, it updates RFC9334 by
-   refining the description of Endorsements and Reference Values: it
-   classifies the RATS conceptual messages as actual state, reference
-   state, or appraisal policy, and it adds considerations on
-   conditionally endorsed values, endorsing verification keys,
-   timeliness, and multiple Endorsements.  Readers of RFC9334 are
-   expected to read it together with this document.
+   Endorsements and Reference Values.  Instead, it updates RFC 9334 by
+   refining the description of Endorsements and Reference Values.
+   Specifically, this document classifies the RATS conceptual messages
+   as actual state, reference state, or appraisal policy, and adds
+   considerations on conditionally endorsed values, endorsing
+   verification keys, timeliness, and multiple Endorsements.  Readers of
+   RFC9334 are expected to read it together with this document.
 
 Discussion Venues
 
@@ -60,7 +60,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 April 2027.
+   This Internet-Draft will expire on 10 April 2027.
 
 Copyright Notice
 
