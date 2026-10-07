@@ -116,8 +116,9 @@ Table of Contents
    Specifically, this document updates [RFC9334] as follows:
 
    *  It classifies the conceptual messages defined in [RFC9334] into
-      actual state, reference state, and appraisal policy (Section 2),
-      and clarifies how Endorsements differ from Evidence and Reference
+      actual state, reference state, and appraisal policy (Section 2).
+
+   *  It clarifies how Endorsements differ from Evidence and Reference
       Values (Section 2.1).
 
    *  It refines the treatment of Endorsements in [RFC9334] by adding
