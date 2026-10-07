@@ -71,7 +71,8 @@ In the IETF Remote Attestation Procedures (RATS) architecture, a Verifier accept
 This document illustrates the purpose and role of Endorsements and discusses some considerations in the choice of message format for Endorsements in the scope of the RATS architecture.
 
 This document does not aim to define a conceptual message format for Endorsements and Reference Values.
-Instead, it updates RFC9334 by refining the description of Endorsements and Reference Values: it classifies the RATS conceptual messages as actual state, reference state, or appraisal policy, and it adds considerations on conditionally endorsed values, endorsing verification keys, timeliness, and multiple Endorsements.
+Instead, it updates RFC 9334 by refining the description of Endorsements and Reference Values.
+Specifically, this document classifies the RATS conceptual messages as actual state, reference state, or appraisal policy, and adds considerations on conditionally endorsed values, endorsing verification keys, timeliness, and multiple Endorsements.
 Readers of RFC9334 are expected to read it together with this document.
 
 --- middle
