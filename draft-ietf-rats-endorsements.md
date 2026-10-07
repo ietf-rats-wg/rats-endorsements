@@ -487,6 +487,7 @@ This document does not require any actions by IANA.
 {: numbered="false"}
 
 The authors wish to thank the following individuals for feedback and ideas that contributed to this document:
+{{{Roman Danyliw}}},
 {{{Serhii Nikolaichuk}}},
 {{{Anton Sokolov}}},
 {{{Yogesh Deshpande}}},
