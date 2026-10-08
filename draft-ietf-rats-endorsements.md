@@ -42,6 +42,7 @@ author:
 
 normative:
   RFC9334: rats-arch
+  RFC9999: rats-cmw
 
 informative:
   RFC9711: rats-eat
@@ -134,7 +135,7 @@ Some examples of such matching include:
 
 ## RATS Conceptual Messages {#conceptual}
 
-RATS conceptual messages in {{-rats-arch}} fall into the above categories as follows:
+RATS "conceptual messages" (see {{Section 1 of -rats-cmw}}) fall into the above categories as follows:
 
 * Actual state: Evidence, Endorsements, Attestation Results
 * Reference state: Reference Values
