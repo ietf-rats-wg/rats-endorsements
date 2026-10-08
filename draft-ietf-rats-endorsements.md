@@ -493,6 +493,7 @@ This document does not require any actions by IANA.
 The authors wish to thank the following individuals for feedback and ideas that contributed to this document:
 {{{Serhii Nikolaichuk}}},
 {{{Anton Sokolov}}},
+{{{Mike Bishop}}},
 {{{Yogesh Deshpande}}},
 {{{Thomas Hardjono}}},
 {{{Laurence Lundblade}}},
