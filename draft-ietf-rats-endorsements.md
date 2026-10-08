@@ -46,6 +46,7 @@ normative:
 informative:
   RFC9711: rats-eat
   I-D.ietf-rats-corim: rats-corim
+  I-D.ietf-rats-coserv: rats-coserv
   TCG-DICE:
     author:
       org: "Trusted Computing Group"
@@ -90,13 +91,13 @@ However, this has since changed, and the purpose of this document is to update {
 Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
 Attestation Results) involve comparing the actual state of an Attester against
 desired or undesired states, to determine how trustworthy the Attester
-is for the Relying Party's purposes. The state of an Attester includes its "shape",
-i.e., the structural composition of the Attester as the arrangement of its
+is for the Relying Party's purposes. The state of an Attester includes
+the structural composition of the Attester as the arrangement of its
 various execution environments, which are typically organized
 hierarchically.
 The state of an Attester also encompasses the combination of static and
 dynamic composition (e.g., provisioned and deployed software, firmware, and
-micro-code), static and dynamic configuration, and the resulting operational state
+microcode), static and dynamic configuration, and the resulting operational state
 of its components at a certain point in time. Thus, a Verifier needs to receive
 conceptual messages with information about actual state, and information about desired/undesired
 states, and an appraisal policy that controls how the two are compared.
@@ -324,6 +325,16 @@ about the Endorser's standing (discussed below), so that a Verifier can
 determine which Endorsement supersedes others given the same condition.
 For example, {{-rats-corim}} provides a `rim-validity` window in the
 corim-map for this purpose.
+Conversely, an attacker, or a party that merely relays Endorsements (e.g., a
+CoSERV server {{-rats-coserv}}), might present only an older Endorsement and
+withhold a newer one that supersedes or revokes it.  A validity period alone
+does not prevent this, because the older Endorsement can still be within its
+validity window.  A Verifier therefore needs to obtain Endorsements from a
+source it trusts to supply the current set (e.g., directly from the Endorser
+over an authenticated channel, see {{security}}), or to learn of revocations or
+supersession through a separate mechanism (e.g., a revocation list or a
+sequence number covering the Endorser's Endorsements), as determined by the
+specific protocol or appraisal policy.
 
 The Endorser's standing (i.e., the fact that its signing key
 or certificate is still valid or its trust anchor is still recognized) is a
@@ -350,7 +361,7 @@ the applications they release.
 {{multiple}} depicts an example with an Attester consisting of an application,
 OS, firmware, and hardware, each from a different vendor that provides
 an Endorsement for their own Target Environment, containing additional claims
-about that Target Environment.  Thus each Target Environment (application, OS, firmware,
+about that Target Environment.  Thus, each Target Environment (application, OS, firmware,
 and hardware) has one set of claims ("claims set 1") in the Evidence, and an additional
 set of claims ("claims set 2") in the Endorsement from its manufacturer.
 A Verifier that trusts each Endorser would thus use the claims sets from both conceptual messages (Endorsements and Evidence) when comparing against reference state for a given Target Environment.
@@ -444,7 +455,7 @@ in this limited case.
 Similarly, an embedded constrained Verifier can choose to not support conditionally
 endorsed values to avoid the complexity introduced by them.
 
-# Security Considerations
+# Security Considerations {#security}
 
 {{Section 7.4 of -rats-arch}} discusses how a Verifier stores one or more trust anchors in its trust anchor store.
 A Verifier expresses its trust in an Endorser by storing a trust anchor for that Endorser.
@@ -459,7 +470,7 @@ For more detailed information on protecting Trust Anchors, refer to {{Section 12
 
 A Verifier can use cryptographically protected, mutually authenticated secure channels to all its trusted input sources, particularly, Endorsers and Reference Value Providers.
 Signing the Endorsement or Reference Values themselves protects their integrity and authenticates their source, but a mutually authenticated channel additionally lets the source authenticate and authorize the requesting Verifier and protects potentially sensitive content (see {{privacy}}) against disclosure to unauthorized parties.
-These links should reach as deep as possible into the Verifier, potentially terminating within the appraisal session context, to avoid man-in-the-middle attacks.
+These links should reach as deep as possible into the Verifier, potentially terminating within the appraisal session context, to avoid on-path attacks.
 Minimizing the use of intermediaries is also vital, as each intermediary is another party that might need to be trusted.
 Refer to {{Section 12.2 of -rats-arch}} for information on conceptual message protection.
 
