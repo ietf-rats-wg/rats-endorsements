@@ -86,9 +86,6 @@ and Reference Values, as well as Appraisal Policy for Evidence.
 A Verifier appraises Evidence using Appraisal Policy for Evidence, typically against a set of Reference Values.
 
 This document updates {{-rats-arch}} to provide further details on Reference Values and Endorsements.
-
-Readers are assumed to be familiar with the terms and concepts defined in {{-rats-arch}}.
-
 Specifically, this document updates {{-rats-arch}} as follows:
 
 * It classifies the conceptual messages defined in {{-rats-arch}} into actual state, reference state, and appraisal policy ({{statetypes}}).
