@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
-<title>RATS Endorsements</title>
+<title>Remote Attestation Procedures (RATS) Endorsements</title>
 <meta content="Dave Thaler" name="author">
 <meta content="Henk Birkholz" name="author">
 <meta content="Thomas Fossati" name="author">
 <meta content="
-       In the IETF Remote Attestation Procedures (RATS) architecture, a Verifier accepts Evidence and uses Appraisal Policy for Evidence, typically with additional input from Endorsements and Reference Values, to generate Attestation Results in formats that are useful for Relying Parties.
+       In the IETF Remote Attestation Procedures (RATS) architecture (RFC 9334), a Verifier accepts Evidence and uses Appraisal Policy for Evidence, typically with additional input from Endorsements and Reference Values, to generate Attestation Results in formats that are useful for Relying Parties.
 This document illustrates the purpose and role of Endorsements and discusses some considerations in the choice of message format for Endorsements in the scope of the RATS architecture. 
        This document does not aim to define a conceptual message format for Endorsements and Reference Values.
 Instead, it updates RFC 9334 by refining the description of Endorsements and Reference Values.
@@ -1090,10 +1090,10 @@ svg {
 </dd>
 </dl>
 </div>
-<h1 id="title">RATS Endorsements</h1>
+<h1 id="title">Remote Attestation Procedures (RATS) Endorsements</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">In the IETF Remote Attestation Procedures (RATS) architecture, a Verifier accepts Evidence and uses Appraisal Policy for Evidence, typically with additional input from Endorsements and Reference Values, to generate Attestation Results in formats that are useful for Relying Parties.
+<p id="section-abstract-1">In the IETF Remote Attestation Procedures (RATS) architecture (RFC 9334), a Verifier accepts Evidence and uses Appraisal Policy for Evidence, typically with additional input from Endorsements and Reference Values, to generate Attestation Results in formats that are useful for Relying Parties.
 This document illustrates the purpose and role of Endorsements and discusses some considerations in the choice of message format for Endorsements in the scope of the RATS architecture.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 <p id="section-abstract-2">This document does not aim to define a conceptual message format for Endorsements and Reference Values.
 Instead, it updates RFC 9334 by refining the description of Endorsements and Reference Values.
@@ -1227,25 +1227,24 @@ Specifically, this document classifies the RATS conceptual messages as actual st
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1"><span><a href="https://rfc-editor.org/rfc/rfc9334#section-3" class="relref">Section 3</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> provides an overview of the roles and conceptual messages in the IETF RATS architecture.
-As discussed in that document, a Verifier accepts a well-defined set of RATS conceptual messages: Evidence, Endorsements
+<p id="section-1-1"><span><a href="https://rfc-editor.org/rfc/rfc9334#section-3" class="relref">Section 3</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> provides an overview of the roles and conceptual messages in the IETF Remote ATtestation procedureS (RATS) architecture.
+As discussed in that document, a Verifier accepts a well-defined set of RATS conceptual messages: Evidence, Endorsements,
 and Reference Values, as well as Appraisal Policy for Evidence.
 A Verifier appraises Evidence using Appraisal Policy for Evidence, typically against a set of Reference Values.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">When <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> was developed, providing details of Reference Values and Endorsements were outside the scope of the RATS Working Group's charter.
-However, this has since changed, and the purpose of this document is to update <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> to provide further details on Reference Values and Endorsements.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">Specifically, this document updates <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> as follows:<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-2">This document updates <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> to provide further details on Reference Values and Endorsements.
+Specifically, this document updates <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> as follows:<a href="#section-1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-1-4.1">
-          <p id="section-1-4.1.1">It classifies the conceptual messages defined in <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> into actual state, reference state, and appraisal policy (<a href="#statetypes" class="auto internal xref">Section 2</a>).<a href="#section-1-4.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-1-3.1">
+          <p id="section-1-3.1.1">It classifies the conceptual messages defined in <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> into actual state, reference state, and appraisal policy (<a href="#statetypes" class="auto internal xref">Section 2</a>).<a href="#section-1-3.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-1-4.2">
-          <p id="section-1-4.2.1">It clarifies how Endorsements differ from Evidence and Reference Values (<a href="#conceptual" class="auto internal xref">Section 2.1</a>).<a href="#section-1-4.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-1-3.2">
+          <p id="section-1-3.2.1">It clarifies how Endorsements differ from Evidence and Reference Values (<a href="#conceptual" class="auto internal xref">Section 2.1</a>).<a href="#section-1-3.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-1-4.3">
-          <p id="section-1-4.3.1">It refines the treatment of Endorsements in <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> by adding considerations on conditionally endorsed values, the endorsement of verification keys, timeliness, and the handling of multiple Endorsements.<a href="#section-1-4.3.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-1-3.3">
+          <p id="section-1-3.3.1">It refines the treatment of Endorsements in <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> by adding considerations on conditionally endorsed values, the endorsement of verification keys, timeliness, and the handling of multiple Endorsements.<a href="#section-1-3.3.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-1-5">Readers of <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> are expected to read it together with this document; where the two differ in their description of Endorsements and Reference Values, this document takes precedence.<a href="#section-1-5" class="pilcrow">¶</a></p>
+<p id="section-1-4">Readers of <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> are expected to read it together with this document; where the two differ in their description of Endorsements and Reference Values, this document takes precedence.<a href="#section-1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="statetypes">
@@ -1259,45 +1258,45 @@ desired or undesired states, to determine how trustworthy the Attester
 is for the Relying Party's purposes. The state of an Attester includes
 the structural composition of the Attester as the arrangement of its
 various execution environments, which are typically organized
-hierarchically.
-The state of an Attester also encompasses the combination of static and
+hierarchically.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-2">The state of an Attester also encompasses the combination of static and
 dynamic composition (e.g., provisioned and deployed software, firmware, and
 microcode), static and dynamic configuration, and the resulting operational state
 of its components at a certain point in time. Thus, a Verifier needs to receive
 conceptual messages with information about actual state, and information about desired/undesired
-states, and an appraisal policy that controls how the two are compared.<a href="#section-2-1" class="pilcrow">¶</a></p>
-<p id="section-2-2">Each Attester in general has at least one Attesting Environment and one Target
-Environment (e.g., hardware, firmware, operating system, etc.).  Typically, each
-Attester has multiple Target Environments, each with their own "claims sets"
+states, and an appraisal policy that controls how the two are compared.<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-3">Each Attester in general has at least one Attesting Environment and one Target
+Environment (e.g., hardware, firmware, or operating system).  Typically, each
+Attester has multiple Target Environments, each with their own "Claims sets"
 representing their actual state. Additionally,
-there can be multiple Target Environments and Attesting Environments that are components of an Attester.<a href="#section-2-2" class="pilcrow">¶</a></p>
-<p id="section-2-3">"Actual state" is a group of claims sets about the actual state of the Attester at a
-given point in time. Each claims set holds claims about a specific Target Environment
-that is essential to determining trustworthiness.  Generally speaking, each claim
+there can be multiple Target Environments and Attesting Environments that are components of an Attester.<a href="#section-2-3" class="pilcrow">¶</a></p>
+<p id="section-2-4">"Actual state" is a group of Claims sets about the actual state of the Attester at a
+given point in time. Each Claims set holds Claims about a specific Target Environment
+that is essential to determining trustworthiness. Each Claim
 has a name
 and a singleton value, being a value collected from a Target Environment of a specific Attester at a given point
-in time. Some claims may inherently have multiple values, such as a list of
+in time. Some Claims may inherently have multiple values, such as a list of
 files in a given location on the device, but in the context of this document such
-a list is treated as a single unit, representing one Attester at one point in time.<a href="#section-2-3" class="pilcrow">¶</a></p>
-<p id="section-2-4">"Reference state" is a group of claims sets about the desired or undesired state of
-an Attester.  Typically, each claim has a name and
+a list is treated as a single unit, representing one Attester at one point in time.<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-5">"Reference state" is a group of Claims sets about the desired or undesired state of
+an Attester.  Typically, each Claim has a name and
 a set of potential values, being the values that are allowed/disallowed
 when determining the trustworthiness of the Attester.
 Generally, there may be varying degrees of gradation beyond just "allowed" or "disallowed."
 Reference state can have a set of values per claim per Target Environment.
 This is contrasted with actual state, which has a single value per claim per Target Environment.
 Actual state applies to one device at one point in time.
-Appraisal policy then specifies how to match the actual state values against a set of Reference Values.<a href="#section-2-4" class="pilcrow">¶</a></p>
-<p id="section-2-5">Some examples of such matching include:<a href="#section-2-5" class="pilcrow">¶</a></p>
+Appraisal policy then specifies how to match the actual state values against a set of Reference Values.<a href="#section-2-5" class="pilcrow">¶</a></p>
+<p id="section-2-6">Some examples of such matching include:<a href="#section-2-6" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-2-6.1">
-          <p id="section-2-6.1.1">An actual value must be in the set of allowed Reference Values.<a href="#section-2-6.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-2-7.1">
+          <p id="section-2-7.1.1">An actual value must be in the set of allowed Reference Values.<a href="#section-2-7.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-6.2">
-          <p id="section-2-6.2.1">An actual value must not be in the set of disallowed Reference Values.<a href="#section-2-6.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-2-7.2">
+          <p id="section-2-7.2.1">An actual value must not be in the set of disallowed Reference Values.<a href="#section-2-7.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-6.3">
-          <p id="section-2-6.3.1">An actual value must be in a range where two Reference Values are the min and max.<a href="#section-2-6.3.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-2-7.3">
+          <p id="section-2-7.3.1">An actual value must be in a range where two Reference Values are the min and max.<a href="#section-2-7.3.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <div id="conceptual">
@@ -1317,17 +1316,17 @@ Appraisal policy then specifies how to match the actual state values against a s
             <p id="section-2.1-2.3.1">Appraisal policy: Appraisal Policy for Evidence, Appraisal Policy for Attestation Results<a href="#section-2.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-2.1-3">Evidence and Endorsements are both "actual state" messages, but they differ in who asserts the claims and about which Environment.
-Evidence is a set of claims about a Target Environment, generated (and typically signed) by the Attesting Environment.
-Endorsements, by contrast, are provided by an Endorser -- a role distinct from the Attester, such as a manufacturer or certification body -- and typically carry claims about an Attesting Environment that has no lower-layer Attesting Environment of its own to vouch for it, or other claims about the Attester's features that the Attester is not in a position to self-assert.
+<p id="section-2.1-3">Evidence and Endorsements are both "actual state" messages, but they differ in who asserts the Claims and about which Environment.
+Evidence is a set of Claims about a Target Environment, generated (and typically signed) by the Attesting Environment.
+Endorsements, by contrast, are provided by an Endorser -- a role distinct from the Attester, such as a manufacturer or certification body -- and typically carry Claims about an Attesting Environment that has no lower-layer Attesting Environment of its own to vouch for it, or other Claims about the Attester's features that the Attester is not in a position to self-assert.
 See also <span><a href="https://rfc-editor.org/rfc/rfc9334#section-4.2" class="relref">Section 4.2</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span>.<a href="#section-2.1-3" class="pilcrow">¶</a></p>
-<p id="section-2.1-4">Hints or suggestions for how to do a comparison might
+<p id="section-2.1-4">Hints (or suggestions) for how to perform a comparison might
 be supplied by a Reference Value Provider (as part of Reference Values),
 an Endorser (in an Endorsement), and/or an Attester (in Evidence),
 but the Verifier Owner is authoritative for Appraisal Policy for Evidence,
 and the Relying Party Owner is authoritative for Appraisal Policy for
 Attestation Results as depicted in <span><a href="https://rfc-editor.org/rfc/rfc9334#section-3" class="relref">Section 3</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span>.<a href="#section-2.1-4" class="pilcrow">¶</a></p>
-<p id="section-2.1-5"><a href="#input" class="auto internal xref">Figure 1</a> below shows an example of Verifier input for a layered Attester
+<p id="section-2.1-5"><a href="#input" class="auto internal xref">Figure 1</a> shows an example of Verifier input for a layered Attester
 as discussed in <span><a href="https://rfc-editor.org/rfc/rfc9334#section-3.2" class="relref">Section 3.2</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span>.<a href="#section-2.1-5" class="pilcrow">¶</a></p>
 <span id="name-example-verifier-input"></span><div id="input">
 <figure id="figure-1">
@@ -1445,12 +1444,12 @@ as discussed in <span><a href="https://rfc-editor.org/rfc/rfc9334#section-3.2" c
 <a href="#name-example-verifier-input" class="selfRef">Example Verifier Input</a>
           </figcaption></figure>
 </div>
-<p id="section-2.1-7">(<a href="#input" class="auto internal xref">Figure 1</a> shows Endorsements only at layer 0 as a typical example, not as a general rule.)<a href="#section-2.1-7" class="pilcrow">¶</a></p>
+<p id="section-2.1-7"><a href="#input" class="auto internal xref">Figure 1</a> shows Endorsements only at layer 0 as a typical example, not as a general rule.<a href="#section-2.1-7" class="pilcrow">¶</a></p>
 <p id="section-2.1-8">A Trust Anchor Store is a special case of
 state above, where the Reference State would be the set of trust anchors
 accepted (or rejected) by the Verifier, and the Actual State would be
 a trust anchor used to appraise Evidence or Endorsements.<a href="#section-2.1-8" class="pilcrow">¶</a></p>
-<p id="section-2.1-9">In layered attestation using DICE <span>[<a href="#TCG-DICE" class="cite xref">TCG-DICE</a>]</span> for example, the actual state of each layer
+<p id="section-2.1-9">In layered attestation using DICE <span>[<a href="#TCG-DICE" class="cite xref">TCG-DICE</a>]</span>, for example, the actual state of each layer
 is signed by a key held by the next lower layer.  Thus in the example diagram
 above, the layer 2 actual state (e.g., OS state) is signed by a layer 1 key
 (e.g., a signing key used by the firmware), the layer 1 actual state (e.g.,
@@ -1467,7 +1466,7 @@ store, which is part of the layer 0 reference state depicted above.<a href="#sec
       <h2 id="name-conditionally-endorsed-valu">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-conditionally-endorsed-valu" class="section-name selfRef">Conditionally Endorsed Values</a>
       </h2>
-<p id="section-3-1">The example in <a href="#input" class="auto internal xref">Figure 1</a> shows Evidence containing actual state for layers 1 through N,
+<p id="section-3-1">The example depicted in <a href="#input" class="auto internal xref">Figure 1</a> shows Evidence containing actual state for layers 1 through N,
 and an Endorsement containing actual state for layer 0. However,
 some claims in Endorsements might be conditional and so are only treated as actual
 state if a condition is met.<a href="#section-3-1" class="pilcrow">¶</a></p>
@@ -1529,8 +1528,8 @@ Alternatively, an Endorser might provide information indicating that a specific 
 <a href="#name-conditional-endorsements" class="selfRef">Conditional Endorsements</a>
         </figcaption></figure>
 </div>
-<p id="section-3-4">Thus, actual state is determined by starting with a collection of unconditional claims and adding any conditional claims whose conditions are met based on the actual state (<a href="#conditional" class="auto internal xref">Figure 2</a>).
-This process is then repeated until no more conditional claims are added.<a href="#section-3-4" class="pilcrow">¶</a></p>
+<p id="section-3-4">Thus, actual state is determined by starting with a collection of unconditional Claims and adding any conditional Claims whose conditions are met based on the actual state (<a href="#conditional" class="auto internal xref">Figure 2</a>).
+This process is then repeated until no more conditional Claims are added.<a href="#section-3-4" class="pilcrow">¶</a></p>
 <p id="section-3-5">Verifier policies around matching actual state against
 reference state are normally expressed in Appraisal Policy for Evidence.
 Similarly, reference state is normally expressed in the Reference Values
@@ -1552,10 +1551,10 @@ This unfortunately complicates the Verifier design as it may need multiple parse
       </h2>
 <p id="section-4-1">Attesting Environments have cryptographic keys that allow authenticating the Evidence that they produce.<a href="#section-4-1" class="pilcrow">¶</a></p>
 <p id="section-4-2">Typically,
-the bottom-most Attesting Environment in an Attester will sign claims about one or more Target Environments
+the bottom-most Attesting Environment in an Attester will sign Claims about one or more Target Environments
 (see also the DICE example at the end of <a href="#conceptual" class="auto internal xref">Section 2.1</a>)
 with a private key that the Attesting Environment possesses, and the Verifier will appraise
-the resulting Evidence with a public key it possesses, called a verification key below.
+the resulting Evidence with a public key it possesses, called a verification key.
 While use of public key cryptography is typical for a verification key, cryptography other than public key may also be used.<a href="#section-4-2" class="pilcrow">¶</a></p>
 <p id="section-4-3">Endorsing the linkage between such verification keys and their associated Attesting Environments is crucial to the appraisal process.<a href="#section-4-3" class="pilcrow">¶</a></p>
 <p id="section-4-4">The Verifier must have access to a verification key for each Attesting Environment. Such a key
@@ -1573,19 +1572,19 @@ remains retrievable and applicable to the previously collected Evidence.<a href=
 particular algorithm or cryptographic protocol is used for the appraisal
 of the Evidence. The verification key (i.e., a key with the purpose of signature checking) could be, typically, a symmetric key, a raw public key, or a certified public key.<a href="#section-4-5" class="pilcrow">¶</a></p>
 <p id="section-4-6">Evidence can contain an identifier for the Attester
-(e.g., <span>[<a href="#RFC9711" class="cite xref">RFC9711</a>]</span> <code>ueid</code>) in a dedicated "identity claim"
+(e.g., <code>ueid</code> <span>[<a href="#RFC9711" class="cite xref">RFC9711</a>]</span>) in a dedicated "identity claim"
 that can be used by the Verifier to look up its verification key for the Attester.
 The granularity at which such identifiers, and therefore the signature-checking keys
-endorsed for them, apply (e.g., per instance, class, or other claims) is out of scope
+endorsed for them, apply (e.g., per instance, class, or other Claims) is out of scope
 of this document.<a href="#section-4-6" class="pilcrow">¶</a></p>
-<p id="section-4-7">While identity claims are just another
-type of claims that may be endorsed, some implementations might treat them
+<p id="section-4-7">While identity Claims are another
+type of Claims that may be endorsed, some implementations might treat them
 differently. For example, a Verifier might perform a first step to
 cryptographically appraise that the Evidence
 has been generated by the Attester that has the key material associated
-with the identifier in the identity claim(s) before spending effort on
-another step to appraise other claims for determining trustworthiness.<a href="#section-4-7" class="pilcrow">¶</a></p>
-<p id="section-4-8">This document treats identity claims the same as other claims but allows
+with the identifier in the identity Claim(s) before spending effort on
+another step to appraise other Claims for determining trustworthiness.<a href="#section-4-7" class="pilcrow">¶</a></p>
+<p id="section-4-8">This document treats identity Claims the same as other Claims but allows
 Appraisal Policy for Evidence to have multiple phases if desired.<a href="#section-4-8" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1594,19 +1593,17 @@ Appraisal Policy for Evidence to have multiple phases if desired.<a href="#secti
       <h2 id="name-timeliness">
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-timeliness" class="section-name selfRef">Timeliness</a>
       </h2>
-<p id="section-5-1">Specific protocol documents are also responsible for documenting how timeliness
-of the Endorsement itself (e.g., using a certificate lifetime) is provided.<a href="#section-5-1" class="pilcrow">¶</a></p>
-<p id="section-5-2"><span><a href="https://rfc-editor.org/rfc/rfc9334#section-8.1" class="relref">Section 8.1</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> discusses timeliness of claims in Evidence.  When
-additional "static" claims (i.e., claims representing invariant properties of the environment) are provided in Endorsements, no additional steps
-are needed for timeliness of those claims since they are static rather than
+<p id="section-5-1"><span><a href="https://rfc-editor.org/rfc/rfc9334#section-8.1" class="relref">Section 8.1</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> discusses timeliness of Claims in Evidence.  When
+additional "static" Claims (i.e., Claims representing invariant properties of the environment) are provided in Endorsements, no additional steps
+are needed for timeliness of those Claims since they are static rather than
 dynamically varying over time.  Once timeliness of Evidence is appraised,
-any matching conditionally endorsed values can be applied.<a href="#section-5-2" class="pilcrow">¶</a></p>
-<p id="section-5-3">If Endorsements ever carry dynamic claims in the future (e.g., whether
+any matching conditionally endorsed values can be applied.<a href="#section-5-1" class="pilcrow">¶</a></p>
+<p id="section-5-2">If Endorsements ever carry dynamic Claims in the future (e.g., whether
 any vulnerabilities in the version of firmware are currently known), then
-the same timeliness considerations as for claims in Evidence would apply,
+the same timeliness considerations as for Claims in Evidence would apply,
 and would be the responsibility of specific protocol documents. See
-<span><a href="https://rfc-editor.org/rfc/rfc9334#section-10" class="relref">Section 10</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> and <span><a href="https://rfc-editor.org/rfc/rfc9334#appendix-A" class="relref">Appendix A</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> for further discussion.<a href="#section-5-3" class="pilcrow">¶</a></p>
-<p id="section-5-4">This distinction between static and dynamic claims is about the invariance
+<span><a href="https://rfc-editor.org/rfc/rfc9334#section-10" class="relref">Section 10</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> and <span><a href="https://rfc-editor.org/rfc/rfc9334#appendix-A" class="relref">Appendix A</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> for further discussion.<a href="#section-5-2" class="pilcrow">¶</a></p>
+<p id="section-5-3">This distinction between static and dynamic Claims is about the invariance
 of properties of the environment, not about the Endorser's assessment of
 those properties.  A condition in a Conditionally Endorsed Value (<a href="#conditional" class="auto internal xref">Figure 2</a>)
 is static in the sense that, once matched against sufficiently timely
@@ -1636,8 +1633,8 @@ source it trusts to supply the current set (e.g., directly from the Endorser
 over an authenticated channel, see <a href="#security" class="auto internal xref">Section 8</a>), or to learn of revocations or
 supersession through a separate mechanism (e.g., a revocation list or a
 sequence number covering the Endorser's Endorsements), as determined by the
-specific protocol or appraisal policy.<a href="#section-5-4" class="pilcrow">¶</a></p>
-<p id="section-5-5">The Endorser's standing (i.e., the fact that its signing key
+specific protocol or appraisal policy.<a href="#section-5-3" class="pilcrow">¶</a></p>
+<p id="section-5-4">The Endorser's standing (i.e., the fact that its signing key
 or certificate is still valid or its trust anchor is still recognized) is a
 further, independent consideration, logically separate from the validity
 of the Endorsement content discussed above.  Whether the Endorser's standing
@@ -1648,7 +1645,7 @@ For example, the CoRIM data model provides a <code>signature-validity</code> win
 that bounds the validity of the Endorser's signature, distinct from the
 <code>rim-validity</code> window discussed above, and the CoRIM processor described
 in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-rats-corim-11#section-8" class="relref">Section 8</a> of [<a href="#I-D.ietf-rats-corim" class="cite xref">I-D.ietf-rats-corim</a>]</span> checks it, together with revocation and
-trust anchor status, relative to the time of appraisal.<a href="#section-5-5" class="pilcrow">¶</a></p>
+trust anchor status, relative to the time of appraisal.<a href="#section-5-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="multiple-endorsements">
@@ -1659,16 +1656,16 @@ trust anchor status, relative to the time of appraisal.<a href="#section-5-5" cl
 <p id="section-6-1"><a href="#input" class="auto internal xref">Figure 1</a> shows an example with an Endorsement at layer 0, such as
 a hardware manufacturer providing claims about the hardware. However, the
 same could be done at other layers in addition.  For example, an OS vendor
-might provide additional static claims about the OS software it provides,
-and application developers might provide additional static claims about
+might provide additional static Claims about the OS software it provides,
+and application developers might provide additional static Claims about
 the applications they release.<a href="#section-6-1" class="pilcrow">¶</a></p>
 <p id="section-6-2"><a href="#multiple" class="auto internal xref">Figure 3</a> depicts an example with an Attester consisting of an application,
 OS, firmware, and hardware, each from a different vendor that provides
-an Endorsement for their own Target Environment, containing additional claims
-about that Target Environment.  Thus, each Target Environment (application, OS, firmware,
-and hardware) has one set of claims ("claims set 1") in the Evidence, and an additional
-set of claims ("claims set 2") in the Endorsement from its manufacturer.
-A Verifier that trusts each Endorser would thus use the claims sets from both conceptual messages (Endorsements and Evidence) when comparing against reference state for a given Target Environment.<a href="#section-6-2" class="pilcrow">¶</a></p>
+an Endorsement for their own Target Environment, containing additional Claims
+about that Target Environment.  Thus each Target Environment (application, OS, firmware,
+and hardware) has one set of Claims ("claims set 1") in the Evidence, and an additional
+set of Claims ("claims set 2") in the Endorsement from its manufacturer.
+A Verifier that trusts each Endorser would thus use the Claims sets from both conceptual messages (Endorsements and Evidence) when comparing against reference state for a given Target Environment.<a href="#section-6-2" class="pilcrow">¶</a></p>
 <span id="name-multiple-endorsements-2"></span><div id="multiple">
 <figure id="figure-3">
         <div id="section-6-3.1">
@@ -1810,9 +1807,9 @@ set of Endorsers. The authority for the binding between Target Environment
 and Endorser comes from the Appraisal Policy for Evidence, which is
 independent of the Endorser, the Target Environment, and the Evidence.
 Evidence cannot establish that authority on its own: a Verifier that relied
-solely on a claim in Evidence naming the Endorser for a Target Environment
+solely on a Claim in Evidence naming the Endorser for a Target Environment
 would be trusting the Attester to select the party allowed to vouch for it.
-Evidence can still play a supporting role, e.g., claims from a Target
+Evidence can still play a supporting role, e.g., Claims from a Target
 Environment might include an identifier that the Verifier uses to locate
 candidate Endorsements, but the Verifier accepts an Endorsement
 only if the Appraisal Policy for Evidence authorizes that Endorser
@@ -1884,11 +1881,11 @@ The binding from an Endorsement to a given Target Environment is done as discuss
 <a href="#endorsing-keys" class="auto internal xref">Section 4</a> of this document covers additional considerations in these areas, while <a href="#formats-security" class="auto internal xref">Section 7.1</a> covers additional considerations around Endorsement formats.<a href="#section-8-2" class="pilcrow">¶</a></p>
 <p id="section-8-3">The integrity of public and private key material and the secrecy of private key material must be ensured at all times.
 This includes public keys that identify trusted supply chain actors.
-For more detailed information on protecting Trust Anchors, refer to <span><a href="https://rfc-editor.org/rfc/rfc9334#section-12.4" class="relref">Section 12.4</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span>.<a href="#section-8-3" class="pilcrow">¶</a></p>
+For more detailed information on protecting trust anchors, refer to <span><a href="https://rfc-editor.org/rfc/rfc9334#section-12.4" class="relref">Section 12.4</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span>.<a href="#section-8-3" class="pilcrow">¶</a></p>
 <p id="section-8-4">A Verifier can use cryptographically protected, mutually authenticated secure channels to all its trusted input sources, particularly, Endorsers and Reference Value Providers.
 Signing the Endorsement or Reference Values themselves protects their integrity and authenticates their source, but a mutually authenticated channel additionally lets the source authenticate and authorize the requesting Verifier and protects potentially sensitive content (see <a href="#privacy" class="auto internal xref">Section 9</a>) against disclosure to unauthorized parties.
 These links should reach as deep as possible into the Verifier, potentially terminating within the appraisal session context, to avoid on-path attacks.
-Minimizing the use of intermediaries is also vital, as each intermediary is another party that might need to be trusted.
+Minimizing the use of intermediaries is also important, as each intermediary is another party that might need to be trusted.
 Refer to <span><a href="https://rfc-editor.org/rfc/rfc9334#section-12.2" class="relref">Section 12.2</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> for information on conceptual message protection.<a href="#section-8-4" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1898,7 +1895,7 @@ Refer to <span><a href="https://rfc-editor.org/rfc/rfc9334#section-12.2" class="
 <a href="#section-9" class="section-number selfRef">9. </a><a href="#name-privacy-considerations" class="section-name selfRef">Privacy Considerations</a>
       </h2>
 <p id="section-9-1">The privacy considerations regarding conceptual messages, as discussed in <span><a href="https://rfc-editor.org/rfc/rfc9334#section-11" class="relref">Section 11</a> of [<a href="#RFC9334" class="cite xref">RFC9334</a>]</span>, apply.
-In particular, since Endorsements and Reference Values can contain personally identifiable information (PII) about a large number of devices, strong confidentiality protection is required at the time of conveyance.<a href="#section-9-1" class="pilcrow">¶</a></p>
+In particular, since Endorsements and Reference Values can contain privacy-sensitive information (e.g., Personally Identifiable Information (PII)) about a large number of devices, strong confidentiality protection is required at the time of conveyance.<a href="#section-9-1" class="pilcrow">¶</a></p>
 <p id="section-9-2">Utilizing the public part of an asymmetric key pair that is used for Evidence generation to identify an Attesting Environment raises privacy considerations that must be carefully considered.<a href="#section-9-2" class="pilcrow">¶</a></p>
 </section>
 </div>
