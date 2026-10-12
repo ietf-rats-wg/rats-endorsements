@@ -675,8 +675,8 @@ Acknowledgements
    ideas that contributed to this document: Roman Danyliw, Serhii
    Nikolaichuk, Anton Sokolov, Mike Bishop, Yogesh Deshpande, Thomas
    Hardjono, Laurence Lundblade, Kathleen Moriarty, Ketan Talaulikar,
-   Michael Richardson, Jim Fenton, Jen Linkova, Deb Cooley, Steven
-   Bellock, Ned Smith, and Carl Wallace
+   Michael Richardson, Mohamed Boucadair, Jim Fenton, Jen Linkova, Deb
+   Cooley, Steven Bellock, Ned Smith, and Carl Wallace
 
 Authors' Addresses
 
