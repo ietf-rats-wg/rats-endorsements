@@ -12,7 +12,8 @@
        In the IETF Remote Attestation Procedures (RATS) architecture, a Verifier accepts Evidence and uses Appraisal Policy for Evidence, typically with additional input from Endorsements and Reference Values, to generate Attestation Results in formats that are useful for Relying Parties.
 This document illustrates the purpose and role of Endorsements and discusses some considerations in the choice of message format for Endorsements in the scope of the RATS architecture. 
        This document does not aim to define a conceptual message format for Endorsements and Reference Values.
-Instead, it extends RFC9334 to provide further details on Reference Values and Endorsements, as these topics were outside the scope of the RATS charter when RFC9334 was developed. 
+Instead, it updates RFC 9334 by refining the description of Endorsements and Reference Values.
+Specifically, this document classifies the RATS conceptual messages as actual state, reference state, or appraisal policy, and adds considerations on conditionally endorsed values, endorsing verification keys, timeliness, and multiple Endorsements. 
     " name="description">
 <meta content="xml2rfc 3.34.1" name="generator">
 <meta content="Internet-Draft" name="keyword">
@@ -1095,7 +1096,8 @@ svg {
 <p id="section-abstract-1">In the IETF Remote Attestation Procedures (RATS) architecture, a Verifier accepts Evidence and uses Appraisal Policy for Evidence, typically with additional input from Endorsements and Reference Values, to generate Attestation Results in formats that are useful for Relying Parties.
 This document illustrates the purpose and role of Endorsements and discusses some considerations in the choice of message format for Endorsements in the scope of the RATS architecture.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 <p id="section-abstract-2">This document does not aim to define a conceptual message format for Endorsements and Reference Values.
-Instead, it extends RFC9334 to provide further details on Reference Values and Endorsements, as these topics were outside the scope of the RATS charter when RFC9334 was developed.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
+Instead, it updates RFC 9334 by refining the description of Endorsements and Reference Values.
+Specifically, this document classifies the RATS conceptual messages as actual state, reference state, or appraisal policy, and adds considerations on conditionally endorsed values, endorsing verification keys, timeliness, and multiple Endorsements.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-discussion-venues">
@@ -1231,6 +1233,19 @@ and Reference Values, as well as Appraisal Policy for Evidence.
 A Verifier appraises Evidence using Appraisal Policy for Evidence, typically against a set of Reference Values.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">When <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> was developed, providing details of Reference Values and Endorsements were outside the scope of the RATS Working Group's charter.
 However, this has since changed, and the purpose of this document is to update <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> to provide further details on Reference Values and Endorsements.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">Specifically, this document updates <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> as follows:<a href="#section-1-3" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-1-4.1">
+          <p id="section-1-4.1.1">It classifies the conceptual messages defined in <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> into actual state, reference state, and appraisal policy (<a href="#statetypes" class="auto internal xref">Section 2</a>).<a href="#section-1-4.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-1-4.2">
+          <p id="section-1-4.2.1">It clarifies how Endorsements differ from Evidence and Reference Values (<a href="#conceptual" class="auto internal xref">Section 2.1</a>).<a href="#section-1-4.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-1-4.3">
+          <p id="section-1-4.3.1">It refines the treatment of Endorsements in <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> by adding considerations on conditionally endorsed values, the endorsement of verification keys, timeliness, and the handling of multiple Endorsements.<a href="#section-1-4.3.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="section-1-5">Readers of <span>[<a href="#RFC9334" class="cite xref">RFC9334</a>]</span> are expected to read it together with this document; where the two differ in their description of Endorsements and Reference Values, this document takes precedence.<a href="#section-1-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="statetypes">
@@ -1962,6 +1977,7 @@ In particular, since Endorsements and Reference Values can contain personally id
 <span class="contact-name">Thomas Hardjono</span>,
 <span class="contact-name">Laurence Lundblade</span>,
 <span class="contact-name">Kathleen Moriarty</span>,
+<span class="contact-name">Ketan Talaulikar</span>,
 <span class="contact-name">Michael Richardson</span>,
 <span class="contact-name">Jim Fenton</span>,
 <span class="contact-name">Jen Linkova</span>,

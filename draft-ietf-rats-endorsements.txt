@@ -26,10 +26,12 @@ Abstract
    architecture.
 
    This document does not aim to define a conceptual message format for
-   Endorsements and Reference Values.  Instead, it extends RFC9334 to
-   provide further details on Reference Values and Endorsements, as
-   these topics were outside the scope of the RATS charter when RFC9334
-   was developed.
+   Endorsements and Reference Values.  Instead, it updates RFC 9334 by
+   refining the description of Endorsements and Reference Values.
+   Specifically, this document classifies the RATS conceptual messages
+   as actual state, reference state, or appraisal policy, and adds
+   considerations on conditionally endorsed values, endorsing
+   verification keys, timeliness, and multiple Endorsements.
 
 Discussion Venues
 
@@ -109,6 +111,23 @@ Table of Contents
    charter.  However, this has since changed, and the purpose of this
    document is to update [RFC9334] to provide further details on
    Reference Values and Endorsements.
+
+   Specifically, this document updates [RFC9334] as follows:
+
+   *  It classifies the conceptual messages defined in [RFC9334] into
+      actual state, reference state, and appraisal policy (Section 2).
+
+   *  It clarifies how Endorsements differ from Evidence and Reference
+      Values (Section 2.1).
+
+   *  It refines the treatment of Endorsements in [RFC9334] by adding
+      considerations on conditionally endorsed values, the endorsement
+      of verification keys, timeliness, and the handling of multiple
+      Endorsements.
+
+   Readers of [RFC9334] are expected to read it together with this
+   document; where the two differ in their description of Endorsements
+   and Reference Values, this document takes precedence.
 
 2.  Actual State vs Reference State
 
@@ -656,8 +675,9 @@ Acknowledgements
    The authors wish to thank the following individuals for feedback and
    ideas that contributed to this document: Roman Danyliw, Serhii
    Nikolaichuk, Anton Sokolov, Mike Bishop, Yogesh Deshpande, Thomas
-   Hardjono, Laurence Lundblade, Kathleen Moriarty, Michael Richardson,
-   Jim Fenton, Jen Linkova, Steven Bellock, Ned Smith, and Carl Wallace
+   Hardjono, Laurence Lundblade, Kathleen Moriarty, Ketan Talaulikar,
+   Michael Richardson, Jim Fenton, Jen Linkova, Steven Bellock, Ned
+   Smith, and Carl Wallace
 
 Authors' Addresses
 
