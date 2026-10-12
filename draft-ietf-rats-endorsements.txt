@@ -189,8 +189,8 @@ Table of Contents
 
 2.1.  RATS Conceptual Messages
 
-   RATS conceptual messages in [RFC9334] fall into the above categories
-   as follows:
+   RATS "conceptual messages" (see Section 1 of [RFC9999]) fall into the
+   above categories as follows:
 
    *  Actual state: Evidence, Endorsements, Attestation Results
 
@@ -635,6 +635,11 @@ Endorsements |   |Actual state|                | Reference state |   | e
               Architecture", RFC 9334, DOI 10.17487/RFC9334, January
               2023, <https://www.rfc-editor.org/rfc/rfc9334>.
 
+   [RFC9999]  Birkholz, H., Smith, N., Fossati, T., and H. Tschofenig,
+              "Remote ATtestation procedureS (RATS) Conceptual Message
+              Wrapper (CMW)", RFC 9999, DOI 10.17487/RFC9999, July 2026,
+              <https://www.rfc-editor.org/rfc/rfc9999>.
+
 11.2.  Informative References
 
    [GP-Cert]  GlobalPlatform, "Security Certification", March 2026,
@@ -676,8 +681,8 @@ Acknowledgements
    ideas that contributed to this document: Roman Danyliw, Serhii
    Nikolaichuk, Anton Sokolov, Mike Bishop, Yogesh Deshpande, Thomas
    Hardjono, Laurence Lundblade, Kathleen Moriarty, Ketan Talaulikar,
-   Michael Richardson, Jim Fenton, Jen Linkova, Steven Bellock, Ned
-   Smith, and Carl Wallace
+   Michael Richardson, Jim Fenton, Jen Linkova, Deb Cooley, Steven
+   Bellock, Ned Smith, and Carl Wallace
 
 Authors' Addresses
 
