@@ -42,10 +42,12 @@ author:
 
 normative:
   RFC9334: rats-arch
+  RFC9999: rats-cmw
 
 informative:
   RFC9711: rats-eat
   I-D.ietf-rats-corim: rats-corim
+  I-D.ietf-rats-coserv: rats-coserv
   TCG-DICE:
     author:
       org: "Trusted Computing Group"
@@ -70,7 +72,9 @@ informative:
 In the IETF Remote Attestation Procedures (RATS) architecture (RFC 9334), a Verifier accepts Evidence and uses Appraisal Policy for Evidence, typically with additional input from Endorsements and Reference Values, to generate Attestation Results in formats that are useful for Relying Parties.
 This document illustrates the purpose and role of Endorsements and discusses some considerations in the choice of message format for Endorsements in the scope of the RATS architecture.
 
-This document does not aim to define a conceptual message format for Endorsements and Reference Values. Instead, it extends RFC 9334 to provide further details on Reference Values and Endorsements. Otherwise, the document does not change any other part of RFC 9334.
+This document does not aim to define a conceptual message format for Endorsements and Reference Values.
+Instead, it updates RFC 9334 by refining the description of Endorsements and Reference Values.
+Specifically, this document classifies the RATS conceptual messages as actual state, reference state, or appraisal policy, and adds considerations on conditionally endorsed values, endorsing verification keys, timeliness, and multiple Endorsements.
 
 --- middle
 
@@ -85,19 +89,27 @@ This document updates {{-rats-arch}} to provide further details on Reference Val
 
 Readers are assumed to be familiar with the terms and concepts defined in {{-rats-arch}}.
 
+Specifically, this document updates {{-rats-arch}} as follows:
+
+* It classifies the conceptual messages defined in {{-rats-arch}} into actual state, reference state, and appraisal policy ({{statetypes}}).
+* It clarifies how Endorsements differ from Evidence and Reference Values ({{conceptual}}).
+* It refines the treatment of Endorsements in {{-rats-arch}} by adding considerations on conditionally endorsed values, the endorsement of verification keys, timeliness, and the handling of multiple Endorsements.
+
+Readers of {{-rats-arch}} are expected to read it together with this document; where the two differ in their description of Endorsements and Reference Values, this document takes precedence.
+
 # Actual State vs Reference State {#statetypes}
 
 Appraisal policies (Appraisal Policy for Evidence, and Appraisal Policy for
 Attestation Results) involve comparing the actual state of an Attester against
 desired or undesired states, to determine how trustworthy the Attester
-is for the Relying Party's purposes. The state of an Attester includes its "shape",
-i.e., the structural composition of the Attester as the arrangement of its
+is for the Relying Party's purposes. The state of an Attester includes
+the structural composition of the Attester as the arrangement of its
 various execution environments, which are typically organized
 hierarchically.
 
 The state of an Attester also encompasses the combination of static and
 dynamic composition (e.g., provisioned and deployed software, firmware, and
-micro-code), static and dynamic configuration, and the resulting operational state
+microcode), static and dynamic configuration, and the resulting operational state
 of its components at a certain point in time. Thus, a Verifier needs to receive
 conceptual messages with information about actual state, and information about desired/undesired
 states, and an appraisal policy that controls how the two are compared.
@@ -135,7 +147,7 @@ Some examples of such matching include:
 
 ## RATS Conceptual Messages {#conceptual}
 
-RATS conceptual messages in {{-rats-arch}} fall into the above categories as follows:
+RATS "conceptual messages" (see {{Section 1 of -rats-cmw}}) fall into the above categories as follows:
 
 * Actual state: Evidence, Endorsements, Attestation Results
 * Reference state: Reference Values
@@ -322,6 +334,16 @@ about the Endorser's standing (discussed below), so that a Verifier can
 determine which Endorsement supersedes others given the same condition.
 For example, {{-rats-corim}} provides a `rim-validity` window in the
 corim-map for this purpose.
+Conversely, an attacker, or a party that merely relays Endorsements (e.g., a
+CoSERV server {{-rats-coserv}}), might present only an older Endorsement and
+withhold a newer one that supersedes or revokes it.  A validity period alone
+does not prevent this, because the older Endorsement can still be within its
+validity window.  A Verifier therefore needs to obtain Endorsements from a
+source it trusts to supply the current set (e.g., directly from the Endorser
+over an authenticated channel, see {{security}}), or to learn of revocations or
+supersession through a separate mechanism (e.g., a revocation list or a
+sequence number covering the Endorser's Endorsements), as determined by the
+specific protocol or appraisal policy.
 
 The Endorser's standing (i.e., the fact that its signing key
 or certificate is still valid or its trust anchor is still recognized) is a
@@ -393,11 +415,18 @@ which Endorser is allowed to provide an Endorsement about which
 Target Environment.  For example, the OS Endorser might be trusted to
 provide additional claims about the OS, but not about the hardware.
 Thus, it is not as simple as saying that a Verifier has a trusted
-set of Endorsers. The binding between Target Environment and Endorser might
-be part of the Appraisal Policy for Evidence, or might be specified
-as part of the Evidence itself (e.g., Claims from a Target Environment
-might include an identifier of what Endorser can provide additional
-Claims about it), or some combination of the two.
+set of Endorsers. The authority for the binding between Target Environment
+and Endorser comes from the Appraisal Policy for Evidence, which is
+independent of the Endorser, the Target Environment, and the Evidence.
+Evidence cannot establish that authority on its own: a Verifier that relied
+solely on a Claim in Evidence naming the Endorser for a Target Environment
+would be trusting the Attester to select the party allowed to vouch for it.
+Evidence can still play a supporting role, e.g., Claims from a Target
+Environment might include an identifier that the Verifier uses to locate
+candidate Endorsements, but the Verifier accepts an Endorsement
+only if the Appraisal Policy for Evidence authorizes that Endorser
+for that Target Environment (for example, by listing the Endorser's
+trust anchor as acceptable for that class of Target Environment).
 An Endorsement format specification should explain how this concern
 is addressed.
 
@@ -442,7 +471,7 @@ in this limited case.
 Similarly, an embedded constrained Verifier can choose to not support conditionally
 endorsed values to avoid the complexity introduced by them.
 
-# Security Considerations
+# Security Considerations {#security}
 
 {{Section 7.4 of -rats-arch}} discusses how a Verifier stores one or more trust anchors in its trust anchor store.
 A Verifier expresses its trust in an Endorser by storing a trust anchor for that Endorser.
@@ -478,15 +507,19 @@ This document does not require any actions by IANA.
 {: numbered="false"}
 
 The authors wish to thank the following individuals for feedback and ideas that contributed to this document:
+{{{Roman Danyliw}}},
 {{{Serhii Nikolaichuk}}},
 {{{Anton Sokolov}}},
+{{{Mike Bishop}}},
 {{{Yogesh Deshpande}}},
 {{{Thomas Hardjono}}},
 {{{Laurence Lundblade}}},
 {{{Kathleen Moriarty}}},
+{{{Ketan Talaulikar}}},
 {{{Michael Richardson}}},
 {{{Jim Fenton}}},
 {{{Jen Linkova}}},
+{{{Deb Cooley}}},
 {{{Steven Bellock}}},
 {{{Ned Smith}}}, and
 {{{Carl Wallace}}}
