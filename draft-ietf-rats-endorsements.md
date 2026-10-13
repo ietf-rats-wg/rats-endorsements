@@ -88,7 +88,7 @@ A Verifier appraises Evidence using Appraisal Policy for Evidence, typically aga
 This document updates {{-rats-arch}} to provide further details on Reference Values and Endorsements.
 Specifically, this document updates {{-rats-arch}} as follows:
 
-* It classifies the conceptual messages defined in {{-rats-arch}} into actual state, reference state, and appraisal policy ({{statetypes}}).
+* It classifies the conceptual messages described in {{Section 8 of -rats-arch}} into actual state, reference state, and appraisal policy ({{statetypes}}).
 * It clarifies how Endorsements differ from Evidence and Reference Values ({{conceptual}}).
 * It refines the treatment of Endorsements in {{-rats-arch}} by adding considerations on conditionally endorsed values, the endorsement of verification keys, timeliness, and the handling of multiple Endorsements.
 
