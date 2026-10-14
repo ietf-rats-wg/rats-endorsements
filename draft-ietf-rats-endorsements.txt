@@ -6,9 +6,9 @@ RATS Working Group                                             D. Thaler
 Internet-Draft                                       Armidale Consulting
 Updates: 9334 (if approved)                                  H. Birkholz
 Intended status: Informational                            Fraunhofer SIT
-Expires: 15 April 2027                                        T. Fossati
+Expires: 17 April 2027                                        T. Fossati
                                                                   NVIDIA
-                                                         12 October 2026
+                                                         14 October 2026
 
 
            Remote Attestation Procedures (RATS) Endorsements
@@ -59,7 +59,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 April 2027.
+   This Internet-Draft will expire on 17 April 2027.
 
 Copyright Notice
 
@@ -110,8 +110,9 @@ Table of Contents
    Reference Values and Endorsements.  Specifically, this document
    updates [RFC9334] as follows:
 
-   *  It classifies the conceptual messages defined in [RFC9334] into
-      actual state, reference state, and appraisal policy (Section 2).
+   *  It classifies the conceptual messages described in Section 8 of
+      [RFC9334] into actual state, reference state, and appraisal policy
+      (Section 2).
 
    *  It clarifies how Endorsements differ from Evidence and Reference
       Values (Section 2.1).
